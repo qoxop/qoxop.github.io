@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="">
+    <title>qoxop | react</title>
+    <link rel="stylesheet" href="/assets/common.css">
+    <link rel="stylesheet" href="/assets/article.css">
+    <link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">  
+    <script async src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.1/highlight.min.js"></script>
+    
+</head>
+<body>
+    <div id="app">
+        <header>
+          <div class="content_box header_inner">
+            <div class="logo">
+              <div class="logoImg">
+                <img src="/assets/icon.png" alt="">
+              </div>
+              <div class="logoText">
+                jiw
+              </div>
+            </div>
+            <nav class="navigator">
+              <ul>
+                
+                <li class="">
+                    <a href="/index.html">
+                        HOME
+                    </a>
+                </li>
+                
+                <li class="">
+                    <a href="/category.html">
+                        CATEGORY
+                    </a>
+                </li>
+                
+                <li class="">
+                    <a href="/tags.html">
+                        标签
+                    </a>
+                </li>
+                
+                <li class="">
+                    <a href="/link.html">
+                        链接
+                    </a>
+                </li>
+                
+                <li class="">
+                    <a href="/about.html">
+                        关于我
+                    </a>
+                </li>
+                
+              </ul>
+            </nav>
+          </div>
+        </header>
+        <div id="main">
+           <article class="content_box">
+    <div class="article md_html_article">
+        <h1>
+            react
+        </h1>
+        <div class="update_time">
+            <span>
+                更新时间：2019-02-12
+            </span>
+        </div>
+        <div class="md_essay">
+            <h3 id="react-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F">react 生命周期</h3>
+<ul>
+<li>
+<p>Mounting</p>
+<p>constructor  -》 static getDerivedStateFromProps  -》render -》 componentDidMount</p>
+</li>
+<li>
+<p>Updating</p>
+<p>static getDerivedStateFromProps -&gt; shouldComponentUpdate -&gt; render -&gt; getSnapshotBeforeUpdate -&gt;componentDidUpdate</p>
+<ul>
+<li>
+<p>static getDerivedStateFromProps(props, state)</p>
+<blockquote>
+<p><code>getDerivedStateFromProps</code> is invoked right before calling the render method, both on the initial mount and on subsequent updates. It should return an object to update the state, or null to update nothing.</p>
+<p>更新是通过 merge 的方式进行的</p>
+</blockquote>
+</li>
+<li>
+<p>getSnapshotBeforeUpdate (prevProps, prevState)</p>
+<blockquote>
+<p><code>getSnapshotBeforeUpdate(prevProps, prevState)</code> is invoked right before the most recently rendered output is committed to e.g. the DOM. It enables your component to capture some information from the DOM (e.g. scroll position) before it is potentially changed. Any value returned by this lifecycle will be passed as a parameter to <code>componentDidUpdate()</code>.</p>
+<p>getSnapshotBeforeUpdate(prevProps, prevState) 在最近的一次 render 被挂载到dom节点之前被调用，这允许你的组件在dom节点在潜在的改变前获取到dom节点的信息。这个函数返回的值会传递给componentDidUpdate(prevProps, prevState, snapshot)的第三个参数。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<p><a href="https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html">why copying props into state causes bugs</a>.</p>
+
+        </div>
+        <div class="md_essay_tags">
+            
+        </div>
+    </div>
+</article>
+        </div>
+        <footer></footer>
+      </div>
+</body>
+</html>

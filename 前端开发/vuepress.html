@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="">
+    <title>qoxop | vuepress</title>
+    <link rel="stylesheet" href="/assets/common.css">
+    <link rel="stylesheet" href="/assets/article.css">
+    <link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">  
+    <script async src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.1/highlight.min.js"></script>
+    
+</head>
+<body>
+    <div id="app">
+        <header>
+          <div class="content_box header_inner">
+            <div class="logo">
+              <div class="logoImg">
+                <img src="/assets/icon.png" alt="">
+              </div>
+              <div class="logoText">
+                jiw
+              </div>
+            </div>
+            <nav class="navigator">
+              <ul>
+                
+                <li class="">
+                    <a href="/index.html">
+                        HOME
+                    </a>
+                </li>
+                
+                <li class="">
+                    <a href="/category.html">
+                        CATEGORY
+                    </a>
+                </li>
+                
+                <li class="">
+                    <a href="/tags.html">
+                        标签
+                    </a>
+                </li>
+                
+                <li class="">
+                    <a href="/link.html">
+                        链接
+                    </a>
+                </li>
+                
+                <li class="">
+                    <a href="/about.html">
+                        关于我
+                    </a>
+                </li>
+                
+              </ul>
+            </nav>
+          </div>
+        </header>
+        <div id="main">
+           <article class="content_box">
+    <div class="article md_html_article">
+        <h1>
+            vuepress
+        </h1>
+        <div class="update_time">
+            <span>
+                更新时间：2019-02-12
+            </span>
+        </div>
+        <div class="md_essay">
+            <h2 id="%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><a href="https://vuepress.vuejs.org/zh/config/" title="官方地址">配置文件</a></h2>
+<p>配置文件一般存放在文档根目录下面的.vuepress/config.js里面。</p>
+<h3 id="%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE">基本配置</h3>
+<h4 id="base">base</h4>
+<p><code>type: string</code></p>
+<p>默认值是 <code>'/'</code>, 配置文档的基本URL，必须以斜杆开始和结束</p>
+<h4 id="title">title</h4>
+<p><code>tpye: string</code></p>
+<p>没有默认值，这是所有页面标题的前缀。</p>
+<h4 id="description">description</h4>
+<p>网站的描述，以<code>&lt;meta&gt;</code> 标签渲染到当前页面的html中</p>
+<h4 id="head">head</h4>
+<p><code>type: Array</code> ,</p>
+<p>注入额外的标签到<code>&lt;head&gt;</code>中，每个标签都可以以<code>[tagName,{ attrName: attrValue},innnerHTML</code>的格式指定</p>
+<h4 id="host">host</h4>
+<p>指定dev server的主机名</p>
+<h4 id="port">port</h4>
+<p>指定dev server的端口</p>
+<h4 id="dest">dest</h4>
+<p>指定vuepress build 的输出目录</p>
+<h4 id="ga">ga</h4>
+<p>提供 Google AnalyticsID 来开启集成。？</p>
+<h4 id="serviceworker">serviceWorker</h4>
+<p>如果设置为 true，VuePress 将自动生成并注册一个 service worker ，这个 worker 将内容缓存以供离线使用（仅在生产环境中启用）。</p>
+<h3 id="%E4%B8%BB%E9%A2%98%E5%8C%96">主题化</h3>
+<h4 id="theme">theme</h4>
+<p><code>type: string</code> ,默认值<code>undefined</code></p>
+<p>指定此选项来使用自定义主题。使用 “foo” 的值，VuePress 将尝试在 <code>node_modules/vuepress-theme-foo/Layout.vue</code> 加载主题组件。</p>
+<h4 id="themeconfig">themeConfig</h4>
+<p><code>type: Object</code>, 默认值 {}</p>
+<p>为使用的主题提供配置选项。这些选项将根据你使用的主题而有所不同。</p>
+<h3 id="markdown">Markdown</h3>
+<h4 id="markdown.linenumbers">markdown.lineNumbers</h4>
+<p><code>type: boolean</code></p>
+<p>是否在每个代码块的左侧显示行号</p>
+<h4 id="markdown.anchor">markdown.anchor</h4>
+<p><code>type: Object</code>, 默认值：<code>{ permalink: true, permalinkBefore: true, permalinkSymbol: '#' }</code> ,<a href="https://github.com/valeriangalliat/markdown-it-anchor">markdown-it-anchor</a> 的选项。?配置锚点?</p>
+<h4 id="markdown.externallinks">markdown.externalLinks</h4>
+<p><code>type: Object</code> ,默认值：<code>{ target: '_blank', rel: 'noopener noreferrer' }</code> 。这个键值对将会作为特性被增加到是外部链接的 <code>&lt;a&gt;</code> 标签上，默认的选项将会在新窗口中打开一个该外部链接。</p>
+<h4 id="markdown.toc">markdown.toc</h4>
+<p><code>type: Object</code> ,默认值：<code>{ includeLevel: [2, 3] }</code> 。<a href="https://github.com/Oktavilla/markdown-it-table-of-contents">markdown-it-table-of-contents</a> 的选项</p>
+<h4 id="markdown.config">markdown.config</h4>
+<p><code>type: Function</code>, 默认值<code>undefined</code> ，一个用于修改当前的 <a href="https://github.com/markdown-it/markdown-it">markdown-it</a> 实例的默认配置，或者应用额外的插件的函数。</p>
+<h3 id="%E6%9E%84%E5%BB%BA%E6%B5%81%E7%A8%8B">构建流程</h3>
+<h4 id="loader(postcss%E3%80%81stylus%E3%80%81scss%E3%80%81sass%E3%80%81less)">loader(postcss、stylus、scss、sass、less)</h4>
+<p>对应的相应的webpack的loader配置。</p>
+<ul>
+<li>postcss -&gt; <code>{ plugins: [require('autoprefixer')] }</code></li>
+<li>stylus -&gt; <code>{ preferPathResolver: 'webpack' }</code></li>
+<li>scss -&gt; <code>{}</code></li>
+<li>sass -&gt; <code>{ indentedSyntax: true }</code></li>
+<li>less -&gt; <code>{}</code></li>
+</ul>
+<h4 id="configurewebpack">configureWebpack</h4>
+<p><code>type: Object | Function</code>，默认值<code>undefined</code>，用于修改内部的 Webpack 配置。如果给定一个对象，那么它将会被 <a href="https://github.com/survivejs/webpack-merge">webpack-merge</a> 合并到最终的配置中，如果给定一个函数，它将会接受 <code>config</code> 作为第一个参数，以及 <code>isServer</code> 作为第二个参数，你可以直接更改 <code>config</code>，也可以返回一个待合并的对象。</p>
+<pre><code class="hljs language-javascript"><span class="hljs-built_in">module</span>.exports = {
+  <span class="hljs-attr">configureWebpack</span>: <span class="hljs-function">(<span class="hljs-params">config, isServer</span>) =&gt;</span> {
+    <span class="hljs-keyword">if</span> (!isServer) {
+      <span class="hljs-comment">// 修改客户端的 webpack 配置</span>
+    }
+  }
+}
+</code></pre>
+<h4 id="chainwebpack">chainWebpack</h4>
+<p><code>type: Function</code> , 默认值 <code>undefined</code> 通过 <a href="https://github.com/mozilla-neutrino/webpack-chain">webpack-chain</a> 来修改内部的 Webpack 配置。</p>
+<pre><code class="hljs language-javascript"><span class="hljs-built_in">module</span>.exports = {
+  <span class="hljs-attr">chainWebpack</span>: <span class="hljs-function">(<span class="hljs-params">config, isServer</span>) =&gt;</span> {
+    <span class="hljs-comment">// config 是 ChainableConfig 的一个实例</span>
+  }
+}
+</code></pre>
+<h3 id="%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9%E6%80%A7">浏览器兼容性</h3>
+<h4 id="evergreen">evergreen</h4>
+<p><code>type: boolean</code>, 默认值 <code>false</code>, 如果你的对象只有那些 “常青树” 浏览器，你可以将其设置成 <code>true</code>，这将会禁止 ESNext 到 ES5 的转译以及对 IE 的 polyfills，同时会带来更快的构建速度和更小的文件体积。</p>
+<h3 id="%E7%9B%B8%E5%85%B3%E9%93%BE%E6%8E%A5">相关链接</h3>
+<p><a href="https://vuepress.vuejs.org/zh/default-theme-config/">默认主题配置</a></p>
+<h2 id="%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%BB%E9%A2%98"><a href="https://vuepress.vuejs.org/zh/guide/custom-themes.html">自定义主题</a></h2>
+<p>vuePress 使用单文件组件来构建自定义主题。想要开发一个自定义主题，首先在你的文档根目录新建一个 <code>.vuepress/theme</code> 文件夹，然后再创建一个 <code>Layout.vue</code> 文件。theme组件相当于一个容器组件，转化为vue组件的md文件包裹起来，同时theme组件可以过去的到整个站点和当前页面的元数据。</p>
+<pre><code class="hljs language-flow">st=&gt;start: ***.md
+mdToVue=&gt;operation: 将md文件转化为一个vue组件
+injectToLayout=&gt;operation: 将md组件作为一个独特的全局组件&lt;Content /&gt;来使用
+st-&gt;mdToVue-&gt;injectToLayout
+</code></pre>
+<pre><code class="hljs language-vue">&lt;template&gt;
+  &lt;div class=&quot;theme-container&quot;&gt;
+    &lt;Content/&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+</code></pre>
+
+        </div>
+        <div class="md_essay_tags">
+            
+        </div>
+    </div>
+</article>
+        </div>
+        <footer></footer>
+      </div>
+</body>
+</html>

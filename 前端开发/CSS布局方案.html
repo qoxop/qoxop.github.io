@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="">
+    <title>qoxop | CSS布局方案</title>
+    <link rel="stylesheet" href="/assets/common.css">
+    <link rel="stylesheet" href="/assets/article.css">
+    <link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">  
+    <script async src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.1/highlight.min.js"></script>
+    
+</head>
+<body>
+    <div id="app">
+        <header>
+          <div class="content_box header_inner">
+            <div class="logo">
+              <div class="logoImg">
+                <img src="/assets/icon.png" alt="">
+              </div>
+              <div class="logoText">
+                jiw
+              </div>
+            </div>
+            <nav class="navigator">
+              <ul>
+                
+                <li class="">
+                    <a href="/index.html">
+                        HOME
+                    </a>
+                </li>
+                
+                <li class="">
+                    <a href="/category.html">
+                        CATEGORY
+                    </a>
+                </li>
+                
+                <li class="">
+                    <a href="/tags.html">
+                        标签
+                    </a>
+                </li>
+                
+                <li class="">
+                    <a href="/link.html">
+                        链接
+                    </a>
+                </li>
+                
+                <li class="">
+                    <a href="/about.html">
+                        关于我
+                    </a>
+                </li>
+                
+              </ul>
+            </nav>
+          </div>
+        </header>
+        <div id="main">
+           <article class="content_box">
+    <div class="article md_html_article">
+        <h1>
+            CSS布局方案
+        </h1>
+        <div class="update_time">
+            <span>
+                更新时间：2019-02-12
+            </span>
+        </div>
+        <div class="md_essay">
+            <h3 id="%E6%B5%AE%E5%8A%A8%E5%B8%83%E5%B1%80">浮动布局</h3>
+<pre><code class="hljs language-css"><span class="hljs-selector-class">.float_box</span> {
+    <span class="hljs-attribute">float</span>: left; <span class="hljs-comment">/*or right*/</span>
+}
+</code></pre>
+<p>在其<strong>原有位置</strong>处脱离布局流(处于上层位置)，同时失去默认宽度(100%父级元素)，向左或右浮动，浮动的元素不会与非浮动的正常兄弟原属发生重叠，且浮动元素不会撑高父元素的高度，可通过设置父元素让浮动元素超出时隐藏</p>
+
+        </div>
+        <div class="md_essay_tags">
+            
+        </div>
+    </div>
+</article>
+        </div>
+        <footer></footer>
+      </div>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="">
+    <title>qoxop | CSS动画</title>
+    <link rel="stylesheet" href="/assets/common.css">
+    <link rel="stylesheet" href="/assets/article.css">
+    <link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">  
+    <script async src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.1/highlight.min.js"></script>
+    
+</head>
+<body>
+    <div id="app">
+        <header>
+          <div class="content_box header_inner">
+            <div class="logo">
+              <div class="logoImg">
+                <img src="/assets/icon.png" alt="">
+              </div>
+              <div class="logoText">
+                jiw
+              </div>
+            </div>
+            <nav class="navigator">
+              <ul>
+                
+                <li class="">
+                    <a href="/index.html">
+                        HOME
+                    </a>
+                </li>
+                
+                <li class="">
+                    <a href="/category.html">
+                        CATEGORY
+                    </a>
+                </li>
+                
+                <li class="">
+                    <a href="/tags.html">
+                        标签
+                    </a>
+                </li>
+                
+                <li class="">
+                    <a href="/link.html">
+                        链接
+                    </a>
+                </li>
+                
+                <li class="">
+                    <a href="/about.html">
+                        关于我
+                    </a>
+                </li>
+                
+              </ul>
+            </nav>
+          </div>
+        </header>
+        <div id="main">
+           <article class="content_box">
+    <div class="article md_html_article">
+        <h1>
+            CSS动画
+        </h1>
+        <div class="update_time">
+            <span>
+                更新时间：2019-02-17
+            </span>
+        </div>
+        <div class="md_essay">
+            <h3 id="transition">transition</h3>
+<ul>
+<li>transition-delay           设置延迟过渡的时间</li>
+<li>transition-duration    设置过渡所需的时间</li>
+<li>transition-property    设置需要过渡的属性</li>
+<li>transition-timing-function    定义速度模式</li>
+</ul>
+<h5 id="%E9%80%9F%E5%BA%A6%E6%A8%A1%E5%9E%8B">速度模型</h5>
+<ul>
+<li>ease       逐渐放慢</li>
+<li>linear     匀速</li>
+<li>ease-in   加速</li>
+<li>ease-out 减速</li>
+<li>cubic-bezier函数       http://cubic-bezier.com/</li>
+</ul>
+<h5 id="%E5%B1%80%E9%99%90">局限</h5>
+<ol>
+<li>transition需要事件触发，所以没法在网页加载时自动发生。</li>
+<li>transition是一次性的，不能重复发生，除非一再触发。</li>
+<li>transition只能定义开始状态和结束状态，不能定义中间状态，也就是说只有两个状态。</li>
+<li>一条transition规则，只能定义一个属性的变化，不能涉及多个属性。</li>
+</ol>
+<h3 id="animation">animation</h3>
+<ul>
+<li>animation-name: 动画名称</li>
+<li>animation-duration: 持续时间</li>
+<li>animation-timing-function: 速度模型</li>
+<li>animation-delay: 延迟执行</li>
+<li>animation-direction: 循环播放时，动画播放的方向（normal、reverse、alernate、alternate-reverse）</li>
+<li>animation-iteration-count: 定义动画在结束前运行的次数（infinite表示无限次）</li>
+<li>animation-fill-mode: 结束动画时的状态（none、backwards:第一帧，forwards:最后一帧，both）</li>
+<li>animation-play-state: 动画播放状态（paused暂停，running运行）</li>
+</ul>
+<h4 id="%40keyframes">@keyframes</h4>
+<p>keyframes关键字用来定义动画的各个状态，它的写法相当自由。</p>
+<pre><code class="hljs language-css">@<span class="hljs-keyword">keyframes</span> rainbow {
+  0% { <span class="hljs-attribute">background</span>: <span class="hljs-number">#c00</span> }
+  50% { <span class="hljs-attribute">background</span>: orange }
+  100% { <span class="hljs-attribute">background</span>: yellowgreen }
+}
+@<span class="hljs-keyword">keyframes</span> rainbow {
+  <span class="hljs-selector-tag">from</span> { <span class="hljs-attribute">background</span>: <span class="hljs-number">#c00</span> }
+  50% { <span class="hljs-attribute">background</span>: orange }
+  <span class="hljs-selector-tag">to</span> { <span class="hljs-attribute">background</span>: yellowgreen }
+}
+</code></pre>
+<h4 id="animation-timing-function">animation-timing-function</h4>
+<blockquote>
+<p>/* Keyword values */
+animation-timing-function: ease;
+animation-timing-function: ease-in;
+animation-timing-function: ease-out;
+animation-timing-function: ease-in-out;
+animation-timing-function: linear;
+animation-timing-function: step-start;
+animation-timing-function: step-end;</p>
+<p>/* Function values */
+animation-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
+animation-timing-function: steps(4, end);
+animation-timing-function: frames(10);</p>
+<p>/* Multiple animations */
+animation-timing-function: ease, step-start, cubic-bezier(0.1, 0.7, 1.0, 0.1);</p>
+</blockquote>
+
+        </div>
+        <div class="md_essay_tags">
+            
+                <div>
+                    <span>css</span>
+                </div>
+            
+                <div>
+                    <span>动画</span>
+                </div>
+            
+        </div>
+    </div>
+</article>
+        </div>
+        <footer></footer>
+      </div>
+</body>
+</html>

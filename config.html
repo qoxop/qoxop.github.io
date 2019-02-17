@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="">
+    <title>qoxop | config</title>
+    <link rel="stylesheet" href="/assets/common.css">
+    <link rel="stylesheet" href="/assets/article.css">
+    <link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">  
+    <script async src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.1/highlight.min.js"></script>
+    
+</head>
+<body>
+    <div id="app">
+        <header>
+          <div class="content_box header_inner">
+            <div class="logo">
+              <div class="logoImg">
+                <img src="/assets/icon.png" alt="">
+              </div>
+              <div class="logoText">
+                jiw
+              </div>
+            </div>
+            <nav class="navigator">
+              <ul>
+                
+                <li class="">
+                    <a href="/index.html">
+                        HOME
+                    </a>
+                </li>
+                
+                <li class="">
+                    <a href="/category.html">
+                        CATEGORY
+                    </a>
+                </li>
+                
+                <li class="">
+                    <a href="/tags.html">
+                        标签
+                    </a>
+                </li>
+                
+                <li class="">
+                    <a href="/link.html">
+                        链接
+                    </a>
+                </li>
+                
+                <li class="">
+                    <a href="/about.html">
+                        关于我
+                    </a>
+                </li>
+                
+              </ul>
+            </nav>
+          </div>
+        </header>
+        <div id="main">
+           <article class="content_box">
+    <div class="article md_html_article">
+        <h1>
+            config
+        </h1>
+        <div class="update_time">
+            <span>
+                更新时间：2019-02-12
+            </span>
+        </div>
+        <div class="md_essay">
+            <pre><code class="hljs language-js">proxyTable: {
+    <span class="hljs-string">'/api/admin/resource/upload-img'</span>: {
+        <span class="hljs-attr">target</span>: <span class="hljs-string">'http://modeling-dev.mypaas.com.cn'</span>,
+        <span class="hljs-attr">changeOrigin</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">pathRewrite</span>: {
+            <span class="hljs-string">'^/api'</span>: <span class="hljs-string">'/api'</span>
+        }
+    },
+    <span class="hljs-string">'/api'</span>: {
+        <span class="hljs-attr">target</span>: <span class="hljs-string">'http://test-qmyxcg.myscrm.cn/'</span>,
+        <span class="hljs-attr">changeOrigin</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">cookieDomainRewrite</span>: {
+            <span class="hljs-string">"*"</span>: <span class="hljs-string">""</span>
+        }
+    }
+},
+</code></pre>
+<pre><code class="hljs language-js">{
+    <span class="hljs-string">"name"</span>: <span class="hljs-string">"workspace"</span>,
+    <span class="hljs-string">"version"</span>: <span class="hljs-string">"1.0.0"</span>,
+    <span class="hljs-string">"author"</span>: <span class="hljs-string">"paas-cli"</span>,
+    <span class="hljs-string">"license"</span>: <span class="hljs-string">"ISC"</span>,
+    <span class="hljs-string">"description"</span>: <span class="hljs-string">"paas-cli"</span>,
+    <span class="hljs-string">"private"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">"scripts"</span>: {
+        <span class="hljs-string">"sync"</span>: <span class="hljs-string">"paas sync &amp;&amp; yarn"</span>,
+        <span class="hljs-string">"git-pull"</span>: <span class="hljs-string">"node bin/git"</span>,
+        <span class="hljs-string">"start"</span>: <span class="hljs-string">"paas start --port 8081 --mode Wechat"</span>,
+        <span class="hljs-string">"startApp"</span>: <span class="hljs-string">"paas startApp"</span>,
+        <span class="hljs-string">"design"</span>: <span class="hljs-string">"paas design"</span>
+    },
+    <span class="hljs-string">"dependencies"</span>: {
+        <span class="hljs-string">"add"</span>: <span class="hljs-string">"^2.0.6"</span>,
+        <span class="hljs-string">"broker-common"</span>: <span class="hljs-string">"git+ssh://git@git.mysoft.com.cn:yunke-paas/broker-common.git"</span>,
+        <span class="hljs-string">"broker-http"</span>: <span class="hljs-string">"git+ssh://git@git.mysoft.com.cn:yunke-paas/broker-http.git"</span>,
+        <span class="hljs-string">"broker-store"</span>: <span class="hljs-string">"git+ssh://git@git.mysoft.com.cn:yunke-paas/broker-store.git"</span>,
+        <span class="hljs-string">"qs"</span>: <span class="hljs-string">"^6.5.1"</span>,
+        <span class="hljs-string">"v-tooltip"</span>: <span class="hljs-string">"^2.0.0-rc.25"</span>,
+        <span class="hljs-string">"vue-upload-component"</span>: <span class="hljs-string">"^2.7.4"</span>,
+        <span class="hljs-string">"vue2-better-scroll"</span>: <span class="hljs-string">"^1.0.6"</span>,
+        <span class="hljs-string">"webapp"</span>: <span class="hljs-string">"git+ssh://git@git.mysoft.com.cn:mic-paas/webapp.gitt#nightly"</span>
+    },
+    <span class="hljs-string">"appConfig"</span>: {
+        <span class="hljs-string">"pluginIds"</span>: <span class="hljs-string">"broker-store"</span>
+    },
+    <span class="hljs-string">"devDependencies"</span>: {
+        <span class="hljs-string">"eslint"</span>: <span class="hljs-string">"^4.1.0"</span>,
+        <span class="hljs-string">"eslint-config-airbnb-base"</span>: <span class="hljs-string">"^12.1.0"</span>,
+        <span class="hljs-string">"eslint-config-prettier"</span>: <span class="hljs-string">"^2.4.0"</span>,
+        <span class="hljs-string">"eslint-config-xo"</span>: <span class="hljs-string">"^0.18.2"</span>,
+        <span class="hljs-string">"eslint-plugin-html"</span>: <span class="hljs-string">"^4.0.1"</span>,
+        <span class="hljs-string">"eslint-plugin-import"</span>: <span class="hljs-string">"^2.8.0"</span>,
+        <span class="hljs-string">"eslint-plugin-prettier"</span>: <span class="hljs-string">"^2.2.0"</span>,
+        <span class="hljs-string">"husky"</span>: <span class="hljs-string">"^0.14.3"</span>,
+        <span class="hljs-string">"lint-staged"</span>: <span class="hljs-string">"^4.2.1"</span>,
+        <span class="hljs-string">"prettier"</span>: <span class="hljs-string">"^1.7.0"</span>,
+        <span class="hljs-string">"rimraf"</span>: <span class="hljs-string">"^2.6.2"</span>,
+        <span class="hljs-string">"v-tooltip"</span>: <span class="hljs-string">"^2.0.0-rc.25"</span>
+    },
+    <span class="hljs-string">"eslintConfig"</span>: {
+        <span class="hljs-string">"parser"</span>: <span class="hljs-string">"babel-eslint"</span>,
+        <span class="hljs-string">"parserOptions"</span>: {
+            <span class="hljs-string">"sourceType"</span>: <span class="hljs-string">"module"</span>
+        },
+        <span class="hljs-string">"extends"</span>: <span class="hljs-string">"airbnb-base"</span>,
+        <span class="hljs-string">"plugins"</span>: [
+            <span class="hljs-string">"html"</span>
+        ],
+        <span class="hljs-string">"rules"</span>: {
+            <span class="hljs-string">"indent"</span>: [
+                <span class="hljs-string">"error"</span>,
+                <span class="hljs-number">4</span>
+            ],
+            <span class="hljs-string">"semi"</span>: <span class="hljs-number">0</span>,
+            <span class="hljs-string">"comma-dangle"</span>: <span class="hljs-number">0</span>,
+            <span class="hljs-string">"linebreak-style"</span>: <span class="hljs-number">0</span>,
+            <span class="hljs-string">"no-console"</span>: <span class="hljs-number">0</span>
+        }
+    },
+    <span class="hljs-string">"appConfig"</span>: {
+        <span class="hljs-string">"pluginIds"</span>:<span class="hljs-string">"broker-common"</span>,
+        <span class="hljs-string">"loadLocalModules"</span>:<span class="hljs-literal">true</span>
+    }
+}
+
+</code></pre>
+
+        </div>
+        <div class="md_essay_tags">
+            
+        </div>
+    </div>
+</article>
+        </div>
+        <footer></footer>
+      </div>
+</body>
+</html>

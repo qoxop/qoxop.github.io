@@ -1,0 +1,275 @@
+/* iconfont */
+@font-face {font-family: "iconfont";
+    src: url('iconfont.eot?t=1548491852945'); /* IE9 */
+    src: url('iconfont.eot?t=1548491852945#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAS8AAsAAAAACZAAAARtAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDKgqGNIU6ATYCJAMUCwwABCAFhG0HSxtBCBFVnEvJfiTYzqP+wYVhKsWxwZ61lQzELS8Vvk3e+zCzN7OZedgc5iLATIQGCCA4a9V0lG7UCZUmMz7xNJ+yn/TL3N9TxuM0SiEkCMf/HEu9TLD813YukUlRiQd4lEAHlOvSDXzPN5IB+B7gGS5M4PNAAFBURiBIZnZhHSiQIJxGAJAuHdu3hOJyQYphEihWXci1UlMyBTIUYbxwAcBk/ffJG4QTBRAgixBeVNouqw1Sn+NFjsjtHE1EDmN5AQC3mwARQCAACSCdQkNtIJrZQIign3IJsQAUcZcAPCcv0l7k2O2Eg6Yv3QooKAAh9z+eBBAdBJMjYlNzEvAcsnok1RiACFSjFAjwIkezUkyyejIF4AYQBpBCtnmWaRBEYTWwqqq6O/pdXR3lasnRyVHkVoFsvvFdiLHe7PnLbZUNs3bssMTaTHX22XbtmuGxwLJ0rt5S11h//fkbXnV3mmPqr7ae9bOCWw6cOWOxmGy2c+cO2bovPm4+yo+YjrUyPtzVXKb9bKOh3SzTGq5v22YGX9tLW71+8TrqblqzcG1LU6jBGHuxeS33aNN2Jl/T233VOuN6pnn++JrBzicsVXVLrVkup2/UcFhmG8gPeDqvOkQcjId9XFYeRBdmnm2cRalpBp9Z1za0fqch8Jns3l1GnDWrASWsRaiJpXC1dLRRTi6KK1PvNPu8OtnlegTVyk6u5dOpbDd1jCTX7LV9nPbgWkH3yh5Sq2HCsAY071vLHhn/Cr0W5Gn/uWVBkde93lOrfsN7NRiWUKvh0F+5qQlh4ankUZ64LXWbcr+raSS8Wlp8XoA+3fFQjwZqFumcSbSdfFNFj3QSqURFR9WSvdzX3IKXw7UL165d9LzIZXdr7PO8v1V43X3PdWuvlVQdJ8/VSrS58njYh7vfTYD3ROwTLg4d5zNHK97uPQdhX3hyaGaWRjWyhZrvIBGjKs85knxkTmVaZeyV5CtjqzRrsoLdN9xjavqe4T4d+Q/p7zMs/7v7DH1Pmfy4M+y+ytT7nuoM24xQ6xL23vCOLUnLSDz6FmFQUugeW36NL3m75B5egAEAAPuRQRTQ3Hnptch1Jhfnmck6PvL13fWOzV0SvynsOnezV1IhadOrTxb1R31WDUmvwNjte33XCm55byNiVbImTz1kPe3tK81JZLNTzN2vHIs+dT1AKPQ2CBxUApHCEylhA0HGRIKOIgWoAOnNjEYskakA/L0ACFdvEDg7DCJXH6SE/YLM4A86ri2Bqpd2T8a75pAhyBQl5U9qCh6N5NWD0XhE5fpMnFqddYXYJkGhF3gLKUZIGRfYWxWpGjLCAyXwMvQ90yTcolCvVp1i3zdhX+QVPMwOMgjIKCiR3BNpFNjIqLPVwffzR1BxehmJmfiRvQJhNZuTkCdIgUxNY6qJbdlt3VQiShk+yRBsQBIMQC9mGZnCD7WgoDx1jvQk5tM0k9bk1W8ZlvEaACV8opxARCIRmeige6O1y1fd8NBdD8GtYWc3vWDdgNkMAAAA') format('woff2'),
+    url('iconfont.woff?t=1548491852945') format('woff'),
+    url('iconfont.ttf?t=1548491852945') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+    url('iconfont.svg?t=1548491852945#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-github:before {
+    content: "\e741";
+}
+
+.icon-next:before {
+    content: "\e600";
+}
+
+.icon-previous:before {
+    content: "\e601";
+}
+
+.icon-resume:before {
+    content: "\e747";
+}
+  
+/* css init */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: lightgreen;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+}
+ul, li, div, header, nav, h1, h2, h3, h4, h5, h6 {
+    padding: 0;
+    margin: 0;
+}
+h2 {
+    font-size: 30px;
+}
+h3 {
+    font-size: 24px;
+}
+ul, ul li {
+    list-style: none;
+}
+div {
+    box-sizing: border-box;
+}
+.content_box {
+    width: 1227px;
+    max-width: 100%;
+    min-width: 960px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+a {
+    text-decoration: unset;
+    color: inherit;
+}
+
+  /* 头部样式 var headerTop = 60px; */
+  #app {
+    height: 100vh;
+    background-color: lightgreen;
+    /* background-image: url(./banner.jpg); */
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+  #app > header {
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    top: 0; left: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-bottom: 1px solid rgba(0,0,0,.25);
+    z-index: 999;
+  
+  }
+  #app>header .header_inner { /* flex布局 */
+    display: flex;
+    flex-flow: nowrap row;
+    overflow: visible;
+  }
+  #app>header .logo {
+    width: 130px;
+    height: 100%;
+    display: flex;
+    flex-flow: nowrap row;
+    cursor: pointer;
+  }
+  #app>header .logoImg{
+    height: 60px;
+    width: 60px;
+    overflow: hidden;
+  }
+  #app>header .logoImg img {
+    width: 100%;
+    height: 100%;
+  }
+  #app>header .logoText {
+    flex: 1;
+    height: 100%;
+    line-height: 48px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    color: #000;
+  }
+  #app>header .navigator {
+    flex: 1;
+    height: 100%;
+    padding-left: 20px;
+  }
+  #app>header .navigator ul{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+  }
+  #app>header .navigator ul li {
+    display: inline-block;
+    height: 60px;
+    box-sizing: border-box;
+    padding: 20px 13px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #555;
+    cursor: pointer;
+  }
+  #app>header .navigator ul li:hover,  #app>header .navigator ul li.actived {
+    font-size: bolder;
+    height: 62px;
+    color: chocolate;
+    border-bottom: 4px solid chocolate;
+  }
+
+  /* 中间内容区 */
+  #main{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding-top: 60px;
+    padding-bottom: 10px;
+   
+  }
+
+  /* 底部内容 */
+  footer {
+    height: 10px;
+    width: 100%;
+    background: #0575E6;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #021B79, #0575E6);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #021B79, #0575E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+ }
+
+#left_content {
+    width: 900px;
+    min-height: 400px;
+    position: relative;
+    z-index: 2;
+}
+.scrollbox {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.scrollbox > * {
+    box-sizing: border-box;
+    padding-right: 10%;
+    width: 110%;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden
+}
+
+/* 右侧内容 */
+aside {
+    position: absolute;
+    width: 290px;
+    border-radius: 4px;
+    top: 20px;
+    right: 0;
+    background-color: #fff;
+    z-index: 1;
+    transition: opacity 1.5s;
+}
+@media screen and (max-width: 1227px) {
+    aside {
+        opacity: 0;
+    }
+}
+aside .profile_banner {
+    background: #005AA7;  /* fallback for old browsers */
+    background: linear-gradient(110deg, #005AA7, #FFFDE4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    height: 120px;
+}
+aside  .profile_logo {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    margin-top: -62px;
+    border: 4px solid #fff;
+    border-radius: 50%;
+    overflow: hidden;
+}
+aside  .profile_logo img{
+    height: 100%;
+    width: 100%;
+}
+aside  .profile_name {
+    font-size: 28px;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 8px;
+    line-height: 0.9;
+}
+aside .profile_motto {
+    padding: 12px;
+    padding-top: 18px;
+    line-height: 1.6;
+    font-style: italic;
+    color: #999;
+}
+aside .profile_info {
+    display: flex;
+    flex-flow: row nowrap;
+    border-top: 0.5px solid #ebcbcb;
+}
+aside .profile_info > div {
+    flex: 1;
+    text-align: center;
+    border-right: 0.5px solid #ebcbcb;
+    padding: 10px;
+    cursor: pointer;
+    color: #666;
+}
+aside .profile_info > div:hover {
+    background-color: chocolate;
+    color: #fff;
+}
+aside .profile_info > div:last-child {
+    border: none;
+}
+aside .profile_info .icontext {
+    font-size: 14px;
+    line-height: 1;
+    color: inherit;
+}
+aside .profile_info .iconfont {
+    font-size: 20px;
+    color: inherit;
+    line-height: 0.8;
+}
+.hljs {
+    overflow-x: auto;
+    border-radius: 4px;
+}
+pre {
+    font-size: 18px;
+    border-radius: 4px;
+}

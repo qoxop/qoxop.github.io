@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="">
+    <title>qoxop | webpack插件与loader</title>
+    <link rel="stylesheet" href="/assets/common.css">
+    <link rel="stylesheet" href="/assets/article.css">
+    <link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">  
+    <script async src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.1/highlight.min.js"></script>
+    
+</head>
+<body>
+    <div id="app">
+        <header>
+          <div class="content_box header_inner">
+            <div class="logo">
+              <div class="logoImg">
+                <img src="/assets/icon.png" alt="">
+              </div>
+              <div class="logoText">
+                jiw
+              </div>
+            </div>
+            <nav class="navigator">
+              <ul>
+                
+                <li class="">
+                    <a href="/index.html">
+                        HOME
+                    </a>
+                </li>
+                
+                <li class="">
+                    <a href="/category.html">
+                        CATEGORY
+                    </a>
+                </li>
+                
+                <li class="">
+                    <a href="/tags.html">
+                        标签
+                    </a>
+                </li>
+                
+                <li class="">
+                    <a href="/link.html">
+                        链接
+                    </a>
+                </li>
+                
+                <li class="">
+                    <a href="/about.html">
+                        关于我
+                    </a>
+                </li>
+                
+              </ul>
+            </nav>
+          </div>
+        </header>
+        <div id="main">
+           <article class="content_box">
+    <div class="article md_html_article">
+        <h1>
+            webpack插件与loader
+        </h1>
+        <div class="update_time">
+            <span>
+                更新时间：2019-02-12
+            </span>
+        </div>
+        <div class="md_essay">
+            <h3 id="%E5%8E%BB%E4%BB%A3%E7%A0%81%E5%88%86%E7%A6%BB%E6%8F%92%E4%BB%B6">去代码分离插件</h3>
+<pre><code class="hljs language-javascript"><span class="hljs-keyword">new</span> webpack.optimize.CommonChunkPlugin({	<span class="hljs-comment">//自带的去重插件</span>
+	name: <span class="hljs-string">'common'</span> <span class="hljs-comment">//指定公共bundle 的名称</span>
+})
+</code></pre>
+<p>ExtractTextPlugin:用于将css从主应用程序中分离</p>
+<p>bundle-loader:</p>
+
+        </div>
+        <div class="md_essay_tags">
+            
+        </div>
+    </div>
+</article>
+        </div>
+        <footer></footer>
+      </div>
+</body>
+</html>

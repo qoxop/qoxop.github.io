@@ -1,0 +1,80 @@
+article.content_box {
+    padding-top: 15px;
+    padding-bottom: 30px;
+}
+
+.md_html_article {
+    background-color: #fff;
+    width: 1000px;
+    box-sizing: border-box;
+    padding: 10px 24px;
+    position: relative;
+}
+.md_html_article .update_time {
+    color: #999;
+    font-size: 14px;
+    line-height: 1;
+    text-align: left;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+.md_html_article h1 {
+    font-size: 26px;
+    color: chocolate;
+    margin: 14px 0 14px 0px;
+}
+.md_html_article h2 {
+    font-size: 24px;
+}
+.md_html_article h3 {
+    margin-top: 36px;
+    margin-bottom: 26px;
+    font-size: 22px;
+}
+.md_html_article h4 {
+    margin-top: 26px;
+    margin-bottom: 16px;
+    font-size: 20px;
+}
+.md_html_article h5 {
+    margin-top: 20px;
+    margin-bottom: 6px;
+    font-size: 18px;
+}
+.md_html_article h6 {
+    margin-top: 6px;
+    margin-bottom: 6px;
+    font-size: 16px;
+}
+.md_essay > p {
+    text-indent: 1.8em;
+    line-height: 1.6;
+}
+.md_html_article pre {
+    margin: 18px 0px;
+    padding-left: 10px;
+}
+.md_html_article pre > code {
+    padding-left:  12px;
+}
+.md_html_article ol, .md_html_article ul{
+    margin: 16px 0px;
+    padding-left: 30px;
+    font-size: 16px;
+}
+.md_html_article li {
+    margin: 8px 0 ;
+    list-style: disc;
+}
+.md_essay_tags {
+    border-top: #eee solid 1px;
+    padding: 10px 0px;
+}
+.md_essay_tags > div {
+    display: inline-block;
+    padding: 8px 14px;
+    border: #ddd solid 1px;
+    border-radius: 4px;
+    margin-right: 10px;
+    cursor: pointer;
+}

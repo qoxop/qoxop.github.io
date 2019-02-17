@@ -1,0 +1,54 @@
+.category_list {
+    background-color: rgba(255, 255, 255, 0.9);
+    margin-top: 20px;
+    min-height: 80vh;
+    margin-bottom: 15px;
+    padding-bottom: 30px;
+}
+.category_list h3, .category_list h2 {
+  padding: 15px 0 15px 30px;
+}
+.category_links ul{
+  padding: 0px 30px 10px 20px;
+}
+.category_links li{
+  display: inline-block;
+}
+.category_links li>a {
+    display: inline-block;
+    padding: 10px;
+    line-height: 1.6;
+    color: dodgerblue;
+}
+.category_links li>a:hover{
+  color: chocolate;
+  text-decoration: underline;
+}
+.category_titles h3 {
+  color: #333;
+}
+.category_titles ul {
+    padding-left: 70px;
+    list-style: disc;
+}
+.category_titles li {
+  list-style: disc;
+  padding: 6px 0px 6px 0px;
+  font-size: 18px;
+}
+.category_titles a {
+  color: dodgerblue;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+.category_titles a:hover {
+    color: chocolate;
+    text-decoration: underline;
+    font-weight: 600;
+}
+.category_titles .essay_time {
+    display: inline-block;
+    margin: 0px 10px 0 0px;
+    font-weight: 600;
+    color: #333;
+}

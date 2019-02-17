@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="">
+    <title>qoxop | yarn</title>
+    <link rel="stylesheet" href="/assets/common.css">
+    <link rel="stylesheet" href="/assets/article.css">
+    <link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">  
+    <script async src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.1/highlight.min.js"></script>
+    
+</head>
+<body>
+    <div id="app">
+        <header>
+          <div class="content_box header_inner">
+            <div class="logo">
+              <div class="logoImg">
+                <img src="/assets/icon.png" alt="">
+              </div>
+              <div class="logoText">
+                jiw
+              </div>
+            </div>
+            <nav class="navigator">
+              <ul>
+                
+                <li class="">
+                    <a href="/index.html">
+                        HOME
+                    </a>
+                </li>
+                
+                <li class="">
+                    <a href="/category.html">
+                        CATEGORY
+                    </a>
+                </li>
+                
+                <li class="">
+                    <a href="/tags.html">
+                        标签
+                    </a>
+                </li>
+                
+                <li class="">
+                    <a href="/link.html">
+                        链接
+                    </a>
+                </li>
+                
+                <li class="">
+                    <a href="/about.html">
+                        关于我
+                    </a>
+                </li>
+                
+              </ul>
+            </nav>
+          </div>
+        </header>
+        <div id="main">
+           <article class="content_box">
+    <div class="article md_html_article">
+        <h1>
+            yarn
+        </h1>
+        <div class="update_time">
+            <span>
+                更新时间：2019-02-12
+            </span>
+        </div>
+        <div class="md_essay">
+            <h4 id="add">add</h4>
+<ul>
+<li><strong>yarn add  &lt;package...&gt;  [--dev/-D, --peer/-P, --optional/-O, --exact/-E, --tilde/-T]</strong></li>
+</ul>
+<h4 id="cache-*">cache  *</h4>
+<ul>
+<li><strong>yarn cache ls</strong>	    列出所有已经缓存的包。</li>
+<li><strong>yarn cache dir</strong>         会打印出当前的 yarn 全局缓存在哪里</li>
+<li><strong>yarn cache clean</strong>     清除本地缓存</li>
+</ul>
+<h4 id="check">check</h4>
+<ul>
+<li><strong>yarn check</strong>    校验当前项目的 package.json 文件里的依赖版本和 yarn 的 lock 文件中列出的版本是否匹配。</li>
+<li><strong>yarn check --integrity</strong>  校验当前项目的 package.json 文件里列出的依赖包的版本以及此包的散列值是否与 yarn 的 lock 文件中列出的相应版本和散列（hash）值一致。 这有助于验证依赖包没有被篡改。</li>
+</ul>
+<h4 id="clean">clean</h4>
+<p>清除安装失败的依赖包</p>
+<h4 id="config">config</h4>
+<ul>
+<li><strong>yarn config set <key> <value> [-g|--global]</strong>    设置配置文件的key-value</li>
+<li><strong>yarn config get <key></strong>    获取配置的文件中对应key的value</li>
+<li><strong>yarn config delete <key></strong>    删除配置文件中某个key</li>
+<li><strong>yarn config list</strong>    列出所有的配置信息</li>
+</ul>
+<h4 id="generate-lock-entry">generate-lock-entry</h4>
+<p>此命令针对复杂的使用情况或业务。它所生成的 lock 文件用来作为当前的 package.json 文件的清单文件（manifest file）。</p>
+<h4 id="global">global</h4>
+<ul>
+<li><strong>yarn global &lt;add/bin/ls/remove/upgrade&gt; [--prefix]</strong>   全局操作</li>
+</ul>
+<h4 id="info">info</h4>
+<ul>
+<li><strong>yarn info <package>  [<field>]</strong>    查看某个包的信息</li>
+</ul>
+<h4 id="init">init</h4>
+<p>初始化一个yarn project</p>
+<h4 id="yarn-%2F-yarn-install">yarn / yarn install</h4>
+<p>yarn install --[ flat / force / har / no-lockfile / production / pure-lockfile ]</p>
+<ul>
+<li><strong>--force</strong>   强制重新安装package.json中的所有依赖</li>
+<li><strong>--har</strong></li>
+<li><strong>--no-lockfile</strong>    Don’t read or generate a yarn.lock lockfile.</li>
+<li><strong>--production</strong>    will not install any package listed in devDependencies.</li>
+<li><strong>--pure-lockfile</strong>   Don’t generate a yarn.lock lockfile.</li>
+</ul>
+<h4 id="licenses-ls">licenses ls</h4>
+<p>执行此命令将按字母顺序列出所有被 yarn 或 yarn install 安装的包，并同时列出每个包所采用的许可证（和源代码的 URL 地址）</p>
+<h4 id="link">link</h4>
+<p>link 命令用于调试本地依赖包</p>
+<ul>
+<li><strong>yarn link</strong>	为当前目录下的项目添加一个链接</li>
+<li><strong>yarn link  <package></strong>  将package关联到一个本地的链接上</li>
+</ul>
+<h4 id="unlink">unlink</h4>
+<ul>
+<li><strong>yarn unlink [ package ]</strong></li>
+</ul>
+<h4 id="login">login</h4>
+<ul>
+<li><strong>yarn login url</strong>	登陆npm仓库</li>
+</ul>
+<h4 id="logout">logout</h4>
+<p>退出登陆</p>
+<h4 id="list">list</h4>
+<p>列出项目所有的依赖</p>
+<h4 id="owner">owner</h4>
+<ul>
+<li><strong>yarn owner ls <package></strong></li>
+<li><strong>yarn owner add <user> <package></strong></li>
+<li><strong>yarn owner rm <user> <package></strong></li>
+</ul>
+<h4 id="pack">pack</h4>
+<p>打包</p>
+<ul>
+<li><strong>yarn pack --filename <filename></strong></li>
+</ul>
+<h4 id="publish">publish</h4>
+<p>发布</p>
+<ul>
+<li><strong>yarn publish [ tarball ]</strong>	Publishes the package defined by a .tgz gzipped tarball.
+<ul>
+<li>**yarn publish [folder] **Publishes the package contained in the specified folder. <folder>/package.json should specify the package details.</li>
+</ul>
+</li>
+<li><strong>yarn publish --tag <tag></strong>     Provided a tag to yarn publish lets you publish packages with a specific tag.</li>
+<li><strong>yarn publish --access &lt;public|restricted&gt;</strong>    The --access flag controls whether the npm registry publishes this package as a public package, or restricted.</li>
+</ul>
+<h4 id="remove">remove</h4>
+<ul>
+<li>yarn remove &lt;package...&gt;		移除一个依赖</li>
+</ul>
+<h4 id="run">run</h4>
+<ul>
+<li>yarn run [script][-- <code>&lt;args&gt;</code>]	执行一个脚本</li>
+</ul>
+<h4 id="self-update">self-update</h4>
+<h4 id="upgrade">upgrade</h4>
+<p>更新所有的依赖到最新稳定版本（based on the version range specified in the package.json file. ）</p>
+
+        </div>
+        <div class="md_essay_tags">
+            
+        </div>
+    </div>
+</article>
+        </div>
+        <footer></footer>
+      </div>
+</body>
+</html>

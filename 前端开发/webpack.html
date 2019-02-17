@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="">
+    <title>qoxop | webpack</title>
+    <link rel="stylesheet" href="/assets/common.css">
+    <link rel="stylesheet" href="/assets/article.css">
+    <link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">  
+    <script async src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.1/highlight.min.js"></script>
+    
+</head>
+<body>
+    <div id="app">
+        <header>
+          <div class="content_box header_inner">
+            <div class="logo">
+              <div class="logoImg">
+                <img src="/assets/icon.png" alt="">
+              </div>
+              <div class="logoText">
+                jiw
+              </div>
+            </div>
+            <nav class="navigator">
+              <ul>
+                
+                <li class="">
+                    <a href="/index.html">
+                        HOME
+                    </a>
+                </li>
+                
+                <li class="">
+                    <a href="/category.html">
+                        CATEGORY
+                    </a>
+                </li>
+                
+                <li class="">
+                    <a href="/tags.html">
+                        标签
+                    </a>
+                </li>
+                
+                <li class="">
+                    <a href="/link.html">
+                        链接
+                    </a>
+                </li>
+                
+                <li class="">
+                    <a href="/about.html">
+                        关于我
+                    </a>
+                </li>
+                
+              </ul>
+            </nav>
+          </div>
+        </header>
+        <div id="main">
+           <article class="content_box">
+    <div class="article md_html_article">
+        <h1>
+            webpack
+        </h1>
+        <div class="update_time">
+            <span>
+                更新时间：2019-02-12
+            </span>
+        </div>
+        <div class="md_essay">
+            <h3 id="%E5%85%A5%E5%8F%A3">入口</h3>
+<h4 id="%E5%8D%95%E5%85%A5%E5%8F%A3">单入口</h4>
+<pre><code class="hljs language-javascript"><span class="hljs-comment">//简写</span>
+<span class="hljs-keyword">const</span> config = {
+  <span class="hljs-attr">entry</span>: <span class="hljs-string">'./path/to/my/entry/file.js'</span>
+};
+<span class="hljs-built_in">module</span>.exports = config
+<span class="hljs-comment">//对象写法</span>
+<span class="hljs-keyword">const</span> config = {
+  <span class="hljs-attr">entry</span>: {
+    <span class="hljs-attr">main</span>: <span class="hljs-string">'./path/to/my/entry/file.js'</span>
+  }
+};
+</code></pre>
+<p>多入口（多页面）</p>
+<pre><code class="hljs language-javascript"><span class="hljs-comment">//告诉webpack 需要构建 3 个独立分离的依赖图</span>
+<span class="hljs-keyword">const</span> config = {
+  <span class="hljs-attr">entry</span>: {
+    <span class="hljs-attr">pageOne</span>: <span class="hljs-string">'./path/to/my/one.js'</span>,
+    <span class="hljs-attr">pageTwo</span>: <span class="hljs-string">'./path/to/my/two.js'</span>
+  }
+};
+</code></pre>
+<h3 id="%E8%BE%93%E5%87%BA">输出</h3>
+<p><strong>注意</strong> ：即使可以存在多个入口起点，但只指定一个输出配置</p>
+<pre><code class="hljs language-javascript"><span class="hljs-comment">//创建单个chunk</span>
+<span class="hljs-keyword">const</span> config = {
+  <span class="hljs-attr">output</span>: {
+    <span class="hljs-attr">filename</span>:<span class="hljs-string">'bundle.js'</span>	<span class="hljs-comment">//输出文件名</span>
+    path:<span class="hljs-string">'/home/proj/public/assets'</span>	<span class="hljs-comment">//输出路径</span>
+  }
+}
+<span class="hljs-comment">//创建多个chunk</span>
+{
+  <span class="hljs-attr">entry</span>: {
+    <span class="hljs-attr">app</span>: <span class="hljs-string">'./src/app.js'</span>,
+    <span class="hljs-attr">search</span>: <span class="hljs-string">'./src/search.js'</span>
+  },
+  <span class="hljs-attr">output</span>: {
+    <span class="hljs-attr">filename</span>: <span class="hljs-string">'[name].js'</span>,	<span class="hljs-comment">//[name]代表入口文件名称</span>
+    path: __dirname + <span class="hljs-string">'/dist'</span>	<span class="hljs-comment">//__dirname魔术变量</span>
+  }
+}
+</code></pre>
+<h3 id="loader">loader</h3>
+<p>用于对模块的源代码进行转换。处理时机是 import 或加载模块时</p>
+<pre><code class="hljs language-javascript"><span class="hljs-comment">//简写模式</span>
+<span class="hljs-built_in">module</span>.exports = {
+  <span class="hljs-attr">module</span>: {
+    <span class="hljs-attr">rules</span>: [
+      { <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.css$/</span>, <span class="hljs-attr">use</span>: <span class="hljs-string">'css-loader'</span> },<span class="hljs-comment">//test文件匹配规则 </span>
+      { <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.ts$/</span>, <span class="hljs-attr">use</span>: <span class="hljs-string">'ts-loader'</span> }	<span class="hljs-comment">//use使用的loader插件 ，字符串或对象数组</span>
+    ]
+  }
+};
+<span class="hljs-comment">//详细模式</span>
+  <span class="hljs-built_in">module</span>: {
+    <span class="hljs-attr">rules</span>: [
+      {
+        <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.css$/</span>,
+        <span class="hljs-attr">use</span>: [
+          { <span class="hljs-attr">loader</span>: <span class="hljs-string">'style-loader'</span> },
+          {
+            <span class="hljs-attr">loader</span>: <span class="hljs-string">'css-loader'</span>,
+            <span class="hljs-attr">options</span>: {
+              <span class="hljs-attr">modules</span>: <span class="hljs-literal">true</span>
+            }
+          }
+        ]
+      }
+    ]
+  }
+</code></pre>
+<ul>
+<li>支持链式传递（给use属性传递一个数组），前一个loader将处理结果传递给下个loader处理</li>
+<li>loader支持同步或异步</li>
+<li>能接受查询参数？？</li>
+<li>可以通过options对象进行配置</li>
+<li>loader能够产生额外的任意文件</li>
+</ul>
+
+        </div>
+        <div class="md_essay_tags">
+            
+        </div>
+    </div>
+</article>
+        </div>
+        <footer></footer>
+      </div>
+</body>
+</html>
