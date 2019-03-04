@@ -8,13 +8,15 @@
     <title>qoxop | ssh</title>
     <link rel="stylesheet" href="/assets/common.css">
     <link rel="stylesheet" href="/assets/article.css">
+    <link rel="stylesheet" href="/assets/scribble.css">
     <link href="/assets/monokai_sublime.min.css" rel="stylesheet">  
     <script async src="/assets/highlight.min.js"></script>
     
 </head>
 <body>
-    <div id="app">
-        <header>
+    <article id="app">
+        <header id="app_header">
+          <h1>张集伟的个人博客</h1>
           <div class="content_box header_inner">
             <div class="logo">
               <div class="logoImg">
@@ -27,31 +29,31 @@
             <nav class="navigator">
               <ul>
                 
-                <li class="">
+                <li class="" onclick="exec('linkTo', '/index.html')">
                     <a href="/index.html">
                         HOME
                     </a>
                 </li>
                 
-                <li class="">
+                <li class="" onclick="exec('linkTo', '/category.html')">
                     <a href="/category.html">
                         CATEGORY
                     </a>
                 </li>
                 
-                <li class="">
+                <li class="" onclick="exec('linkTo', '/tags.html')">
                     <a href="/tags.html">
                         标签
                     </a>
                 </li>
                 
-                <li class="">
+                <li class="" onclick="exec('linkTo', '/link.html')">
                     <a href="/link.html">
                         链接
                     </a>
                 </li>
                 
-                <li class="">
+                <li class="" onclick="exec('linkTo', '/about.html')">
                     <a href="/about.html">
                         关于我
                     </a>
@@ -61,18 +63,18 @@
             </nav>
           </div>
         </header>
-        <div id="main">
+        <main id="main">
            <article class="content_box">
-    <div class="article md_html_article">
+    <div class="article md_html_article" id="left_content">
         <h1>
             ssh
         </h1>
         <div class="update_time">
             <span>
-                更新时间：2019-02-12
+                更新时间：2018-12-22
             </span>
         </div>
-        <div class="md_essay">
+        <div id="write" class="md_essay">
             <h4 id="%E7%BB%91%E5%AE%9A%E6%9C%AC%E5%9C%B0%E7%AB%AF%E5%8F%A3">绑定本地端口</h4>
 <pre><code class="hljs language-bash">ssh -D 8080 user@host
 </code></pre>
@@ -92,8 +94,14 @@
         </div>
     </div>
 </article>
-        </div>
-        <footer></footer>
+        </main>
+        <footer id="footer"></footer>
+      </article>
+      <div class="shortcut-tools">
+          <div onclick="exec('scrollToTop')" class="goto-top-btn">Top</div>
+          <div onclick="exec('scrollToBottom')" class="goto-bottom-btn">Bottom</div>
+          <div onclick="exec('goback')" class="goback-btn">goback</div>
       </div>
+      <script src="/assets/common.js"></script>
 </body>
 </html>

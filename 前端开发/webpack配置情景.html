@@ -8,13 +8,15 @@
     <title>qoxop | webpack配置情景</title>
     <link rel="stylesheet" href="/assets/common.css">
     <link rel="stylesheet" href="/assets/article.css">
+    <link rel="stylesheet" href="/assets/scribble.css">
     <link href="/assets/monokai_sublime.min.css" rel="stylesheet">  
     <script async src="/assets/highlight.min.js"></script>
     
 </head>
 <body>
-    <div id="app">
-        <header>
+    <article id="app">
+        <header id="app_header">
+          <h1>张集伟的个人博客</h1>
           <div class="content_box header_inner">
             <div class="logo">
               <div class="logoImg">
@@ -27,31 +29,31 @@
             <nav class="navigator">
               <ul>
                 
-                <li class="">
+                <li class="" onclick="exec('linkTo', '/index.html')">
                     <a href="/index.html">
                         HOME
                     </a>
                 </li>
                 
-                <li class="">
+                <li class="" onclick="exec('linkTo', '/category.html')">
                     <a href="/category.html">
                         CATEGORY
                     </a>
                 </li>
                 
-                <li class="">
+                <li class="" onclick="exec('linkTo', '/tags.html')">
                     <a href="/tags.html">
                         标签
                     </a>
                 </li>
                 
-                <li class="">
+                <li class="" onclick="exec('linkTo', '/link.html')">
                     <a href="/link.html">
                         链接
                     </a>
                 </li>
                 
-                <li class="">
+                <li class="" onclick="exec('linkTo', '/about.html')">
                     <a href="/about.html">
                         关于我
                     </a>
@@ -61,18 +63,18 @@
             </nav>
           </div>
         </header>
-        <div id="main">
+        <main id="main">
            <article class="content_box">
-    <div class="article md_html_article">
+    <div class="article md_html_article" id="left_content">
         <h1>
             webpack配置情景
         </h1>
         <div class="update_time">
             <span>
-                更新时间：2019-02-12
+                更新时间：2018-12-22
             </span>
         </div>
-        <div class="md_essay">
+        <div id="write" class="md_essay">
             <h4 id="1.-%E4%BD%BFcss%E3%80%81less%E6%94%AF%E6%8C%81%E6%A8%A1%E5%9D%97%E5%BC%95%E5%85%A5%E3%80%81%E4%BD%9C%E7%94%A8%E5%9F%9F%E7%AE%A1%E7%90%86%E3%80%81%E5%90%88%E5%B9%B6%E6%89%93%E5%8C%85%E5%88%B0%E5%8D%95%E4%B8%AA%E6%96%87%E4%BB%B6">1. 使css、less支持模块引入、作用域管理、合并打包到单个文件</h4>
 
         </div>
@@ -81,8 +83,14 @@
         </div>
     </div>
 </article>
-        </div>
-        <footer></footer>
+        </main>
+        <footer id="footer"></footer>
+      </article>
+      <div class="shortcut-tools">
+          <div onclick="exec('scrollToTop')" class="goto-top-btn">Top</div>
+          <div onclick="exec('scrollToBottom')" class="goto-bottom-btn">Bottom</div>
+          <div onclick="exec('goback')" class="goback-btn">goback</div>
       </div>
+      <script src="/assets/common.js"></script>
 </body>
 </html>

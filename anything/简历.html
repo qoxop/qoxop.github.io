@@ -10,11 +10,14 @@
     <link rel="stylesheet" href="/assets/article.css">
     <link href="/assets/monokai_sublime.min.css" rel="stylesheet">  
     <script async src="/assets/highlight.min.js"></script>
+     
+      <script src="/assets/hot_reload.js"></script>
     
 </head>
 <body>
-    <div id="app">
-        <header>
+    <article id="app">
+        <header id="app_header">
+          <h1>张集伟的个人博客</h1>
           <div class="content_box header_inner">
             <div class="logo">
               <div class="logoImg">
@@ -61,7 +64,7 @@
             </nav>
           </div>
         </header>
-        <div id="main">
+        <main id="main">
            <article class="content_box">
     <div class="article md_html_article">
         <h1>
@@ -69,30 +72,38 @@
         </h1>
         <div class="update_time">
             <span>
-                更新时间：2019-02-12
+                更新时间：2019-03-03
             </span>
         </div>
         <div class="md_essay">
-            <p>注意要点</p>
-<ol>
-<li>邮件和附件标题署名，姓名-求职岗位</li>
-</ol>
-<p>拥有两年的web开发经验(包括校内经历)，在校期间在工作室做的PC端的信息管理系统，工作期间主要是做移动端开发，负责编写业务代码。经常使用的框架是react和vue，偏爱使用react。</p>
+            <p>拥有三年的前端开发经验(包括校内经历)，在校内做了两年的pc端前端开发，工作以及实习做的是移动端开发。熟悉html语义化，了解常见的前端性能优化方案，常用的框架是react和vue，偏爱使用react。</p>
 <h3 id="%E5%B7%A5%E4%BD%9C%E7%BB%8F%E9%AA%8C">工作经验</h3>
 <h4 id="%E5%85%AC%E5%8F%B8%E6%98%8E%E6%BA%90%E4%BA%91%E5%AE%A2%E7%94%B5%E5%AD%90%E5%95%86%E5%8A%A1%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8">公司明源云客电子商务有限公司</h4>
+<p>雅居宝app项目</p>
+<p>背景：项目是公司为雅居乐地产公司开发的一个全民营销平台，支持组件与页面定制化功能</p>
+<p>技术：用vue+vuex+vue-router编写组件和页面，UI采用的vux，然后结合公司自己开发的paas平台实现页面和组件的定制化，我是在实习期的时候参与了这个项目，主要负责部分。在其中学到了：</p>
+<p>职责与成长：这个项目实在实习期参与的，主要负责业务组件的开发，在这过程中我学到 1. 前端模块化开发、前端开发模式，熟悉了vue框架以及相关的vuex与vue-router等， 掌握了相关的开发工具的使用（比如charles、mockjs等）</p>
+<p>移动销售app项目</p>
+<p>背景：项目主要是做房地销售业务相关的功能，业务逻辑复杂、业务场景较多 。是公司的核心项目。项目时间较为长久。</p>
+<p>技术：主要采用 react 框架和 redux 状态管理库以及相关的辅助库，UI采用antd-mobile，构建工具用的是webpack。</p>
+<p>职责与成长：我主要负责的业务需求开发、与后端协商结构结构、维护原有的功能，同时在这些的基础上我还对项目做了一些优化措施：</p>
+<ol>
+<li>逐步使用Typescript替换Javascript, 定义更加清晰的数据结构和组件结构</li>
+<li>抽离通用的业务逻辑，提高某些业务逻辑的复用性，优化和统一代码结构</li>
+<li>将组件样式编写替换成styled-components的方式，方便样式的维护，以及增加样式编写的灵活性</li>
+</ol>
+<h4 id="%E6%A0%A1%E5%86%85%E5%B7%A5%E4%BD%9C%E7%BB%8F%E5%8E%86">校内工作经历</h4>
+<p>大三开始帮学校老师做一些信息管理系统的项目，包括社区网格化管理系统、招商资源管理系统、街道物业管理系统，因为工作室人手较少，需要同时开发前后端代码以及培训用户等。</p>
+<p>其中街道物业管理系统是由我自己独立设计开发，项目采用SpringBoot、mybatis开发后端程序，react、mobx、antd开发前端程序，采用前后端分离的方式开发。前端工具采用的是parcel，实现了xxx</p>
+<p>项目后期用node编写前后端统一的构建发布脚本，实现了系统的自动检测更新和升级的功能，避免的内网部署的繁琐步骤，以及网络不稳定带来的升级困难。</p>
+<h4 id="%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2">个人博客</h4>
+<p>个人平时喜欢用git + markdown来记录工作和学习的收获，近段时间基于gulp写了一个静态网站生成程序，将文章整理发布到githubpage上。博客地址 https://qoxop.github.io，仓库地址：https://github.com/qoxop/blog_generator</p>
+<h4 id="%E6%8A%80%E8%83%BD%E6%B8%85%E5%8D%95">技能清单</h4>
 <ul>
-<li>
-<p>xxxx-xx-xx</p>
-<p>​	我参与了公司雅居宝app主要是一个ToC的售楼应用，我主要负责楼盘详情、经纪人消息模块 、经纪人消息模块 等以及后期的bug修复和样式优化。遇较大的难题就是业务数据的管理，主要在一个刷新的问题</p>
-</li>
-<li>
-<p>xxxx-xx-xx   移动销售app</p>
-<p>减少样式组件的封装，抽象交互组件</p>
-<p>无限滚动列表的尝试，</p>
-</li>
-<li>
-<p>自动部署机制</p>
-</li>
+<li>基础技能：css、js、html、ES6、typescript，小程序</li>
+<li>前端框架：vue、react、redux</li>
+<li>前端工具：parcel，gulp，webpack、less</li>
+<li>版本工具：git</li>
 </ul>
 
         </div>
@@ -101,8 +112,14 @@
         </div>
     </div>
 </article>
-        </div>
-        <footer></footer>
+        </main>
+        <footer id="footer"></footer>
+      </article>
+      <div class="shortcut-tools">
+          <div onclick="exec('scrollToTop')" class="goto-top-btn">Top</div>
+          <div onclick="exec('scrollToBottom')" class="goto-bottom-btn">Bottom</div>
+          <div onclick="exec('goback')" class="goback-btn">goback</div>
       </div>
+      <script src="/assets/common.js"></script>
 </body>
 </html>

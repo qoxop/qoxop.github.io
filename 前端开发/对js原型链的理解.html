@@ -8,13 +8,15 @@
     <title>qoxop | 对js原型链的理解</title>
     <link rel="stylesheet" href="/assets/common.css">
     <link rel="stylesheet" href="/assets/article.css">
+    <link rel="stylesheet" href="/assets/scribble.css">
     <link href="/assets/monokai_sublime.min.css" rel="stylesheet">  
     <script async src="/assets/highlight.min.js"></script>
     
 </head>
 <body>
-    <div id="app">
-        <header>
+    <article id="app">
+        <header id="app_header">
+          <h1>张集伟的个人博客</h1>
           <div class="content_box header_inner">
             <div class="logo">
               <div class="logoImg">
@@ -27,31 +29,31 @@
             <nav class="navigator">
               <ul>
                 
-                <li class="">
+                <li class="" onclick="exec('linkTo', '/index.html')">
                     <a href="/index.html">
                         HOME
                     </a>
                 </li>
                 
-                <li class="">
+                <li class="" onclick="exec('linkTo', '/category.html')">
                     <a href="/category.html">
                         CATEGORY
                     </a>
                 </li>
                 
-                <li class="">
+                <li class="" onclick="exec('linkTo', '/tags.html')">
                     <a href="/tags.html">
                         标签
                     </a>
                 </li>
                 
-                <li class="">
+                <li class="" onclick="exec('linkTo', '/link.html')">
                     <a href="/link.html">
                         链接
                     </a>
                 </li>
                 
-                <li class="">
+                <li class="" onclick="exec('linkTo', '/about.html')">
                     <a href="/about.html">
                         关于我
                     </a>
@@ -61,18 +63,18 @@
             </nav>
           </div>
         </header>
-        <div id="main">
+        <main id="main">
            <article class="content_box">
-    <div class="article md_html_article">
+    <div class="article md_html_article" id="left_content">
         <h1>
             对js原型链的理解
         </h1>
         <div class="update_time">
             <span>
-                更新时间：2019-02-12
+                更新时间：2019-03-03
             </span>
         </div>
-        <div class="md_essay">
+        <div id="write" class="md_essay">
             <h3 id="%E5%8E%9F%E5%9E%8B%E9%93%BE%E7%9A%84%E6%9C%AC%E8%B4%A8">原型链的本质</h3>
 <p>a对象的<code>__proto__</code> 属性指向b对象，而b对象的<code>__proto__</code> 指向c对象，这就是一条原型链</p>
 <h3 id="%E5%8E%9F%E5%9E%8B%E9%93%BE%E7%9A%84%E4%BD%9C%E7%94%A8">原型链的作用</h3>
@@ -140,24 +142,6 @@ child.tpye === <span class="hljs-string">"parent"</span> <span class="hljs-comme
 child.name === <span class="hljs-string">"child"</span> <span class="hljs-comment">// true</span>
 child.sayHi() <span class="hljs-comment">// Error</span>
 </code></pre>
-<ol start="2">
-<li>
-<p>巴拉巴拉巴拉</p>
-<pre><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-    
-}
-</code></pre>
-</li>
-<li>
-<p>66666</p>
-<pre><code class="hljs language-java"><span class="hljs-class"><span class="hljs-keyword">class</span>
-</span></code></pre>
-</li>
-</ol>
-<ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-9340500"><label class="task-list-item-label" for="task-item-9340500"> 66666</label></li>
-</ul>
-<p><div class="table-of-contents"><ul><li><a href="#%E5%8E%9F%E5%9E%8B%E9%93%BE%E7%9A%84%E6%9C%AC%E8%B4%A8">原型链的本质</a></li><li><a href="#%E5%8E%9F%E5%9E%8B%E9%93%BE%E7%9A%84%E4%BD%9C%E7%94%A8">原型链的作用</a></li><li><a href="#%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%96%B9%E5%BC%8F">创建对象的方式</a></li><li><a href="#javascript%E4%B8%AD%E5%8E%9F%E5%9E%8B%E9%93%BE%E7%9A%84%E5%BD%A2%E6%88%90">JavaScript中原型链的形成</a></li><li><a href="#%E6%93%8D%E4%BD%9C%E7%AC%A6">操作符</a><ul><li><a href="#instanceof">instanceof</a></li><li><a href="#new">new</a></li></ul></li><li><a href="#%E5%90%84%E7%A7%8D%E9%BB%98%E8%AE%A4%E7%B1%BB%E5%9E%8B%E7%9A%84prototype">各种默认类型的prototype</a></li><li><a href="#%E5%AE%9E%E7%8E%B0%E7%BB%A7%E6%89%BF%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95">实现继承的几种方法</a></li></ul></div></p>
 
         </div>
         <div class="md_essay_tags">
@@ -165,8 +149,14 @@ child.sayHi() <span class="hljs-comment">// Error</span>
         </div>
     </div>
 </article>
-        </div>
-        <footer></footer>
+        </main>
+        <footer id="footer"></footer>
+      </article>
+      <div class="shortcut-tools">
+          <div onclick="exec('scrollToTop')" class="goto-top-btn">Top</div>
+          <div onclick="exec('scrollToBottom')" class="goto-bottom-btn">Bottom</div>
+          <div onclick="exec('goback')" class="goback-btn">goback</div>
       </div>
+      <script src="/assets/common.js"></script>
 </body>
 </html>

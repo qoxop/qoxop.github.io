@@ -8,13 +8,15 @@
     <title>qoxop | 首页(2)</title>
     <link rel="stylesheet" href="/assets/common.css">
     <link rel="stylesheet" href="/assets/articleList.css">
+    <link rel="stylesheet" href="/assets/scribble.css">
     <link href="/assets/monokai_sublime.min.css" rel="stylesheet">  
     <script async src="/assets/highlight.min.js"></script>
     
 </head>
 <body>
-    <div id="app">
-        <header>
+    <article id="app">
+        <header id="app_header">
+          <h1>张集伟的个人博客</h1>
           <div class="content_box header_inner">
             <div class="logo">
               <div class="logoImg">
@@ -27,31 +29,31 @@
             <nav class="navigator">
               <ul>
                 
-                <li class="actived">
+                <li class="actived" onclick="exec('linkTo', '#')">
                     <a href="#">
                         HOME
                     </a>
                 </li>
                 
-                <li class="">
+                <li class="" onclick="exec('linkTo', '/category.html')">
                     <a href="/category.html">
                         CATEGORY
                     </a>
                 </li>
                 
-                <li class="">
+                <li class="" onclick="exec('linkTo', '/tags.html')">
                     <a href="/tags.html">
                         标签
                     </a>
                 </li>
                 
-                <li class="">
+                <li class="" onclick="exec('linkTo', '/link.html')">
                     <a href="/link.html">
                         链接
                     </a>
                 </li>
                 
-                <li class="">
+                <li class="" onclick="exec('linkTo', '/about.html')">
                     <a href="/about.html">
                         关于我
                     </a>
@@ -61,85 +63,95 @@
             </nav>
           </div>
         </header>
-        <div id="main">
+        <main id="main">
            <div class="content_box">
     <div id="left_content">
         <!-- 这里存放主要内容 -->
        <div class="article_list">
     
     <section class="article_item">
-        <h3><a href="/anything/简历.html">简历</a></h3>
-        <div class="preview md_html">
-            <p>注意要点</p>
-<ol>
-<li>邮件和附件标题署名，姓名-求职岗位</li>
-</ol>
-<p>拥有两年的web开发经验(包括校内经历)，在校期间在工作室做的PC端的信息管理系统，工作期间主要是做移动端开发，负责编写业务代码。经常使用的框架是react和vue，偏爱使用react。</p>
-<h3 id="%E5%B7%A5%E4%BD%9C%E7%BB%8F%E9%AA%8C">工作经验</h3>
-<h4 id="%E5%85%AC%E5%8F%B8%E6%98%8E%E6%BA%90%E4%BA%91%E5%AE%A2%E7%94%B5%E5%AD%90%E5%95%86%E5%8A%A1%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8">公司明源云客电子商务有限公司</h4>
-<ul>
-<li>
-<p>xxxx-xx-xx</p>
-<p>​	我参与了公司雅居宝app主要是一个ToC的售楼应用，我主要负责楼盘详情、经纪人消息模块 、经纪人消息模块 等以及后期的bug修复和样式优化。遇较大的难题就是业务数据的管理，主要在一个刷新的问题</p>
-</li>
-<li>
-<p>xxxx-xx-xx   移动销售app</p>
-<p>减少样式组件的封装，抽象交互组件</p>
-<p>无限滚动列表的尝试，</p>
-</li>
-<li>
-<p>自动部署机制</p>
-</li>
-</ul>
+        <h2><a href="/前端开发/redux中间件.html">redux中间件</a></h2>
+        <div class="preview">
+            <p>对于redux的来说，相对难以理解的可能就是redux中间件了，一开始的时候看了文档再看了别人写的文章介绍依旧还是云里雾里的，其实中间件的概念就是在再一个直接的过程中链式地加入其他的任务。为了理解redux中间件，今天还是从另一种方式入手来思考吧！</p>
 
         </div>
         <div class="article_item_footer">
             <div class="read_btn">
-                <a href="/anything/简历.html">Read</a>
+                <a href="/前端开发/redux中间件.html">Read</a>
             </div>
         </div>
     </section>
     
     <section class="article_item">
-        <h3><a href="/anything/述职.html">述职</a></h3>
-        <div class="preview md_html">
-            <h3 id="2018%E5%B9%B4%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93">2018年工作总结</h3>
-<p>2018年主要负责的是</p>
-<h4 id="%E9%94%80%E5%94%AE%E7%BB%8F%E7%90%86-%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9D%97%E5%92%8C%E5%AE%A2%E6%88%B7%E6%A8%A1%E5%9D%97%E7%9A%84%E4%B8%9A%E5%8A%A1%E9%9C%80%E6%B1%82%E5%BC%80%E5%8F%91%E5%92%8C%E5%8A%9F%E8%83%BD%E4%BC%98%E5%8C%96">销售经理 数据统计模块和客户模块的业务需求开发和功能优化</h4>
-<p>销售经理首页的样式和交互优化、统一缺省页和搜索文字文案、客户分配列表的自定义筛选和自定义分组功能、销售经理排班功能等等...</p>
-<h4 id="%E8%90%A5%E9%94%80%E6%80%BB%E5%92%8C%E6%81%92%E5%A4%A7%E8%90%A5%E9%94%80%E6%80%BB%E7%9A%84%E4%B8%80%E4%BA%9B%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E9%9C%80%E6%B1%82">营销总和恒大营销总的一些数据统计需求</h4>
-<p>营销总查看转化率和各种预期情况统计，营销总查看房源模块，营销总穿透到项目明细等...</p>
-<h4 id="%E5%85%B6%E4%BB%96%E7%9A%84%E5%8C%85%E6%8B%AC%E4%BA%91%E5%AE%A2%E5%90%8E%E5%8F%B0%E5%92%8C%E8%81%8C%E4%B8%9A%E9%A1%BE%E9%97%AE%E7%9B%B8%E5%85%B3%E7%9A%84%E4%B8%80%E4%BA%9B%E9%9B%B6%E6%95%A3%E7%9A%84%E9%9C%80%E6%B1%82">其他的包括云客后台和职业顾问相关的一些零散的需求</h4>
-<p>置业顾问鸡汤、后台的批量免逾期、后台客户全选逻辑统一</p>
-<h4 id="%E7%84%B6%E5%90%8E%E5%B0%B1%E6%98%AF%E4%B8%80%E4%BA%9Bbug%E7%9A%84%E4%BF%AE%E5%A4%8D">然后就是一些bug的修复</h4>
-<h3 id="2018%E5%B9%B4%E7%9A%84%E4%B8%8D%E8%B6%B3%E7%82%B9">2018年的不足点</h3>
+        <h2><a href="/前端开发/HTML5新特性.html">HTML5新特性</a></h2>
+        <div class="preview">
+            <h4 id="1.-%E6%96%B0%E7%9A%84%E8%AF%AD%E4%B9%89%E5%8C%96%E6%A0%87%E7%AD%BE">1. 新的语义化标签</h4>
+<h4 id="2.-canvas-api">2.  Canvas API</h4>
+<h4 id="3.-svg">3. SVG</h4>
+<h4 id="4.-%E5%9C%B0%E7%90%86%E4%BF%A1%E6%81%AF-geolocation-api">4. 地理信息 Geolocation API</h4>
+<h4 id="5.-%E8%B7%A8%E6%96%87%E6%A1%A3%E6%B6%88%E6%81%AF%E4%BC%A0%E9%80%92-communication-api">5. 跨文档消息传递 Communication API</h4>
+<pre><code class="hljs language-javascript"><span class="hljs-built_in">window</span>.postMessage(<span class="hljs-string">'Hello, world'</span>,<span class="hljs-string">'http://www.a.com/'</span>)
+</code></pre>
+<pre><code class="hljs language-javascript"><span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">"message"</span>, messageHandler, <span class="hljs-literal">true</span>);
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">messageHandler</span>(<span class="hljs-params">e</span>) </span>{
+    <span class="hljs-keyword">switch</span>(e.origin) {
+        <span class="hljs-keyword">case</span> <span class="hljs-string">"my.a.com"</span>:
+        <span class="hljs-comment">// 处理消息</span>
+        <span class="hljs-built_in">console</span>.log(e.data);
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">default</span>: 
+        <span class="hljs-comment">// ....</span>
+    }
+}
+</code></pre>
+<h4 id="6.-xmlhttprequest-level2">6. XMLHttpRequest Level2</h4>
 <ul>
-<li>记录和总结较少</li>
-<li>需求时间评估不足，导致求快的心理从而影响了代码质量</li>
-<li>对于工作和学习的规划不够</li>
+<li>跨源</li>
+<li>进度事件</li>
 </ul>
-<h3 id="2019%E5%B9%B4%E7%9A%84%E8%A7%84%E5%88%92">2019年的规划</h3>
-<p>对自己的要求</p>
-<ol>
-<li>提高代码质量，工作效率</li>
-</ol>
-<p>学习的计划</p>
-<ol>
-<li>巩固前端的基础知识</li>
-<li>学习nodejs</li>
-</ol>
+<h4 id="7.-websockets-api">7. WebSockets API</h4>
+<h4 id="8.-web-workers-api">8. Web Workers API</h4>
+<h4 id="9.-video%E3%80%81audio-api">9.  video、audio API</h4>
+<h4 id="10.-webstorage-api">10. webstorage API</h4>
 
         </div>
         <div class="article_item_footer">
             <div class="read_btn">
-                <a href="/anything/述职.html">Read</a>
+                <a href="/前端开发/HTML5新特性.html">Read</a>
             </div>
         </div>
     </section>
     
     <section class="article_item">
-        <h3><a href="/前端开发/CSS动画.html">CSS动画</a></h3>
-        <div class="preview md_html">
+        <h2><a href="/前端开发/HTML语义化及其应用.html">HTML语义化及其应用</a></h2>
+        <div class="preview">
+            <p>首先我对html语义化的理解是，页面的html标签结构能很好地表达页面的想呈现的内容以及内容的结构。为什么要使用html语义化标签呢？主要是为了方便人阅读和机器的解析，良好的html结构让人比较容易程序要表达的什么，同时有利于seo。同时在丢失样式的情况下能有一个基础的样式来展示页面。下面是来自维基百科的解释：</p>
+
+        </div>
+        <div class="article_item_footer">
+            <div class="read_btn">
+                <a href="/前端开发/HTML语义化及其应用.html">Read</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="article_item">
+        <h2><a href="/前端开发/react生命周期.html">react生命周期</a></h2>
+        <div class="preview">
+            <h3 id="preview">preview</h3>
+<p>关于react生命周期，网上有个通过流程图总结的文档 http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/，这个流程图和官方文档已经描述得相当清楚，这里还是通过自己的理解总结一下下。</p>
+
+        </div>
+        <div class="article_item_footer">
+            <div class="read_btn">
+                <a href="/前端开发/react生命周期.html">Read</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="article_item">
+        <h2><a href="/前端开发/CSS动画.html">CSS动画</a></h2>
+        <div class="preview">
             <h3 id="transition">transition</h3>
 <ul>
 <li>transition-delay           设置延迟过渡的时间</li>
@@ -213,166 +225,125 @@ animation-timing-function: ease, step-start, cubic-bezier(0.1, 0.7, 1.0, 0.1);</
     </section>
     
     <section class="article_item">
-        <h3><a href="/前端开发/css布局.html">css布局</a></h3>
-        <div class="preview md_html">
-            <h3 id="css%E7%9B%92%E6%A8%A1%E5%9E%8B">CSS盒模型</h3>
-<blockquote>
-<p>CSS盒模型（译者注：也被称为“盒模型”）是网页布局的基础 ——每个元素被表示为一个矩形的方框，框的内容、内边距、边界和外边距像洋葱的膜那样，一层包着一层构建起来。浏览器渲染网页布局时，它会算出每个框的内容要用什么样式，周围的洋葱层有多大，以及框相对于其它框放在哪里。</p>
-</blockquote>
-<h4 id="%E7%9B%92%E6%A8%A1%E5%9E%8B%E7%BB%84%E6%88%90">盒模型组成</h4>
-<p>由外到里分别为: content, padding, border, margin</p>
-<h4 id="%E4%B8%A4%E7%A7%8D%E6%A0%87%E5%87%86">两种标准</h4>
-<p>标准模型(content-box)、IE模型(border-box)，通过box-sizing切换，具体的区别在于width、height属性描述限制的范围不同</p>
-<h4 id="%E8%8E%B7%E5%8F%96%E7%9B%92%E5%AD%90%E7%9A%84%E5%AE%BD%E9%AB%98">获取盒子的宽高</h4>
+        <h2><a href="/前端开发/mobx.html">mobx</a></h2>
+        <div class="preview">
+            <h4 id="autorun">Autorun</h4>
+<p>参数：一个使用了observable数据的函数</p>
+<p>返回：disposer函数，调用该函数可以去取消autorun，以及取消对computed值的计算</p>
+<p>错误处理：可以用disposer.onError方法来覆盖Reaction的默认日志行为。</p>
+<pre><code class="hljs language-javascript"><span class="hljs-keyword">const</span> age = observable(<span class="hljs-number">10</span>)
+<span class="hljs-keyword">const</span> dispose = autorun(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+    <span class="hljs-keyword">if</span> (age.get() &lt; <span class="hljs-number">0</span>)
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">"Age should not be negative"</span>)
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Age"</span>, age.get())
+})
+age.set(<span class="hljs-number">18</span>)  <span class="hljs-comment">// 输出: Age 18</span>
+age.set(<span class="hljs-number">-10</span>) <span class="hljs-comment">// 输出: Age should not be negative</span>
+age.set(<span class="hljs-number">5</span>)   <span class="hljs-comment">// 已恢复; 输出: Age 5</span>
+
+dispose.onError(<span class="hljs-function"><span class="hljs-params">e</span> =&gt;</span> {
+    <span class="hljs-built_in">window</span>.alert(<span class="hljs-string">"Please enter a valid age"</span>)
+})
+
+age.set(<span class="hljs-number">-5</span>)  <span class="hljs-comment">// 显示alert弹出框</span>
+</code></pre>
+<p>全局的onError方法：全局的 onError 处理方法可以通过 extras.onReactionError(handler)来设置。</p>
+<h4 id="%40observer">@observer</h4>
+<p>将React组件转变成响应式组件。它用mobx.autorun 包装了组件的render函数以确保任何组件渲染中使用的数据变化是都可以强制刷新组件。</p>
+<pre><code class="hljs language-javascript"><span class="hljs-keyword">import</span> {observer} <span class="hljs-keyword">from</span> <span class="hljs-string">"mobx-react"</span>;
+
+<span class="hljs-keyword">var</span> timerData = observable({
+    <span class="hljs-attr">secondsPassed</span>: <span class="hljs-number">0</span>
+});
+
+setInterval(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+    timerData.secondsPassed++;
+}, <span class="hljs-number">1000</span>);
+
+@observer <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Timer</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+    render() {
+        <span class="hljs-keyword">return</span> (<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Seconds passed: { this.props.timerData.secondsPassed } <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span> )
+    }
+};
+<span class="hljs-comment">//secondsPassed改变会触发组件刷新</span>
+React.render(&lt;Timer timerData={timerData} /&gt;, document.body);
+/*secondsPassed改变不会触发组件刷新，因为此处只是单纯地传递了字面值而已，Timer无法获取到timerData.secondsPassed的变化*/
+React.render(&lt;Timer timerData={timerData.secondsPassed} /&gt;, document.body); 
+</code></pre>
+<p>@observer、autorun函数所能观察的目标只能是引用，为了触发 **autorun **值需要通过引用来传递而不是字面值来传递。</p>
 <ol>
 <li>
-<p>取内联样式设置的宽高（取得的是css是width/height属性）</p>
-<pre><code class="hljs language-javascript">dom.style.width/height
+<p>无状态函数组件</p>
+<pre><code class="hljs language-react">import {observer} from &quot;mobx-react&quot;;
+
+const Timer = observer(({ timerData }) =&gt;
+    &lt;span&gt;Seconds passed: { timerData.secondsPassed } &lt;/span&gt;
+);
 </code></pre>
 </li>
 <li>
-<p>取渲染后的宽高，仅ie（取得的是标准模型的宽高）</p>
-<pre><code class="hljs language-javascript">dom.currentStyle.width/height
+<p>可观察的局部组件状态</p>
+<pre><code class="hljs language-react">import {observer} from &quot;mobx-react&quot;
+import {observable} from &quot;mobx&quot;
+
+@observer class Timer extends React.Component {
+    @observable secondsPassed = 0
+
+    componentWillMount() {
+        setInterval(() =&gt; {
+            this.secondsPassed++
+        }, 1000)
+    }
+
+    render() {
+        return (&lt;span&gt;Seconds passed: { this.secondsPassed } &lt;/span&gt; )
+    }
+})
+
+React.render(&lt;Timer /&gt;, document.body)
 </code></pre>
+<p>mobx局部组件状态的变化只会触发render、componentWillUpdate、componentDidUpdate</p>
 </li>
 <li>
-<p>取渲染后的宽高, 通用兼容性好（取得的是标准模型的宽高）</p>
-<pre><code class="hljs language-javascript"><span class="hljs-built_in">window</span>.getComputedStyle(dom).width/height
-<span class="hljs-comment">// 如果dom元素是一个滚动盒子，那么结果需要是减去滚动调后的值</span>
-</code></pre>
-</li>
-<li>
-<p>通过计算盒子在视窗的绝对位置 （取得的是IE模型的宽高）</p>
-<pre><code class="hljs language-javascript">dom.getBoundingClientRect().width/height
-</code></pre>
-</li>
-<li>
-<p><code>offsetWidth</code> / <code>offsetWidth</code> （取得的是IE模型的宽高）</p>
-<pre><code class="hljs language-javascript">dom.offsetWidth/offsetWidth
-</code></pre>
-</li>
-</ol>
-<h4 id="%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%A1%8C%E9%99%B7">外边距塌陷</h4>
-<blockquote>
-<p>块级元素的上外边距和下外边距有时会合并（或折叠）为一个外边距，其大小取其中的最大者，这种行为称为外边距折叠（margin collapsing），有时也翻译为外边距合并。注意浮动元素和绝对定位元素的外边距不会折叠。</p>
-</blockquote>
-<h5 id="%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%A1%8C%E9%99%B7%E7%9A%84%E4%B8%89%E7%A7%8D%E5%9F%BA%E6%9C%AC%E6%83%85%E5%86%B5">外边距塌陷的三种基本情况</h5>
+<p>componentWillReact 生命周期钩子</p>
+<p>当使用 mobx-react 时可以定义一个新的生命周期钩子函数 componentWillReact(一语双关)。当组件因为它观察的数据发生了改变，它会安排重新渲染，这个时候 componentWillReact 会被触发。</p>
+<h4 id="action">action</h4>
+<p>应该永远只对<strong>修改</strong>状态的函数使用动作</p>
 <ul>
-<li>相邻元素之间</li>
-<li>父元素与其第一个或最后一个子元素之间</li>
-<li>空的块级元素</li>
-</ul>
-<h5 id="%E9%98%B2%E6%AD%A2%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%A1%8C%E9%99%B7%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88">防止外边距塌陷的解决方案</h5>
-<h6 id="bfc-%E5%9D%97%E7%BA%A7%E6%A0%BC%E5%BC%8F%E5%8C%96%E4%B8%8A%E4%B8%8B%E6%96%87">BFC 块级格式化上下文</h6>
-<blockquote>
-<p>BFC（Block Formatting Context）格式化上下文，是Web页面中盒模型布局的CSS渲染模式，指一个独立的渲染区域或者说是一个隔离的独立容器。</p>
-</blockquote>
-<ul>
-<li>原理：
-<ol>
-<li>BFC元素的子元素在垂直方向的边距会发生重叠（为什么时垂直方向，应为块级元素独占一行，其他元素确实脱离了正常的文档流）</li>
-<li>BFC元素的边距不会与它的子浮动元素的box重叠，也就是说浮动元素的margin也同样会撑开父元素的高度或高度(如果没有限制宽高的话)，同时与子浮动元素相邻的子元素之间也不会发生重叠</li>
-<li>BFC在页面是一个独立的容器，外面的元素不会影响它里面的元素</li>
-<li>计算BFC元素高度时浮动元素也会参与计算，也就是说即使BFC元素内的尾部有自动清楚所有浮动的功能，即使BFC元素的子元素都是浮动的，BFC元素的高度也不会为<strong>零</strong></li>
-</ol>
-</li>
-<li>如何创建
-<ol>
-<li>css属性float不为none</li>
-<li>css属性position不为默认值</li>
-<li>css属性display属性与table相关的属性</li>
-<li>css属性overflow属性不为visible</li>
-</ol>
-</li>
-</ul>
-<h3 id="css%E5%B8%83%E5%B1%80%E6%96%B9%E6%A1%88">CSS布局方案</h3>
-<h4 id="flex%E5%B8%83%E5%B1%80">Flex布局</h4>
-<blockquote>
-<p>Flex 是 Flexible Box 的缩写，意为&quot;弹性布局&quot;，用来为盒状模型提供最大的灵活性。 任何一个容器(包括行内元素)都可以指定为 Flex 布局。</p>
-<p>注意，设为 Flex 布局以后，子元素的<code>float</code>、<code>clear</code>和<code>vertical-align</code>属性将失效。</p>
-</blockquote>
-<h5 id="1.-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5">1. 基本概念</h5>
-<p>采用Flex布局的元素称为Flex容器, 其子元素就自动变成了Flex项目</p>
-<pre><code class="hljs language-css"><span class="hljs-selector-tag">div</span><span class="hljs-selector-class">.flexbox</span> {
-    <span class="hljs-attribute">display</span>: flex;
+<li>
+<p>绑定的动作</p>
+<pre><code class="hljs language-react">class Ticker {
+    @observable tick = 0
+
+    @action.bound
+    increment() {
+        this.tick++ // 'this' 永远都是正确的
+    }
 }
 </code></pre>
-<p>Flex容器有两根轴—主轴和交叉轴，Flex项目就是依据这两个轴来进行布局的(包括调整大小与对齐方式)，默认的主轴是水平轴(-&gt;),交叉轴是垂直轴(up to down)，轴起止与border。</p>
-<h5 id="2.-%E5%AE%B9%E5%99%A8%E5%B1%9E%E6%80%A7">2. 容器属性</h5>
-<ol>
-<li>flex-direction</li>
-<li>flex-wrap</li>
-<li>flex-flow</li>
-<li>justify-content</li>
-<li>align-items</li>
-<li>align-content</li>
+</li>
+</ul>
+</li>
 </ol>
-<p>分别设置主轴方向，换行方式，主轴方向和换行方式，项目在主轴方式的分布规则，项目在交叉轴方向上的对齐方式，</p>
-<h6 id="2.1-flex-direction-%E5%B1%9E%E6%80%A7">2.1 flex-direction 属性</h6>
-<p><code>flex-direction</code>属性决定主轴的方向（即项目的排列方向）。</p>
-<pre><code class="hljs language-css"><span class="hljs-selector-class">.box</span> {
-  <span class="hljs-attribute">flex-direction</span>: row | row-reverse | column | column-reverse; <span class="hljs-comment">/* →  ←  ↓  ↑  */</span>
-}
-</code></pre>
-<h6 id="2.2-flex-wrap%E5%B1%9E%E6%80%A7">2.2 flex-wrap属性</h6>
-<p>默认情况下Flex项目都排在了与主轴平行的轴线上，flex-wrap属性定义如果一条轴线排不下时如何换行。</p>
-<ul>
-<li><code>nowrap</code>(默认)：不换行，超出部分怎么显示有父元素决定</li>
-<li><code>wrap</code>：正常换行</li>
-<li><code>wrap-reverse</code>: 反向换行</li>
-</ul>
-<h6 id="2.3-flex-flow">2.3 flex-flow</h6>
-<p><code>flex-flow</code>属性是<code>flex-direction</code>属性和<code>flex-wrap</code>属性的简写形式，默认值为<code>row nowrap</code></p>
-<h6 id="2.4-justify-content%E5%B1%9E%E6%80%A7">2.4 justify-content属性</h6>
-<p>很多人喜欢将其定义为 &quot; 项目在主轴上的对齐方式 &quot;, 但个人喜欢理解为项目在主轴方式的分布规则，因为这个属性对于项目元素刚好排满一行主轴轴线时，并不会起任何作用，只有在排不满时，主轴轴线上出现了多余的空间， justify-content属性就是来描述如何分配这些空间的。</p>
-<ul>
-<li><code>flex-start</code>: 所有项目往主轴的起始位置靠，剩余的空间都在主轴的终止方向上</li>
-<li><code>flex-end</code>: 与<code>flex-start</code>相反</li>
-<li><code>center</code>: 所有项目往主轴的中间位置位置靠，剩余空间放两边</li>
-<li><code>space-between</code>:  两端元素贴壁(两端对齐)，剩余空间均匀分配给项目间的空隙</li>
-<li><code>space-around</code>: 每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。</li>
-</ul>
-<h6 id="2.5-align-items%E5%B1%9E%E6%80%A7">2.5 align-items属性</h6>
-<p><code>align-items</code>属性定义项目在交叉轴上如何对齐。align的英文意思为：使对其，成一直线， items是指项目，那么<code>align-items</code>就是可以理解为项目是对其于怎样的一条线的。</p>
-<p>首先我们知道项目是在主轴方向上进行堆叠分布的，但如果项目在交叉轴方向上的长度不一致，就会参差不齐，这就需要对其，是将项目都往交叉轴的起始位置靠还是往终止位置靠，还是往交叉轴的中间对齐，还是将每个项目在交叉轴上的长度都拉升到一致，又或者将所有项目的第一行文字放同一个主轴轴轴线上再按这个限制去摆放项目</p>
-<ul>
-<li><code>flex-start</code>：交叉轴的起点对齐。</li>
-<li><code>flex-end</code>：交叉轴的终点对齐。</li>
-<li><code>center</code>：交叉轴的中点对齐。</li>
-<li><code>baseline</code>: 项目的第一行文字的基线对齐。</li>
-<li><code>stretch</code>（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。</li>
-</ul>
-<p>之前关于轴、对齐的误解：对齐指子元素如何再父元素中排布，比如说元素A向左对齐那么A就会尽可能地往父元素的左边靠，这一点是很好理解，误解的是这么一个描述 &quot;<code>align-items</code>属性定义项目在交叉轴上如何对齐&quot; ,个人的感觉是项目是如何贴在交叉轴轴线上的(因为比如向左对齐就是元素贴在了父元素的左边框上了，但起始向左对齐的重点是在&quot;<strong>左</strong>&quot;字上面), 所以如果把描述改为 &quot;<code>align-items</code>属性定义项目是往的交叉轴哪个方向对齐&quot; 会更好理解一点</p>
+<h4 id="mobx%E4%BC%9A%E5%AF%B9%E4%BB%80%E4%B9%88%E5%81%9A%E5%87%BA%E5%8F%8D%E5%BA%94%EF%BC%9F">Mobx会对什么做出反应？</h4>
+<blockquote>
+<p>Mobx 会对在<strong>追踪函数</strong>执行过程中<strong>读取</strong>现存的可观察属性做出反应。</p>
+</blockquote>
+<p>调用过至少一次getter(注册观察者)，使用setter(执行过程)</p>
+<p>Mobx的observable函数就是通过普通对象生产一个拥有getter、setter属性的对象，其中getter的首次调用用于初始化初值并注册该属性的观察者，</p>
+<p>单例模式、观察者模式、</p>
 
         </div>
         <div class="article_item_footer">
             <div class="read_btn">
-                <a href="/前端开发/css布局.html">Read</a>
+                <a href="/前端开发/mobx.html">Read</a>
             </div>
         </div>
     </section>
     
     <section class="article_item">
-        <h3><a href="/前端开发/CSS布局方案.html">CSS布局方案</a></h3>
-        <div class="preview md_html">
-            <h3 id="%E6%B5%AE%E5%8A%A8%E5%B8%83%E5%B1%80">浮动布局</h3>
-<pre><code class="hljs language-css"><span class="hljs-selector-class">.float_box</span> {
-    <span class="hljs-attribute">float</span>: left; <span class="hljs-comment">/*or right*/</span>
-}
-</code></pre>
-<p>在其<strong>原有位置</strong>处脱离布局流(处于上层位置)，同时失去默认宽度(100%父级元素)，向左或右浮动，浮动的元素不会与非浮动的正常兄弟原属发生重叠，且浮动元素不会撑高父元素的高度，可通过设置父元素让浮动元素超出时隐藏</p>
-
-        </div>
-        <div class="article_item_footer">
-            <div class="read_btn">
-                <a href="/前端开发/CSS布局方案.html">Read</a>
-            </div>
-        </div>
-    </section>
-    
-    <section class="article_item">
-        <h3><a href="/前端开发/Es6异步.html">Es6异步</a></h3>
-        <div class="preview md_html">
+        <h2><a href="/前端开发/Es6异步.html">Es6异步</a></h2>
+        <div class="preview">
             <h3 id="generator">Generator</h3>
 <h4 id="%E5%9F%BA%E7%A1%80%E5%86%99%E6%B3%95">基础写法</h4>
 <pre><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-title">gn</span>(<span class="hljs-params"></span>)</span>{
@@ -493,243 +464,625 @@ it.next();
     </section>
     
     <section class="article_item">
-        <h3><a href="/前端开发/eslint.html">eslint</a></h3>
-        <div class="preview md_html">
-            <h1 id="eslint">ESlint</h1>
-<h3 id="%E5%AE%9A%E4%B9%89">定义</h3>
-<p>ESLint 是一个开源的 JavaScript 代码检查工具</p>
-<h3 id="%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8">安装使用</h3>
-<pre><code class="hljs language-javascript">npm i -g eslint
-</code></pre>
-<ul>
-<li>
-<p>命令行使用</p>
-<pre><code class="hljs">eslint [options] [<span class="hljs-keyword">file</span>|<span class="hljs-keyword">dir</span>|<span class="hljs-keyword">glob</span>]*
-
-</code></pre>
-</li>
-<li>
-<p>与编辑器一起配置使用，安装eslint插件</p>
-</li>
-</ul>
-<h3 id="%E9%85%8D%E7%BD%AE">配置</h3>
-<h5 id="%E6%B3%A8%E9%87%8A%E9%85%8D%E7%BD%AE">注释配置</h5>
-<h5 id="%E6%96%87%E4%BB%B6%E9%85%8D%E7%BD%AE">文件配置</h5>
-<p>在.eslintrc.*（json,js,yaml）文件 或者在package.json文件中的eslintConfig字段配置</p>
-<ul>
-<li>
-<p>代码和解析</p>
-<pre><code class="hljs language-json"><span class="hljs-string">"eslintConfig"</span>: {
-    //配置解析器
-    <span class="hljs-attr">"parser"</span>: <span class="hljs-string">"babel-eslint"</span>,
-        
-    //配置解析的选项
-    <span class="hljs-attr">"parserOptions"</span>: {
-        <span class="hljs-attr">"ecmaVersion"</span>: <span class="hljs-number">6</span>,	//ecmaScript的版本
-        <span class="hljs-attr">"sourceType"</span>: <span class="hljs-string">"module"</span>,	//源码类型，<span class="hljs-attr">"script"</span>(默认)或者<span class="hljs-attr">"module"</span>，
-        <span class="hljs-attr">"ecmaFeatures"</span>: {	//额外的语言特性
-            <span class="hljs-attr">"globalReturn"</span>: <span class="hljs-literal">true</span>,	// 允许在全局作用域下使用 return 语句
-            <span class="hljs-attr">"jsx"</span>: <span class="hljs-literal">true</span>,	//启用jsx
-            <span class="hljs-attr">"impliedStrict"</span>: <span class="hljs-literal">true</span>	//启用全局 strict mode (如果 ecmaVersion 是 <span class="hljs-number">5</span> 或更高)
-        },
-    },
-    
-    //继承配置，可以是一个字符串或字符串数组，字符串内容可以是一个文件或者一个已安装的npm包
-    <span class="hljs-attr">"extends"</span>: <span class="hljs-string">"airbnb-base"</span>,
-    
-    //配置启用环境
-    <span class="hljs-attr">"env"</span>: {
-        <span class="hljs-attr">"browser"</span>: <span class="hljs-literal">true</span>,
-        <span class="hljs-attr">"node"</span>: <span class="hljs-literal">true</span>
-        //还以其他的等等。。。
-    },
-    
-    //全局变量名配置
-    <span class="hljs-attr">"globals"</span>: {
-        <span class="hljs-attr">"var1"</span>: <span class="hljs-literal">true</span>,	//在某个文件中访问var1不会报错了
-    	<span class="hljs-attr">"var2"</span>: <span class="hljs-literal">true</span>	//在某个文件中访问var2会报错，即使全局环境中存在var2这个变量
-    },
-	
-	//使用第三方插件
-    //全局安装的 ESLint 只能使用全局安装的插件。
-    //本地安装的 ESLint 不仅可以使用本地安装的插件还可以使用全局安装的插件。
-    <span class="hljs-attr">"plugins"</span>: [
-        <span class="hljs-string">"html"</span>
-    ],
-    
-    //配置规则，http://eslint.cn/docs/rules/
-    //<span class="hljs-string">"off"</span> 或 <span class="hljs-number">0</span> - 关闭规则
-    //<span class="hljs-string">"warn"</span> 或 <span class="hljs-number">1</span> - 开启规则，使用警告级别的错误：warn (不会导致程序退出)
-    //<span class="hljs-string">"error"</span> 或 <span class="hljs-number">2</span> - 开启规则，使用错误级别的错误：error (当被触发的时候，程序会退出)
-    <span class="hljs-string">"rules"</span>: {
-        <span class="hljs-attr">"indent"</span>: [
-            <span class="hljs-string">"error"</span>,	//第一个为级别
-            <span class="hljs-number">4</span>			//其他的为该规则的参数
-        ],
-        <span class="hljs-attr">"semi"</span>: <span class="hljs-number">0</span>,		//级别
-        <span class="hljs-attr">"comma-dangle"</span>: <span class="hljs-number">0</span>,
-        <span class="hljs-attr">"linebreak-style"</span>: <span class="hljs-number">0</span>,
-        <span class="hljs-attr">"no-console"</span>: <span class="hljs-number">0</span>
-    }
-}
-</code></pre>
-</li>
-<li>
-<p>优先级</p>
-<p>文件内注释 &gt; 配置文件，当前目录的配置文件  &gt;  父级目录的配置文件</p>
-</li>
-<li>
-<p>忽视解析的文件或目录，用 .eslintignore 文件进行配置</p>
-</li>
-</ul>
-
-        </div>
-        <div class="article_item_footer">
-            <div class="read_btn">
-                <a href="/前端开发/eslint.html">Read</a>
-            </div>
-        </div>
-    </section>
-    
-    <section class="article_item">
-        <h3><a href="/前端开发/Markdown.html">Markdown</a></h3>
-        <div class="preview md_html">
-            
-        </div>
-        <div class="article_item_footer">
-            <div class="read_btn">
-                <a href="/前端开发/Markdown.html">Read</a>
-            </div>
-        </div>
-    </section>
-    
-    <section class="article_item">
-        <h3><a href="/前端开发/mobx.html">mobx</a></h3>
-        <div class="preview md_html">
-            <h4 id="autorun">Autorun</h4>
-<p>参数：一个使用了observable数据的函数</p>
-<p>返回：disposer函数，调用该函数可以去取消autorun，以及取消对computed值的计算</p>
-<p>错误处理：可以用disposer.onError方法来覆盖Reaction的默认日志行为。</p>
-<pre><code class="hljs language-javascript"><span class="hljs-keyword">const</span> age = observable(<span class="hljs-number">10</span>)
-<span class="hljs-keyword">const</span> dispose = autorun(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
-    <span class="hljs-keyword">if</span> (age.get() &lt; <span class="hljs-number">0</span>)
-        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">"Age should not be negative"</span>)
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Age"</span>, age.get())
-})
-age.set(<span class="hljs-number">18</span>)  <span class="hljs-comment">// 输出: Age 18</span>
-age.set(<span class="hljs-number">-10</span>) <span class="hljs-comment">// 输出: Age should not be negative</span>
-age.set(<span class="hljs-number">5</span>)   <span class="hljs-comment">// 已恢复; 输出: Age 5</span>
-
-dispose.onError(<span class="hljs-function"><span class="hljs-params">e</span> =&gt;</span> {
-    <span class="hljs-built_in">window</span>.alert(<span class="hljs-string">"Please enter a valid age"</span>)
-})
-
-age.set(<span class="hljs-number">-5</span>)  <span class="hljs-comment">// 显示alert弹出框</span>
-</code></pre>
-<p>全局的onError方法：全局的 onError 处理方法可以通过 extras.onReactionError(handler)来设置。</p>
-<h4 id="%40observer">@observer</h4>
-<p>将React组件转变成响应式组件。它用mobx.autorun 包装了组件的render函数以确保任何组件渲染中使用的数据变化是都可以强制刷新组件。</p>
-<pre><code class="hljs language-javascript"><span class="hljs-keyword">import</span> {observer} <span class="hljs-keyword">from</span> <span class="hljs-string">"mobx-react"</span>;
-
-<span class="hljs-keyword">var</span> timerData = observable({
-    <span class="hljs-attr">secondsPassed</span>: <span class="hljs-number">0</span>
-});
-
-setInterval(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
-    timerData.secondsPassed++;
-}, <span class="hljs-number">1000</span>);
-
-@observer <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Timer</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
-    render() {
-        <span class="hljs-keyword">return</span> (<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Seconds passed: { this.props.timerData.secondsPassed } <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span> )
-    }
-};
-<span class="hljs-comment">//secondsPassed改变会触发组件刷新</span>
-React.render(&lt;Timer timerData={timerData} /&gt;, document.body);
-/*secondsPassed改变不会触发组件刷新，因为此处只是单纯地传递了字面值而已，Timer无法获取到timerData.secondsPassed的变化*/
-React.render(&lt;Timer timerData={timerData.secondsPassed} /&gt;, document.body); 
-</code></pre>
-<p>@observer、autorun函数所能观察的目标只能是引用，为了触发 **autorun **值需要通过引用来传递而不是字面值来传递。</p>
+        <h2><a href="/前端开发/typeScript.html">typeScript</a></h2>
+        <div class="preview">
+            <h3 id="%E7%B1%BB%E5%9E%8B">类型</h3>
 <ol>
 <li>
-<p>无状态函数组件</p>
-<pre><code class="hljs language-react">import {observer} from &quot;mobx-react&quot;;
-
-const Timer = observer(({ timerData }) =&gt;
-    &lt;span&gt;Seconds passed: { timerData.secondsPassed } &lt;/span&gt;
-);
+<p>类型声明，冒号+类型  -&gt; :boolean | :number | :string</p>
+</li>
+<li>
+<p>类型种类：布尔值(boolean)、 数字(number) 、字符串(string)、数组(Array|Array<number>)、元组(Tuple)、枚举(enum)、任意类型(Any)、void(函数无返回值、只能赋值为null和undefined)、Null 、Undefined、never</p>
+</li>
+<li>
+<p>元组：一个固定长度、元素类型固定的数组：let x: [string, number]</p>
+</li>
+<li>
+<p>枚举：</p>
+<pre><code class="hljs language-typescript"><span class="hljs-keyword">enum</span> Color {Red, Green, Blue}	<span class="hljs-comment">//Color.Red 等于0</span>
+<span class="hljs-keyword">let</span> c: Color = Color.Green		
+<span class="hljs-comment">//c被定义为Color枚举类型，只能在被赋值为{Red, Green, Blue}中的一个，实际对应的是{0，1，2}</span>
+<span class="hljs-keyword">enum</span> Color {Red=<span class="hljs-number">1</span>, Green=<span class="hljs-number">2</span>, Blue}	<span class="hljs-comment">//可以修改默认值</span>
+<span class="hljs-keyword">let</span> c: Color = Color.Green	
 </code></pre>
 </li>
 <li>
-<p>可观察的局部组件状态</p>
-<pre><code class="hljs language-react">import {observer} from &quot;mobx-react&quot;
-import {observable} from &quot;mobx&quot;
-
-@observer class Timer extends React.Component {
-    @observable secondsPassed = 0
-
-    componentWillMount() {
-        setInterval(() =&gt; {
-            this.secondsPassed++
-        }, 1000)
-    }
-
-    render() {
-        return (&lt;span&gt;Seconds passed: { this.secondsPassed } &lt;/span&gt; )
-    }
-})
-
-React.render(&lt;Timer /&gt;, document.body)
+<p>类型断言?</p>
+<pre><code class="hljs language-typescript"><span class="hljs-keyword">let</span> someValue: <span class="hljs-built_in">any</span> = <span class="hljs-string">"hello !"</span>
+<span class="hljs-keyword">let</span> strLength: <span class="hljs-built_in">number</span> = (&lt;<span class="hljs-built_in">string</span>&gt;someValue).length;
 </code></pre>
-<p>mobx局部组件状态的变化只会触发render、componentWillUpdate、componentDidUpdate</p>
+</li>
+</ol>
+<h3 id="%E5%8F%98%E9%87%8F">变量</h3>
+<ol>
+<li>
+<p>let与const，与es6相同</p>
 </li>
 <li>
-<p>componentWillReact 生命周期钩子</p>
-<p>当使用 mobx-react 时可以定义一个新的生命周期钩子函数 componentWillReact(一语双关)。当组件因为它观察的数据发生了改变，它会安排重新渲染，这个时候 componentWillReact 会被触发。</p>
-<h4 id="action">action</h4>
-<p>应该永远只对<strong>修改</strong>状态的函数使用动作</p>
-<ul>
+<p>解构</p>
+<pre><code class="hljs language-typescript"><span class="hljs-comment">/*数组解构*/</span>
+<span class="hljs-keyword">let</span> input = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>]
+<span class="hljs-keyword">let</span> [first,second] = input <span class="hljs-comment">//声明了两个变量</span>
+[first,second] = [second,first] <span class="hljs-comment">//变量交换</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">f</span>(<span class="hljs-params">[p1,p2]</span>)</span>{<span class="hljs-comment">/*...*/</span>}	<span class="hljs-comment">//传入一个数组，在函数内部生成两个变量，p1、p2</span>
+<span class="hljs-keyword">let</span> [first, ...rest] = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>];	<span class="hljs-comment">//剩余变量，rest 相当于[2,3,4]</span>
+</code></pre>
+<pre><code class="hljs language-typescript"><span class="hljs-comment">/*对象解构*/</span>
+<span class="hljs-keyword">let</span> o = {a: <span class="hljs-number">1</span>, b: <span class="hljs-number">2</span>, c: <span class="hljs-number">3</span>};
+<span class="hljs-keyword">let</span> {a,b} = o;
+<span class="hljs-keyword">let</span> {a = <span class="hljs-number">100</span>, b} = o;	<span class="hljs-comment">//默认值</span>
+<span class="hljs-keyword">let</span> {a,...r} = o; <span class="hljs-comment">//剩余变量，r = {b: 2，c: 3}</span>
+<span class="hljs-keyword">let</span> { a: one, b: two } = o;	<span class="hljs-comment">//属性重命名</span>
+<span class="hljs-keyword">let</span> { a: one, b: two }:{a: <span class="hljs-built_in">string</span>, b: <span class="hljs-built_in">number</span>} = o;	<span class="hljs-comment">//设置类型</span>
+<span class="hljs-comment">/*函数声明*/</span>
+<span class="hljs-keyword">type</span> C = { a: <span class="hljs-built_in">string</span>, b?: <span class="hljs-built_in">number</span> }
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">f</span>(<span class="hljs-params">{ a, b }: C</span>): <span class="hljs-title">void</span> </span>{<span class="hljs-comment">/*.......*/</span>} 
+<span class="hljs-comment">//传入一个C类型的对象，在函数内部生成a、b两个变量</span>
+</code></pre>
+</li>
 <li>
-<p>绑定的动作</p>
-<pre><code class="hljs language-react">class Ticker {
-    @observable tick = 0
-
-    @action.bound
-    increment() {
-        this.tick++ // 'this' 永远都是正确的
-    }
+<p>展开</p>
+<pre><code class="hljs language-typescript"><span class="hljs-comment">/*数组展开*/</span>
+<span class="hljs-keyword">let</span> ar = [<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>];
+<span class="hljs-keyword">let</span> arr = [<span class="hljs-number">1</span>, ...ar]
+<span class="hljs-comment">/*对象展开*/</span>
+<span class="hljs-keyword">let</span> o = {b: <span class="hljs-number">2</span>, c: <span class="hljs-number">3</span>}
+<span class="hljs-keyword">let</span> oo = {a: <span class="hljs-number">1</span>, ...o}
+<span class="hljs-comment">// 出现在展开对象后面的属性会覆盖前面的属性。</span>
+<span class="hljs-comment">//对象展开仅包含对象自身的可枚举属性。 大体上是说当你展开一个对象实例时，你会丢失其方法</span>
+</code></pre>
+</li>
+</ol>
+<h3 id="%E6%8E%A5%E5%8F%A3">接口</h3>
+<ol>
+<li>
+<p>概念：typescript的接口像是一种对<strong>对象</strong>结构的描述，像是一种自定义类型，将一个变量声明为该接口类型时，此变量的值就必须满足接口的描述，否则将编译不过</p>
+</li>
+<li>
+<p>可选属性，但一个接口定义的属性可有可无时，可以将其定义为可选类型，来避免编译报错</p>
+<pre><code class="hljs language-typescript"><span class="hljs-comment">/*必选*/</span>
+<span class="hljs-keyword">interface</span> SquareConfig {
+  color: <span class="hljs-built_in">string</span>;
+  width: <span class="hljs-built_in">number</span>;
+}
+<span class="hljs-comment">/*可选*/</span>
+<span class="hljs-keyword">interface</span> SquareConfig {
+  color?: <span class="hljs-built_in">string</span>;
+  width?: <span class="hljs-built_in">number</span>;
 }
 </code></pre>
 </li>
-</ul>
+<li>
+<p>只读属性：一些对象属性只能在对象刚刚创建的时候修改其值，其他时间是不允许修改的</p>
+<pre><code class="hljs language-typescript"><span class="hljs-keyword">interface</span> Point {
+    readonly x: <span class="hljs-built_in">number</span>;	<span class="hljs-comment">//用readonly来定义只读属性</span>
+    readonly y: <span class="hljs-built_in">number</span>;
+}
+<span class="hljs-comment">/*只读数组 ReadonlyArray&lt;T&gt;*/</span>
+<span class="hljs-keyword">let</span> a: <span class="hljs-built_in">number</span>[] = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>];
+<span class="hljs-keyword">let</span> ro: ReadonlyArray&lt;<span class="hljs-built_in">number</span>&gt; = a;
+ro[<span class="hljs-number">0</span>] = <span class="hljs-number">12</span>; <span class="hljs-comment">// error!</span>
+ro.push(<span class="hljs-number">5</span>); <span class="hljs-comment">// error!</span>
+ro.length = <span class="hljs-number">100</span>; <span class="hljs-comment">// error!</span>
+a = ro; <span class="hljs-comment">// error!</span>
+</code></pre>
+<p>对象字面量会被特殊对待而且会经过 额外属性检查，当将它们赋值给变量或作为参数传递的时候。 <strong>如果一个对象字面量</strong>存在任何“<strong>目标类型</strong>”不包含的属性时，你会得到一个错误。</p>
+<pre><code class="hljs language-typescript"><span class="hljs-comment">/*绕开检查*/</span>
+<span class="hljs-keyword">let</span> mySquare = createSquare({ width: <span class="hljs-number">100</span>, opacity: <span class="hljs-number">0.5</span> } <span class="hljs-keyword">as</span> SquareConfig);
+</code></pre>
+</li>
+<li>
+<p>可索引的类型: 共支持两种索引签名<strong>字符串</strong> 、<strong>数字</strong></p>
+<pre><code class="hljs language-typescript"><span class="hljs-keyword">interface</span> StringArray {
+  [index: <span class="hljs-built_in">number</span>]: <span class="hljs-built_in">string</span>;
+}
+<span class="hljs-keyword">let</span> myArray: StringArray = [<span class="hljs-string">"Bob"</span>, <span class="hljs-string">"Fred"</span>];
+<span class="hljs-comment">/* 错误：使用'string'索引，有时会得到number!*/</span>
+<span class="hljs-keyword">interface</span> NotOkay {	
+    [x: <span class="hljs-built_in">number</span>]: <span class="hljs-built_in">number</span>;	<span class="hljs-comment">//数字索引会转化为字符串索引，比如100或转化为"100"</span>
+    [x: <span class="hljs-built_in">string</span>]: <span class="hljs-built_in">string</span>;
+}
+<span class="hljs-keyword">interface</span> NumberDictionary {
+  	[index: <span class="hljs-built_in">string</span>]: <span class="hljs-built_in">number</span>;
+  	length: <span class="hljs-built_in">number</span>;    <span class="hljs-comment">// 可以，length是number类型</span>
+  	name: <span class="hljs-built_in">string</span>       <span class="hljs-comment">// 错误，`name`的类型与索引类型返回值的类型不匹配</span>
+}
+<span class="hljs-comment">/*只读*/</span>
+<span class="hljs-keyword">interface</span> ReadonlyStringArray {
+    readonly [index: <span class="hljs-built_in">number</span>]: <span class="hljs-built_in">string</span>; <span class="hljs-comment">//防止给索引赋值</span>
+}
+</code></pre>
+</li>
+<li>
+<p>函数类型</p>
+<pre><code class="hljs language-typescript"><span class="hljs-keyword">interface</span> SearchFunc {
+    (source: <span class="hljs-built_in">string</span>, subString: <span class="hljs-built_in">string</span>): <span class="hljs-built_in">boolean</span>;	
+	<span class="hljs-comment">//(参数1:参数1类型,参2数: 参数2类型): 返回类型</span>
+}
+<span class="hljs-keyword">let</span> mysearch: SearchFunc = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">s1:<span class="hljs-built_in">string</span>,s2:<span class="hljs-built_in">string</span></span>)</span>{
+    <span class="hljs-comment">//balabala.....</span>
+    <span class="hljs-comment">//函数的参数会逐个进行检查，要求对应位置上的参数类型是兼容的。</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>
+}
+</code></pre>
+</li>
+<li>
+<p>继承接口，extends 接口1, 接口2</p>
+</li>
+<li>
+<p>接口继承类：当接口继承了一个类类型时，它会继承类的成员但不包括其实现。 就好像接口声明了所有类中存在的成员，但并没有提供具体实现一样。 接口同样会继承到类的private和protected成员。</p>
+<p><strong>接口继承类形成的接口，实现该接口的类必须且只能是 <u>被继承类</u> 的子类</strong></p>
 </li>
 </ol>
-<h4 id="mobx%E4%BC%9A%E5%AF%B9%E4%BB%80%E4%B9%88%E5%81%9A%E5%87%BA%E5%8F%8D%E5%BA%94%EF%BC%9F">Mobx会对什么做出反应？</h4>
-<blockquote>
-<p>Mobx 会对在<strong>追踪函数</strong>执行过程中<strong>读取</strong>现存的可观察属性做出反应。</p>
-</blockquote>
-<p>调用过至少一次getter(注册观察者)，使用setter(执行过程)</p>
-<p>Mobx的observable函数就是通过普通对象生产一个拥有getter、setter属性的对象，其中getter的首次调用用于初始化初值并注册该属性的观察者，</p>
-<p>单例模式、观察者模式、</p>
+<h3 id="%E7%B1%BB">类</h3>
+<h5 id="%E7%BB%A7%E6%89%BF">继承</h5>
+<p>子类继承基类的public、protected属性和方法，</p>
+<ol>
+<li>在子类中可以通过this.xxx访问到xxx属性或方法，</li>
+<li>子类的构造函数内必须首先执行基类的构造方法,通过执行super()</li>
+<li>子类可以重写基类的方法，重写(xxx)后还是可以通过super.xxx() 访问到基类的方法。</li>
+</ol>
+<h5 id="%E7%B1%BB%E5%9E%8B%E5%85%BC%E5%AE%B9">类型兼容</h5>
+<ol>
+<li>两个类都没有public、protected的属性和方法，而且具有相同的公有属性和方法，那这两个类是兼容的，</li>
+<li>两个类都继承自一个基类并且有与上述一样的情况，那这两个类是兼容的</li>
+<li>兼容的类的实例值可互换。</li>
+</ol>
+<h5 id="%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6">访问控制</h5>
+<ol>
+<li>private ：不能在类外部使用，也不能在子类直接使用，子类只能通过基类的public、和protected方法间接访问，类的外部只能通过类实例的方法来间接访问私有的属性或方法</li>
+<li>protected：不能在类外部使用，能继承给子类，子类可直接通过this.xxx访问的到protected的方法或属性</li>
+<li>public：默认</li>
+</ol>
+<h5 id="%E5%8F%AA%E8%AF%BB%E5%B1%9E%E6%80%A7">只读属性</h5>
+<p>你可以使用 readonly关键字将属性设置为只读的。 只读属性必须在声明时或构造函数里被初始化。</p>
+<h5 id="%E5%8F%82%E6%95%B0%E5%B1%9E%E6%80%A7">参数属性</h5>
+<pre><code class="hljs language-typescript"><span class="hljs-keyword">class</span> Animal {
+    <span class="hljs-keyword">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">private</span> name: <span class="hljs-built_in">string</span></span>) { } <span class="hljs-comment">//自动赋值了</span>
+    move(distanceInMeters: <span class="hljs-built_in">number</span>) {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`<span class="hljs-subst">${this.name}</span> moved <span class="hljs-subst">${distanceInMeters}</span>m.`</span>);
+    }
+}
+</code></pre>
+<h5 id="%E5%AD%98%E5%8F%96%E5%99%A8">存取器</h5>
+<ol>
+<li>get name(){}</li>
+<li>set name(str){}</li>
+</ol>
+<h5 id="%E9%9D%99%E6%80%81%E5%B1%9E%E6%80%A7">静态属性</h5>
+<p>用static修饰属性，该属性是属于类的，实在类建立时初始化的，而不是创建实例时，可以同过 <strong>类名.xxx</strong> 直接访问，所有的子类可共享该属性。</p>
 
         </div>
         <div class="article_item_footer">
             <div class="read_btn">
-                <a href="/前端开发/mobx.html">Read</a>
+                <a href="/前端开发/typeScript.html">Read</a>
             </div>
         </div>
     </section>
     
     <section class="article_item">
-        <h3><a href="/前端开发/pk.html">pk</a></h3>
-        <div class="preview md_html">
-            <p>在我们最初谈及获取用var声明的变量时，我们简略地探究了一下在获取到了变量之后它的行为是怎样的。 直观地讲，每次进入一个作用域时，它创建了一个变量的 环境。 就算作用域内代码已经执行完毕，这个环境与其捕获的变量依然存在</p>
-<p>当let声明出现在循环体里时拥有完全不同的行为。 不仅是在循环里引入了一个新的变量环境，而是针对 每次迭代都会创建这样一个新作用域。 这就是我们在使用立即执行的函数表达式时做的事，所以在 setTimeout例子里我们仅使用let声明就可以了。</p>
+        <h2><a href="/前端开发/VUE.html">VUE</a></h2>
+        <div class="preview">
+            <h3 id="%E6%A6%82%E5%BF%B5">概念</h3>
+<h4 id="%E9%A6%96%E5%85%88vue%E5%AE%9E%E4%BE%8B%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F">首先vue实例是什么？</h4>
+<p>首先是一个js对象，负责管理视图数据，视图的渲染根据的是vue实例data，而视图上的动作可以与vue实例的方法绑定从而修改data，这就是一个双向的过程。</p>
+<p>那么html模板的作用就明显了，vue实例需要绑定到html元素上才会起作用，所以html模板就是通过vue实例提供的数据与方法来动态渲染视图。</p>
+<h4 id="vue%E7%BB%84%E4%BB%B6">vue组件</h4>
+<p>将vue实例与html模板组合在一块，就可以组成一个既可以管理自身状态又可以与外界交互的vue组件。（当然对于一个vue组件来说vue实例并不是必要的）</p>
+<h4 id="vue%E5%AE%9E%E4%BE%8B%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F">vue实例生命周期</h4>
+<p>vue实例从创建到销毁会经历一系列的阶段，在这些阶段会执行不同的方法，通过重写这些方法来在不同阶段执行一些特定的任务。</p>
+<p><strong>beforeCreate</strong> -&gt; created -&gt; beforeMount -&gt; mounted -&gt; beforeUpdate -&gt; updated -&gt; <strong>destroyed</strong></p>
+<h4 id="%E6%A8%A1%E6%9D%BF%E8%AF%AD%E6%B3%95">模板语法</h4>
+<h5 id="%E6%8F%92%E5%80%BC">插值</h5>
+<ol>
+<li>
+<p>文本</p>
+<p>​</p>
+<pre><code class="hljs language-vue">&lt;span&gt;Message: {{ msg }}&lt;/span&gt;
+</code></pre>
+</li>
+<li>
+<p>原始HTML</p>
+<pre><code class="hljs language-vue">&lt;p&gt;Using mustaches: {{ rawHtml }}&lt;/p&gt;
+&lt;p&gt;
+  	Using v-html directive: 
+  	&lt;span v-html=&quot;rawHtml&quot;&gt;&lt;/span&gt;
+&lt;/p&gt;
+</code></pre>
+</li>
+<li>
+<p>html特性</p>
+<p>给html设置特性时，</p>
+</li>
+</ol>
+<h4 id="%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4">自定义指令</h4>
+<pre><code class="hljs language-javascript"><span class="hljs-comment">//全局</span>
+Vue.directive(<span class="hljs-string">'focus'</span>, {
+  <span class="hljs-comment">// 当被绑定的元素插入到 DOM 中时……</span>
+  inserted: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">el</span>) </span>{
+    <span class="hljs-comment">// 聚焦元素</span>
+    el.focus()
+  }
+})
+<span class="hljs-comment">//局部</span>
+directives: {
+  <span class="hljs-attr">focus</span>: {
+    <span class="hljs-comment">// 指令的定义</span>
+    inserted: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">el</span>) </span>{
+      el.focus()
+    }
+  }
+}
+<span class="hljs-comment">//使用，focus时将自动获得焦点</span>
+&lt;input v-focus&gt;
+</code></pre>
+<h5 id="%E6%8C%87%E4%BB%A4%E9%92%A9%E5%AD%90">指令钩子</h5>
+<ul>
+<li>bind: 只调用一次，指令第一次绑定到元素时调用</li>
+<li>inserted：被绑定元素插入父节点时调用</li>
+<li>update：所在组件的 VNode 更新时调用，但是可能发生在其子 VNode 更新之前。</li>
+<li>componentUpdate：指令所在组件的 VNode 及其子 VNode 全部更新后调用。</li>
+<li>unbind：只调用一次，指令与元素解绑时调。</li>
+</ul>
+<h5 id="%E6%8C%87%E4%BB%A4%E9%92%A9%E5%AD%90%E5%8F%82%E6%95%B0">指令钩子参数</h5>
+<ul>
+<li>el：指令所绑定的元素，可以用来直接操作 DOM 。</li>
+<li>binding：一个对象
+<ul>
+<li>name:指令名，不带 v-</li>
+<li>value：指令值</li>
+<li>oldValue：上一个之指令值</li>
+<li>expression：字符串形式的指令表达式</li>
+<li>arg：传给指令的参数，可选</li>
+<li>modifiers：一个包含修饰符的对象。</li>
+</ul>
+</li>
+<li>vnode：Vue编译生成的虚拟节点</li>
+<li>oldVnode：上一个虚拟节点，仅在update和componentUpdated钩子中可用</li>
+</ul>
+<h4 id="%E8%BF%87%E6%BB%A4%E5%99%A8-vue.filter">过滤器 Vue.filter</h4>
+<pre><code class="hljs language-javascript"><span class="hljs-comment">//全局</span>
+Vue.filter(<span class="hljs-string">'my-filter'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">value</span>) </span>{
+  <span class="hljs-comment">// 返回处理后的值</span>
+})
+<span class="hljs-comment">//局部</span>
+filters: {
+  <span class="hljs-string">"my-filter"</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">value</span>) </span>{
+    <span class="hljs-comment">// 返回处理后的值</span>
+  }
+}
+<span class="hljs-comment">//使用</span>
+<span class="hljs-comment">// 在双花括号中</span>
+{{ data | myFilter }}
+<span class="hljs-comment">// 在 `v-bind` 中</span>
+&lt;div v-bind:id=<span class="hljs-string">"rawId | myFilter"</span>&gt;<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+<span class="hljs-comment">//接受参数。filterA接受的参数 message、arg1、arg2</span>
+{{ message | filterA(<span class="hljs-string">'arg1'</span>, arg2) }}
+</code></pre>
+<h4 id="%E5%85%A8%E5%B1%80%E7%BB%84%E4%BB%B6-vue.component">全局组件 Vue.component</h4>
+<pre><code class="hljs language-javascript"><span class="hljs-comment">// 注册组件，传入一个扩展过的构造器</span>
+Vue.component(<span class="hljs-string">'my-component'</span>, Vue.extend({ <span class="hljs-comment">/* ... */</span> }))
+
+<span class="hljs-comment">// 注册组件，传入一个选项对象 (自动调用 Vue.extend)</span>
+Vue.component(<span class="hljs-string">'my-component'</span>, { <span class="hljs-comment">/* ... */</span> })
+
+<span class="hljs-comment">// 获取注册的组件 (始终返回构造器)</span>
+<span class="hljs-keyword">var</span> MyComponent = Vue.component(<span class="hljs-string">'my-component'</span>)
+</code></pre>
+<h4 id="%E6%8F%92%E4%BB%B6-vue.use(-plugin-)">插件 Vue.use( plugin )</h4>
+<p>安装Vue插件，为vue添加全局功能，{Object | Function} plugin，如果是Object 必须提供install方法，如果是Function则直接当作install方法。</p>
+<pre><code class="hljs language-javascript"><span class="hljs-comment">//定义插件</span>
+MyPlugin.install = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">Vue, options</span>) </span>{
+  <span class="hljs-comment">// 1. 添加全局方法或属性</span>
+  Vue.myGlobalMethod = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-comment">// 逻辑...</span>
+  }
+
+  <span class="hljs-comment">// 2. 添加全局资源</span>
+  Vue.directive(<span class="hljs-string">'my-directive'</span>, {
+    bind (el, binding, vnode, oldVnode) {
+      <span class="hljs-comment">// 逻辑...</span>
+    }
+    ...
+  })
+
+  <span class="hljs-comment">// 3. 注入组件</span>
+  Vue.mixin({
+    <span class="hljs-attr">created</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+      <span class="hljs-comment">// 逻辑...</span>
+    }
+    ...
+  })
+
+  <span class="hljs-comment">// 4. 添加实例方法</span>
+  Vue.prototype.$myMethod = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">methodOptions</span>) </span>{
+    <span class="hljs-comment">// 逻辑...</span>
+  }
+}
+<span class="hljs-comment">//注册插件</span>
+Vue.use(MyPlugin, { <span class="hljs-attr">someOption</span>: <span class="hljs-literal">true</span> })
+<span class="hljs-comment">//使用....</span>
+</code></pre>
+<h4 id="%E5%85%A8%E5%B1%80%E6%B7%B7%E5%90%88-mixin">全局混合 mixin</h4>
+<pre><code class="hljs language-javascript"><span class="hljs-comment">// 为自定义的选项 'myOption' 注入一个处理器。</span>
+Vue.mixin({
+  <span class="hljs-attr">created</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> myOption = <span class="hljs-keyword">this</span>.$options.myOption
+    <span class="hljs-keyword">if</span> (myOption) {
+      <span class="hljs-built_in">console</span>.log(myOption)
+    }
+  }
+})
+
+<span class="hljs-keyword">new</span> Vue({
+  <span class="hljs-attr">myOption</span>: <span class="hljs-string">'hello!'</span>
+})
+<span class="hljs-comment">// =&gt; "hello!"</span>
+</code></pre>
+<p>自定义选项合并策略 Vue.config.optionMergeStrategies.myOption = function..</p>
+<h4 id="%E6%B8%B2%E6%9F%93%E5%87%BD%E6%95%B0render">渲染函数render</h4>
+<p>render函数的作用是来代替模板语法，当模板语法过于冗长，而且根据业务场景无法删减时，建议使用render。</p>
+<p>render函数可以在定义组件时使用，也可以在渲染数据时使用（在渲染时对数据加工，修改外观、行为等，而不是单纯的数据渲染）</p>
+<p>render函数第一个函数必须是 <strong>createElement</strong> 函数（别名 <strong>h</strong>），其他参数随意</p>
+<p><strong>createElement</strong> 函数参数结构与dom节点树类似，第一个参数是一个字符串作为元素标签名，第二个参数是一个节点配置项（js对象），第三个参数是一个节点数组，节点可以是任意类型，所以可以嵌套<strong>createElement</strong> 来构造复杂的节点数。</p>
+<p>配置项对象</p>
+<pre><code class="hljs language-javascript">{
+  <span class="hljs-comment">// 和`v-bind:class`一样的 API</span>
+  <span class="hljs-string">'class'</span>: {
+    <span class="hljs-attr">foo</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">bar</span>: <span class="hljs-literal">false</span>
+  },
+  <span class="hljs-comment">// 和`v-bind:style`一样的 API</span>
+  style: {
+    <span class="hljs-attr">color</span>: <span class="hljs-string">'red'</span>,
+    <span class="hljs-attr">fontSize</span>: <span class="hljs-string">'14px'</span>
+  },
+  <span class="hljs-comment">// 正常的 HTML 特性</span>
+  attrs: {
+    <span class="hljs-attr">id</span>: <span class="hljs-string">'foo'</span>
+  },
+  <span class="hljs-comment">// 组件 props</span>
+  props: {
+    <span class="hljs-attr">myProp</span>: <span class="hljs-string">'bar'</span>
+  },
+  <span class="hljs-comment">// DOM 属性</span>
+  domProps: {
+    <span class="hljs-attr">innerHTML</span>: <span class="hljs-string">'baz'</span>
+  },
+  <span class="hljs-comment">// 事件监听器基于 `on`</span>
+  <span class="hljs-comment">// 所以不再支持如 `v-on:keyup.enter` 修饰器</span>
+  <span class="hljs-comment">// 需要手动匹配 keyCode。</span>
+  on: {
+    <span class="hljs-attr">click</span>: <span class="hljs-keyword">this</span>.clickHandler
+  },
+  <span class="hljs-comment">// 仅对于组件，用于监听原生事件，而不是组件内部使用 `vm.$emit` 触发的事件。</span>
+  nativeOn: {
+    <span class="hljs-attr">click</span>: <span class="hljs-keyword">this</span>.nativeClickHandler
+  },
+  <span class="hljs-comment">// 自定义指令。注意，您无法对绑定中的 `oldValue` 赋值</span>
+  <span class="hljs-comment">// Vue 会为您持续追踪</span>
+  directives: [
+    {
+      <span class="hljs-attr">name</span>: <span class="hljs-string">'my-custom-directive'</span>,
+      <span class="hljs-attr">value</span>: <span class="hljs-string">'2'</span>,
+      <span class="hljs-attr">expression</span>: <span class="hljs-string">'1 + 1'</span>,
+      <span class="hljs-attr">arg</span>: <span class="hljs-string">'foo'</span>,
+      <span class="hljs-attr">modifiers</span>: {
+        <span class="hljs-attr">bar</span>: <span class="hljs-literal">true</span>
+      }
+    }
+  ],
+  <span class="hljs-comment">// Scoped slots in the form of</span>
+  <span class="hljs-comment">// { name: props =&gt; VNode | Array&lt;VNode&gt; }</span>
+  scopedSlots: {
+    <span class="hljs-attr">default</span>: <span class="hljs-function"><span class="hljs-params">props</span> =&gt;</span> createElement(<span class="hljs-string">'span'</span>, props.text)
+  },
+  <span class="hljs-comment">// 如果组件是其他组件的子组件，需为插槽指定名称</span>
+  slot: <span class="hljs-string">'name-of-slot'</span>,
+  <span class="hljs-comment">// 其他特殊顶层属性</span>
+  key: <span class="hljs-string">'myKey'</span>,
+  <span class="hljs-attr">ref</span>: <span class="hljs-string">'myRef'</span>
+}
+</code></pre>
+<h3 id="%E9%85%8D%E7%BD%AE%E9%80%89%E9%A1%B9">配置选项</h3>
+<h4 id="%E6%95%B0%E6%8D%AE">数据</h4>
+<h5 id="data">data</h5>
+<ul>
+<li><strong>类型</strong>：<code>Object | Function</code></li>
+<li><strong>限制</strong>：组件的定义只接受 <code>function</code>。</li>
+</ul>
+<blockquote>
+<p>Vue 实例的数据对象。Vue 将会递归将 data 的属性<strong>转换为 getter/setter</strong>，从而让 data 的属性能够响应数据变化。<strong>对象必须是纯粹的对象</strong> (含有零个或多个的 key/value 对)：浏览器 API 创建的原生对象，原型上的属性会被忽略。大概来说，data 应该只能是数据 - 不推荐观察拥有状态行为的对象。</p>
+</blockquote>
+<blockquote>
+<p>以 <code>_</code> 或 <code>$</code> 开头的属性 <strong>不会</strong> 被 Vue 实例代理，因为它们可能和 Vue 内置的属性、API 方法冲突。你可以使用例如 <code>vm.$data._property</code> 的方式访问这些属性。</p>
+</blockquote>
+<p>注意：不应使用箭头函数</p>
+<h5 id="props">props</h5>
+<p><strong>详情</strong> : <strong>props</strong> 可以是数组或对象，用于接收来自父组件的数据。props 可以是简单的数组，或者使用对象作为替代，对象允许配置高级选项，如类型检测、自定义校验和设置默认值。</p>
+<pre><code class="hljs language-javascript"><span class="hljs-comment">// 对象语法，提供校验</span>
+Vue.component(<span class="hljs-string">'props-demo-advanced'</span>, {
+  <span class="hljs-attr">props</span>: {
+    <span class="hljs-comment">// 检测类型</span>
+    height: <span class="hljs-built_in">Number</span>,
+    <span class="hljs-comment">// 检测类型 + 其他验证</span>
+    age: {
+      <span class="hljs-attr">type</span>: <span class="hljs-built_in">Number</span>,
+      <span class="hljs-attr">default</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-attr">required</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">validator</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">value</span>) </span>{
+        <span class="hljs-keyword">return</span> value &gt;= <span class="hljs-number">0</span>
+      }
+    }
+  }
+})
+</code></pre>
+<h5 id="propsdata">propsData</h5>
+<p>用于通过 new 创建实例时传递 props</p>
+<pre><code class="hljs language-javascript"><span class="hljs-keyword">var</span> Comp = Vue.extend({
+  <span class="hljs-attr">props</span>: [<span class="hljs-string">'msg'</span>],
+  <span class="hljs-attr">template</span>: <span class="hljs-string">'&lt;div&gt;{{ msg }}&lt;/div&gt;'</span>
+})
+
+<span class="hljs-keyword">var</span> vm = <span class="hljs-keyword">new</span> Comp({
+  <span class="hljs-attr">propsData</span>: {
+    <span class="hljs-attr">msg</span>: <span class="hljs-string">'hello'</span>
+  }
+})
+</code></pre>
+<h5 id="computed">computed</h5>
+<p>计算属性，属性值必须是个函数，或者是一个具有get、set方法的对象，计算属性的结果会被缓存，是有实例内的相应式数据会触发它的重新计算，其他的变化都不会？？</p>
+<h5 id="methods">methods</h5>
+<p>methods 将被混入到 Vue 实例中。可以直接通过 VM 实例访问这些方法，或者在指令表达式中使用。方法中的 this 自动绑定为 Vue 实例。</p>
+<h5 id="watch">watch</h5>
+<p>一个对象，键是需要观察的表达式，值是对应回调函数。值也可以是方法名，或者包含选项的对象。Vue 实例将会在实例化时调用 $watch()，遍历 watch 对象的每一个属</p>
+<pre><code class="hljs language-javascript"><span class="hljs-keyword">var</span> vm = <span class="hljs-keyword">new</span> Vue({
+  <span class="hljs-attr">data</span>: {
+    <span class="hljs-attr">a</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">b</span>: <span class="hljs-number">2</span>,
+    <span class="hljs-attr">c</span>: <span class="hljs-number">3</span>,
+    <span class="hljs-attr">d</span>: <span class="hljs-number">4</span>
+  },
+  <span class="hljs-attr">watch</span>: {
+    <span class="hljs-attr">a</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">val, oldVal</span>) </span>{
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'new: %s, old: %s'</span>, val, oldVal)
+    },
+    <span class="hljs-comment">// 方法名</span>
+    b: <span class="hljs-string">'someMethod'</span>,
+    <span class="hljs-comment">// 深度 watcher</span>
+    c: {
+      <span class="hljs-attr">handler</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">val, oldVal</span>) </span>{ <span class="hljs-comment">/* ... */</span> },
+      <span class="hljs-attr">deep</span>: <span class="hljs-literal">true</span>
+    },
+    <span class="hljs-comment">// 该回调将会在侦听开始之后被立即调用</span>
+    d: {
+      <span class="hljs-attr">handler</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">val, oldVal</span>) </span>{ <span class="hljs-comment">/* ... */</span> },
+      <span class="hljs-attr">immediate</span>: <span class="hljs-literal">true</span>
+    }
+  }
+})
+vm.a = <span class="hljs-number">2</span> <span class="hljs-comment">// =&gt; new: 2, old: 1</span>
+</code></pre>
+<h4 id="dom">DOM</h4>
+<p>vue实例最终是要挂载到DOM节点上才会起作用，实例如何挂载到DOM节点？可以通过el、template、tender、renderError等属性来配置。</p>
+<h5 id="el">el</h5>
+<p>在由new创建实例时使用，可以是css选择器，或者HTMLElement实例</p>
+<h5 id="template">template</h5>
+<p>一个字符串模板作为vue实例的标识使用。</p>
+<h5 id="render">render</h5>
+<p>直接使用render函数传入的createElement来构造节点树</p>
+<h5 id="rendererroe">renderErroe</h5>
+<p>....</p>
+<h4 id="%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%92%A9%E5%AD%90">生命周期钩子</h4>
+<h4 id="%E5%AE%9E%E4%BE%8B%E5%B1%9E%E6%80%A7">实例属性</h4>
+<ul>
+<li>
+<p><strong>vm.$slots</strong> : 用来访问被插槽分发的内容。(slot=&quot;foo&quot; 中的内容将会在 vm.$slots.foo 中被找到),default 属性包括了所有没有被包含在具名插槽中的节点。</p>
+</li>
+<li>
+<p><strong>vm.$refs</strong> : 持有已注册过ref的所有子组件</p>
+<pre><code class="hljs language-javascript">
+</code></pre>
+<p>​</p>
+</li>
+</ul>
 
         </div>
         <div class="article_item_footer">
             <div class="read_btn">
-                <a href="/前端开发/pk.html">Read</a>
+                <a href="/前端开发/VUE.html">Read</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="article_item">
+        <h2><a href="/前端开发/webpack.html">webpack</a></h2>
+        <div class="preview">
+            <h3 id="%E5%85%A5%E5%8F%A3">入口</h3>
+<h4 id="%E5%8D%95%E5%85%A5%E5%8F%A3">单入口</h4>
+<pre><code class="hljs language-javascript"><span class="hljs-comment">//简写</span>
+<span class="hljs-keyword">const</span> config = {
+  <span class="hljs-attr">entry</span>: <span class="hljs-string">'./path/to/my/entry/file.js'</span>
+};
+<span class="hljs-built_in">module</span>.exports = config
+<span class="hljs-comment">//对象写法</span>
+<span class="hljs-keyword">const</span> config = {
+  <span class="hljs-attr">entry</span>: {
+    <span class="hljs-attr">main</span>: <span class="hljs-string">'./path/to/my/entry/file.js'</span>
+  }
+};
+</code></pre>
+<p>多入口（多页面）</p>
+<pre><code class="hljs language-javascript"><span class="hljs-comment">//告诉webpack 需要构建 3 个独立分离的依赖图</span>
+<span class="hljs-keyword">const</span> config = {
+  <span class="hljs-attr">entry</span>: {
+    <span class="hljs-attr">pageOne</span>: <span class="hljs-string">'./path/to/my/one.js'</span>,
+    <span class="hljs-attr">pageTwo</span>: <span class="hljs-string">'./path/to/my/two.js'</span>
+  }
+};
+</code></pre>
+<h3 id="%E8%BE%93%E5%87%BA">输出</h3>
+<p><strong>注意</strong> ：即使可以存在多个入口起点，但只指定一个输出配置</p>
+<pre><code class="hljs language-javascript"><span class="hljs-comment">//创建单个chunk</span>
+<span class="hljs-keyword">const</span> config = {
+  <span class="hljs-attr">output</span>: {
+    <span class="hljs-attr">filename</span>:<span class="hljs-string">'bundle.js'</span>	<span class="hljs-comment">//输出文件名</span>
+    path:<span class="hljs-string">'/home/proj/public/assets'</span>	<span class="hljs-comment">//输出路径</span>
+  }
+}
+<span class="hljs-comment">//创建多个chunk</span>
+{
+  <span class="hljs-attr">entry</span>: {
+    <span class="hljs-attr">app</span>: <span class="hljs-string">'./src/app.js'</span>,
+    <span class="hljs-attr">search</span>: <span class="hljs-string">'./src/search.js'</span>
+  },
+  <span class="hljs-attr">output</span>: {
+    <span class="hljs-attr">filename</span>: <span class="hljs-string">'[name].js'</span>,	<span class="hljs-comment">//[name]代表入口文件名称</span>
+    path: __dirname + <span class="hljs-string">'/dist'</span>	<span class="hljs-comment">//__dirname魔术变量</span>
+  }
+}
+</code></pre>
+<h3 id="loader">loader</h3>
+<p>用于对模块的源代码进行转换。处理时机是 import 或加载模块时</p>
+<pre><code class="hljs language-javascript"><span class="hljs-comment">//简写模式</span>
+<span class="hljs-built_in">module</span>.exports = {
+  <span class="hljs-attr">module</span>: {
+    <span class="hljs-attr">rules</span>: [
+      { <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.css$/</span>, <span class="hljs-attr">use</span>: <span class="hljs-string">'css-loader'</span> },<span class="hljs-comment">//test文件匹配规则 </span>
+      { <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.ts$/</span>, <span class="hljs-attr">use</span>: <span class="hljs-string">'ts-loader'</span> }	<span class="hljs-comment">//use使用的loader插件 ，字符串或对象数组</span>
+    ]
+  }
+};
+<span class="hljs-comment">//详细模式</span>
+  <span class="hljs-built_in">module</span>: {
+    <span class="hljs-attr">rules</span>: [
+      {
+        <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.css$/</span>,
+        <span class="hljs-attr">use</span>: [
+          { <span class="hljs-attr">loader</span>: <span class="hljs-string">'style-loader'</span> },
+          {
+            <span class="hljs-attr">loader</span>: <span class="hljs-string">'css-loader'</span>,
+            <span class="hljs-attr">options</span>: {
+              <span class="hljs-attr">modules</span>: <span class="hljs-literal">true</span>
+            }
+          }
+        ]
+      }
+    ]
+  }
+</code></pre>
+<ul>
+<li>支持链式传递（给use属性传递一个数组），前一个loader将处理结果传递给下个loader处理</li>
+<li>loader支持同步或异步</li>
+<li>能接受查询参数？？</li>
+<li>可以通过options对象进行配置</li>
+<li>loader能够产生额外的任意文件</li>
+</ul>
+
+        </div>
+        <div class="article_item_footer">
+            <div class="read_btn">
+                <a href="/前端开发/webpack.html">Read</a>
             </div>
         </div>
     </section>
@@ -755,21 +1108,17 @@ React.render(&lt;Timer /&gt;, document.body)
                 3
             </a>
         
-            <a href="/articles/4.html" class="page_num_item ">
-                4
-            </a>
-        
     </div>
     <div class="page_next">
         <a class="page_next_item" href="/articles/3.html">
             <i class="iconfont icon-next"></i>
         </a>
-        <a class="page_next_item" href="/articles/4.html">LAST</a>
+        <a class="page_next_item" href="/articles/3.html">LAST</a>
     </div>
     </div>
 </div>
     </div>
-    <aside>
+    <aside class="aside-box">
         <div class="profile_banner"></div>
         <div class="profile_logo">
         <img src="/assets/logo.png" alt="">
@@ -778,10 +1127,10 @@ React.render(&lt;Timer /&gt;, document.body)
             qoxop
         </div>
         <div class="profile_motto">
-            一只单身的帅狗, 打代码、打游戏、撸猫、无恶不做~~~
+            bala~~~ blablabal~~~
         </div>
         <div class="profile_info">
-        <div>
+        <div onclick="exec('gotoGithub')">
             <div class="iconbox"><em class="iconfont icon-github"></em></div>
             <div class="icontext">github</div>
         </div>
@@ -793,8 +1142,14 @@ React.render(&lt;Timer /&gt;, document.body)
         </div>
     </aside>
 </div>
-        </div>
-        <footer></footer>
+        </main>
+        <footer id="footer"></footer>
+      </article>
+      <div class="shortcut-tools">
+          <div onclick="exec('scrollToTop')" class="goto-top-btn">Top</div>
+          <div onclick="exec('scrollToBottom')" class="goto-bottom-btn">Bottom</div>
+          <div onclick="exec('goback')" class="goback-btn">goback</div>
       </div>
+      <script src="/assets/common.js"></script>
 </body>
 </html>

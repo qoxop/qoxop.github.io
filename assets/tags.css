@@ -1,15 +1,24 @@
 .tags_list {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.99);
     margin-top: 20px;
     min-height: 80vh;
     margin-bottom: 15px;
     padding-bottom: 30px;
+    overflow: hidden;
 }
 .tags_list h3, .tags_list h2 {
     padding: 15px 0 15px 30px;
 }
+.tags_links h2 {
+    font-size: 30px;
+    line-height: 1.2em;
+    padding-top: 1.2em;
+    margin: 0;
+}
+
 .tags_links ul{
-    padding: 0px 30px 10px 20px;
+    margin-top: 0.4em;
+    padding: 0px 30px 10px 30px;
 }
 .tags_links li{
     display: inline-block;

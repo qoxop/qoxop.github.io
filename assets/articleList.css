@@ -1,18 +1,19 @@
 .article_list .article_item {
     box-sizing: border-box;
     margin-top: 20px;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 1);
     border-radius: 6px 0 0 0;
-    /* padding-right: 30px; */
+    overflow: hidden;
   }
-  .article_item h3 {
-    padding: 15px 0px 0 24px;
+  .article_item > h2 {
+    padding-left: 24px;
+    line-height: 1.4em;
+    margin: 1.2em 0.4em .4em 0.0em;
   }
-  .article_item h3 > a {
+  .article_item > h2 > a {
     display: inline-block;
     text-decoration: unset;
     color: chocolate;
-    padding: 0px 6px 6px 6px;
   }
   .article_item a:hover {
     padding-bottom: 3px;
@@ -38,68 +39,125 @@
     background: -webkit-linear-gradient(to top, rgba(255,255,255, 0.9), rgba(255,255,255, 0));
     background: linear-gradient(to top, rgba(255,255,255, 0.9), rgba(255,255,255, 0));
   }
-  .article_item_footer {
-      border-top: 1px solid #efefef;
-      min-height: 60px;
-      position: relative;
+  .preview > * {
+    display: none;
   }
-  .article_item_footer .read_btn {
-      height: 40px;
-      line-height: 40px;
-      width: 70px;
-      text-align: center;
-      background-color: #eee;
-      position: absolute;
-      bottom: 10px;
-      right: 20px;
-      color: #666;
-      font-weight: bold;
-      cursor: pointer;
+  .preview > div:first-of-type,
+  .preview > pre:first-of-type,
+  .preview > p:first-of-type,
+  .preview > blockquote:first-of-type,
+  .preview > h3:first-of-type,
+  .preview > ul:first-of-type {
+    display: block !important;
   }
-  .article_item_footer .read_btn:hover {
-      background-color: chocolate;
-      color: #fff;
-      text-decoration: underline;
+  .preview ul, .preview ol {
+    padding: 0 0 0 30px;
   }
-  /* 分页条 */
-  .page_box {
-    margin: 25px 0;
-    display: flex;
-    flex-flow: row nowrap;
-    font-weight: 600;
-  }
-  .page_box .page_num {
-    flex: 1;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    margin-right: 10px;
-  }
-  .page_next_item, .page_pre_item {
-    display: block;
-    background-color: rgba(255, 255, 255, 0.9);
-    width: 60px;
+  .md_html_article li {
+    margin: 8px 0 ;
+    list-style: disc;
+}
+.preview li {
+  margin: 8px 0 ;
+  list-style: disc;
+}
+.preview > h3 {
+  margin: 1em 0;
+  line-height: 1.4em;
+}
+.preview > p {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  line-height: 1.6;
+  text-indent: 1.8em;
+}
+.preview > pre {
+  padding: 1px 15px;
+}
+.preview blockquote {
+  padding: 0 1em;
+  margin: 14px 0;
+  border: 2px dashed #d0dfda;
+  border-radius: 5px;
+  color: #606060;
+  background: #f9f9f9;
+  -webkit-transition: all, 0.3s;
+  -moz-transition: all, 0.3s;
+  -ms-transition: all, 0.3s;
+  -o-transition: all, 0.3s;
+  transition: all, 0.3s;
+  font-style: normal !important;
+  line-height: 1.4;
+}
+.preview blockquote >:first-child {
+  margin-top: 1em;
+}
+.preview blockquote >:last-child {
+  margin-bottom: inherit;
+}
+
+.article_item_footer {
+    border-top: 1px solid #efefef;
+    min-height: 60px;
+    position: relative;
+}
+.article_item_footer .read_btn {
     height: 40px;
     line-height: 40px;
+    width: 70px;
     text-align: center;
-    margin-right: 10px;
-    display: inline-block;
+    background-color: #eee;
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    color: #666;
+    font-weight: bold;
     cursor: pointer;
-  }
-  .page_num_item {
-    display: block;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    text-align: center;
-    border-radius: 5px;
-    margin: 0 5px;
-    font-size: 18px;
-    background-color: rgba(255, 255, 255, 0.5);
-    color: #fff;
-    cursor: pointer;
-  }
-  .page_next_item:hover, .page_pre_item:hover, .page_num_item:hover, .page_num .actived {
+}
+.article_item_footer .read_btn:hover {
     background-color: chocolate;
     color: #fff;
-  }
+    text-decoration: underline;
+}
+  /* 分页条 */
+.page_box {
+  margin: 25px 0;
+  display: flex;
+  flex-flow: row nowrap;
+  font-weight: 600;
+}
+.page_box .page_num {
+  flex: 1;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  margin-right: 10px;
+}
+.page_next_item, .page_pre_item {
+  display: block;
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 60px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  margin-right: 10px;
+  display: inline-block;
+  cursor: pointer;
+}
+.page_num_item {
+  display: block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 5px;
+  margin: 0 5px;
+  font-size: 18px;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #fff;
+  cursor: pointer;
+}
+.page_next_item:hover, .page_pre_item:hover, .page_num_item:hover, .page_num .actived {
+  background-color: chocolate;
+  color: #fff;
+}

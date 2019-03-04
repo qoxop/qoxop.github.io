@@ -1,15 +1,23 @@
 .category_list {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.99);
     margin-top: 20px;
     min-height: 80vh;
     margin-bottom: 15px;
     padding-bottom: 30px;
+    overflow: hidden;
 }
 .category_list h3, .category_list h2 {
   padding: 15px 0 15px 30px;
 }
+.category_links h2 {
+  font-size: 30px;
+  line-height: 1.2em;
+  padding-top: 1.2em;
+  margin: 0;
+}
 .category_links ul{
-  padding: 0px 30px 10px 20px;
+  margin-top: 0.4em;
+  padding: 0px 30px 10px 30px;
 }
 .category_links li{
   display: inline-block;
