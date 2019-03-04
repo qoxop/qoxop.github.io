@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content=",,,,,,,,,">
+    <title>qoxop | 首页(24)</title>
+    <link rel="stylesheet" href="/assets/common.css">
+    <link rel="stylesheet" href="/assets/articleList.css">
+    <link href="/assets/monokai_sublime.min.css" rel="stylesheet">  
+    <script async src="/assets/highlight.min.js"></script>
+     
+      <script src="/assets/hot_reload.js"></script>
+    
+</head>
+<body>
+    <article id="app">
+        <header>
+          <h1>张集伟的个人博客</h1>
+          <div class="content_box header_inner">
+            <div class="logo">
+              <div class="logoImg">
+                <img src="/assets/icon.png" alt="">
+              </div>
+              <div class="logoText">
+                jiw
+              </div>
+            </div>
+            <nav class="navigator">
+              <ul>
+                
+                <li class="actived">
+                    <a href="#">
+                        HOME
+                    </a>
+                </li>
+                
+                <li class="">
+                    <a href="/category.html">
+                        CATEGORY
+                    </a>
+                </li>
+                
+                <li class="">
+                    <a href="/tags.html">
+                        标签
+                    </a>
+                </li>
+                
+                <li class="">
+                    <a href="/link.html">
+                        链接
+                    </a>
+                </li>
+                
+                <li class="">
+                    <a href="/about.html">
+                        关于我
+                    </a>
+                </li>
+                
+              </ul>
+            </nav>
+          </div>
+        </header>
+        <main id="main">
+           <div class="content_box">
+    <div id="left_content">
+        <!-- 这里存放主要内容 -->
+       <div class="article_list">
+    
+    <section class="article_item">
+        <h3><a href="/前端开发/HTML语义化及其应用.html">HTML语义化及其应用</a></h3>
+        <div class="preview md_html">
+            <p>首先我对html语义化的理解是，页面的html标签结构能很好地表达页面的想呈现的内容以及内容的结构。为什么要使用html语义化标签呢？主要是为了方便人阅读和机器的解析，良好的html结构让人比较容易程序要表达的什么，同时有利于seo。同时在丢失样式的情况下能有一个基础的样式来展示页面。下面是来自维基百科的解释：</p>
+
+        </div>
+        <div class="article_item_footer">
+            <div class="read_btn">
+                <a href="/前端开发/HTML语义化及其应用.html">Read</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="article_item">
+        <h3><a href="/前端开发/HTML5新特性.html">HTML5新特性</a></h3>
+        <div class="preview md_html">
+            <h4 id="1.-%E6%96%B0%E7%9A%84%E8%AF%AD%E4%B9%89%E5%8C%96%E6%A0%87%E7%AD%BE">1. 新的语义化标签</h4>
+<h4 id="2.-canvas-api">2.  Canvas API</h4>
+<h4 id="3.-svg">3. SVG</h4>
+<h4 id="4.-%E5%9C%B0%E7%90%86%E4%BF%A1%E6%81%AF-geolocation-api">4. 地理信息 Geolocation API</h4>
+<h4 id="5.-%E8%B7%A8%E6%96%87%E6%A1%A3%E6%B6%88%E6%81%AF%E4%BC%A0%E9%80%92-communication-api">5. 跨文档消息传递 Communication API</h4>
+<pre><code class="hljs language-javascript"><span class="hljs-built_in">window</span>.postMessage(<span class="hljs-string">'Hello, world'</span>,<span class="hljs-string">'http://www.a.com/'</span>)
+</code></pre>
+<pre><code class="hljs language-javascript"><span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">"message"</span>, messageHandler, <span class="hljs-literal">true</span>);
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">messageHandler</span>(<span class="hljs-params">e</span>) </span>{
+    <span class="hljs-keyword">switch</span>(e.origin) {
+        <span class="hljs-keyword">case</span> <span class="hljs-string">"my.a.com"</span>:
+        <span class="hljs-comment">// 处理消息</span>
+        <span class="hljs-built_in">console</span>.log(e.data);
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">default</span>: 
+        <span class="hljs-comment">// ....</span>
+    }
+}
+</code></pre>
+<h4 id="6.-xmlhttprequest-level2">6. XMLHttpRequest Level2</h4>
+<ul>
+<li>跨源</li>
+<li>进度事件</li>
+</ul>
+<h4 id="7.-websockets-api">7. WebSockets API</h4>
+<h4 id="8.-web-workers-api">8. Web Workers API</h4>
+<h4 id="9.-video%E3%80%81audio-api">9.  video、audio API</h4>
+<h4 id="10.-webstorage-api">10. webstorage API</h4>
+
+        </div>
+        <div class="article_item_footer">
+            <div class="read_btn">
+                <a href="/前端开发/HTML5新特性.html">Read</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="article_item">
+        <h3><a href="/前端开发/CSS布局之Flex布局.html">CSS布局之Flex布局</a></h3>
+        <div class="preview md_html">
+            <h2 id="flex%E5%B8%83%E5%B1%80">Flex布局</h2>
+<blockquote>
+<p>Flex 是 Flexible Box 的缩写，意为&quot;弹性布局&quot;，用来为盒状模型提供最大的灵活性。 任何一个容器(包括行内元素)都可以指定为 Flex 布局。</p>
+<p>注意，设为 Flex 布局以后，子元素的<code>float</code>、<code>clear</code>和<code>vertical-align</code>属性将失效。</p>
+</blockquote>
+
+        </div>
+        <div class="article_item_footer">
+            <div class="read_btn">
+                <a href="/前端开发/CSS布局之Flex布局.html">Read</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="article_item">
+        <h3><a href="/前端开发/CSS沉思录.html">CSS沉思录</a></h3>
+        <div class="preview md_html">
+            <h3 id="css%E5%A4%8D%E7%94%A8%E5%90%A6%EF%BC%9F">css复用否？</h3>
+<p>除了通用样式建议不复用？复用的隐患？样式复用的替代方案是组件复用</p>
+<h3 id="css%E7%B1%BB%E5%90%8D%E8%8A%82%E7%9C%81%E5%90%A6%EF%BC%9F">css类名节省否？</h3>
+<p>使用怎样的选择器比较好？从性能、可读性入手</p>
+<h3 id="%E5%85%B3%E4%BA%8Ereact%E4%B8%AD%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E6%A0%B7%E5%BC%8F%E7%9A%84%E5%90%84%E7%A7%8D%E6%96%B9%E6%A1%88">关于react中如何使用样式的各种方案</h3>
+<h3 id="%E5%85%B3%E4%BA%8Eless%E4%B8%8Esass">关于LESS与SASS</h3>
+
+        </div>
+        <div class="article_item_footer">
+            <div class="read_btn">
+                <a href="/前端开发/CSS沉思录.html">Read</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="article_item">
+        <h3><a href="/前端开发/webpack.html">webpack</a></h3>
+        <div class="preview md_html">
+            <h3 id="%E5%85%A5%E5%8F%A3">入口</h3>
+<h4 id="%E5%8D%95%E5%85%A5%E5%8F%A3">单入口</h4>
+<pre><code class="hljs language-javascript"><span class="hljs-comment">//简写</span>
+<span class="hljs-keyword">const</span> config = {
+  <span class="hljs-attr">entry</span>: <span class="hljs-string">'./path/to/my/entry/file.js'</span>
+};
+<span class="hljs-built_in">module</span>.exports = config
+<span class="hljs-comment">//对象写法</span>
+<span class="hljs-keyword">const</span> config = {
+  <span class="hljs-attr">entry</span>: {
+    <span class="hljs-attr">main</span>: <span class="hljs-string">'./path/to/my/entry/file.js'</span>
+  }
+};
+</code></pre>
+<p>多入口（多页面）</p>
+<pre><code class="hljs language-javascript"><span class="hljs-comment">//告诉webpack 需要构建 3 个独立分离的依赖图</span>
+<span class="hljs-keyword">const</span> config = {
+  <span class="hljs-attr">entry</span>: {
+    <span class="hljs-attr">pageOne</span>: <span class="hljs-string">'./path/to/my/one.js'</span>,
+    <span class="hljs-attr">pageTwo</span>: <span class="hljs-string">'./path/to/my/two.js'</span>
+  }
+};
+</code></pre>
+<h3 id="%E8%BE%93%E5%87%BA">输出</h3>
+<p><strong>注意</strong> ：即使可以存在多个入口起点，但只指定一个输出配置</p>
+<pre><code class="hljs language-javascript"><span class="hljs-comment">//创建单个chunk</span>
+<span class="hljs-keyword">const</span> config = {
+  <span class="hljs-attr">output</span>: {
+    <span class="hljs-attr">filename</span>:<span class="hljs-string">'bundle.js'</span>	<span class="hljs-comment">//输出文件名</span>
+    path:<span class="hljs-string">'/home/proj/public/assets'</span>	<span class="hljs-comment">//输出路径</span>
+  }
+}
+<span class="hljs-comment">//创建多个chunk</span>
+{
+  <span class="hljs-attr">entry</span>: {
+    <span class="hljs-attr">app</span>: <span class="hljs-string">'./src/app.js'</span>,
+    <span class="hljs-attr">search</span>: <span class="hljs-string">'./src/search.js'</span>
+  },
+  <span class="hljs-attr">output</span>: {
+    <span class="hljs-attr">filename</span>: <span class="hljs-string">'[name].js'</span>,	<span class="hljs-comment">//[name]代表入口文件名称</span>
+    path: __dirname + <span class="hljs-string">'/dist'</span>	<span class="hljs-comment">//__dirname魔术变量</span>
+  }
+}
+</code></pre>
+<h3 id="loader">loader</h3>
+<p>用于对模块的源代码进行转换。处理时机是 import 或加载模块时</p>
+<pre><code class="hljs language-javascript"><span class="hljs-comment">//简写模式</span>
+<span class="hljs-built_in">module</span>.exports = {
+  <span class="hljs-attr">module</span>: {
+    <span class="hljs-attr">rules</span>: [
+      { <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.css$/</span>, <span class="hljs-attr">use</span>: <span class="hljs-string">'css-loader'</span> },<span class="hljs-comment">//test文件匹配规则 </span>
+      { <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.ts$/</span>, <span class="hljs-attr">use</span>: <span class="hljs-string">'ts-loader'</span> }	<span class="hljs-comment">//use使用的loader插件 ，字符串或对象数组</span>
+    ]
+  }
+};
+<span class="hljs-comment">//详细模式</span>
+  <span class="hljs-built_in">module</span>: {
+    <span class="hljs-attr">rules</span>: [
+      {
+        <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.css$/</span>,
+        <span class="hljs-attr">use</span>: [
+          { <span class="hljs-attr">loader</span>: <span class="hljs-string">'style-loader'</span> },
+          {
+            <span class="hljs-attr">loader</span>: <span class="hljs-string">'css-loader'</span>,
+            <span class="hljs-attr">options</span>: {
+              <span class="hljs-attr">modules</span>: <span class="hljs-literal">true</span>
+            }
+          }
+        ]
+      }
+    ]
+  }
+</code></pre>
+<ul>
+<li>支持链式传递（给use属性传递一个数组），前一个loader将处理结果传递给下个loader处理</li>
+<li>loader支持同步或异步</li>
+<li>能接受查询参数？？</li>
+<li>可以通过options对象进行配置</li>
+<li>loader能够产生额外的任意文件</li>
+</ul>
+
+        </div>
+        <div class="article_item_footer">
+            <div class="read_btn">
+                <a href="/前端开发/webpack.html">Read</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="article_item">
+        <h3><a href="/前端开发/css盒子模型.html">css盒子模型</a></h3>
+        <div class="preview md_html">
+            <h3 id="css%E7%9B%92%E6%A8%A1%E5%9E%8B">CSS盒模型</h3>
+<blockquote>
+<p>CSS盒模型（译者注：也被称为“盒模型”）是网页布局的基础 ——每个元素被表示为一个矩形的方框，框的内容、内边距、边界和外边距像洋葱的膜那样，一层包着一层构建起来。浏览器渲染网页布局时，它会算出每个框的内容要用什么样式，周围的洋葱层有多大，以及框相对于其它框放在哪里。</p>
+</blockquote>
+<h4 id="%E7%9B%92%E6%A8%A1%E5%9E%8B%E7%BB%84%E6%88%90">盒模型组成</h4>
+<p>由外到里分别为: content, padding, border, margin</p>
+<h4 id="%E4%B8%A4%E7%A7%8D%E6%A0%87%E5%87%86">两种标准</h4>
+<p>标准模型(content-box)、IE模型(border-box)，通过box-sizing切换，具体的区别在于width、height属性描述限制的范围不同</p>
+<h4 id="%E8%8E%B7%E5%8F%96%E7%9B%92%E5%AD%90%E7%9A%84%E5%AE%BD%E9%AB%98">获取盒子的宽高</h4>
+<ol>
+<li>
+<p>取内联样式设置的宽高（取得的是css是width/height属性）</p>
+<pre><code class="hljs language-javascript">dom.style.width/height
+</code></pre>
+</li>
+<li>
+<p>取渲染后的宽高，仅ie（取得的是标准模型的宽高）</p>
+<pre><code class="hljs language-javascript">dom.currentStyle.width/height
+</code></pre>
+</li>
+<li>
+<p>取渲染后的宽高, 通用兼容性好（取得的是标准模型的宽高）</p>
+<pre><code class="hljs language-javascript"><span class="hljs-built_in">window</span>.getComputedStyle(dom).width/height
+<span class="hljs-comment">// 如果dom元素是一个滚动盒子，那么结果需要是减去滚动调后的值</span>
+</code></pre>
+</li>
+<li>
+<p>通过计算盒子在视窗的绝对位置 （取得的是IE模型的宽高）</p>
+<pre><code class="hljs language-javascript">dom.getBoundingClientRect().width/height
+</code></pre>
+</li>
+<li>
+<p><code>offsetWidth</code> / <code>offsetWidth</code> （取得的是IE模型的宽高）</p>
+<pre><code class="hljs language-javascript">dom.offsetWidth/offsetWidth
+</code></pre>
+</li>
+</ol>
+<h4 id="%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%A1%8C%E9%99%B7">外边距塌陷</h4>
+<blockquote>
+<p>块级元素的上外边距和下外边距有时会合并（或折叠）为一个外边距，其大小取其中的最大者，这种行为称为外边距折叠（margin collapsing），有时也翻译为外边距合并。注意浮动元素和绝对定位元素的外边距不会折叠。</p>
+</blockquote>
+<h5 id="%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%A1%8C%E9%99%B7%E7%9A%84%E4%B8%89%E7%A7%8D%E5%9F%BA%E6%9C%AC%E6%83%85%E5%86%B5">外边距塌陷的三种基本情况</h5>
+<ul>
+<li>相邻元素之间</li>
+<li>父元素与其第一个或最后一个子元素之间</li>
+<li>空的块级元素</li>
+</ul>
+<h5 id="%E9%98%B2%E6%AD%A2%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%A1%8C%E9%99%B7%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88">防止外边距塌陷的解决方案</h5>
+<h6 id="bfc-%E5%9D%97%E7%BA%A7%E6%A0%BC%E5%BC%8F%E5%8C%96%E4%B8%8A%E4%B8%8B%E6%96%87">BFC 块级格式化上下文</h6>
+<blockquote>
+<p>BFC（Block Formatting Context）格式化上下文，是Web页面中盒模型布局的CSS渲染模式，指一个独立的渲染区域或者说是一个隔离的独立容器。</p>
+</blockquote>
+<ul>
+<li>原理：
+<ol>
+<li>BFC元素的子元素在垂直方向的边距会发生重叠（为什么时垂直方向，应为块级元素独占一行，其他元素确实脱离了正常的文档流）</li>
+<li>BFC元素的边距不会与它的子浮动元素的box重叠，也就是说浮动元素的margin也同样会撑开父元素的高度或高度(如果没有限制宽高的话)，同时与子浮动元素相邻的子元素之间也不会发生重叠</li>
+<li>BFC在页面是一个独立的容器，外面的元素不会影响它里面的元素</li>
+<li>计算BFC元素高度时浮动元素也会参与计算，也就是说即使BFC元素内的尾部有自动清楚所有浮动的功能，即使BFC元素的子元素都是浮动的，BFC元素的高度也不会为<strong>零</strong></li>
+</ol>
+</li>
+<li>如何创建
+<ol>
+<li>css属性float不为none</li>
+<li>css属性position不为默认值</li>
+<li>css属性display属性与table相关的属性</li>
+<li>css属性overflow属性不为visible</li>
+</ol>
+</li>
+</ul>
+
+        </div>
+        <div class="article_item_footer">
+            <div class="read_btn">
+                <a href="/前端开发/css盒子模型.html">Read</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="article_item">
+        <h3><a href="/前端开发/css盒子模型.html">css盒子模型</a></h3>
+        <div class="preview md_html">
+            <h3 id="css%E7%9B%92%E6%A8%A1%E5%9E%8B">CSS盒模型</h3>
+<blockquote>
+<p>CSS盒模型（译者注：也被称为“盒模型”）是网页布局的基础 ——每个元素被表示为一个矩形的方框，框的内容、内边距、边界和外边距像洋葱的膜那样，一层包着一层构建起来。浏览器渲染网页布局时，它会算出每个框的内容要用什么样式，周围的洋葱层有多大，以及框相对于其它框放在哪里。</p>
+</blockquote>
+<h4 id="%E7%9B%92%E6%A8%A1%E5%9E%8B%E7%BB%84%E6%88%90">盒模型组成</h4>
+<p>由外到里分别为: content, padding, border, margin</p>
+<h4 id="%E4%B8%A4%E7%A7%8D%E6%A0%87%E5%87%86">两种标准</h4>
+<p>标准模型(content-box)、IE模型(border-box)，通过box-sizing切换，具体的区别在于width、height属性描述限制的范围不同</p>
+<h4 id="%E8%8E%B7%E5%8F%96%E7%9B%92%E5%AD%90%E7%9A%84%E5%AE%BD%E9%AB%98">获取盒子的宽高</h4>
+<ol>
+<li>
+<p>取内联样式设置的宽高（取得的是css是width/height属性）</p>
+<pre><code class="hljs language-javascript">dom.style.width/height
+</code></pre>
+</li>
+<li>
+<p>取渲染后的宽高，仅ie（取得的是标准模型的宽高）</p>
+<pre><code class="hljs language-javascript">dom.currentStyle.width/height
+</code></pre>
+</li>
+<li>
+<p>取渲染后的宽高, 通用兼容性好（取得的是标准模型的宽高）</p>
+<pre><code class="hljs language-javascript"><span class="hljs-built_in">window</span>.getComputedStyle(dom).width/height
+<span class="hljs-comment">// 如果dom元素是一个滚动盒子，那么结果需要是减去滚动调后的值</span>
+</code></pre>
+</li>
+<li>
+<p>通过计算盒子在视窗的绝对位置 （取得的是IE模型的宽高）</p>
+<pre><code class="hljs language-javascript">dom.getBoundingClientRect().width/height
+</code></pre>
+</li>
+<li>
+<p><code>offsetWidth</code> / <code>offsetWidth</code> （取得的是IE模型的宽高）</p>
+<pre><code class="hljs language-javascript">dom.offsetWidth/offsetWidth
+</code></pre>
+</li>
+</ol>
+<h4 id="%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%A1%8C%E9%99%B7">外边距塌陷</h4>
+<blockquote>
+<p>块级元素的上外边距和下外边距有时会合并（或折叠）为一个外边距，其大小取其中的最大者，这种行为称为外边距折叠（margin collapsing），有时也翻译为外边距合并。注意浮动元素和绝对定位元素的外边距不会折叠。</p>
+</blockquote>
+<h5 id="%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%A1%8C%E9%99%B7%E7%9A%84%E4%B8%89%E7%A7%8D%E5%9F%BA%E6%9C%AC%E6%83%85%E5%86%B5">外边距塌陷的三种基本情况</h5>
+<ul>
+<li>相邻元素之间</li>
+<li>父元素与其第一个或最后一个子元素之间</li>
+<li>空的块级元素</li>
+</ul>
+<h5 id="%E9%98%B2%E6%AD%A2%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%A1%8C%E9%99%B7%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88">防止外边距塌陷的解决方案</h5>
+<h6 id="bfc-%E5%9D%97%E7%BA%A7%E6%A0%BC%E5%BC%8F%E5%8C%96%E4%B8%8A%E4%B8%8B%E6%96%87">BFC 块级格式化上下文</h6>
+<blockquote>
+<p>BFC（Block Formatting Context）格式化上下文，是Web页面中盒模型布局的CSS渲染模式，指一个独立的渲染区域或者说是一个隔离的独立容器。</p>
+</blockquote>
+<ul>
+<li>原理：
+<ol>
+<li>BFC元素的子元素在垂直方向的边距会发生重叠（为什么时垂直方向，应为块级元素独占一行，其他元素确实脱离了正常的文档流）</li>
+<li>BFC元素的边距不会与它的子浮动元素的box重叠，也就是说浮动元素的margin也同样会撑开父元素的高度或高度(如果没有限制宽高的话)，同时与子浮动元素相邻的子元素之间也不会发生重叠</li>
+<li>BFC在页面是一个独立的容器，外面的元素不会影响它里面的元素</li>
+<li>计算BFC元素高度时浮动元素也会参与计算，也就是说即使BFC元素内的尾部有自动清楚所有浮动的功能，即使BFC元素的子元素都是浮动的，BFC元素的高度也不会为<strong>零</strong></li>
+</ol>
+</li>
+<li>如何创建
+<ol>
+<li>css属性float不为none</li>
+<li>css属性position不为默认值</li>
+<li>css属性display属性与table相关的属性</li>
+<li>css属性overflow属性不为visible</li>
+</ol>
+</li>
+</ul>
+
+        </div>
+        <div class="article_item_footer">
+            <div class="read_btn">
+                <a href="/前端开发/css盒子模型.html">Read</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="article_item">
+        <h3><a href="/前端开发/css盒子模型.html">css盒子模型</a></h3>
+        <div class="preview md_html">
+            <h3 id="css%E7%9B%92%E6%A8%A1%E5%9E%8B">CSS盒模型</h3>
+<blockquote>
+<p>CSS盒模型（译者注：也被称为“盒模型”）是网页布局的基础 ——每个元素被表示为一个矩形的方框，框的内容、内边距、边界和外边距像洋葱的膜那样，一层包着一层构建起来。浏览器渲染网页布局时，它会算出每个框的内容要用什么样式，周围的洋葱层有多大，以及框相对于其它框放在哪里。</p>
+</blockquote>
+<h4 id="%E7%9B%92%E6%A8%A1%E5%9E%8B%E7%BB%84%E6%88%90">盒模型组成</h4>
+<p>由外到里分别为: content, padding, border, margin</p>
+<h4 id="%E4%B8%A4%E7%A7%8D%E6%A0%87%E5%87%86">两种标准</h4>
+<p>标准模型(content-box)、IE模型(border-box)，通过box-sizing切换，具体的区别在于width、height属性描述限制的范围不同</p>
+<h4 id="%E8%8E%B7%E5%8F%96%E7%9B%92%E5%AD%90%E7%9A%84%E5%AE%BD%E9%AB%98">获取盒子的宽高</h4>
+<ol>
+<li>
+<p>取内联样式设置的宽高（取得的是css是width/height属性）</p>
+<pre><code class="hljs language-javascript">dom.style.width/height
+</code></pre>
+</li>
+<li>
+<p>取渲染后的宽高，仅ie（取得的是标准模型的宽高）</p>
+<pre><code class="hljs language-javascript">dom.currentStyle.width/height
+</code></pre>
+</li>
+<li>
+<p>取渲染后的宽高, 通用兼容性好（取得的是标准模型的宽高）</p>
+<pre><code class="hljs language-javascript"><span class="hljs-built_in">window</span>.getComputedStyle(dom).width/height
+<span class="hljs-comment">// 如果dom元素是一个滚动盒子，那么结果需要是减去滚动调后的值</span>
+</code></pre>
+</li>
+<li>
+<p>通过计算盒子在视窗的绝对位置 （取得的是IE模型的宽高）</p>
+<pre><code class="hljs language-javascript">dom.getBoundingClientRect().width/height
+</code></pre>
+</li>
+<li>
+<p><code>offsetWidth</code> / <code>offsetWidth</code> （取得的是IE模型的宽高）</p>
+<pre><code class="hljs language-javascript">dom.offsetWidth/offsetWidth
+</code></pre>
+</li>
+</ol>
+<h4 id="%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%A1%8C%E9%99%B7">外边距塌陷</h4>
+<blockquote>
+<p>块级元素的上外边距和下外边距有时会合并（或折叠）为一个外边距，其大小取其中的最大者，这种行为称为外边距折叠（margin collapsing），有时也翻译为外边距合并。注意浮动元素和绝对定位元素的外边距不会折叠。</p>
+</blockquote>
+<h5 id="%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%A1%8C%E9%99%B7%E7%9A%84%E4%B8%89%E7%A7%8D%E5%9F%BA%E6%9C%AC%E6%83%85%E5%86%B5">外边距塌陷的三种基本情况</h5>
+<ul>
+<li>相邻元素之间</li>
+<li>父元素与其第一个或最后一个子元素之间</li>
+<li>空的块级元素</li>
+</ul>
+<h5 id="%E9%98%B2%E6%AD%A2%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%A1%8C%E9%99%B7%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88">防止外边距塌陷的解决方案</h5>
+<h6 id="bfc-%E5%9D%97%E7%BA%A7%E6%A0%BC%E5%BC%8F%E5%8C%96%E4%B8%8A%E4%B8%8B%E6%96%87">BFC 块级格式化上下文</h6>
+<blockquote>
+<p>BFC（Block Formatting Context）格式化上下文，是Web页面中盒模型布局的CSS渲染模式，指一个独立的渲染区域或者说是一个隔离的独立容器。</p>
+</blockquote>
+<ul>
+<li>原理：
+<ol>
+<li>BFC元素的子元素在垂直方向的边距会发生重叠（为什么时垂直方向，应为块级元素独占一行，其他元素确实脱离了正常的文档流）</li>
+<li>BFC元素的边距不会与它的子浮动元素的box重叠，也就是说浮动元素的margin也同样会撑开父元素的高度或高度(如果没有限制宽高的话)，同时与子浮动元素相邻的子元素之间也不会发生重叠</li>
+<li>BFC在页面是一个独立的容器，外面的元素不会影响它里面的元素</li>
+<li>计算BFC元素高度时浮动元素也会参与计算，也就是说即使BFC元素内的尾部有自动清楚所有浮动的功能，即使BFC元素的子元素都是浮动的，BFC元素的高度也不会为<strong>零</strong></li>
+</ol>
+</li>
+<li>如何创建
+<ol>
+<li>css属性float不为none</li>
+<li>css属性position不为默认值</li>
+<li>css属性display属性与table相关的属性</li>
+<li>css属性overflow属性不为visible</li>
+</ol>
+</li>
+</ul>
+
+        </div>
+        <div class="article_item_footer">
+            <div class="read_btn">
+                <a href="/前端开发/css盒子模型.html">Read</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="article_item">
+        <h3><a href="/前端开发/css盒子模型.html">css盒子模型</a></h3>
+        <div class="preview md_html">
+            <h3 id="css%E7%9B%92%E6%A8%A1%E5%9E%8B">CSS盒模型</h3>
+<blockquote>
+<p>CSS盒模型（译者注：也被称为“盒模型”）是网页布局的基础 ——每个元素被表示为一个矩形的方框，框的内容、内边距、边界和外边距像洋葱的膜那样，一层包着一层构建起来。浏览器渲染网页布局时，它会算出每个框的内容要用什么样式，周围的洋葱层有多大，以及框相对于其它框放在哪里。</p>
+</blockquote>
+<h4 id="%E7%9B%92%E6%A8%A1%E5%9E%8B%E7%BB%84%E6%88%90">盒模型组成</h4>
+<p>由外到里分别为: content, padding, border, margin</p>
+<h4 id="%E4%B8%A4%E7%A7%8D%E6%A0%87%E5%87%86">两种标准</h4>
+<p>标准模型(content-box)、IE模型(border-box)，通过box-sizing切换，具体的区别在于width、height属性描述限制的范围不同</p>
+<h4 id="%E8%8E%B7%E5%8F%96%E7%9B%92%E5%AD%90%E7%9A%84%E5%AE%BD%E9%AB%98">获取盒子的宽高</h4>
+<ol>
+<li>
+<p>取内联样式设置的宽高（取得的是css是width/height属性）</p>
+<pre><code class="hljs language-javascript">dom.style.width/height
+</code></pre>
+</li>
+<li>
+<p>取渲染后的宽高，仅ie（取得的是标准模型的宽高）</p>
+<pre><code class="hljs language-javascript">dom.currentStyle.width/height
+</code></pre>
+</li>
+<li>
+<p>取渲染后的宽高, 通用兼容性好（取得的是标准模型的宽高）</p>
+<pre><code class="hljs language-javascript"><span class="hljs-built_in">window</span>.getComputedStyle(dom).width/height
+<span class="hljs-comment">// 如果dom元素是一个滚动盒子，那么结果需要是减去滚动调后的值</span>
+</code></pre>
+</li>
+<li>
+<p>通过计算盒子在视窗的绝对位置 （取得的是IE模型的宽高）</p>
+<pre><code class="hljs language-javascript">dom.getBoundingClientRect().width/height
+</code></pre>
+</li>
+<li>
+<p><code>offsetWidth</code> / <code>offsetWidth</code> （取得的是IE模型的宽高）</p>
+<pre><code class="hljs language-javascript">dom.offsetWidth/offsetWidth
+</code></pre>
+</li>
+</ol>
+<h4 id="%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%A1%8C%E9%99%B7">外边距塌陷</h4>
+<blockquote>
+<p>块级元素的上外边距和下外边距有时会合并（或折叠）为一个外边距，其大小取其中的最大者，这种行为称为外边距折叠（margin collapsing），有时也翻译为外边距合并。注意浮动元素和绝对定位元素的外边距不会折叠。</p>
+</blockquote>
+<h5 id="%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%A1%8C%E9%99%B7%E7%9A%84%E4%B8%89%E7%A7%8D%E5%9F%BA%E6%9C%AC%E6%83%85%E5%86%B5">外边距塌陷的三种基本情况</h5>
+<ul>
+<li>相邻元素之间</li>
+<li>父元素与其第一个或最后一个子元素之间</li>
+<li>空的块级元素</li>
+</ul>
+<h5 id="%E9%98%B2%E6%AD%A2%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%A1%8C%E9%99%B7%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88">防止外边距塌陷的解决方案</h5>
+<h6 id="bfc-%E5%9D%97%E7%BA%A7%E6%A0%BC%E5%BC%8F%E5%8C%96%E4%B8%8A%E4%B8%8B%E6%96%87">BFC 块级格式化上下文</h6>
+<blockquote>
+<p>BFC（Block Formatting Context）格式化上下文，是Web页面中盒模型布局的CSS渲染模式，指一个独立的渲染区域或者说是一个隔离的独立容器。</p>
+</blockquote>
+<ul>
+<li>原理：
+<ol>
+<li>BFC元素的子元素在垂直方向的边距会发生重叠（为什么时垂直方向，应为块级元素独占一行，其他元素确实脱离了正常的文档流）</li>
+<li>BFC元素的边距不会与它的子浮动元素的box重叠，也就是说浮动元素的margin也同样会撑开父元素的高度或高度(如果没有限制宽高的话)，同时与子浮动元素相邻的子元素之间也不会发生重叠</li>
+<li>BFC在页面是一个独立的容器，外面的元素不会影响它里面的元素</li>
+<li>计算BFC元素高度时浮动元素也会参与计算，也就是说即使BFC元素内的尾部有自动清楚所有浮动的功能，即使BFC元素的子元素都是浮动的，BFC元素的高度也不会为<strong>零</strong></li>
+</ol>
+</li>
+<li>如何创建
+<ol>
+<li>css属性float不为none</li>
+<li>css属性position不为默认值</li>
+<li>css属性display属性与table相关的属性</li>
+<li>css属性overflow属性不为visible</li>
+</ol>
+</li>
+</ul>
+
+        </div>
+        <div class="article_item_footer">
+            <div class="read_btn">
+                <a href="/前端开发/css盒子模型.html">Read</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="article_item">
+        <h3><a href="/前端开发/css盒子模型.html">css盒子模型</a></h3>
+        <div class="preview md_html">
+            <h3 id="css%E7%9B%92%E6%A8%A1%E5%9E%8B">CSS盒模型</h3>
+<blockquote>
+<p>CSS盒模型（译者注：也被称为“盒模型”）是网页布局的基础 ——每个元素被表示为一个矩形的方框，框的内容、内边距、边界和外边距像洋葱的膜那样，一层包着一层构建起来。浏览器渲染网页布局时，它会算出每个框的内容要用什么样式，周围的洋葱层有多大，以及框相对于其它框放在哪里。</p>
+</blockquote>
+<h4 id="%E7%9B%92%E6%A8%A1%E5%9E%8B%E7%BB%84%E6%88%90">盒模型组成</h4>
+<p>由外到里分别为: content, padding, border, margin</p>
+<h4 id="%E4%B8%A4%E7%A7%8D%E6%A0%87%E5%87%86">两种标准</h4>
+<p>标准模型(content-box)、IE模型(border-box)，通过box-sizing切换，具体的区别在于width、height属性描述限制的范围不同</p>
+<h4 id="%E8%8E%B7%E5%8F%96%E7%9B%92%E5%AD%90%E7%9A%84%E5%AE%BD%E9%AB%98">获取盒子的宽高</h4>
+<ol>
+<li>
+<p>取内联样式设置的宽高（取得的是css是width/height属性）</p>
+<pre><code class="hljs language-javascript">dom.style.width/height
+</code></pre>
+</li>
+<li>
+<p>取渲染后的宽高，仅ie（取得的是标准模型的宽高）</p>
+<pre><code class="hljs language-javascript">dom.currentStyle.width/height
+</code></pre>
+</li>
+<li>
+<p>取渲染后的宽高, 通用兼容性好（取得的是标准模型的宽高）</p>
+<pre><code class="hljs language-javascript"><span class="hljs-built_in">window</span>.getComputedStyle(dom).width/height
+<span class="hljs-comment">// 如果dom元素是一个滚动盒子，那么结果需要是减去滚动调后的值</span>
+</code></pre>
+</li>
+<li>
+<p>通过计算盒子在视窗的绝对位置 （取得的是IE模型的宽高）</p>
+<pre><code class="hljs language-javascript">dom.getBoundingClientRect().width/height
+</code></pre>
+</li>
+<li>
+<p><code>offsetWidth</code> / <code>offsetWidth</code> （取得的是IE模型的宽高）</p>
+<pre><code class="hljs language-javascript">dom.offsetWidth/offsetWidth
+</code></pre>
+</li>
+</ol>
+<h4 id="%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%A1%8C%E9%99%B7">外边距塌陷</h4>
+<blockquote>
+<p>块级元素的上外边距和下外边距有时会合并（或折叠）为一个外边距，其大小取其中的最大者，这种行为称为外边距折叠（margin collapsing），有时也翻译为外边距合并。注意浮动元素和绝对定位元素的外边距不会折叠。</p>
+</blockquote>
+<h5 id="%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%A1%8C%E9%99%B7%E7%9A%84%E4%B8%89%E7%A7%8D%E5%9F%BA%E6%9C%AC%E6%83%85%E5%86%B5">外边距塌陷的三种基本情况</h5>
+<ul>
+<li>相邻元素之间</li>
+<li>父元素与其第一个或最后一个子元素之间</li>
+<li>空的块级元素</li>
+</ul>
+<h5 id="%E9%98%B2%E6%AD%A2%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%A1%8C%E9%99%B7%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88">防止外边距塌陷的解决方案</h5>
+<h6 id="bfc-%E5%9D%97%E7%BA%A7%E6%A0%BC%E5%BC%8F%E5%8C%96%E4%B8%8A%E4%B8%8B%E6%96%87">BFC 块级格式化上下文</h6>
+<blockquote>
+<p>BFC（Block Formatting Context）格式化上下文，是Web页面中盒模型布局的CSS渲染模式，指一个独立的渲染区域或者说是一个隔离的独立容器。</p>
+</blockquote>
+<ul>
+<li>原理：
+<ol>
+<li>BFC元素的子元素在垂直方向的边距会发生重叠（为什么时垂直方向，应为块级元素独占一行，其他元素确实脱离了正常的文档流）</li>
+<li>BFC元素的边距不会与它的子浮动元素的box重叠，也就是说浮动元素的margin也同样会撑开父元素的高度或高度(如果没有限制宽高的话)，同时与子浮动元素相邻的子元素之间也不会发生重叠</li>
+<li>BFC在页面是一个独立的容器，外面的元素不会影响它里面的元素</li>
+<li>计算BFC元素高度时浮动元素也会参与计算，也就是说即使BFC元素内的尾部有自动清楚所有浮动的功能，即使BFC元素的子元素都是浮动的，BFC元素的高度也不会为<strong>零</strong></li>
+</ol>
+</li>
+<li>如何创建
+<ol>
+<li>css属性float不为none</li>
+<li>css属性position不为默认值</li>
+<li>css属性display属性与table相关的属性</li>
+<li>css属性overflow属性不为visible</li>
+</ol>
+</li>
+</ul>
+
+        </div>
+        <div class="article_item_footer">
+            <div class="read_btn">
+                <a href="/前端开发/css盒子模型.html">Read</a>
+            </div>
+        </div>
+    </section>
+    
+    <div class="page_box">
+    <div class="page_pre">
+        <a class="page_pre_item" class="" href="/articles/1.html">FIRST</a>
+        <a class="page_pre_item" href="/articles/23.html">
+            <i class="iconfont icon-previous"></i>
+        </a>
+    </div>
+    <div class="page_num">
+        
+    </div>
+    <div class="page_next">
+        <a class="page_next_item" href="/articles/25.html">
+            <i class="iconfont icon-next"></i>
+        </a>
+        <a class="page_next_item" href="/articles/57.html">LAST</a>
+    </div>
+    </div>
+</div>
+    </div>
+    <aside>
+        <div class="profile_banner"></div>
+        <div class="profile_logo">
+        <img src="/assets/logo.png" alt="">
+        </div>
+        <div class="profile_name">
+            qoxop
+        </div>
+        <div class="profile_motto">
+            一只单身的帅狗, 打代码、打游戏、撸猫、无恶不做~~~
+        </div>
+        <div class="profile_info">
+        <div>
+            <div class="iconbox"><em class="iconfont icon-github"></em></div>
+            <div class="icontext">github</div>
+        </div>
+        <div>
+            <div class="iconbox"><em class="iconfont icon-resume"></em></div>
+            <div class="icontext">resume</div>
+        </div>
+        <div>...</div>
+        </div>
+    </aside>
+</div>
+        </main>
+        <footer id="footer"></footer>
+      </article>
+      <div class="shortcut-tools">
+          <div onclick="exec('scrollToTop')" class="goto-top-btn">Top</div>
+          <div onclick="exec('scrollToBottom')" class="goto-bottom-btn">Bottom</div>
+          <div onclick="exec('goback')" class="goback-btn">goback</div>
+      </div>
+      <script src="/assets/common.js"></script>
+</body>
+</html>

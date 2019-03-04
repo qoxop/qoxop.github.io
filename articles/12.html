@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content=",,,,,,,,,">
+    <title>qoxop | 首页(12)</title>
+    <link rel="stylesheet" href="/assets/common.css">
+    <link rel="stylesheet" href="/assets/articleList.css">
+    <link href="/assets/monokai_sublime.min.css" rel="stylesheet">  
+    <script async src="/assets/highlight.min.js"></script>
+     
+      <script src="/assets/hot_reload.js"></script>
+    
+</head>
+<body>
+    <article id="app">
+        <header>
+          <h1>张集伟的个人博客</h1>
+          <div class="content_box header_inner">
+            <div class="logo">
+              <div class="logoImg">
+                <img src="/assets/icon.png" alt="">
+              </div>
+              <div class="logoText">
+                jiw
+              </div>
+            </div>
+            <nav class="navigator">
+              <ul>
+                
+                <li class="actived">
+                    <a href="#">
+                        HOME
+                    </a>
+                </li>
+                
+                <li class="">
+                    <a href="/category.html">
+                        CATEGORY
+                    </a>
+                </li>
+                
+                <li class="">
+                    <a href="/tags.html">
+                        标签
+                    </a>
+                </li>
+                
+                <li class="">
+                    <a href="/link.html">
+                        链接
+                    </a>
+                </li>
+                
+                <li class="">
+                    <a href="/about.html">
+                        关于我
+                    </a>
+                </li>
+                
+              </ul>
+            </nav>
+          </div>
+        </header>
+        <main id="main">
+           <div class="content_box">
+    <div id="left_content">
+        <!-- 这里存放主要内容 -->
+       <div class="article_list">
+    
+    <section class="article_item">
+        <h3><a href="/前端开发/react生命周期.html">react生命周期</a></h3>
+        <div class="preview md_html">
+            <h3 id="preview">preview</h3>
+<p>关于react生命周期，网上有个通过流程图总结的文档 http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/，这个流程图和官方文档已经描述得相当清楚，这里还是通过自己的理解总结一下下。</p>
+
+        </div>
+        <div class="article_item_footer">
+            <div class="read_btn">
+                <a href="/前端开发/react生命周期.html">Read</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="article_item">
+        <h3><a href="/前端开发/redux中间件.html">redux中间件</a></h3>
+        <div class="preview md_html">
+            <p>对于redux的来说，相对难以理解的可能就是redux中间件了，一开始的时候看了文档再看了别人写的文章介绍依旧还是云里雾里的，其实中间件的概念就是在再一个直接的过程中链式地加入其他的任务。为了理解redux中间件，今天还是从另一种方式入手来思考吧！</p>
+
+        </div>
+        <div class="article_item_footer">
+            <div class="read_btn">
+                <a href="/前端开发/redux中间件.html">Read</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="article_item">
+        <h3><a href="/dart.html">dart</a></h3>
+        <div class="preview md_html">
+            <h3 id="1.-demo">1. demo</h3>
+<pre><code class="hljs language-dart">main(){
+    <span class="hljs-keyword">var</span> number = <span class="hljs-number">41</span>;	<span class="hljs-comment">// 变量声明和初始化</span>
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">'The number is <span class="hljs-subst">$number</span>'</span>) <span class="hljs-comment">//字符模板</span>
+}
+</code></pre>
+<h3 id="2.%E5%9F%BA%E7%A1%80">2.基础</h3>
+<ol>
+<li>
+<p>主入口：main函数</p>
+</li>
+<li>
+<p>一切皆对象，任何能保存在变量中的东西都是对象，任何对象都是class的实例，任何类都是继承自 Object class</p>
+</li>
+<li>
+<p>强类型，类型声明可选，因为dart有类型推断，变量类型取决与初始化的值。</p>
+</li>
+<li>
+<p>支持泛型，比如<code>List&lt;int&gt;</code></p>
+</li>
+<li>
+<p>支持高阶函数，函数可以被绑定到类或对象上，也可以在函数内定义函数。</p>
+</li>
+<li>
+<p>Dart supports top-level variables, as well as variables tied to a class or object (static and instance variables). Instance variables are sometimes known as fields or properties.</p>
+</li>
+<li>
+<p>没有显式的访问控制声明，如 public、protected等，下划线开头的属性是私有的。</p>
+</li>
+<li>
+<p>标识符以字母下划线开头，后面随意</p>
+</li>
+<li>
+<p>表达式语句与声明语句很不同</p>
+</li>
+<li>
+<p>dart工具回报两种问题，error 和 warning，错误包括运行时错误和编译时错误</p>
+</li>
+</ol>
+<h3 id="%E5%8F%98%E9%87%8F">变量</h3>
+<h4 id="%E5%A3%B0%E6%98%8E%E6%96%B9%E5%BC%8F">声明方式</h4>
+<ol>
+<li>
+<p>自动类型推断，需初始化，如果没有初始化默认类型为 Null <code>var name ='tom'</code></p>
+</li>
+<li>
+<p>手动类型声明，不需要初始化 <code>String name = 'tom'</code></p>
+</li>
+</ol>
+<h4 id="%E9%BB%98%E8%AE%A4%E5%80%BC">默认值</h4>
+<pre><code class="hljs">没有初始化的变量的默认值都是 null
+</code></pre>
+<h4 id="%E5%B8%B8%E9%87%8F">常量</h4>
+<ol>
+<li>编译时常量const:  类似与c语言的宏定义</li>
+<li>运行时常量final：用final定义的顶级作用域或类变量在其第一次使用时被初始化。</li>
+</ol>
+<blockquote>
+<p><strong>Note:</strong> 实例变量可以被定位为 <code>final</code> 但是不能定位为  <code>const</code>.</p>
+</blockquote>
+<h3 id="%E8%87%AA%E6%9C%89%E7%B1%BB%E5%9E%8B">自有类型</h3>
+<ol>
+<li>number</li>
+<li>strings</li>
+<li>booleans</li>
+<li>lists</li>
+<li>maps</li>
+<li>runes(for expressing Unicode characters in a string)</li>
+<li>symbols</li>
+</ol>
+<p>以上的类型都可以通过字面量的方式初始化，可以通过它们的构造函数来初始化</p>
+<h4 id="number">number</h4>
+<pre><code class="hljs">包含两个子类型，`int` 和 `double`
+</code></pre>
+<h4 id="strings">strings</h4>
+<h5 id="%E5%AD%97%E9%9D%A2%E9%87%8F%E4%B9%A6%E5%86%99%E6%96%B9%E5%BC%8F">字面量书写方式</h5>
+<ol>
+<li>单引号</li>
+<li>双引号</li>
+<li>拼接
+<ol>
+<li>加号拼接</li>
+<li>相邻拼接</li>
+<li>字符串模板，a. <code>$ + 变量名</code>， b.<code>${任意表达式}</code></li>
+</ol>
+</li>
+<li>三引号</li>
+<li>单行字符串 r''</li>
+</ol>
+<blockquote>
+<p>字符串字面量时编译时常量，常量字符串的字符串模板只能内嵌编译时常量</p>
+</blockquote>
+<h4 id="booleans">booleans</h4>
+<h4 id="list">list</h4>
+<p>类似与其它语言的Array</p>
+<pre><code class="hljs language-dart"><span class="hljs-keyword">var</span> list = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]
+</code></pre>
+<p>提供类JavaScript的api，但他支持泛型</p>
+<h4 id="maps">maps</h4>
+<p>一个key - value动态对象，key与value都可以是任意对象</p>
+<pre><code class="hljs language-dart"><span class="hljs-comment">// 字面量写法</span>
+<span class="hljs-keyword">var</span> gifts = {
+    <span class="hljs-string">'first'</span>: <span class="hljs-string">'partridge'</span>,
+    <span class="hljs-string">'second'</span>: <span class="hljs-string">'turledoves'</span>,
+}
+<span class="hljs-comment">// 构造函数写法</span>
+<span class="hljs-keyword">var</span> gifts = <span class="hljs-built_in">Map</span>();
+<span class="hljs-keyword">assert</span>(gifts[<span class="hljs-string">'first'</span>] == <span class="hljs-string">'partridge'</span>)
+</code></pre>
+<ol>
+<li>
+<p>如果查找的key不存在map对象中，将会返回null</p>
+</li>
+<li>
+<p>可以通过.length属性查看存在多少个键值对</p>
+</li>
+</ol>
+<h4 id="runes">runes</h4>
+<p>In Dart, runes are the UTF-32 code points of a string.</p>
+<p>Unicode defines a unique numeric value for each letter, digit, and symbol used in all of the world’s writing systems. Because a Dart string is a sequence of UTF-16 code units, expressing 32-bit Unicode values within a string requires special syntax.</p>
+<pre><code class="hljs language-dart">main() {
+  <span class="hljs-keyword">var</span> clapping = <span class="hljs-string">'\u{1f44f}'</span>;
+  <span class="hljs-built_in">print</span>(clapping);
+  <span class="hljs-built_in">print</span>(clapping.codeUnits);
+  <span class="hljs-built_in">print</span>(clapping.runes.toList());
+
+  Runes input = <span class="hljs-keyword">new</span> Runes(
+      <span class="hljs-string">'\u2665  \u{1f605}  \u{1f60e}  \u{1f47b}  \u{1f596}  \u{1f44d}'</span>);
+  <span class="hljs-built_in">print</span>(<span class="hljs-keyword">new</span> <span class="hljs-built_in">String</span>.fromCharCodes(input));
+}
+</code></pre>
+<h4 id="symbols">symbols</h4>
+<h3 id="function">Function</h3>
+<h4 id="%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5">基础概念</h4>
+<ol>
+<li>定义方式 <code>返回类型 函数名(...arg){/* 函数体 */}</code></li>
+<li>可以省略返回类型，通过return语句自动推断</li>
+<li>支持箭头函数（类JavaScript）</li>
+</ol>
+<h4 id="%E5%8F%AF%E9%80%89%E5%8F%82%E6%95%B0">可选参数</h4>
+<ul>
+<li>
+<p>命名传参</p>
+<pre><code class="hljs language-dart"><span class="hljs-comment">// 函数定义方式</span>
+<span class="hljs-keyword">void</span> enableFlags({<span class="hljs-built_in">bool</span> bold, <span class="hljs-built_in">bool</span> hidden}) {
+    <span class="hljs-comment">// ...</span>
+}
+<span class="hljs-comment">// 调用方式</span>
+enableFlags(bold: <span class="hljs-keyword">true</span>, hidden: <span class="hljs-keyword">false</span>);
+<span class="hljs-comment">// 必选参数</span>
+<span class="hljs-keyword">void</span> enableFlags({
+    <span class="hljs-meta">@require</span> <span class="hljs-built_in">bool</span> bold, 
+    <span class="hljs-built_in">bool</span> hidden}) {
+    <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+</li>
+<li>
+<p>位置传参</p>
+</li>
+<li>
+<p>参数默认值</p>
+<pre><code class="hljs language-dart"><span class="hljs-comment">// 命名</span>
+<span class="hljs-keyword">void</span> enableFlags({<span class="hljs-built_in">bool</span> bold, <span class="hljs-built_in">bool</span> hidden = <span class="hljs-keyword">false</span>}) {
+    <span class="hljs-comment">// ...</span>
+}
+<span class="hljs-comment">// 位置</span>
+<span class="hljs-keyword">void</span> enableFlags(<span class="hljs-built_in">bool</span> bold, [<span class="hljs-built_in">bool</span> hidden = <span class="hljs-keyword">false</span>]) {
+    <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+</li>
+</ul>
+<h4 id="main()-function">main() function</h4>
+<h4 id="anonymous-functions">Anonymous functions</h4>
+<pre><code class="hljs language-dart"><span class="hljs-comment">// 匿名函数</span>
+<span class="hljs-keyword">var</span> list = [<span class="hljs-string">'apples'</span>, <span class="hljs-string">'bananas'</span>, <span class="hljs-string">'oranges'</span>];
+list.forEach((item) {
+  <span class="hljs-built_in">print</span>(<span class="hljs-string">'<span class="hljs-subst">${list.indexOf(item)}</span>: <span class="hljs-subst">$item</span>'</span>);
+});
+</code></pre>
+<h4 id="lexical-scope-%E8%AF%8D%E6%B3%95%E4%BD%9C%E7%94%A8%E5%9F%9F">Lexical scope 词法作用域</h4>
+<pre><code class="hljs">规则与es6的let一样，作用域块包括函数块和语法块
+</code></pre>
+<h3 id="operators">Operators</h3>
+<p>| 描述         | 操作符 |
+| ------------ | ------ |
+| TYPE TEST    | is is! |
+| IF NULL      | ??     |
+| 断言         | as     |
+| 对象链式操作 | ..     |</p>
+<pre><code class="hljs language-dart">(emp <span class="hljs-keyword">as</span> Person).firstName = <span class="hljs-string">'Bob'</span>
+</code></pre>
+<h3 id="%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6">流程控制</h3>
+<pre><code class="hljs">。。。
+</code></pre>
+<h4 id="assert">Assert</h4>
+<pre><code class="hljs">不是函数而是语句，如果语句内的语句放回false，会打断程序的运行
+</code></pre>
+<h2 id="exceptions">Exceptions</h2>
+<pre><code class="hljs">Your Dart code can throw and catch exceptions. Exceptions are errors indicating that something unexpected happened. If the exception isn’t caught, the isolate that raised the exception is suspended, and typically the isolate and its program are terminated.（异常不捕获处理会造成程序的终止）
+</code></pre>
+<ul>
+<li>throw</li>
+</ul>
+<pre><code class="hljs language-dart"><span class="hljs-keyword">throw</span> FormatException(<span class="hljs-string">'Expected at least 1 section'</span>);
+<span class="hljs-comment">// throw anything</span>
+<span class="hljs-keyword">throw</span> <span class="hljs-string">'out of llamas'</span>;
+</code></pre>
+<ul>
+<li>try catch</li>
+</ul>
+<pre><code class="hljs language-dart"><span class="hljs-keyword">try</span> {
+  breedMoreLlamas();
+} on OutOfLlamasException {
+  <span class="hljs-comment">// A specific exception</span>
+  buyMoreLlamas();
+} on Exception <span class="hljs-keyword">catch</span> (e) {
+  <span class="hljs-comment">// Anything else that is an exception</span>
+  <span class="hljs-built_in">print</span>(<span class="hljs-string">'Unknown exception: <span class="hljs-subst">$e</span>'</span>);
+} <span class="hljs-keyword">catch</span> (e) {
+  <span class="hljs-comment">// No specified type, handles all</span>
+  <span class="hljs-built_in">print</span>(<span class="hljs-string">'Something really unknown: <span class="hljs-subst">$e</span>'</span>);
+} <span class="hljs-keyword">finally</span> {
+    
+}
+</code></pre>
+<p>date_type: day week month quarter year custom</p>
+
+        </div>
+        <div class="article_item_footer">
+            <div class="read_btn">
+                <a href="/dart.html">Read</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="article_item">
+        <h3><a href="/config.html">config</a></h3>
+        <div class="preview md_html">
+            <pre><code class="hljs language-js">proxyTable: {
+    <span class="hljs-string">'/api/admin/resource/upload-img'</span>: {
+        <span class="hljs-attr">target</span>: <span class="hljs-string">'http://modeling-dev.mypaas.com.cn'</span>,
+        <span class="hljs-attr">changeOrigin</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">pathRewrite</span>: {
+            <span class="hljs-string">'^/api'</span>: <span class="hljs-string">'/api'</span>
+        }
+    },
+    <span class="hljs-string">'/api'</span>: {
+        <span class="hljs-attr">target</span>: <span class="hljs-string">'http://test-qmyxcg.myscrm.cn/'</span>,
+        <span class="hljs-attr">changeOrigin</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">cookieDomainRewrite</span>: {
+            <span class="hljs-string">"*"</span>: <span class="hljs-string">""</span>
+        }
+    }
+},
+</code></pre>
+<pre><code class="hljs language-js">{
+    <span class="hljs-string">"name"</span>: <span class="hljs-string">"workspace"</span>,
+    <span class="hljs-string">"version"</span>: <span class="hljs-string">"1.0.0"</span>,
+    <span class="hljs-string">"author"</span>: <span class="hljs-string">"paas-cli"</span>,
+    <span class="hljs-string">"license"</span>: <span class="hljs-string">"ISC"</span>,
+    <span class="hljs-string">"description"</span>: <span class="hljs-string">"paas-cli"</span>,
+    <span class="hljs-string">"private"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-string">"scripts"</span>: {
+        <span class="hljs-string">"sync"</span>: <span class="hljs-string">"paas sync &amp;&amp; yarn"</span>,
+        <span class="hljs-string">"git-pull"</span>: <span class="hljs-string">"node bin/git"</span>,
+        <span class="hljs-string">"start"</span>: <span class="hljs-string">"paas start --port 8081 --mode Wechat"</span>,
+        <span class="hljs-string">"startApp"</span>: <span class="hljs-string">"paas startApp"</span>,
+        <span class="hljs-string">"design"</span>: <span class="hljs-string">"paas design"</span>
+    },
+    <span class="hljs-string">"dependencies"</span>: {
+        <span class="hljs-string">"add"</span>: <span class="hljs-string">"^2.0.6"</span>,
+        <span class="hljs-string">"broker-common"</span>: <span class="hljs-string">"git+ssh://git@git.mysoft.com.cn:yunke-paas/broker-common.git"</span>,
+        <span class="hljs-string">"broker-http"</span>: <span class="hljs-string">"git+ssh://git@git.mysoft.com.cn:yunke-paas/broker-http.git"</span>,
+        <span class="hljs-string">"broker-store"</span>: <span class="hljs-string">"git+ssh://git@git.mysoft.com.cn:yunke-paas/broker-store.git"</span>,
+        <span class="hljs-string">"qs"</span>: <span class="hljs-string">"^6.5.1"</span>,
+        <span class="hljs-string">"v-tooltip"</span>: <span class="hljs-string">"^2.0.0-rc.25"</span>,
+        <span class="hljs-string">"vue-upload-component"</span>: <span class="hljs-string">"^2.7.4"</span>,
+        <span class="hljs-string">"vue2-better-scroll"</span>: <span class="hljs-string">"^1.0.6"</span>,
+        <span class="hljs-string">"webapp"</span>: <span class="hljs-string">"git+ssh://git@git.mysoft.com.cn:mic-paas/webapp.gitt#nightly"</span>
+    },
+    <span class="hljs-string">"appConfig"</span>: {
+        <span class="hljs-string">"pluginIds"</span>: <span class="hljs-string">"broker-store"</span>
+    },
+    <span class="hljs-string">"devDependencies"</span>: {
+        <span class="hljs-string">"eslint"</span>: <span class="hljs-string">"^4.1.0"</span>,
+        <span class="hljs-string">"eslint-config-airbnb-base"</span>: <span class="hljs-string">"^12.1.0"</span>,
+        <span class="hljs-string">"eslint-config-prettier"</span>: <span class="hljs-string">"^2.4.0"</span>,
+        <span class="hljs-string">"eslint-config-xo"</span>: <span class="hljs-string">"^0.18.2"</span>,
+        <span class="hljs-string">"eslint-plugin-html"</span>: <span class="hljs-string">"^4.0.1"</span>,
+        <span class="hljs-string">"eslint-plugin-import"</span>: <span class="hljs-string">"^2.8.0"</span>,
+        <span class="hljs-string">"eslint-plugin-prettier"</span>: <span class="hljs-string">"^2.2.0"</span>,
+        <span class="hljs-string">"husky"</span>: <span class="hljs-string">"^0.14.3"</span>,
+        <span class="hljs-string">"lint-staged"</span>: <span class="hljs-string">"^4.2.1"</span>,
+        <span class="hljs-string">"prettier"</span>: <span class="hljs-string">"^1.7.0"</span>,
+        <span class="hljs-string">"rimraf"</span>: <span class="hljs-string">"^2.6.2"</span>,
+        <span class="hljs-string">"v-tooltip"</span>: <span class="hljs-string">"^2.0.0-rc.25"</span>
+    },
+    <span class="hljs-string">"eslintConfig"</span>: {
+        <span class="hljs-string">"parser"</span>: <span class="hljs-string">"babel-eslint"</span>,
+        <span class="hljs-string">"parserOptions"</span>: {
+            <span class="hljs-string">"sourceType"</span>: <span class="hljs-string">"module"</span>
+        },
+        <span class="hljs-string">"extends"</span>: <span class="hljs-string">"airbnb-base"</span>,
+        <span class="hljs-string">"plugins"</span>: [
+            <span class="hljs-string">"html"</span>
+        ],
+        <span class="hljs-string">"rules"</span>: {
+            <span class="hljs-string">"indent"</span>: [
+                <span class="hljs-string">"error"</span>,
+                <span class="hljs-number">4</span>
+            ],
+            <span class="hljs-string">"semi"</span>: <span class="hljs-number">0</span>,
+            <span class="hljs-string">"comma-dangle"</span>: <span class="hljs-number">0</span>,
+            <span class="hljs-string">"linebreak-style"</span>: <span class="hljs-number">0</span>,
+            <span class="hljs-string">"no-console"</span>: <span class="hljs-number">0</span>
+        }
+    },
+    <span class="hljs-string">"appConfig"</span>: {
+        <span class="hljs-string">"pluginIds"</span>:<span class="hljs-string">"broker-common"</span>,
+        <span class="hljs-string">"loadLocalModules"</span>:<span class="hljs-literal">true</span>
+    }
+}
+
+</code></pre>
+
+        </div>
+        <div class="article_item_footer">
+            <div class="read_btn">
+                <a href="/config.html">Read</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="article_item">
+        <h3><a href="/about.html">about</a></h3>
+        <div class="preview md_html">
+            <h3 id="%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1">数据统计</h3>
+
+        </div>
+        <div class="article_item_footer">
+            <div class="read_btn">
+                <a href="/about.html">Read</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="article_item">
+        <h3><a href="/前端开发/关于柯里化函数.html">关于柯里化函数</a></h3>
+        <div class="preview md_html">
+            
+        </div>
+        <div class="article_item_footer">
+            <div class="read_btn">
+                <a href="/前端开发/关于柯里化函数.html">Read</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="article_item">
+        <h3><a href="/前端开发/业务逻辑复用的思考.html">业务逻辑复用的思考</a></h3>
+        <div class="preview md_html">
+            <p>过往的react开发中，对于代码的复用常常停留在组件的复用，而常见的组件划分法是将其分为容器组件和纯逐渐，比如对项目中比较常见的图表、表格、多级菜单等封装为对应的纯组件，对于纯组件而言它只负责展示，要复用这样的组件，只要对应的通过props传入不同的数据和回调函数即可。而容器组件是应用的数据逻辑层，主要用来处理应用状态、交互、服务器通讯(间接或直接)等。好像扯远了。。。</p>
+
+        </div>
+        <div class="article_item_footer">
+            <div class="read_btn">
+                <a href="/前端开发/业务逻辑复用的思考.html">Read</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="article_item">
+        <h3><a href="/前端开发/redux中间件.html">redux中间件</a></h3>
+        <div class="preview md_html">
+            <p>对于redux的来说，相对难以理解的可能就是redux中间件了，一开始的时候看了文档再看了别人写的文章介绍依旧还是云里雾里的，其实中间件的概念就是在再一个直接的过程中链式地加入其他的任务。为了理解redux中间件，今天还是从另一种方式入手来思考吧！</p>
+
+        </div>
+        <div class="article_item_footer">
+            <div class="read_btn">
+                <a href="/前端开发/redux中间件.html">Read</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="article_item">
+        <h3><a href="/前端开发/业务逻辑复用的思考.html">业务逻辑复用的思考</a></h3>
+        <div class="preview md_html">
+            <p>过往的react开发中，对于代码的复用常常停留在组件的复用，而常见的组件划分法是将其分为容器组件和纯逐渐，比如对项目中比较常见的图表、表格、多级菜单等封装为对应的纯组件，对于纯组件而言它只负责展示，要复用这样的组件，只要对应的通过props传入不同的数据和回调函数即可。而容器组件是应用的数据逻辑层，主要用来处理应用状态、交互、服务器通讯(间接或直接)等。好像扯远了。。。</p>
+
+        </div>
+        <div class="article_item_footer">
+            <div class="read_btn">
+                <a href="/前端开发/业务逻辑复用的思考.html">Read</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="article_item">
+        <h3><a href="/前端开发/关于柯里化函数.html">关于柯里化函数</a></h3>
+        <div class="preview md_html">
+            
+        </div>
+        <div class="article_item_footer">
+            <div class="read_btn">
+                <a href="/前端开发/关于柯里化函数.html">Read</a>
+            </div>
+        </div>
+    </section>
+    
+    <div class="page_box">
+    <div class="page_pre">
+        <a class="page_pre_item" class="" href="/articles/1.html">FIRST</a>
+        <a class="page_pre_item" href="/articles/11.html">
+            <i class="iconfont icon-previous"></i>
+        </a>
+    </div>
+    <div class="page_num">
+        
+    </div>
+    <div class="page_next">
+        <a class="page_next_item" href="/articles/13.html">
+            <i class="iconfont icon-next"></i>
+        </a>
+        <a class="page_next_item" href="/articles/57.html">LAST</a>
+    </div>
+    </div>
+</div>
+    </div>
+    <aside>
+        <div class="profile_banner"></div>
+        <div class="profile_logo">
+        <img src="/assets/logo.png" alt="">
+        </div>
+        <div class="profile_name">
+            qoxop
+        </div>
+        <div class="profile_motto">
+            一只单身的帅狗, 打代码、打游戏、撸猫、无恶不做~~~
+        </div>
+        <div class="profile_info">
+        <div>
+            <div class="iconbox"><em class="iconfont icon-github"></em></div>
+            <div class="icontext">github</div>
+        </div>
+        <div>
+            <div class="iconbox"><em class="iconfont icon-resume"></em></div>
+            <div class="icontext">resume</div>
+        </div>
+        <div>...</div>
+        </div>
+    </aside>
+</div>
+        </main>
+        <footer id="footer"></footer>
+      </article>
+      <div class="shortcut-tools">
+          <div onclick="exec('scrollToTop')" class="goto-top-btn">Top</div>
+          <div onclick="exec('scrollToBottom')" class="goto-bottom-btn">Bottom</div>
+          <div onclick="exec('goback')" class="goback-btn">goback</div>
+      </div>
+      <script src="/assets/common.js"></script>
+</body>
+</html>

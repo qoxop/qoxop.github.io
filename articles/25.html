@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content=",,,,,,,,,">
+    <title>qoxop | 首页(25)</title>
+    <link rel="stylesheet" href="/assets/common.css">
+    <link rel="stylesheet" href="/assets/articleList.css">
+    <link href="/assets/monokai_sublime.min.css" rel="stylesheet">  
+    <script async src="/assets/highlight.min.js"></script>
+     
+      <script src="/assets/hot_reload.js"></script>
+    
+</head>
+<body>
+    <article id="app">
+        <header>
+          <h1>张集伟的个人博客</h1>
+          <div class="content_box header_inner">
+            <div class="logo">
+              <div class="logoImg">
+                <img src="/assets/icon.png" alt="">
+              </div>
+              <div class="logoText">
+                jiw
+              </div>
+            </div>
+            <nav class="navigator">
+              <ul>
+                
+                <li class="actived">
+                    <a href="#">
+                        HOME
+                    </a>
+                </li>
+                
+                <li class="">
+                    <a href="/category.html">
+                        CATEGORY
+                    </a>
+                </li>
+                
+                <li class="">
+                    <a href="/tags.html">
+                        标签
+                    </a>
+                </li>
+                
+                <li class="">
+                    <a href="/link.html">
+                        链接
+                    </a>
+                </li>
+                
+                <li class="">
+                    <a href="/about.html">
+                        关于我
+                    </a>
+                </li>
+                
+              </ul>
+            </nav>
+          </div>
+        </header>
+        <main id="main">
+           <div class="content_box">
+    <div id="left_content">
+        <!-- 这里存放主要内容 -->
+       <div class="article_list">
+    
+    <section class="article_item">
+        <h3><a href="/前端开发/css盒子模型.html">css盒子模型</a></h3>
+        <div class="preview md_html">
+            <h3 id="css%E7%9B%92%E6%A8%A1%E5%9E%8B">CSS盒模型</h3>
+<blockquote>
+<p>CSS盒模型（译者注：也被称为“盒模型”）是网页布局的基础 ——每个元素被表示为一个矩形的方框，框的内容、内边距、边界和外边距像洋葱的膜那样，一层包着一层构建起来。浏览器渲染网页布局时，它会算出每个框的内容要用什么样式，周围的洋葱层有多大，以及框相对于其它框放在哪里。</p>
+</blockquote>
+<h4 id="%E7%9B%92%E6%A8%A1%E5%9E%8B%E7%BB%84%E6%88%90">盒模型组成</h4>
+<p>由外到里分别为: content, padding, border, margin</p>
+<h4 id="%E4%B8%A4%E7%A7%8D%E6%A0%87%E5%87%86">两种标准</h4>
+<p>标准模型(content-box)、IE模型(border-box)，通过box-sizing切换，具体的区别在于width、height属性描述限制的范围不同</p>
+<h4 id="%E8%8E%B7%E5%8F%96%E7%9B%92%E5%AD%90%E7%9A%84%E5%AE%BD%E9%AB%98">获取盒子的宽高</h4>
+<ol>
+<li>
+<p>取内联样式设置的宽高（取得的是css是width/height属性）</p>
+<pre><code class="hljs language-javascript">dom.style.width/height
+</code></pre>
+</li>
+<li>
+<p>取渲染后的宽高，仅ie（取得的是标准模型的宽高）</p>
+<pre><code class="hljs language-javascript">dom.currentStyle.width/height
+</code></pre>
+</li>
+<li>
+<p>取渲染后的宽高, 通用兼容性好（取得的是标准模型的宽高）</p>
+<pre><code class="hljs language-javascript"><span class="hljs-built_in">window</span>.getComputedStyle(dom).width/height
+<span class="hljs-comment">// 如果dom元素是一个滚动盒子，那么结果需要是减去滚动调后的值</span>
+</code></pre>
+</li>
+<li>
+<p>通过计算盒子在视窗的绝对位置 （取得的是IE模型的宽高）</p>
+<pre><code class="hljs language-javascript">dom.getBoundingClientRect().width/height
+</code></pre>
+</li>
+<li>
+<p><code>offsetWidth</code> / <code>offsetWidth</code> （取得的是IE模型的宽高）</p>
+<pre><code class="hljs language-javascript">dom.offsetWidth/offsetWidth
+</code></pre>
+</li>
+</ol>
+<h4 id="%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%A1%8C%E9%99%B7">外边距塌陷</h4>
+<blockquote>
+<p>块级元素的上外边距和下外边距有时会合并（或折叠）为一个外边距，其大小取其中的最大者，这种行为称为外边距折叠（margin collapsing），有时也翻译为外边距合并。注意浮动元素和绝对定位元素的外边距不会折叠。</p>
+</blockquote>
+<h5 id="%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%A1%8C%E9%99%B7%E7%9A%84%E4%B8%89%E7%A7%8D%E5%9F%BA%E6%9C%AC%E6%83%85%E5%86%B5">外边距塌陷的三种基本情况</h5>
+<ul>
+<li>相邻元素之间</li>
+<li>父元素与其第一个或最后一个子元素之间</li>
+<li>空的块级元素</li>
+</ul>
+<h5 id="%E9%98%B2%E6%AD%A2%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%A1%8C%E9%99%B7%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88">防止外边距塌陷的解决方案</h5>
+<h6 id="bfc-%E5%9D%97%E7%BA%A7%E6%A0%BC%E5%BC%8F%E5%8C%96%E4%B8%8A%E4%B8%8B%E6%96%87">BFC 块级格式化上下文</h6>
+<blockquote>
+<p>BFC（Block Formatting Context）格式化上下文，是Web页面中盒模型布局的CSS渲染模式，指一个独立的渲染区域或者说是一个隔离的独立容器。</p>
+</blockquote>
+<ul>
+<li>原理：
+<ol>
+<li>BFC元素的子元素在垂直方向的边距会发生重叠（为什么时垂直方向，应为块级元素独占一行，其他元素确实脱离了正常的文档流）</li>
+<li>BFC元素的边距不会与它的子浮动元素的box重叠，也就是说浮动元素的margin也同样会撑开父元素的高度或高度(如果没有限制宽高的话)，同时与子浮动元素相邻的子元素之间也不会发生重叠</li>
+<li>BFC在页面是一个独立的容器，外面的元素不会影响它里面的元素</li>
+<li>计算BFC元素高度时浮动元素也会参与计算，也就是说即使BFC元素内的尾部有自动清楚所有浮动的功能，即使BFC元素的子元素都是浮动的，BFC元素的高度也不会为<strong>零</strong></li>
+</ol>
+</li>
+<li>如何创建
+<ol>
+<li>css属性float不为none</li>
+<li>css属性position不为默认值</li>
+<li>css属性display属性与table相关的属性</li>
+<li>css属性overflow属性不为visible</li>
+</ol>
+</li>
+</ul>
+
+        </div>
+        <div class="article_item_footer">
+            <div class="read_btn">
+                <a href="/前端开发/css盒子模型.html">Read</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="article_item">
+        <h3><a href="/前端开发/css盒子模型.html">css盒子模型</a></h3>
+        <div class="preview md_html">
+            <h3 id="css%E7%9B%92%E6%A8%A1%E5%9E%8B">CSS盒模型</h3>
+<blockquote>
+<p>CSS盒模型（译者注：也被称为“盒模型”）是网页布局的基础 ——每个元素被表示为一个矩形的方框，框的内容、内边距、边界和外边距像洋葱的膜那样，一层包着一层构建起来。浏览器渲染网页布局时，它会算出每个框的内容要用什么样式，周围的洋葱层有多大，以及框相对于其它框放在哪里。</p>
+</blockquote>
+<h4 id="%E7%9B%92%E6%A8%A1%E5%9E%8B%E7%BB%84%E6%88%90">盒模型组成</h4>
+<p>由外到里分别为: content, padding, border, margin</p>
+<h4 id="%E4%B8%A4%E7%A7%8D%E6%A0%87%E5%87%86">两种标准</h4>
+<p>标准模型(content-box)、IE模型(border-box)，通过box-sizing切换，具体的区别在于width、height属性描述限制的范围不同</p>
+<h4 id="%E8%8E%B7%E5%8F%96%E7%9B%92%E5%AD%90%E7%9A%84%E5%AE%BD%E9%AB%98">获取盒子的宽高</h4>
+<ol>
+<li>
+<p>取内联样式设置的宽高（取得的是css是width/height属性）</p>
+<pre><code class="hljs language-javascript">dom.style.width/height
+</code></pre>
+</li>
+<li>
+<p>取渲染后的宽高，仅ie（取得的是标准模型的宽高）</p>
+<pre><code class="hljs language-javascript">dom.currentStyle.width/height
+</code></pre>
+</li>
+<li>
+<p>取渲染后的宽高, 通用兼容性好（取得的是标准模型的宽高）</p>
+<pre><code class="hljs language-javascript"><span class="hljs-built_in">window</span>.getComputedStyle(dom).width/height
+<span class="hljs-comment">// 如果dom元素是一个滚动盒子，那么结果需要是减去滚动调后的值</span>
+</code></pre>
+</li>
+<li>
+<p>通过计算盒子在视窗的绝对位置 （取得的是IE模型的宽高）</p>
+<pre><code class="hljs language-javascript">dom.getBoundingClientRect().width/height
+</code></pre>
+</li>
+<li>
+<p><code>offsetWidth</code> / <code>offsetWidth</code> （取得的是IE模型的宽高）</p>
+<pre><code class="hljs language-javascript">dom.offsetWidth/offsetWidth
+</code></pre>
+</li>
+</ol>
+<h4 id="%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%A1%8C%E9%99%B7">外边距塌陷</h4>
+<blockquote>
+<p>块级元素的上外边距和下外边距有时会合并（或折叠）为一个外边距，其大小取其中的最大者，这种行为称为外边距折叠（margin collapsing），有时也翻译为外边距合并。注意浮动元素和绝对定位元素的外边距不会折叠。</p>
+</blockquote>
+<h5 id="%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%A1%8C%E9%99%B7%E7%9A%84%E4%B8%89%E7%A7%8D%E5%9F%BA%E6%9C%AC%E6%83%85%E5%86%B5">外边距塌陷的三种基本情况</h5>
+<ul>
+<li>相邻元素之间</li>
+<li>父元素与其第一个或最后一个子元素之间</li>
+<li>空的块级元素</li>
+</ul>
+<h5 id="%E9%98%B2%E6%AD%A2%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%A1%8C%E9%99%B7%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88">防止外边距塌陷的解决方案</h5>
+<h6 id="bfc-%E5%9D%97%E7%BA%A7%E6%A0%BC%E5%BC%8F%E5%8C%96%E4%B8%8A%E4%B8%8B%E6%96%87">BFC 块级格式化上下文</h6>
+<blockquote>
+<p>BFC（Block Formatting Context）格式化上下文，是Web页面中盒模型布局的CSS渲染模式，指一个独立的渲染区域或者说是一个隔离的独立容器。</p>
+</blockquote>
+<ul>
+<li>原理：
+<ol>
+<li>BFC元素的子元素在垂直方向的边距会发生重叠（为什么时垂直方向，应为块级元素独占一行，其他元素确实脱离了正常的文档流）</li>
+<li>BFC元素的边距不会与它的子浮动元素的box重叠，也就是说浮动元素的margin也同样会撑开父元素的高度或高度(如果没有限制宽高的话)，同时与子浮动元素相邻的子元素之间也不会发生重叠</li>
+<li>BFC在页面是一个独立的容器，外面的元素不会影响它里面的元素</li>
+<li>计算BFC元素高度时浮动元素也会参与计算，也就是说即使BFC元素内的尾部有自动清楚所有浮动的功能，即使BFC元素的子元素都是浮动的，BFC元素的高度也不会为<strong>零</strong></li>
+</ol>
+</li>
+<li>如何创建
+<ol>
+<li>css属性float不为none</li>
+<li>css属性position不为默认值</li>
+<li>css属性display属性与table相关的属性</li>
+<li>css属性overflow属性不为visible</li>
+</ol>
+</li>
+</ul>
+
+        </div>
+        <div class="article_item_footer">
+            <div class="read_btn">
+                <a href="/前端开发/css盒子模型.html">Read</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="article_item">
+        <h3><a href="/前端开发/css盒子模型.html">css盒子模型</a></h3>
+        <div class="preview md_html">
+            <h3 id="css%E7%9B%92%E6%A8%A1%E5%9E%8B">CSS盒模型</h3>
+<blockquote>
+<p>CSS盒模型（译者注：也被称为“盒模型”）是网页布局的基础 ——每个元素被表示为一个矩形的方框，框的内容、内边距、边界和外边距像洋葱的膜那样，一层包着一层构建起来。浏览器渲染网页布局时，它会算出每个框的内容要用什么样式，周围的洋葱层有多大，以及框相对于其它框放在哪里。</p>
+</blockquote>
+<h4 id="%E7%9B%92%E6%A8%A1%E5%9E%8B%E7%BB%84%E6%88%90">盒模型组成</h4>
+<p>由外到里分别为: content, padding, border, margin</p>
+<h4 id="%E4%B8%A4%E7%A7%8D%E6%A0%87%E5%87%86">两种标准</h4>
+<p>标准模型(content-box)、IE模型(border-box)，通过box-sizing切换，具体的区别在于width、height属性描述限制的范围不同</p>
+<h4 id="%E8%8E%B7%E5%8F%96%E7%9B%92%E5%AD%90%E7%9A%84%E5%AE%BD%E9%AB%98">获取盒子的宽高</h4>
+<ol>
+<li>
+<p>取内联样式设置的宽高（取得的是css是width/height属性）</p>
+<pre><code class="hljs language-javascript">dom.style.width/height
+</code></pre>
+</li>
+<li>
+<p>取渲染后的宽高，仅ie（取得的是标准模型的宽高）</p>
+<pre><code class="hljs language-javascript">dom.currentStyle.width/height
+</code></pre>
+</li>
+<li>
+<p>取渲染后的宽高, 通用兼容性好（取得的是标准模型的宽高）</p>
+<pre><code class="hljs language-javascript"><span class="hljs-built_in">window</span>.getComputedStyle(dom).width/height
+<span class="hljs-comment">// 如果dom元素是一个滚动盒子，那么结果需要是减去滚动调后的值</span>
+</code></pre>
+</li>
+<li>
+<p>通过计算盒子在视窗的绝对位置 （取得的是IE模型的宽高）</p>
+<pre><code class="hljs language-javascript">dom.getBoundingClientRect().width/height
+</code></pre>
+</li>
+<li>
+<p><code>offsetWidth</code> / <code>offsetWidth</code> （取得的是IE模型的宽高）</p>
+<pre><code class="hljs language-javascript">dom.offsetWidth/offsetWidth
+</code></pre>
+</li>
+</ol>
+<h4 id="%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%A1%8C%E9%99%B7">外边距塌陷</h4>
+<blockquote>
+<p>块级元素的上外边距和下外边距有时会合并（或折叠）为一个外边距，其大小取其中的最大者，这种行为称为外边距折叠（margin collapsing），有时也翻译为外边距合并。注意浮动元素和绝对定位元素的外边距不会折叠。</p>
+</blockquote>
+<h5 id="%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%A1%8C%E9%99%B7%E7%9A%84%E4%B8%89%E7%A7%8D%E5%9F%BA%E6%9C%AC%E6%83%85%E5%86%B5">外边距塌陷的三种基本情况</h5>
+<ul>
+<li>相邻元素之间</li>
+<li>父元素与其第一个或最后一个子元素之间</li>
+<li>空的块级元素</li>
+</ul>
+<h5 id="%E9%98%B2%E6%AD%A2%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%A1%8C%E9%99%B7%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88">防止外边距塌陷的解决方案</h5>
+<h6 id="bfc-%E5%9D%97%E7%BA%A7%E6%A0%BC%E5%BC%8F%E5%8C%96%E4%B8%8A%E4%B8%8B%E6%96%87">BFC 块级格式化上下文</h6>
+<blockquote>
+<p>BFC（Block Formatting Context）格式化上下文，是Web页面中盒模型布局的CSS渲染模式，指一个独立的渲染区域或者说是一个隔离的独立容器。</p>
+</blockquote>
+<ul>
+<li>原理：
+<ol>
+<li>BFC元素的子元素在垂直方向的边距会发生重叠（为什么时垂直方向，应为块级元素独占一行，其他元素确实脱离了正常的文档流）</li>
+<li>BFC元素的边距不会与它的子浮动元素的box重叠，也就是说浮动元素的margin也同样会撑开父元素的高度或高度(如果没有限制宽高的话)，同时与子浮动元素相邻的子元素之间也不会发生重叠</li>
+<li>BFC在页面是一个独立的容器，外面的元素不会影响它里面的元素</li>
+<li>计算BFC元素高度时浮动元素也会参与计算，也就是说即使BFC元素内的尾部有自动清楚所有浮动的功能，即使BFC元素的子元素都是浮动的，BFC元素的高度也不会为<strong>零</strong></li>
+</ol>
+</li>
+<li>如何创建
+<ol>
+<li>css属性float不为none</li>
+<li>css属性position不为默认值</li>
+<li>css属性display属性与table相关的属性</li>
+<li>css属性overflow属性不为visible</li>
+</ol>
+</li>
+</ul>
+
+        </div>
+        <div class="article_item_footer">
+            <div class="read_btn">
+                <a href="/前端开发/css盒子模型.html">Read</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="article_item">
+        <h3><a href="/前端开发/css盒子模型.html">css盒子模型</a></h3>
+        <div class="preview md_html">
+            <h3 id="css%E7%9B%92%E6%A8%A1%E5%9E%8B">CSS盒模型</h3>
+<blockquote>
+<p>CSS盒模型（译者注：也被称为“盒模型”）是网页布局的基础 ——每个元素被表示为一个矩形的方框，框的内容、内边距、边界和外边距像洋葱的膜那样，一层包着一层构建起来。浏览器渲染网页布局时，它会算出每个框的内容要用什么样式，周围的洋葱层有多大，以及框相对于其它框放在哪里。</p>
+</blockquote>
+<h4 id="%E7%9B%92%E6%A8%A1%E5%9E%8B%E7%BB%84%E6%88%90">盒模型组成</h4>
+<p>由外到里分别为: content, padding, border, margin</p>
+<h4 id="%E4%B8%A4%E7%A7%8D%E6%A0%87%E5%87%86">两种标准</h4>
+<p>标准模型(content-box)、IE模型(border-box)，通过box-sizing切换，具体的区别在于width、height属性描述限制的范围不同</p>
+<h4 id="%E8%8E%B7%E5%8F%96%E7%9B%92%E5%AD%90%E7%9A%84%E5%AE%BD%E9%AB%98">获取盒子的宽高</h4>
+<ol>
+<li>
+<p>取内联样式设置的宽高（取得的是css是width/height属性）</p>
+<pre><code class="hljs language-javascript">dom.style.width/height
+</code></pre>
+</li>
+<li>
+<p>取渲染后的宽高，仅ie（取得的是标准模型的宽高）</p>
+<pre><code class="hljs language-javascript">dom.currentStyle.width/height
+</code></pre>
+</li>
+<li>
+<p>取渲染后的宽高, 通用兼容性好（取得的是标准模型的宽高）</p>
+<pre><code class="hljs language-javascript"><span class="hljs-built_in">window</span>.getComputedStyle(dom).width/height
+<span class="hljs-comment">// 如果dom元素是一个滚动盒子，那么结果需要是减去滚动调后的值</span>
+</code></pre>
+</li>
+<li>
+<p>通过计算盒子在视窗的绝对位置 （取得的是IE模型的宽高）</p>
+<pre><code class="hljs language-javascript">dom.getBoundingClientRect().width/height
+</code></pre>
+</li>
+<li>
+<p><code>offsetWidth</code> / <code>offsetWidth</code> （取得的是IE模型的宽高）</p>
+<pre><code class="hljs language-javascript">dom.offsetWidth/offsetWidth
+</code></pre>
+</li>
+</ol>
+<h4 id="%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%A1%8C%E9%99%B7">外边距塌陷</h4>
+<blockquote>
+<p>块级元素的上外边距和下外边距有时会合并（或折叠）为一个外边距，其大小取其中的最大者，这种行为称为外边距折叠（margin collapsing），有时也翻译为外边距合并。注意浮动元素和绝对定位元素的外边距不会折叠。</p>
+</blockquote>
+<h5 id="%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%A1%8C%E9%99%B7%E7%9A%84%E4%B8%89%E7%A7%8D%E5%9F%BA%E6%9C%AC%E6%83%85%E5%86%B5">外边距塌陷的三种基本情况</h5>
+<ul>
+<li>相邻元素之间</li>
+<li>父元素与其第一个或最后一个子元素之间</li>
+<li>空的块级元素</li>
+</ul>
+<h5 id="%E9%98%B2%E6%AD%A2%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%A1%8C%E9%99%B7%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88">防止外边距塌陷的解决方案</h5>
+<h6 id="bfc-%E5%9D%97%E7%BA%A7%E6%A0%BC%E5%BC%8F%E5%8C%96%E4%B8%8A%E4%B8%8B%E6%96%87">BFC 块级格式化上下文</h6>
+<blockquote>
+<p>BFC（Block Formatting Context）格式化上下文，是Web页面中盒模型布局的CSS渲染模式，指一个独立的渲染区域或者说是一个隔离的独立容器。</p>
+</blockquote>
+<ul>
+<li>原理：
+<ol>
+<li>BFC元素的子元素在垂直方向的边距会发生重叠（为什么时垂直方向，应为块级元素独占一行，其他元素确实脱离了正常的文档流）</li>
+<li>BFC元素的边距不会与它的子浮动元素的box重叠，也就是说浮动元素的margin也同样会撑开父元素的高度或高度(如果没有限制宽高的话)，同时与子浮动元素相邻的子元素之间也不会发生重叠</li>
+<li>BFC在页面是一个独立的容器，外面的元素不会影响它里面的元素</li>
+<li>计算BFC元素高度时浮动元素也会参与计算，也就是说即使BFC元素内的尾部有自动清楚所有浮动的功能，即使BFC元素的子元素都是浮动的，BFC元素的高度也不会为<strong>零</strong></li>
+</ol>
+</li>
+<li>如何创建
+<ol>
+<li>css属性float不为none</li>
+<li>css属性position不为默认值</li>
+<li>css属性display属性与table相关的属性</li>
+<li>css属性overflow属性不为visible</li>
+</ol>
+</li>
+</ul>
+
+        </div>
+        <div class="article_item_footer">
+            <div class="read_btn">
+                <a href="/前端开发/css盒子模型.html">Read</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="article_item">
+        <h3><a href="/前端开发/css盒子模型.html">css盒子模型</a></h3>
+        <div class="preview md_html">
+            <h3 id="css%E7%9B%92%E6%A8%A1%E5%9E%8B">CSS盒模型</h3>
+<blockquote>
+<p>CSS盒模型（译者注：也被称为“盒模型”）是网页布局的基础 ——每个元素被表示为一个矩形的方框，框的内容、内边距、边界和外边距像洋葱的膜那样，一层包着一层构建起来。浏览器渲染网页布局时，它会算出每个框的内容要用什么样式，周围的洋葱层有多大，以及框相对于其它框放在哪里。</p>
+</blockquote>
+<h4 id="%E7%9B%92%E6%A8%A1%E5%9E%8B%E7%BB%84%E6%88%90">盒模型组成</h4>
+<p>由外到里分别为: content, padding, border, margin</p>
+<h4 id="%E4%B8%A4%E7%A7%8D%E6%A0%87%E5%87%86">两种标准</h4>
+<p>标准模型(content-box)、IE模型(border-box)，通过box-sizing切换，具体的区别在于width、height属性描述限制的范围不同</p>
+<h4 id="%E8%8E%B7%E5%8F%96%E7%9B%92%E5%AD%90%E7%9A%84%E5%AE%BD%E9%AB%98">获取盒子的宽高</h4>
+<ol>
+<li>
+<p>取内联样式设置的宽高（取得的是css是width/height属性）</p>
+<pre><code class="hljs language-javascript">dom.style.width/height
+</code></pre>
+</li>
+<li>
+<p>取渲染后的宽高，仅ie（取得的是标准模型的宽高）</p>
+<pre><code class="hljs language-javascript">dom.currentStyle.width/height
+</code></pre>
+</li>
+<li>
+<p>取渲染后的宽高, 通用兼容性好（取得的是标准模型的宽高）</p>
+<pre><code class="hljs language-javascript"><span class="hljs-built_in">window</span>.getComputedStyle(dom).width/height
+<span class="hljs-comment">// 如果dom元素是一个滚动盒子，那么结果需要是减去滚动调后的值</span>
+</code></pre>
+</li>
+<li>
+<p>通过计算盒子在视窗的绝对位置 （取得的是IE模型的宽高）</p>
+<pre><code class="hljs language-javascript">dom.getBoundingClientRect().width/height
+</code></pre>
+</li>
+<li>
+<p><code>offsetWidth</code> / <code>offsetWidth</code> （取得的是IE模型的宽高）</p>
+<pre><code class="hljs language-javascript">dom.offsetWidth/offsetWidth
+</code></pre>
+</li>
+</ol>
+<h4 id="%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%A1%8C%E9%99%B7">外边距塌陷</h4>
+<blockquote>
+<p>块级元素的上外边距和下外边距有时会合并（或折叠）为一个外边距，其大小取其中的最大者，这种行为称为外边距折叠（margin collapsing），有时也翻译为外边距合并。注意浮动元素和绝对定位元素的外边距不会折叠。</p>
+</blockquote>
+<h5 id="%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%A1%8C%E9%99%B7%E7%9A%84%E4%B8%89%E7%A7%8D%E5%9F%BA%E6%9C%AC%E6%83%85%E5%86%B5">外边距塌陷的三种基本情况</h5>
+<ul>
+<li>相邻元素之间</li>
+<li>父元素与其第一个或最后一个子元素之间</li>
+<li>空的块级元素</li>
+</ul>
+<h5 id="%E9%98%B2%E6%AD%A2%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%A1%8C%E9%99%B7%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88">防止外边距塌陷的解决方案</h5>
+<h6 id="bfc-%E5%9D%97%E7%BA%A7%E6%A0%BC%E5%BC%8F%E5%8C%96%E4%B8%8A%E4%B8%8B%E6%96%87">BFC 块级格式化上下文</h6>
+<blockquote>
+<p>BFC（Block Formatting Context）格式化上下文，是Web页面中盒模型布局的CSS渲染模式，指一个独立的渲染区域或者说是一个隔离的独立容器。</p>
+</blockquote>
+<ul>
+<li>原理：
+<ol>
+<li>BFC元素的子元素在垂直方向的边距会发生重叠（为什么时垂直方向，应为块级元素独占一行，其他元素确实脱离了正常的文档流）</li>
+<li>BFC元素的边距不会与它的子浮动元素的box重叠，也就是说浮动元素的margin也同样会撑开父元素的高度或高度(如果没有限制宽高的话)，同时与子浮动元素相邻的子元素之间也不会发生重叠</li>
+<li>BFC在页面是一个独立的容器，外面的元素不会影响它里面的元素</li>
+<li>计算BFC元素高度时浮动元素也会参与计算，也就是说即使BFC元素内的尾部有自动清楚所有浮动的功能，即使BFC元素的子元素都是浮动的，BFC元素的高度也不会为<strong>零</strong></li>
+</ol>
+</li>
+<li>如何创建
+<ol>
+<li>css属性float不为none</li>
+<li>css属性position不为默认值</li>
+<li>css属性display属性与table相关的属性</li>
+<li>css属性overflow属性不为visible</li>
+</ol>
+</li>
+</ul>
+
+        </div>
+        <div class="article_item_footer">
+            <div class="read_btn">
+                <a href="/前端开发/css盒子模型.html">Read</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="article_item">
+        <h3><a href="/前端开发/css盒子模型.html">css盒子模型</a></h3>
+        <div class="preview md_html">
+            <h3 id="css%E7%9B%92%E6%A8%A1%E5%9E%8B">CSS盒模型</h3>
+<blockquote>
+<p>CSS盒模型（译者注：也被称为“盒模型”）是网页布局的基础 ——每个元素被表示为一个矩形的方框，框的内容、内边距、边界和外边距像洋葱的膜那样，一层包着一层构建起来。浏览器渲染网页布局时，它会算出每个框的内容要用什么样式，周围的洋葱层有多大，以及框相对于其它框放在哪里。</p>
+</blockquote>
+<h4 id="%E7%9B%92%E6%A8%A1%E5%9E%8B%E7%BB%84%E6%88%90">盒模型组成</h4>
+<p>由外到里分别为: content, padding, border, margin</p>
+<h4 id="%E4%B8%A4%E7%A7%8D%E6%A0%87%E5%87%86">两种标准</h4>
+<p>标准模型(content-box)、IE模型(border-box)，通过box-sizing切换，具体的区别在于width、height属性描述限制的范围不同</p>
+<h4 id="%E8%8E%B7%E5%8F%96%E7%9B%92%E5%AD%90%E7%9A%84%E5%AE%BD%E9%AB%98">获取盒子的宽高</h4>
+<ol>
+<li>
+<p>取内联样式设置的宽高（取得的是css是width/height属性）</p>
+<pre><code class="hljs language-javascript">dom.style.width/height
+</code></pre>
+</li>
+<li>
+<p>取渲染后的宽高，仅ie（取得的是标准模型的宽高）</p>
+<pre><code class="hljs language-javascript">dom.currentStyle.width/height
+</code></pre>
+</li>
+<li>
+<p>取渲染后的宽高, 通用兼容性好（取得的是标准模型的宽高）</p>
+<pre><code class="hljs language-javascript"><span class="hljs-built_in">window</span>.getComputedStyle(dom).width/height
+<span class="hljs-comment">// 如果dom元素是一个滚动盒子，那么结果需要是减去滚动调后的值</span>
+</code></pre>
+</li>
+<li>
+<p>通过计算盒子在视窗的绝对位置 （取得的是IE模型的宽高）</p>
+<pre><code class="hljs language-javascript">dom.getBoundingClientRect().width/height
+</code></pre>
+</li>
+<li>
+<p><code>offsetWidth</code> / <code>offsetWidth</code> （取得的是IE模型的宽高）</p>
+<pre><code class="hljs language-javascript">dom.offsetWidth/offsetWidth
+</code></pre>
+</li>
+</ol>
+<h4 id="%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%A1%8C%E9%99%B7">外边距塌陷</h4>
+<blockquote>
+<p>块级元素的上外边距和下外边距有时会合并（或折叠）为一个外边距，其大小取其中的最大者，这种行为称为外边距折叠（margin collapsing），有时也翻译为外边距合并。注意浮动元素和绝对定位元素的外边距不会折叠。</p>
+</blockquote>
+<h5 id="%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%A1%8C%E9%99%B7%E7%9A%84%E4%B8%89%E7%A7%8D%E5%9F%BA%E6%9C%AC%E6%83%85%E5%86%B5">外边距塌陷的三种基本情况</h5>
+<ul>
+<li>相邻元素之间</li>
+<li>父元素与其第一个或最后一个子元素之间</li>
+<li>空的块级元素</li>
+</ul>
+<h5 id="%E9%98%B2%E6%AD%A2%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%A1%8C%E9%99%B7%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88">防止外边距塌陷的解决方案</h5>
+<h6 id="bfc-%E5%9D%97%E7%BA%A7%E6%A0%BC%E5%BC%8F%E5%8C%96%E4%B8%8A%E4%B8%8B%E6%96%87">BFC 块级格式化上下文</h6>
+<blockquote>
+<p>BFC（Block Formatting Context）格式化上下文，是Web页面中盒模型布局的CSS渲染模式，指一个独立的渲染区域或者说是一个隔离的独立容器。</p>
+</blockquote>
+<ul>
+<li>原理：
+<ol>
+<li>BFC元素的子元素在垂直方向的边距会发生重叠（为什么时垂直方向，应为块级元素独占一行，其他元素确实脱离了正常的文档流）</li>
+<li>BFC元素的边距不会与它的子浮动元素的box重叠，也就是说浮动元素的margin也同样会撑开父元素的高度或高度(如果没有限制宽高的话)，同时与子浮动元素相邻的子元素之间也不会发生重叠</li>
+<li>BFC在页面是一个独立的容器，外面的元素不会影响它里面的元素</li>
+<li>计算BFC元素高度时浮动元素也会参与计算，也就是说即使BFC元素内的尾部有自动清楚所有浮动的功能，即使BFC元素的子元素都是浮动的，BFC元素的高度也不会为<strong>零</strong></li>
+</ol>
+</li>
+<li>如何创建
+<ol>
+<li>css属性float不为none</li>
+<li>css属性position不为默认值</li>
+<li>css属性display属性与table相关的属性</li>
+<li>css属性overflow属性不为visible</li>
+</ol>
+</li>
+</ul>
+
+        </div>
+        <div class="article_item_footer">
+            <div class="read_btn">
+                <a href="/前端开发/css盒子模型.html">Read</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="article_item">
+        <h3><a href="/前端开发/css盒子模型.html">css盒子模型</a></h3>
+        <div class="preview md_html">
+            <h3 id="css%E7%9B%92%E6%A8%A1%E5%9E%8B">CSS盒模型</h3>
+<blockquote>
+<p>CSS盒模型（译者注：也被称为“盒模型”）是网页布局的基础 ——每个元素被表示为一个矩形的方框，框的内容、内边距、边界和外边距像洋葱的膜那样，一层包着一层构建起来。浏览器渲染网页布局时，它会算出每个框的内容要用什么样式，周围的洋葱层有多大，以及框相对于其它框放在哪里。</p>
+</blockquote>
+<h4 id="%E7%9B%92%E6%A8%A1%E5%9E%8B%E7%BB%84%E6%88%90">盒模型组成</h4>
+<p>由外到里分别为: content, padding, border, margin</p>
+<h4 id="%E4%B8%A4%E7%A7%8D%E6%A0%87%E5%87%86">两种标准</h4>
+<p>标准模型(content-box)、IE模型(border-box)，通过box-sizing切换，具体的区别在于width、height属性描述限制的范围不同</p>
+<h4 id="%E8%8E%B7%E5%8F%96%E7%9B%92%E5%AD%90%E7%9A%84%E5%AE%BD%E9%AB%98">获取盒子的宽高</h4>
+<ol>
+<li>
+<p>取内联样式设置的宽高（取得的是css是width/height属性）</p>
+<pre><code class="hljs language-javascript">dom.style.width/height
+</code></pre>
+</li>
+<li>
+<p>取渲染后的宽高，仅ie（取得的是标准模型的宽高）</p>
+<pre><code class="hljs language-javascript">dom.currentStyle.width/height
+</code></pre>
+</li>
+<li>
+<p>取渲染后的宽高, 通用兼容性好（取得的是标准模型的宽高）</p>
+<pre><code class="hljs language-javascript"><span class="hljs-built_in">window</span>.getComputedStyle(dom).width/height
+<span class="hljs-comment">// 如果dom元素是一个滚动盒子，那么结果需要是减去滚动调后的值</span>
+</code></pre>
+</li>
+<li>
+<p>通过计算盒子在视窗的绝对位置 （取得的是IE模型的宽高）</p>
+<pre><code class="hljs language-javascript">dom.getBoundingClientRect().width/height
+</code></pre>
+</li>
+<li>
+<p><code>offsetWidth</code> / <code>offsetWidth</code> （取得的是IE模型的宽高）</p>
+<pre><code class="hljs language-javascript">dom.offsetWidth/offsetWidth
+</code></pre>
+</li>
+</ol>
+<h4 id="%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%A1%8C%E9%99%B7">外边距塌陷</h4>
+<blockquote>
+<p>块级元素的上外边距和下外边距有时会合并（或折叠）为一个外边距，其大小取其中的最大者，这种行为称为外边距折叠（margin collapsing），有时也翻译为外边距合并。注意浮动元素和绝对定位元素的外边距不会折叠。</p>
+</blockquote>
+<h5 id="%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%A1%8C%E9%99%B7%E7%9A%84%E4%B8%89%E7%A7%8D%E5%9F%BA%E6%9C%AC%E6%83%85%E5%86%B5">外边距塌陷的三种基本情况</h5>
+<ul>
+<li>相邻元素之间</li>
+<li>父元素与其第一个或最后一个子元素之间</li>
+<li>空的块级元素</li>
+</ul>
+<h5 id="%E9%98%B2%E6%AD%A2%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%A1%8C%E9%99%B7%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88">防止外边距塌陷的解决方案</h5>
+<h6 id="bfc-%E5%9D%97%E7%BA%A7%E6%A0%BC%E5%BC%8F%E5%8C%96%E4%B8%8A%E4%B8%8B%E6%96%87">BFC 块级格式化上下文</h6>
+<blockquote>
+<p>BFC（Block Formatting Context）格式化上下文，是Web页面中盒模型布局的CSS渲染模式，指一个独立的渲染区域或者说是一个隔离的独立容器。</p>
+</blockquote>
+<ul>
+<li>原理：
+<ol>
+<li>BFC元素的子元素在垂直方向的边距会发生重叠（为什么时垂直方向，应为块级元素独占一行，其他元素确实脱离了正常的文档流）</li>
+<li>BFC元素的边距不会与它的子浮动元素的box重叠，也就是说浮动元素的margin也同样会撑开父元素的高度或高度(如果没有限制宽高的话)，同时与子浮动元素相邻的子元素之间也不会发生重叠</li>
+<li>BFC在页面是一个独立的容器，外面的元素不会影响它里面的元素</li>
+<li>计算BFC元素高度时浮动元素也会参与计算，也就是说即使BFC元素内的尾部有自动清楚所有浮动的功能，即使BFC元素的子元素都是浮动的，BFC元素的高度也不会为<strong>零</strong></li>
+</ol>
+</li>
+<li>如何创建
+<ol>
+<li>css属性float不为none</li>
+<li>css属性position不为默认值</li>
+<li>css属性display属性与table相关的属性</li>
+<li>css属性overflow属性不为visible</li>
+</ol>
+</li>
+</ul>
+
+        </div>
+        <div class="article_item_footer">
+            <div class="read_btn">
+                <a href="/前端开发/css盒子模型.html">Read</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="article_item">
+        <h3><a href="/前端开发/css盒子模型.html">css盒子模型</a></h3>
+        <div class="preview md_html">
+            <h3 id="css%E7%9B%92%E6%A8%A1%E5%9E%8B">CSS盒模型</h3>
+<blockquote>
+<p>CSS盒模型（译者注：也被称为“盒模型”）是网页布局的基础 ——每个元素被表示为一个矩形的方框，框的内容、内边距、边界和外边距像洋葱的膜那样，一层包着一层构建起来。浏览器渲染网页布局时，它会算出每个框的内容要用什么样式，周围的洋葱层有多大，以及框相对于其它框放在哪里。</p>
+</blockquote>
+<h4 id="%E7%9B%92%E6%A8%A1%E5%9E%8B%E7%BB%84%E6%88%90">盒模型组成</h4>
+<p>由外到里分别为: content, padding, border, margin</p>
+<h4 id="%E4%B8%A4%E7%A7%8D%E6%A0%87%E5%87%86">两种标准</h4>
+<p>标准模型(content-box)、IE模型(border-box)，通过box-sizing切换，具体的区别在于width、height属性描述限制的范围不同</p>
+<h4 id="%E8%8E%B7%E5%8F%96%E7%9B%92%E5%AD%90%E7%9A%84%E5%AE%BD%E9%AB%98">获取盒子的宽高</h4>
+<ol>
+<li>
+<p>取内联样式设置的宽高（取得的是css是width/height属性）</p>
+<pre><code class="hljs language-javascript">dom.style.width/height
+</code></pre>
+</li>
+<li>
+<p>取渲染后的宽高，仅ie（取得的是标准模型的宽高）</p>
+<pre><code class="hljs language-javascript">dom.currentStyle.width/height
+</code></pre>
+</li>
+<li>
+<p>取渲染后的宽高, 通用兼容性好（取得的是标准模型的宽高）</p>
+<pre><code class="hljs language-javascript"><span class="hljs-built_in">window</span>.getComputedStyle(dom).width/height
+<span class="hljs-comment">// 如果dom元素是一个滚动盒子，那么结果需要是减去滚动调后的值</span>
+</code></pre>
+</li>
+<li>
+<p>通过计算盒子在视窗的绝对位置 （取得的是IE模型的宽高）</p>
+<pre><code class="hljs language-javascript">dom.getBoundingClientRect().width/height
+</code></pre>
+</li>
+<li>
+<p><code>offsetWidth</code> / <code>offsetWidth</code> （取得的是IE模型的宽高）</p>
+<pre><code class="hljs language-javascript">dom.offsetWidth/offsetWidth
+</code></pre>
+</li>
+</ol>
+<h4 id="%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%A1%8C%E9%99%B7">外边距塌陷</h4>
+<blockquote>
+<p>块级元素的上外边距和下外边距有时会合并（或折叠）为一个外边距，其大小取其中的最大者，这种行为称为外边距折叠（margin collapsing），有时也翻译为外边距合并。注意浮动元素和绝对定位元素的外边距不会折叠。</p>
+</blockquote>
+<h5 id="%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%A1%8C%E9%99%B7%E7%9A%84%E4%B8%89%E7%A7%8D%E5%9F%BA%E6%9C%AC%E6%83%85%E5%86%B5">外边距塌陷的三种基本情况</h5>
+<ul>
+<li>相邻元素之间</li>
+<li>父元素与其第一个或最后一个子元素之间</li>
+<li>空的块级元素</li>
+</ul>
+<h5 id="%E9%98%B2%E6%AD%A2%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%A1%8C%E9%99%B7%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88">防止外边距塌陷的解决方案</h5>
+<h6 id="bfc-%E5%9D%97%E7%BA%A7%E6%A0%BC%E5%BC%8F%E5%8C%96%E4%B8%8A%E4%B8%8B%E6%96%87">BFC 块级格式化上下文</h6>
+<blockquote>
+<p>BFC（Block Formatting Context）格式化上下文，是Web页面中盒模型布局的CSS渲染模式，指一个独立的渲染区域或者说是一个隔离的独立容器。</p>
+</blockquote>
+<ul>
+<li>原理：
+<ol>
+<li>BFC元素的子元素在垂直方向的边距会发生重叠（为什么时垂直方向，应为块级元素独占一行，其他元素确实脱离了正常的文档流）</li>
+<li>BFC元素的边距不会与它的子浮动元素的box重叠，也就是说浮动元素的margin也同样会撑开父元素的高度或高度(如果没有限制宽高的话)，同时与子浮动元素相邻的子元素之间也不会发生重叠</li>
+<li>BFC在页面是一个独立的容器，外面的元素不会影响它里面的元素</li>
+<li>计算BFC元素高度时浮动元素也会参与计算，也就是说即使BFC元素内的尾部有自动清楚所有浮动的功能，即使BFC元素的子元素都是浮动的，BFC元素的高度也不会为<strong>零</strong></li>
+</ol>
+</li>
+<li>如何创建
+<ol>
+<li>css属性float不为none</li>
+<li>css属性position不为默认值</li>
+<li>css属性display属性与table相关的属性</li>
+<li>css属性overflow属性不为visible</li>
+</ol>
+</li>
+</ul>
+
+        </div>
+        <div class="article_item_footer">
+            <div class="read_btn">
+                <a href="/前端开发/css盒子模型.html">Read</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="article_item">
+        <h3><a href="/前端开发/css盒子模型.html">css盒子模型</a></h3>
+        <div class="preview md_html">
+            <h3 id="css%E7%9B%92%E6%A8%A1%E5%9E%8B">CSS盒模型</h3>
+<blockquote>
+<p>CSS盒模型（译者注：也被称为“盒模型”）是网页布局的基础 ——每个元素被表示为一个矩形的方框，框的内容、内边距、边界和外边距像洋葱的膜那样，一层包着一层构建起来。浏览器渲染网页布局时，它会算出每个框的内容要用什么样式，周围的洋葱层有多大，以及框相对于其它框放在哪里。</p>
+</blockquote>
+<h4 id="%E7%9B%92%E6%A8%A1%E5%9E%8B%E7%BB%84%E6%88%90">盒模型组成</h4>
+<p>由外到里分别为: content, padding, border, margin</p>
+<h4 id="%E4%B8%A4%E7%A7%8D%E6%A0%87%E5%87%86">两种标准</h4>
+<p>标准模型(content-box)、IE模型(border-box)，通过box-sizing切换，具体的区别在于width、height属性描述限制的范围不同</p>
+<h4 id="%E8%8E%B7%E5%8F%96%E7%9B%92%E5%AD%90%E7%9A%84%E5%AE%BD%E9%AB%98">获取盒子的宽高</h4>
+<ol>
+<li>
+<p>取内联样式设置的宽高（取得的是css是width/height属性）</p>
+<pre><code class="hljs language-javascript">dom.style.width/height
+</code></pre>
+</li>
+<li>
+<p>取渲染后的宽高，仅ie（取得的是标准模型的宽高）</p>
+<pre><code class="hljs language-javascript">dom.currentStyle.width/height
+</code></pre>
+</li>
+<li>
+<p>取渲染后的宽高, 通用兼容性好（取得的是标准模型的宽高）</p>
+<pre><code class="hljs language-javascript"><span class="hljs-built_in">window</span>.getComputedStyle(dom).width/height
+<span class="hljs-comment">// 如果dom元素是一个滚动盒子，那么结果需要是减去滚动调后的值</span>
+</code></pre>
+</li>
+<li>
+<p>通过计算盒子在视窗的绝对位置 （取得的是IE模型的宽高）</p>
+<pre><code class="hljs language-javascript">dom.getBoundingClientRect().width/height
+</code></pre>
+</li>
+<li>
+<p><code>offsetWidth</code> / <code>offsetWidth</code> （取得的是IE模型的宽高）</p>
+<pre><code class="hljs language-javascript">dom.offsetWidth/offsetWidth
+</code></pre>
+</li>
+</ol>
+<h4 id="%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%A1%8C%E9%99%B7">外边距塌陷</h4>
+<blockquote>
+<p>块级元素的上外边距和下外边距有时会合并（或折叠）为一个外边距，其大小取其中的最大者，这种行为称为外边距折叠（margin collapsing），有时也翻译为外边距合并。注意浮动元素和绝对定位元素的外边距不会折叠。</p>
+</blockquote>
+<h5 id="%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%A1%8C%E9%99%B7%E7%9A%84%E4%B8%89%E7%A7%8D%E5%9F%BA%E6%9C%AC%E6%83%85%E5%86%B5">外边距塌陷的三种基本情况</h5>
+<ul>
+<li>相邻元素之间</li>
+<li>父元素与其第一个或最后一个子元素之间</li>
+<li>空的块级元素</li>
+</ul>
+<h5 id="%E9%98%B2%E6%AD%A2%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%A1%8C%E9%99%B7%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88">防止外边距塌陷的解决方案</h5>
+<h6 id="bfc-%E5%9D%97%E7%BA%A7%E6%A0%BC%E5%BC%8F%E5%8C%96%E4%B8%8A%E4%B8%8B%E6%96%87">BFC 块级格式化上下文</h6>
+<blockquote>
+<p>BFC（Block Formatting Context）格式化上下文，是Web页面中盒模型布局的CSS渲染模式，指一个独立的渲染区域或者说是一个隔离的独立容器。</p>
+</blockquote>
+<ul>
+<li>原理：
+<ol>
+<li>BFC元素的子元素在垂直方向的边距会发生重叠（为什么时垂直方向，应为块级元素独占一行，其他元素确实脱离了正常的文档流）</li>
+<li>BFC元素的边距不会与它的子浮动元素的box重叠，也就是说浮动元素的margin也同样会撑开父元素的高度或高度(如果没有限制宽高的话)，同时与子浮动元素相邻的子元素之间也不会发生重叠</li>
+<li>BFC在页面是一个独立的容器，外面的元素不会影响它里面的元素</li>
+<li>计算BFC元素高度时浮动元素也会参与计算，也就是说即使BFC元素内的尾部有自动清楚所有浮动的功能，即使BFC元素的子元素都是浮动的，BFC元素的高度也不会为<strong>零</strong></li>
+</ol>
+</li>
+<li>如何创建
+<ol>
+<li>css属性float不为none</li>
+<li>css属性position不为默认值</li>
+<li>css属性display属性与table相关的属性</li>
+<li>css属性overflow属性不为visible</li>
+</ol>
+</li>
+</ul>
+
+        </div>
+        <div class="article_item_footer">
+            <div class="read_btn">
+                <a href="/前端开发/css盒子模型.html">Read</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="article_item">
+        <h3><a href="/前端开发/css盒子模型.html">css盒子模型</a></h3>
+        <div class="preview md_html">
+            <h3 id="css%E7%9B%92%E6%A8%A1%E5%9E%8B">CSS盒模型</h3>
+<blockquote>
+<p>CSS盒模型（译者注：也被称为“盒模型”）是网页布局的基础 ——每个元素被表示为一个矩形的方框，框的内容、内边距、边界和外边距像洋葱的膜那样，一层包着一层构建起来。浏览器渲染网页布局时，它会算出每个框的内容要用什么样式，周围的洋葱层有多大，以及框相对于其它框放在哪里。</p>
+</blockquote>
+<h4 id="%E7%9B%92%E6%A8%A1%E5%9E%8B%E7%BB%84%E6%88%90">盒模型组成</h4>
+<p>由外到里分别为: content, padding, border, margin</p>
+<h4 id="%E4%B8%A4%E7%A7%8D%E6%A0%87%E5%87%86">两种标准</h4>
+<p>标准模型(content-box)、IE模型(border-box)，通过box-sizing切换，具体的区别在于width、height属性描述限制的范围不同</p>
+<h4 id="%E8%8E%B7%E5%8F%96%E7%9B%92%E5%AD%90%E7%9A%84%E5%AE%BD%E9%AB%98">获取盒子的宽高</h4>
+<ol>
+<li>
+<p>取内联样式设置的宽高（取得的是css是width/height属性）</p>
+<pre><code class="hljs language-javascript">dom.style.width/height
+</code></pre>
+</li>
+<li>
+<p>取渲染后的宽高，仅ie（取得的是标准模型的宽高）</p>
+<pre><code class="hljs language-javascript">dom.currentStyle.width/height
+</code></pre>
+</li>
+<li>
+<p>取渲染后的宽高, 通用兼容性好（取得的是标准模型的宽高）</p>
+<pre><code class="hljs language-javascript"><span class="hljs-built_in">window</span>.getComputedStyle(dom).width/height
+<span class="hljs-comment">// 如果dom元素是一个滚动盒子，那么结果需要是减去滚动调后的值</span>
+</code></pre>
+</li>
+<li>
+<p>通过计算盒子在视窗的绝对位置 （取得的是IE模型的宽高）</p>
+<pre><code class="hljs language-javascript">dom.getBoundingClientRect().width/height
+</code></pre>
+</li>
+<li>
+<p><code>offsetWidth</code> / <code>offsetWidth</code> （取得的是IE模型的宽高）</p>
+<pre><code class="hljs language-javascript">dom.offsetWidth/offsetWidth
+</code></pre>
+</li>
+</ol>
+<h4 id="%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%A1%8C%E9%99%B7">外边距塌陷</h4>
+<blockquote>
+<p>块级元素的上外边距和下外边距有时会合并（或折叠）为一个外边距，其大小取其中的最大者，这种行为称为外边距折叠（margin collapsing），有时也翻译为外边距合并。注意浮动元素和绝对定位元素的外边距不会折叠。</p>
+</blockquote>
+<h5 id="%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%A1%8C%E9%99%B7%E7%9A%84%E4%B8%89%E7%A7%8D%E5%9F%BA%E6%9C%AC%E6%83%85%E5%86%B5">外边距塌陷的三种基本情况</h5>
+<ul>
+<li>相邻元素之间</li>
+<li>父元素与其第一个或最后一个子元素之间</li>
+<li>空的块级元素</li>
+</ul>
+<h5 id="%E9%98%B2%E6%AD%A2%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%A1%8C%E9%99%B7%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88">防止外边距塌陷的解决方案</h5>
+<h6 id="bfc-%E5%9D%97%E7%BA%A7%E6%A0%BC%E5%BC%8F%E5%8C%96%E4%B8%8A%E4%B8%8B%E6%96%87">BFC 块级格式化上下文</h6>
+<blockquote>
+<p>BFC（Block Formatting Context）格式化上下文，是Web页面中盒模型布局的CSS渲染模式，指一个独立的渲染区域或者说是一个隔离的独立容器。</p>
+</blockquote>
+<ul>
+<li>原理：
+<ol>
+<li>BFC元素的子元素在垂直方向的边距会发生重叠（为什么时垂直方向，应为块级元素独占一行，其他元素确实脱离了正常的文档流）</li>
+<li>BFC元素的边距不会与它的子浮动元素的box重叠，也就是说浮动元素的margin也同样会撑开父元素的高度或高度(如果没有限制宽高的话)，同时与子浮动元素相邻的子元素之间也不会发生重叠</li>
+<li>BFC在页面是一个独立的容器，外面的元素不会影响它里面的元素</li>
+<li>计算BFC元素高度时浮动元素也会参与计算，也就是说即使BFC元素内的尾部有自动清楚所有浮动的功能，即使BFC元素的子元素都是浮动的，BFC元素的高度也不会为<strong>零</strong></li>
+</ol>
+</li>
+<li>如何创建
+<ol>
+<li>css属性float不为none</li>
+<li>css属性position不为默认值</li>
+<li>css属性display属性与table相关的属性</li>
+<li>css属性overflow属性不为visible</li>
+</ol>
+</li>
+</ul>
+
+        </div>
+        <div class="article_item_footer">
+            <div class="read_btn">
+                <a href="/前端开发/css盒子模型.html">Read</a>
+            </div>
+        </div>
+    </section>
+    
+    <div class="page_box">
+    <div class="page_pre">
+        <a class="page_pre_item" class="" href="/articles/1.html">FIRST</a>
+        <a class="page_pre_item" href="/articles/24.html">
+            <i class="iconfont icon-previous"></i>
+        </a>
+    </div>
+    <div class="page_num">
+        
+    </div>
+    <div class="page_next">
+        <a class="page_next_item" href="/articles/26.html">
+            <i class="iconfont icon-next"></i>
+        </a>
+        <a class="page_next_item" href="/articles/57.html">LAST</a>
+    </div>
+    </div>
+</div>
+    </div>
+    <aside>
+        <div class="profile_banner"></div>
+        <div class="profile_logo">
+        <img src="/assets/logo.png" alt="">
+        </div>
+        <div class="profile_name">
+            qoxop
+        </div>
+        <div class="profile_motto">
+            一只单身的帅狗, 打代码、打游戏、撸猫、无恶不做~~~
+        </div>
+        <div class="profile_info">
+        <div>
+            <div class="iconbox"><em class="iconfont icon-github"></em></div>
+            <div class="icontext">github</div>
+        </div>
+        <div>
+            <div class="iconbox"><em class="iconfont icon-resume"></em></div>
+            <div class="icontext">resume</div>
+        </div>
+        <div>...</div>
+        </div>
+    </aside>
+</div>
+        </main>
+        <footer id="footer"></footer>
+      </article>
+      <div class="shortcut-tools">
+          <div onclick="exec('scrollToTop')" class="goto-top-btn">Top</div>
+          <div onclick="exec('scrollToBottom')" class="goto-bottom-btn">Bottom</div>
+          <div onclick="exec('goback')" class="goback-btn">goback</div>
+      </div>
+      <script src="/assets/common.js"></script>
+</body>
+</html>

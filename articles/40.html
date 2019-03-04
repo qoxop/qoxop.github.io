@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content=",,,,,,,,,">
+    <title>qoxop | 首页(40)</title>
+    <link rel="stylesheet" href="/assets/common.css">
+    <link rel="stylesheet" href="/assets/articleList.css">
+    <link href="/assets/monokai_sublime.min.css" rel="stylesheet">  
+    <script async src="/assets/highlight.min.js"></script>
+     
+      <script src="/assets/hot_reload.js"></script>
+    
+</head>
+<body>
+    <article id="app">
+        <header>
+          <h1>张集伟的个人博客</h1>
+          <div class="content_box header_inner">
+            <div class="logo">
+              <div class="logoImg">
+                <img src="/assets/icon.png" alt="">
+              </div>
+              <div class="logoText">
+                jiw
+              </div>
+            </div>
+            <nav class="navigator">
+              <ul>
+                
+                <li class="actived">
+                    <a href="#">
+                        HOME
+                    </a>
+                </li>
+                
+                <li class="">
+                    <a href="/category.html">
+                        CATEGORY
+                    </a>
+                </li>
+                
+                <li class="">
+                    <a href="/tags.html">
+                        标签
+                    </a>
+                </li>
+                
+                <li class="">
+                    <a href="/link.html">
+                        链接
+                    </a>
+                </li>
+                
+                <li class="">
+                    <a href="/about.html">
+                        关于我
+                    </a>
+                </li>
+                
+              </ul>
+            </nav>
+          </div>
+        </header>
+        <main id="main">
+           <div class="content_box">
+    <div id="left_content">
+        <!-- 这里存放主要内容 -->
+       <div class="article_list">
+    
+    <section class="article_item">
+        <h3><a href="/后端开发/备注.html">备注</a></h3>
+        <div class="preview md_html">
+            
+        </div>
+        <div class="article_item_footer">
+            <div class="read_btn">
+                <a href="/后端开发/备注.html">Read</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="article_item">
+        <h3><a href="/前端开发/CSS动画.html">CSS动画</a></h3>
+        <div class="preview md_html">
+            <h3 id="transition">transition</h3>
+<ul>
+<li>transition-delay           设置延迟过渡的时间</li>
+<li>transition-duration    设置过渡所需的时间</li>
+<li>transition-property    设置需要过渡的属性</li>
+<li>transition-timing-function    定义速度模式</li>
+</ul>
+<h5 id="%E9%80%9F%E5%BA%A6%E6%A8%A1%E5%9E%8B">速度模型</h5>
+<ul>
+<li>ease       逐渐放慢</li>
+<li>linear     匀速</li>
+<li>ease-in   加速</li>
+<li>ease-out 减速</li>
+<li>cubic-bezier函数       http://cubic-bezier.com/</li>
+</ul>
+<h5 id="%E5%B1%80%E9%99%90">局限</h5>
+<ol>
+<li>transition需要事件触发，所以没法在网页加载时自动发生。</li>
+<li>transition是一次性的，不能重复发生，除非一再触发。</li>
+<li>transition只能定义开始状态和结束状态，不能定义中间状态，也就是说只有两个状态。</li>
+<li>一条transition规则，只能定义一个属性的变化，不能涉及多个属性。</li>
+</ol>
+<h3 id="animation">animation</h3>
+<ul>
+<li>animation-name: 动画名称</li>
+<li>animation-duration: 持续时间</li>
+<li>animation-timing-function: 速度模型</li>
+<li>animation-delay: 延迟执行</li>
+<li>animation-direction: 循环播放时，动画播放的方向（normal、reverse、alernate、alternate-reverse）</li>
+<li>animation-iteration-count: 定义动画在结束前运行的次数（infinite表示无限次）</li>
+<li>animation-fill-mode: 结束动画时的状态（none、backwards:第一帧，forwards:最后一帧，both）</li>
+<li>animation-play-state: 动画播放状态（paused暂停，running运行）</li>
+</ul>
+<h4 id="%40keyframes">@keyframes</h4>
+<p>keyframes关键字用来定义动画的各个状态，它的写法相当自由。</p>
+<pre><code class="hljs language-css">@<span class="hljs-keyword">keyframes</span> rainbow {
+  0% { <span class="hljs-attribute">background</span>: <span class="hljs-number">#c00</span> }
+  50% { <span class="hljs-attribute">background</span>: orange }
+  100% { <span class="hljs-attribute">background</span>: yellowgreen }
+}
+@<span class="hljs-keyword">keyframes</span> rainbow {
+  <span class="hljs-selector-tag">from</span> { <span class="hljs-attribute">background</span>: <span class="hljs-number">#c00</span> }
+  50% { <span class="hljs-attribute">background</span>: orange }
+  <span class="hljs-selector-tag">to</span> { <span class="hljs-attribute">background</span>: yellowgreen }
+}
+</code></pre>
+<h4 id="animation-timing-function">animation-timing-function</h4>
+<blockquote>
+<p>/* Keyword values */
+animation-timing-function: ease;
+animation-timing-function: ease-in;
+animation-timing-function: ease-out;
+animation-timing-function: ease-in-out;
+animation-timing-function: linear;
+animation-timing-function: step-start;
+animation-timing-function: step-end;</p>
+<p>/* Function values */
+animation-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
+animation-timing-function: steps(4, end);
+animation-timing-function: frames(10);</p>
+<p>/* Multiple animations */
+animation-timing-function: ease, step-start, cubic-bezier(0.1, 0.7, 1.0, 0.1);</p>
+</blockquote>
+
+        </div>
+        <div class="article_item_footer">
+            <div class="read_btn">
+                <a href="/前端开发/CSS动画.html">Read</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="article_item">
+        <h3><a href="/读书笔记/git.html">git</a></h3>
+        <div class="preview md_html">
+            <h3 id="fetch">fetch</h3>
+<h4 id="%E6%8F%8F%E8%BF%B0">描述</h4>
+<p>拉去远程分支，默认再本地增加origin/XXX分支</p>
+<h4 id="%E5%8F%82%E6%95%B0">参数</h4>
+<p>--prune / -p ：fetch之前删除本地中对远程分支的引用，如果改引用再远程分支中已经不存在</p>
+<h3 id="commit">commit</h3>
+<p>git commit --amend 修补提交</p>
+
+        </div>
+        <div class="article_item_footer">
+            <div class="read_btn">
+                <a href="/读书笔记/git.html">Read</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="article_item">
+        <h3><a href="/经验总结/周记.html">周记</a></h3>
+        <div class="preview md_html">
+            <h2 id="%E5%91%A8%E8%AE%B0">周记</h2>
+<p>2017年12月18日～2017年12月24日										张集伟</p>
+<p>​	这一周，在工作上主要是修复了恒大营销总应用的两个问题，一个是数据展示问题一个是网络请求问题，第一个问题主要是对需求的理解不清造成，第二个问题主要是由于粗心造成。</p>
+<p>​	而其他的时间主要在学习用webpack搭建前端项目和学习一个新的前端状态管理库Mobx，对于webpack的学习主要是了解它的各个配置项的作用以及了解根据具体需求来配个相应的loader与插件。而mobx与redux一样都是能与react很好配合的一个状态管理器，但是两者的实现方式却是大不相同。</p>
+<p>​	用redux的话，状态更新只能由action触发，以纯函数的方式定义reducer函数来规定state的更新规则，所以每次局部状态的更新免不了要进行一次state的拷贝，而且redux采用单个的store来管理应用的状态，所以在项目越来越复杂时store也会变得过于庞大而不便于管理，所以需要拆分reducer来优化，而且redux原生并不支持异步的action，需要通过中间件来实现异步action，当然，对于redux，是有它适合的应用场景和优势，在这方面上以后还是要继续去了解的。</p>
+<p>​	对于mobx，我自己的理解是，mobx通过将普通对象转化成一个可观察对象（原理是基于js对象的getter与setter属性），在设置可观察对象时，会自动触发某些行为，在这方面上它与redux是类似的。但mobx提供更加细粒化的观察，首先可观察对象是一个单例模式，mobx观察的是引用，当引用内的值发现改变就能触发行为，可以不通过派发action和用reducer更新状态，提供了更加自由的方式来管理应用状态，能更及时地相应状态变化。mobx可以采用多store来管理状态，方便业务拆分，不过这应该也有不好的地方，因为有可能造成状态的混乱或者其他的问题。当然对于这两个状态管理库，目前还没有很深入地理解，还需要在往后的时间继续学习。</p>
+
+        </div>
+        <div class="article_item_footer">
+            <div class="read_btn">
+                <a href="/经验总结/周记.html">Read</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="article_item">
+        <h3><a href="/前端开发/webpack.html">webpack</a></h3>
+        <div class="preview md_html">
+            <h3 id="%E5%85%A5%E5%8F%A3">入口</h3>
+<h4 id="%E5%8D%95%E5%85%A5%E5%8F%A3">单入口</h4>
+<pre><code class="hljs language-javascript"><span class="hljs-comment">//简写</span>
+<span class="hljs-keyword">const</span> config = {
+  <span class="hljs-attr">entry</span>: <span class="hljs-string">'./path/to/my/entry/file.js'</span>
+};
+<span class="hljs-built_in">module</span>.exports = config
+<span class="hljs-comment">//对象写法</span>
+<span class="hljs-keyword">const</span> config = {
+  <span class="hljs-attr">entry</span>: {
+    <span class="hljs-attr">main</span>: <span class="hljs-string">'./path/to/my/entry/file.js'</span>
+  }
+};
+</code></pre>
+<p>多入口（多页面）</p>
+<pre><code class="hljs language-javascript"><span class="hljs-comment">//告诉webpack 需要构建 3 个独立分离的依赖图</span>
+<span class="hljs-keyword">const</span> config = {
+  <span class="hljs-attr">entry</span>: {
+    <span class="hljs-attr">pageOne</span>: <span class="hljs-string">'./path/to/my/one.js'</span>,
+    <span class="hljs-attr">pageTwo</span>: <span class="hljs-string">'./path/to/my/two.js'</span>
+  }
+};
+</code></pre>
+<h3 id="%E8%BE%93%E5%87%BA">输出</h3>
+<p><strong>注意</strong> ：即使可以存在多个入口起点，但只指定一个输出配置</p>
+<pre><code class="hljs language-javascript"><span class="hljs-comment">//创建单个chunk</span>
+<span class="hljs-keyword">const</span> config = {
+  <span class="hljs-attr">output</span>: {
+    <span class="hljs-attr">filename</span>:<span class="hljs-string">'bundle.js'</span>	<span class="hljs-comment">//输出文件名</span>
+    path:<span class="hljs-string">'/home/proj/public/assets'</span>	<span class="hljs-comment">//输出路径</span>
+  }
+}
+<span class="hljs-comment">//创建多个chunk</span>
+{
+  <span class="hljs-attr">entry</span>: {
+    <span class="hljs-attr">app</span>: <span class="hljs-string">'./src/app.js'</span>,
+    <span class="hljs-attr">search</span>: <span class="hljs-string">'./src/search.js'</span>
+  },
+  <span class="hljs-attr">output</span>: {
+    <span class="hljs-attr">filename</span>: <span class="hljs-string">'[name].js'</span>,	<span class="hljs-comment">//[name]代表入口文件名称</span>
+    path: __dirname + <span class="hljs-string">'/dist'</span>	<span class="hljs-comment">//__dirname魔术变量</span>
+  }
+}
+</code></pre>
+<h3 id="loader">loader</h3>
+<p>用于对模块的源代码进行转换。处理时机是 import 或加载模块时</p>
+<pre><code class="hljs language-javascript"><span class="hljs-comment">//简写模式</span>
+<span class="hljs-built_in">module</span>.exports = {
+  <span class="hljs-attr">module</span>: {
+    <span class="hljs-attr">rules</span>: [
+      { <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.css$/</span>, <span class="hljs-attr">use</span>: <span class="hljs-string">'css-loader'</span> },<span class="hljs-comment">//test文件匹配规则 </span>
+      { <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.ts$/</span>, <span class="hljs-attr">use</span>: <span class="hljs-string">'ts-loader'</span> }	<span class="hljs-comment">//use使用的loader插件 ，字符串或对象数组</span>
+    ]
+  }
+};
+<span class="hljs-comment">//详细模式</span>
+  <span class="hljs-built_in">module</span>: {
+    <span class="hljs-attr">rules</span>: [
+      {
+        <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.css$/</span>,
+        <span class="hljs-attr">use</span>: [
+          { <span class="hljs-attr">loader</span>: <span class="hljs-string">'style-loader'</span> },
+          {
+            <span class="hljs-attr">loader</span>: <span class="hljs-string">'css-loader'</span>,
+            <span class="hljs-attr">options</span>: {
+              <span class="hljs-attr">modules</span>: <span class="hljs-literal">true</span>
+            }
+          }
+        ]
+      }
+    ]
+  }
+</code></pre>
+<ul>
+<li>支持链式传递（给use属性传递一个数组），前一个loader将处理结果传递给下个loader处理</li>
+<li>loader支持同步或异步</li>
+<li>能接受查询参数？？</li>
+<li>可以通过options对象进行配置</li>
+<li>loader能够产生额外的任意文件</li>
+</ul>
+
+        </div>
+        <div class="article_item_footer">
+            <div class="read_btn">
+                <a href="/前端开发/webpack.html">Read</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="article_item">
+        <h3><a href="/前端开发/Es6异步.html">Es6异步</a></h3>
+        <div class="preview md_html">
+            <h3 id="generator">Generator</h3>
+<h4 id="%E5%9F%BA%E7%A1%80%E5%86%99%E6%B3%95">基础写法</h4>
+<pre><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-title">gn</span>(<span class="hljs-params"></span>)</span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"begin"</span>);
+  <span class="hljs-keyword">yield</span> <span class="hljs-string">'hello'</span>;
+  <span class="hljs-keyword">yield</span> <span class="hljs-string">'world'</span>;
+  <span class="hljs-keyword">return</span> <span class="hljs-string">'ending'</span>;
+}
+<span class="hljs-keyword">var</span> g = gn()	<span class="hljs-comment">//这里gn函数内的语句不会立即执行，而是返回一个遍历器对象Iterator </span>
+g.next();	<span class="hljs-comment">//log-&gt;begin return-&gt;{value:'hello', done: false}</span>
+g.next();	<span class="hljs-comment">//return-&gt;{value:'world', done: false}</span>
+g.next();	<span class="hljs-comment">//return-&gt;{value:'ending', done: true}</span>
+g.next();	<span class="hljs-comment">//return-&gt;{value:undefined, done: true}</span>
+</code></pre>
+<p>generator本身就是发生器的意思，就是generator函数可以生产一系列的状态。他的作用是可以让函数分步执行，同时还保留了<strong>作用域</strong>。</p>
+<p>yield表达式其实是一个暂停标志，它的参数作为该状态下的返回值(next方法的返回值)。yield表达式默认不会产生值（或者说产生一个undefined），当yield表达式嵌入在另一个表达式中时，必须用括号包裹起来，同时被嵌入的表达式是被视作下一个状态的程序（包括yield本身也是），所以next方法可以传递一个参数，该参数会被当作yield表达是产出值。</p>
+<h4 id="for...of">for...of</h4>
+<p>for...of 循环可以自动遍历 Generator 函数时生成的Iterator对象，且不再需要调用next方法。当返回的对象中done属性为true时停止循环，所以return返回的值不会出现在for...of中</p>
+<h4 id="generator.prototype.throw()">Generator.prototype.throw()</h4>
+<p>抛出一个错误，然后可以在函数内部捕获，如果内部没有捕获代码（或者说数量不足），错误将由外部处理。可以接受一个参数，该参数会被catch语句接收。</p>
+<h4 id="generator.prototype.return()">Generator.prototype.return()</h4>
+<p>提前终止遍历器对象的状态，并返回给定的值（参数），如果 Generator 函数内部有try...finally代码块，那么return方法会推迟到finally代码块执行完再执行。</p>
+<pre><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-title">numbers</span> (<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">yield</span> <span class="hljs-number">1</span>;
+  <span class="hljs-keyword">try</span> {
+    <span class="hljs-keyword">yield</span> <span class="hljs-number">2</span>;
+  } <span class="hljs-keyword">finally</span> {
+    <span class="hljs-keyword">yield</span> <span class="hljs-number">3</span>;
+  }
+  <span class="hljs-keyword">yield</span> <span class="hljs-number">4</span>;
+}
+<span class="hljs-keyword">var</span> g = numbers();
+g.next() <span class="hljs-comment">// { value: 1, done: false }</span>
+g.next() <span class="hljs-comment">// { value: 2, done: false }</span>
+g.return(<span class="hljs-number">5</span>) <span class="hljs-comment">// { value: 3, done: false }</span>
+g.next() <span class="hljs-comment">// { value: 5, done: true }</span>
+</code></pre>
+<h4 id="yield*-%E8%A1%A8%E8%BE%BE">yield* 表达</h4>
+<p>相当于代码复制，</p>
+<pre><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">yield</span> <span class="hljs-string">'a'</span>;
+  <span class="hljs-keyword">yield</span> <span class="hljs-string">'b'</span>;
+}
+<span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-title">bar</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">yield</span> <span class="hljs-string">'x'</span>;
+  <span class="hljs-keyword">yield</span>* foo();
+  <span class="hljs-keyword">yield</span> <span class="hljs-string">'y'</span>;
+}
+<span class="hljs-comment">// 等同于</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-title">bar</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">yield</span> <span class="hljs-string">'x'</span>;
+  <span class="hljs-keyword">yield</span> <span class="hljs-string">'a'</span>;
+  <span class="hljs-keyword">yield</span> <span class="hljs-string">'b'</span>;
+  <span class="hljs-keyword">yield</span> <span class="hljs-string">'y'</span>;
+}
+</code></pre>
+<h4 id="generator-%E5%87%BD%E6%95%B0%E7%9A%84this">Generator 函数的this</h4>
+<p>Generator 函数总是返回一个遍历器而不是this，也不可以用new来调用。</p>
+<pre><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-title">F</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">this</span>.a = <span class="hljs-number">1</span>;
+  <span class="hljs-keyword">yield</span> <span class="hljs-keyword">this</span>.b = <span class="hljs-number">2</span>;
+  <span class="hljs-keyword">yield</span> <span class="hljs-keyword">this</span>.c = <span class="hljs-number">3</span>;
+}
+<span class="hljs-keyword">var</span> f = F.call(F.prototype);
+
+f.next();  <span class="hljs-comment">// Object {value: 2, done: false}</span>
+f.next();  <span class="hljs-comment">// Object {value: 3, done: false}</span>
+f.next();  <span class="hljs-comment">// Object {value: undefined, done: true}</span>
+
+f.a <span class="hljs-comment">// 1</span>
+f.b <span class="hljs-comment">// 2</span>
+f.c <span class="hljs-comment">// 3</span>
+</code></pre>
+<h4 id="%E5%BA%94%E7%94%A8">应用</h4>
+<pre><code class="hljs language-javascript"><span class="hljs-comment">//状态机</span>
+<span class="hljs-keyword">var</span> clock = <span class="hljs-function"><span class="hljs-keyword">function</span>* (<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Tick!'</span>);
+    <span class="hljs-keyword">yield</span>;
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Tock!'</span>);
+    <span class="hljs-keyword">yield</span>;
+  }
+};
+</code></pre>
+<pre><code class="hljs language-javascript"><span class="hljs-comment">//异步操作的同步化表示</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-title">main</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">var</span> result = <span class="hljs-keyword">yield</span> request(<span class="hljs-string">"http://some.url"</span>);
+  <span class="hljs-keyword">var</span> resp = <span class="hljs-built_in">JSON</span>.parse(result);
+    <span class="hljs-built_in">console</span>.log(resp.value);
+}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">request</span>(<span class="hljs-params">url</span>) </span>{
+  makeAjaxCall(url, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">response</span>)</span>{
+    it.next(response);
+  });
+}
+<span class="hljs-keyword">var</span> it = main();
+it.next();
+</code></pre>
+<pre><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-title">iterEntries</span>(<span class="hljs-params">obj</span>) </span>{
+  <span class="hljs-keyword">let</span> keys = <span class="hljs-built_in">Object</span>.keys(obj);	<span class="hljs-comment">//获取对象的所有key（字符串数组）</span>
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i=<span class="hljs-number">0</span>; i &lt; keys.length; i++) {
+    <span class="hljs-keyword">let</span> key = keys[i];
+    <span class="hljs-keyword">yield</span> [key, obj[key]];
+  }
+}
+<span class="hljs-keyword">let</span> myObj = { <span class="hljs-attr">foo</span>: <span class="hljs-number">3</span>, <span class="hljs-attr">bar</span>: <span class="hljs-number">7</span> };
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> [key, value] <span class="hljs-keyword">of</span> iterEntries(myObj)) {
+  <span class="hljs-built_in">console</span>.log(key, value);
+}
+</code></pre>
+
+        </div>
+        <div class="article_item_footer">
+            <div class="read_btn">
+                <a href="/前端开发/Es6异步.html">Read</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="article_item">
+        <h3><a href="/前端开发/Eslint相关.html">Eslint相关</a></h3>
+        <div class="preview md_html">
+            <h1 id="eslint">ESlint</h1>
+<h3 id="%E5%AE%9A%E4%B9%89">定义</h3>
+<p>ESLint 是一个开源的 JavaScript 代码检查工具</p>
+<h3 id="%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8">安装使用</h3>
+<pre><code class="hljs language-javascript">npm i -g eslint
+</code></pre>
+<ul>
+<li>
+<p>命令行使用</p>
+<pre><code class="hljs">eslint [options] [<span class="hljs-keyword">file</span>|<span class="hljs-keyword">dir</span>|<span class="hljs-keyword">glob</span>]*
+
+</code></pre>
+</li>
+<li>
+<p>与编辑器一起配置使用，安装eslint插件</p>
+</li>
+</ul>
+<h3 id="%E9%85%8D%E7%BD%AE">配置</h3>
+<h5 id="%E6%B3%A8%E9%87%8A%E9%85%8D%E7%BD%AE">注释配置</h5>
+<h5 id="%E6%96%87%E4%BB%B6%E9%85%8D%E7%BD%AE">文件配置</h5>
+<p>在.eslintrc.*（json,js,yaml）文件 或者在package.json文件中的eslintConfig字段配置</p>
+<ul>
+<li>
+<p>代码和解析</p>
+<pre><code class="hljs language-json"><span class="hljs-string">"eslintConfig"</span>: {
+    //配置解析器
+    <span class="hljs-attr">"parser"</span>: <span class="hljs-string">"babel-eslint"</span>,
+        
+    //配置解析的选项
+    <span class="hljs-attr">"parserOptions"</span>: {
+        <span class="hljs-attr">"ecmaVersion"</span>: <span class="hljs-number">6</span>,	//ecmaScript的版本
+        <span class="hljs-attr">"sourceType"</span>: <span class="hljs-string">"module"</span>,	//源码类型，<span class="hljs-attr">"script"</span>(默认)或者<span class="hljs-attr">"module"</span>，
+        <span class="hljs-attr">"ecmaFeatures"</span>: {	//额外的语言特性
+            <span class="hljs-attr">"globalReturn"</span>: <span class="hljs-literal">true</span>,	// 允许在全局作用域下使用 return 语句
+            <span class="hljs-attr">"jsx"</span>: <span class="hljs-literal">true</span>,	//启用jsx
+            <span class="hljs-attr">"impliedStrict"</span>: <span class="hljs-literal">true</span>	//启用全局 strict mode (如果 ecmaVersion 是 <span class="hljs-number">5</span> 或更高)
+        },
+    },
+    
+    //继承配置，可以是一个字符串或字符串数组，字符串内容可以是一个文件或者一个已安装的npm包
+    <span class="hljs-attr">"extends"</span>: <span class="hljs-string">"airbnb-base"</span>,
+    
+    //配置启用环境
+    <span class="hljs-attr">"env"</span>: {
+        <span class="hljs-attr">"browser"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">"node"</span>: <span class="hljs-literal">true</span>
+        //还以其他的等等。。。
+    },
+    
+    //全局变量名配置
+    <span class="hljs-attr">"globals"</span>: {
+        <span class="hljs-attr">"var1"</span>: <span class="hljs-literal">true</span>,	//在某个文件中访问var1不会报错了
+    	<span class="hljs-attr">"var2"</span>: <span class="hljs-literal">true</span>	//在某个文件中访问var2会报错，即使全局环境中存在var2这个变量
+    },
+	
+	//使用第三方插件
+    //全局安装的 ESLint 只能使用全局安装的插件。
+    //本地安装的 ESLint 不仅可以使用本地安装的插件还可以使用全局安装的插件。
+    <span class="hljs-attr">"plugins"</span>: [
+        <span class="hljs-string">"html"</span>
+    ],
+    
+    //配置规则，http://eslint.cn/docs/rules/
+    //<span class="hljs-string">"off"</span> 或 <span class="hljs-number">0</span> - 关闭规则
+    //<span class="hljs-string">"warn"</span> 或 <span class="hljs-number">1</span> - 开启规则，使用警告级别的错误：warn (不会导致程序退出)
+    //<span class="hljs-string">"error"</span> 或 <span class="hljs-number">2</span> - 开启规则，使用错误级别的错误：error (当被触发的时候，程序会退出)
+    <span class="hljs-string">"rules"</span>: {
+        <span class="hljs-attr">"indent"</span>: [
+            <span class="hljs-string">"error"</span>,	//第一个为级别
+            <span class="hljs-number">4</span>			//其他的为该规则的参数
+        ],
+        <span class="hljs-attr">"semi"</span>: <span class="hljs-number">0</span>,		//级别
+        <span class="hljs-attr">"comma-dangle"</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-attr">"linebreak-style"</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-attr">"no-console"</span>: <span class="hljs-number">0</span>
+    }
+}
+</code></pre>
+</li>
+<li>
+<p>优先级</p>
+<p>文件内注释 &gt; 配置文件，当前目录的配置文件  &gt;  父级目录的配置文件</p>
+</li>
+<li>
+<p>忽视解析的文件或目录，用 .eslintignore 文件进行配置</p>
+</li>
+</ul>
+
+        </div>
+        <div class="article_item_footer">
+            <div class="read_btn">
+                <a href="/前端开发/Eslint相关.html">Read</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="article_item">
+        <h3><a href="/后端开发/备注.html">备注</a></h3>
+        <div class="preview md_html">
+            
+        </div>
+        <div class="article_item_footer">
+            <div class="read_btn">
+                <a href="/后端开发/备注.html">Read</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="article_item">
+        <h3><a href="/后端开发/login.html">login</a></h3>
+        <div class="preview md_html">
+            <ol>
+<li>checkLogin： 向后台询问登陆态，不传userId 和 password，如果是登陆态，后台回直接放回登陆信息</li>
+</ol>
+<pre><code class="hljs language-flow">st=&gt;start: /login
+e=&gt;end: End
+st-&gt;e
+</code></pre>
+<pre><code class="hljs language-flow">st=&gt;start: Start|past:&gt;http://www.google.com[blank]
+e=&gt;end: End:&gt;http://www.google.com
+op1=&gt;operation: My Operation|past
+op2=&gt;operation: Stuff|current
+sub1=&gt;subroutine: My Subroutine|invalid
+cond=&gt;condition: Yes 
+or No?|approved:&gt;http://www.baidu.com
+c2=&gt;condition: Good idea|rejected
+io=&gt;inputoutput: catch something...|request
+
+st-&gt;op1(right)-&gt;cond
+cond(yes, right)-&gt;c2
+cond(no)-&gt;sub1(left)-&gt;op1
+c2(yes)-&gt;io-&gt;e
+c2(no)-&gt;op2-&gt;e
+​```
+
+
+</code></pre>
+<pre><code class="hljs language-flow">st=&gt;start: start
+end=&gt;end: end
+
+st-&gt;end
+</code></pre>
+
+        </div>
+        <div class="article_item_footer">
+            <div class="read_btn">
+                <a href="/后端开发/login.html">Read</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="article_item">
+        <h3><a href="/前端开发/mobx.html">mobx</a></h3>
+        <div class="preview md_html">
+            <h4 id="autorun">Autorun</h4>
+<p>参数：一个使用了observable数据的函数</p>
+<p>返回：disposer函数，调用该函数可以去取消autorun，以及取消对computed值的计算</p>
+<p>错误处理：可以用disposer.onError方法来覆盖Reaction的默认日志行为。</p>
+<pre><code class="hljs language-javascript"><span class="hljs-keyword">const</span> age = observable(<span class="hljs-number">10</span>)
+<span class="hljs-keyword">const</span> dispose = autorun(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+    <span class="hljs-keyword">if</span> (age.get() &lt; <span class="hljs-number">0</span>)
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">"Age should not be negative"</span>)
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Age"</span>, age.get())
+})
+age.set(<span class="hljs-number">18</span>)  <span class="hljs-comment">// 输出: Age 18</span>
+age.set(<span class="hljs-number">-10</span>) <span class="hljs-comment">// 输出: Age should not be negative</span>
+age.set(<span class="hljs-number">5</span>)   <span class="hljs-comment">// 已恢复; 输出: Age 5</span>
+
+dispose.onError(<span class="hljs-function"><span class="hljs-params">e</span> =&gt;</span> {
+    <span class="hljs-built_in">window</span>.alert(<span class="hljs-string">"Please enter a valid age"</span>)
+})
+
+age.set(<span class="hljs-number">-5</span>)  <span class="hljs-comment">// 显示alert弹出框</span>
+</code></pre>
+<p>全局的onError方法：全局的 onError 处理方法可以通过 extras.onReactionError(handler)来设置。</p>
+<h4 id="%40observer">@observer</h4>
+<p>将React组件转变成响应式组件。它用mobx.autorun 包装了组件的render函数以确保任何组件渲染中使用的数据变化是都可以强制刷新组件。</p>
+<pre><code class="hljs language-javascript"><span class="hljs-keyword">import</span> {observer} <span class="hljs-keyword">from</span> <span class="hljs-string">"mobx-react"</span>;
+
+<span class="hljs-keyword">var</span> timerData = observable({
+    <span class="hljs-attr">secondsPassed</span>: <span class="hljs-number">0</span>
+});
+
+setInterval(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+    timerData.secondsPassed++;
+}, <span class="hljs-number">1000</span>);
+
+@observer <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Timer</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+    render() {
+        <span class="hljs-keyword">return</span> (<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Seconds passed: { this.props.timerData.secondsPassed } <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span> )
+    }
+};
+<span class="hljs-comment">//secondsPassed改变会触发组件刷新</span>
+React.render(&lt;Timer timerData={timerData} /&gt;, document.body);
+/*secondsPassed改变不会触发组件刷新，因为此处只是单纯地传递了字面值而已，Timer无法获取到timerData.secondsPassed的变化*/
+React.render(&lt;Timer timerData={timerData.secondsPassed} /&gt;, document.body); 
+</code></pre>
+<p>@observer、autorun函数所能观察的目标只能是引用，为了触发 **autorun **值需要通过引用来传递而不是字面值来传递。</p>
+<ol>
+<li>
+<p>无状态函数组件</p>
+<pre><code class="hljs language-react">import {observer} from &quot;mobx-react&quot;;
+
+const Timer = observer(({ timerData }) =&gt;
+    &lt;span&gt;Seconds passed: { timerData.secondsPassed } &lt;/span&gt;
+);
+</code></pre>
+</li>
+<li>
+<p>可观察的局部组件状态</p>
+<pre><code class="hljs language-react">import {observer} from &quot;mobx-react&quot;
+import {observable} from &quot;mobx&quot;
+
+@observer class Timer extends React.Component {
+    @observable secondsPassed = 0
+
+    componentWillMount() {
+        setInterval(() =&gt; {
+            this.secondsPassed++
+        }, 1000)
+    }
+
+    render() {
+        return (&lt;span&gt;Seconds passed: { this.secondsPassed } &lt;/span&gt; )
+    }
+})
+
+React.render(&lt;Timer /&gt;, document.body)
+</code></pre>
+<p>mobx局部组件状态的变化只会触发render、componentWillUpdate、componentDidUpdate</p>
+</li>
+<li>
+<p>componentWillReact 生命周期钩子</p>
+<p>当使用 mobx-react 时可以定义一个新的生命周期钩子函数 componentWillReact(一语双关)。当组件因为它观察的数据发生了改变，它会安排重新渲染，这个时候 componentWillReact 会被触发。</p>
+<h4 id="action">action</h4>
+<p>应该永远只对<strong>修改</strong>状态的函数使用动作</p>
+<ul>
+<li>
+<p>绑定的动作</p>
+<pre><code class="hljs language-react">class Ticker {
+    @observable tick = 0
+
+    @action.bound
+    increment() {
+        this.tick++ // 'this' 永远都是正确的
+    }
+}
+</code></pre>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="mobx%E4%BC%9A%E5%AF%B9%E4%BB%80%E4%B9%88%E5%81%9A%E5%87%BA%E5%8F%8D%E5%BA%94%EF%BC%9F">Mobx会对什么做出反应？</h4>
+<blockquote>
+<p>Mobx 会对在<strong>追踪函数</strong>执行过程中<strong>读取</strong>现存的可观察属性做出反应。</p>
+</blockquote>
+<p>调用过至少一次getter(注册观察者)，使用setter(执行过程)</p>
+<p>Mobx的observable函数就是通过普通对象生产一个拥有getter、setter属性的对象，其中getter的首次调用用于初始化初值并注册该属性的观察者，</p>
+<p>单例模式、观察者模式、</p>
+
+        </div>
+        <div class="article_item_footer">
+            <div class="read_btn">
+                <a href="/前端开发/mobx.html">Read</a>
+            </div>
+        </div>
+    </section>
+    
+    <div class="page_box">
+    <div class="page_pre">
+        <a class="page_pre_item" class="" href="/articles/1.html">FIRST</a>
+        <a class="page_pre_item" href="/articles/39.html">
+            <i class="iconfont icon-previous"></i>
+        </a>
+    </div>
+    <div class="page_num">
+        
+    </div>
+    <div class="page_next">
+        <a class="page_next_item" href="/articles/41.html">
+            <i class="iconfont icon-next"></i>
+        </a>
+        <a class="page_next_item" href="/articles/57.html">LAST</a>
+    </div>
+    </div>
+</div>
+    </div>
+    <aside>
+        <div class="profile_banner"></div>
+        <div class="profile_logo">
+        <img src="/assets/logo.png" alt="">
+        </div>
+        <div class="profile_name">
+            qoxop
+        </div>
+        <div class="profile_motto">
+            一只单身的帅狗, 打代码、打游戏、撸猫、无恶不做~~~
+        </div>
+        <div class="profile_info">
+        <div>
+            <div class="iconbox"><em class="iconfont icon-github"></em></div>
+            <div class="icontext">github</div>
+        </div>
+        <div>
+            <div class="iconbox"><em class="iconfont icon-resume"></em></div>
+            <div class="icontext">resume</div>
+        </div>
+        <div>...</div>
+        </div>
+    </aside>
+</div>
+        </main>
+        <footer id="footer"></footer>
+      </article>
+      <div class="shortcut-tools">
+          <div onclick="exec('scrollToTop')" class="goto-top-btn">Top</div>
+          <div onclick="exec('scrollToBottom')" class="goto-bottom-btn">Bottom</div>
+          <div onclick="exec('goback')" class="goback-btn">goback</div>
+      </div>
+      <script src="/assets/common.js"></script>
+</body>
+</html>

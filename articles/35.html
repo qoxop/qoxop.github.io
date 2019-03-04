@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content=",,,,,,,,,">
+    <title>qoxop | 首页(35)</title>
+    <link rel="stylesheet" href="/assets/common.css">
+    <link rel="stylesheet" href="/assets/articleList.css">
+    <link href="/assets/monokai_sublime.min.css" rel="stylesheet">  
+    <script async src="/assets/highlight.min.js"></script>
+     
+      <script src="/assets/hot_reload.js"></script>
+    
+</head>
+<body>
+    <article id="app">
+        <header>
+          <h1>张集伟的个人博客</h1>
+          <div class="content_box header_inner">
+            <div class="logo">
+              <div class="logoImg">
+                <img src="/assets/icon.png" alt="">
+              </div>
+              <div class="logoText">
+                jiw
+              </div>
+            </div>
+            <nav class="navigator">
+              <ul>
+                
+                <li class="actived">
+                    <a href="#">
+                        HOME
+                    </a>
+                </li>
+                
+                <li class="">
+                    <a href="/category.html">
+                        CATEGORY
+                    </a>
+                </li>
+                
+                <li class="">
+                    <a href="/tags.html">
+                        标签
+                    </a>
+                </li>
+                
+                <li class="">
+                    <a href="/link.html">
+                        链接
+                    </a>
+                </li>
+                
+                <li class="">
+                    <a href="/about.html">
+                        关于我
+                    </a>
+                </li>
+                
+              </ul>
+            </nav>
+          </div>
+        </header>
+        <main id="main">
+           <div class="content_box">
+    <div id="left_content">
+        <!-- 这里存放主要内容 -->
+       <div class="article_list">
+    
+    <section class="article_item">
+        <h3><a href="/前端开发/webpack配置情景.html">webpack配置情景</a></h3>
+        <div class="preview md_html">
+            <h4 id="1.-%E4%BD%BFcss%E3%80%81less%E6%94%AF%E6%8C%81%E6%A8%A1%E5%9D%97%E5%BC%95%E5%85%A5%E3%80%81%E4%BD%9C%E7%94%A8%E5%9F%9F%E7%AE%A1%E7%90%86%E3%80%81%E5%90%88%E5%B9%B6%E6%89%93%E5%8C%85%E5%88%B0%E5%8D%95%E4%B8%AA%E6%96%87%E4%BB%B6">1. 使css、less支持模块引入、作用域管理、合并打包到单个文件</h4>
+
+        </div>
+        <div class="article_item_footer">
+            <div class="read_btn">
+                <a href="/前端开发/webpack配置情景.html">Read</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="article_item">
+        <h3><a href="/前端开发/yarn.html">yarn</a></h3>
+        <div class="preview md_html">
+            <h4 id="add">add</h4>
+<ul>
+<li><strong>yarn add  &lt;package...&gt;  [--dev/-D, --peer/-P, --optional/-O, --exact/-E, --tilde/-T]</strong></li>
+</ul>
+<h4 id="cache-*">cache  *</h4>
+<ul>
+<li><strong>yarn cache ls</strong>	    列出所有已经缓存的包。</li>
+<li><strong>yarn cache dir</strong>         会打印出当前的 yarn 全局缓存在哪里</li>
+<li><strong>yarn cache clean</strong>     清除本地缓存</li>
+</ul>
+<h4 id="check">check</h4>
+<ul>
+<li><strong>yarn check</strong>    校验当前项目的 package.json 文件里的依赖版本和 yarn 的 lock 文件中列出的版本是否匹配。</li>
+<li><strong>yarn check --integrity</strong>  校验当前项目的 package.json 文件里列出的依赖包的版本以及此包的散列值是否与 yarn 的 lock 文件中列出的相应版本和散列（hash）值一致。 这有助于验证依赖包没有被篡改。</li>
+</ul>
+<h4 id="clean">clean</h4>
+<p>清除安装失败的依赖包</p>
+<h4 id="config">config</h4>
+<ul>
+<li><strong>yarn config set <key> <value> [-g|--global]</strong>    设置配置文件的key-value</li>
+<li><strong>yarn config get <key></strong>    获取配置的文件中对应key的value</li>
+<li><strong>yarn config delete <key></strong>    删除配置文件中某个key</li>
+<li><strong>yarn config list</strong>    列出所有的配置信息</li>
+</ul>
+<h4 id="generate-lock-entry">generate-lock-entry</h4>
+<p>此命令针对复杂的使用情况或业务。它所生成的 lock 文件用来作为当前的 package.json 文件的清单文件（manifest file）。</p>
+<h4 id="global">global</h4>
+<ul>
+<li><strong>yarn global &lt;add/bin/ls/remove/upgrade&gt; [--prefix]</strong>   全局操作</li>
+</ul>
+<h4 id="info">info</h4>
+<ul>
+<li><strong>yarn info <package>  [<field>]</strong>    查看某个包的信息</li>
+</ul>
+<h4 id="init">init</h4>
+<p>初始化一个yarn project</p>
+<h4 id="yarn-%2F-yarn-install">yarn / yarn install</h4>
+<p>yarn install --[ flat / force / har / no-lockfile / production / pure-lockfile ]</p>
+<ul>
+<li><strong>--force</strong>   强制重新安装package.json中的所有依赖</li>
+<li><strong>--har</strong></li>
+<li><strong>--no-lockfile</strong>    Don’t read or generate a yarn.lock lockfile.</li>
+<li><strong>--production</strong>    will not install any package listed in devDependencies.</li>
+<li><strong>--pure-lockfile</strong>   Don’t generate a yarn.lock lockfile.</li>
+</ul>
+<h4 id="licenses-ls">licenses ls</h4>
+<p>执行此命令将按字母顺序列出所有被 yarn 或 yarn install 安装的包，并同时列出每个包所采用的许可证（和源代码的 URL 地址）</p>
+<h4 id="link">link</h4>
+<p>link 命令用于调试本地依赖包</p>
+<ul>
+<li><strong>yarn link</strong>	为当前目录下的项目添加一个链接</li>
+<li><strong>yarn link  <package></strong>  将package关联到一个本地的链接上</li>
+</ul>
+<h4 id="unlink">unlink</h4>
+<ul>
+<li><strong>yarn unlink [ package ]</strong></li>
+</ul>
+<h4 id="login">login</h4>
+<ul>
+<li><strong>yarn login url</strong>	登陆npm仓库</li>
+</ul>
+<h4 id="logout">logout</h4>
+<p>退出登陆</p>
+<h4 id="list">list</h4>
+<p>列出项目所有的依赖</p>
+<h4 id="owner">owner</h4>
+<ul>
+<li><strong>yarn owner ls <package></strong></li>
+<li><strong>yarn owner add <user> <package></strong></li>
+<li><strong>yarn owner rm <user> <package></strong></li>
+</ul>
+<h4 id="pack">pack</h4>
+<p>打包</p>
+<ul>
+<li><strong>yarn pack --filename <filename></strong></li>
+</ul>
+<h4 id="publish">publish</h4>
+<p>发布</p>
+<ul>
+<li><strong>yarn publish [ tarball ]</strong>	Publishes the package defined by a .tgz gzipped tarball.
+<ul>
+<li>**yarn publish [folder] **Publishes the package contained in the specified folder. <folder>/package.json should specify the package details.</li>
+</ul>
+</li>
+<li><strong>yarn publish --tag <tag></strong>     Provided a tag to yarn publish lets you publish packages with a specific tag.</li>
+<li><strong>yarn publish --access &lt;public|restricted&gt;</strong>    The --access flag controls whether the npm registry publishes this package as a public package, or restricted.</li>
+</ul>
+<h4 id="remove">remove</h4>
+<ul>
+<li>yarn remove &lt;package...&gt;		移除一个依赖</li>
+</ul>
+<h4 id="run">run</h4>
+<ul>
+<li>yarn run [script][-- <code>&lt;args&gt;</code>]	执行一个脚本</li>
+</ul>
+<h4 id="self-update">self-update</h4>
+<h4 id="upgrade">upgrade</h4>
+<p>更新所有的依赖到最新稳定版本（based on the version range specified in the package.json file. ）</p>
+
+        </div>
+        <div class="article_item_footer">
+            <div class="read_btn">
+                <a href="/前端开发/yarn.html">Read</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="article_item">
+        <h3><a href="/读书笔记/ssh.html">ssh</a></h3>
+        <div class="preview md_html">
+            <h4 id="%E7%BB%91%E5%AE%9A%E6%9C%AC%E5%9C%B0%E7%AB%AF%E5%8F%A3">绑定本地端口</h4>
+<pre><code class="hljs language-bash">ssh -D 8080 user@host
+</code></pre>
+<p>ssh建立一个socket，监听本地的8080端口，就自动把它转移到SSH连接上面，发往远程主机。</p>
+<h4 id="%E6%9C%AC%E5%9C%B0%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91">本地端口转发</h4>
+<pre><code class="hljs language-bash">ssh -L localPort: remoteHost :remotePort SSHHost
+</code></pre>
+<p>ssh链接由**执行方(本地)<strong>向</strong>SSHHost(远程)**发起，ssh监听本地端口localPort，将localPort数据转发给了SSHHost的sshServer，sshServer将数据转发给远程服务端口remoteHost:remotePort,远程服务器返回的数据将原路返回到本地端口。</p>
+<h4 id="%E8%BF%9C%E7%A8%8B%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91">远程端口转发</h4>
+<pre><code class="hljs language-bash">ssh -R localPort: remoteHost :remotePort SSHHost
+</code></pre>
+<p>ssh链接由**执行方(远程)<strong>向</strong>SSHHost(本地)<strong>发起，<strong>执行方ssh</strong>要求</strong>SSHHost(本地)**上的sshServer监听localPort端口并将localPort端口数据返回给自己，由自己将数据转发给远程服务端口remoteHost:remotePort，远程服务器返回的数据将原路返回到本地端口。</p>
+
+        </div>
+        <div class="article_item_footer">
+            <div class="read_btn">
+                <a href="/读书笔记/ssh.html">Read</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="article_item">
+        <h3><a href="/读书笔记/git.html">git</a></h3>
+        <div class="preview md_html">
+            <h3 id="fetch">fetch</h3>
+<h4 id="%E6%8F%8F%E8%BF%B0">描述</h4>
+<p>拉去远程分支，默认再本地增加origin/XXX分支</p>
+<h4 id="%E5%8F%82%E6%95%B0">参数</h4>
+<p>--prune / -p ：fetch之前删除本地中对远程分支的引用，如果改引用再远程分支中已经不存在</p>
+<h3 id="commit">commit</h3>
+<p>git commit --amend 修补提交</p>
+
+        </div>
+        <div class="article_item_footer">
+            <div class="read_btn">
+                <a href="/读书笔记/git.html">Read</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="article_item">
+        <h3><a href="/前端开发/对js原型链的理解.html">对js原型链的理解</a></h3>
+        <div class="preview md_html">
+            <h3 id="%E5%8E%9F%E5%9E%8B%E9%93%BE%E7%9A%84%E6%9C%AC%E8%B4%A8">原型链的本质</h3>
+<p>a对象的<code>__proto__</code> 属性指向b对象，而b对象的<code>__proto__</code> 指向c对象，这就是一条原型链</p>
+<h3 id="%E5%8E%9F%E5%9E%8B%E9%93%BE%E7%9A%84%E4%BD%9C%E7%94%A8">原型链的作用</h3>
+<p>如果访问对象自身某个不存在属性时，程序就会去对象的<code>__proto__</code>属性指向的对象去查找，如果再找不到就会继续按照这样的规则去继续查找，知道找到为止或者最后的对像的<code>__proto__</code>属性指向null</p>
+<p>由于属性的查找的优先级是先查自身自有属性再去原型链中查找，这就造成了所谓的属性屏蔽</p>
+<pre><code class="hljs language-javascript"><span class="hljs-comment">// 演示原型链</span>
+<span class="hljs-keyword">let</span> a = {<span class="hljs-attr">pa</span>: <span class="hljs-string">'a'</span>};
+<span class="hljs-keyword">let</span> b = {<span class="hljs-attr">pb</span>: <span class="hljs-string">'b'</span>};
+<span class="hljs-keyword">let</span> c = {<span class="hljs-attr">pc</span>: <span class="hljs-string">'c'</span>};
+a.__proto__ = b;
+b.__proto__ = c;
+a.pb === b.pb <span class="hljs-comment">// true</span>
+a.pc === c.pc <span class="hljs-comment">// true</span>
+c = {<span class="hljs-attr">pc</span>: <span class="hljs-string">'cc'</span>};
+a.pc === c.pc <span class="hljs-comment">// false, c的指向改变了</span>
+</code></pre>
+<h3 id="%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%96%B9%E5%BC%8F">创建对象的方式</h3>
+<ol>
+<li>字面量 / <code>new Object(obj)</code> ：构造函数都是Object</li>
+<li>构造函数 :  构造函数为自定义的构造函数</li>
+<li><code>Object.create(srcObj: any)</code> ：构造函数与<code>srcObj</code>的构造函数一致，作用是新建一个对象使得该对象的<code>__proto__</code>属性指向<code>srcObj</code></li>
+</ol>
+<h3 id="javascript%E4%B8%AD%E5%8E%9F%E5%9E%8B%E9%93%BE%E7%9A%84%E5%BD%A2%E6%88%90">JavaScript中原型链的形成</h3>
+<p>对象的原型指向它的构造函数<strong>在调用时</strong>的<code>prototype</code>属性(的引用)，如果需要如果需要动态修改对象的原型，只能去修改<code>prototype</code>属性的属性，而不能直接给<code>prototype</code>属性赋值(因为引用改变了)</p>
+<p><code>js</code>中只有<strong>函数</strong>与<strong>类</strong>(本质上也是函数)有默认的<code>prototype</code>属性，而且<code>prototype</code>属性对象的<code>constructor</code>属性指向函数本身或者类的构造函数</p>
+<p>一些概念：原型对象指的就是prototype，原型链就是<code>__proto__</code>链</p>
+<p>注意点：原型对象上的方法和属性是所有实例对象共有的方法和属性</p>
+<h3 id="%E6%93%8D%E4%BD%9C%E7%AC%A6">操作符</h3>
+<h4 id="instanceof">instanceof</h4>
+<pre><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">A</span> </span>{<span class="hljs-comment">/* anything here */</span>};
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">B</span> </span>{
+    A.call(<span class="hljs-keyword">this</span>)
+    <span class="hljs-comment">/* anything here */</span>
+}；
+B.prototype = <span class="hljs-built_in">Object</span>.create(A.prototype)
+<span class="hljs-keyword">var</span> b = <span class="hljs-keyword">new</span> B
+b installceof B; <span class="hljs-comment">// 作用(原理)上等于b.__proto__ === B.prototype || b.__proto__ === A.prototype</span>
+<span class="hljs-comment">// 如果需要判断直接父类</span>
+b.__proto__.constructor === B.prototype.constructor
+</code></pre>
+<h4 id="new">new</h4>
+<ol>
+<li>一个新的对象被创建，它继承自构造函数的prototype，<code>f = {__proto__: F.prototype}</code></li>
+<li>构造函数被执行，相应的传参被传入，同时上下文(this)会被指定为这个新的实例。<code>(this = f)</code></li>
+<li>如果构造函数返回了一个对象，那实例就会变成这个对象，new操作符的作用相当于没有，如果没有返回任何东西，那new操作符将会把上下文(this)做为函数的返回， <code>return this</code></li>
+</ol>
+<h3 id="%E5%90%84%E7%A7%8D%E9%BB%98%E8%AE%A4%E7%B1%BB%E5%9E%8B%E7%9A%84prototype">各种默认类型的prototype</h3>
+<pre><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">F</span>(<span class="hljs-params"></span>) </span>{}
+F.__proto__ === <span class="hljs-built_in">Function</span>.prototype <span class="hljs-comment">// true</span>
+</code></pre>
+<h3 id="%E5%AE%9E%E7%8E%B0%E7%BB%A7%E6%89%BF%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95">实现继承的几种方法</h3>
+<ol>
+<li>只继承自有属性(利用构造函数)</li>
+</ol>
+<pre><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Parent</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">this</span>.type = <span class="hljs-string">"parent"</span>
+}
+Parent.prototype.sayHi = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"hi"</span>);
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Child</span>(<span class="hljs-params"></span>) </span>{
+  Parent.call(<span class="hljs-keyword">this</span>)
+  <span class="hljs-keyword">this</span>.name = <span class="hljs-string">"child"</span>
+}
+<span class="hljs-keyword">const</span> child = <span class="hljs-keyword">new</span> Child
+child.tpye === <span class="hljs-string">"parent"</span> <span class="hljs-comment">// true</span>
+child.name === <span class="hljs-string">"child"</span> <span class="hljs-comment">// true</span>
+child.sayHi() <span class="hljs-comment">// Error</span>
+</code></pre>
+
+        </div>
+        <div class="article_item_footer">
+            <div class="read_btn">
+                <a href="/前端开发/对js原型链的理解.html">Read</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="article_item">
+        <h3><a href="/后端开发/login.html">login</a></h3>
+        <div class="preview md_html">
+            <ol>
+<li>checkLogin： 向后台询问登陆态，不传userId 和 password，如果是登陆态，后台回直接放回登陆信息</li>
+</ol>
+<pre><code class="hljs language-flow">st=&gt;start: /login
+e=&gt;end: End
+st-&gt;e
+</code></pre>
+<pre><code class="hljs language-flow">st=&gt;start: Start|past:&gt;http://www.google.com[blank]
+e=&gt;end: End:&gt;http://www.google.com
+op1=&gt;operation: My Operation|past
+op2=&gt;operation: Stuff|current
+sub1=&gt;subroutine: My Subroutine|invalid
+cond=&gt;condition: Yes 
+or No?|approved:&gt;http://www.baidu.com
+c2=&gt;condition: Good idea|rejected
+io=&gt;inputoutput: catch something...|request
+
+st-&gt;op1(right)-&gt;cond
+cond(yes, right)-&gt;c2
+cond(no)-&gt;sub1(left)-&gt;op1
+c2(yes)-&gt;io-&gt;e
+c2(no)-&gt;op2-&gt;e
+​```
+
+
+</code></pre>
+<pre><code class="hljs language-flow">st=&gt;start: start
+end=&gt;end: end
+
+st-&gt;end
+</code></pre>
+
+        </div>
+        <div class="article_item_footer">
+            <div class="read_btn">
+                <a href="/后端开发/login.html">Read</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="article_item">
+        <h3><a href="/后端开发/备注.html">备注</a></h3>
+        <div class="preview md_html">
+            
+        </div>
+        <div class="article_item_footer">
+            <div class="read_btn">
+                <a href="/后端开发/备注.html">Read</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="article_item">
+        <h3><a href="/经验总结/周记.html">周记</a></h3>
+        <div class="preview md_html">
+            <h2 id="%E5%91%A8%E8%AE%B0">周记</h2>
+<p>2017年12月18日～2017年12月24日										张集伟</p>
+<p>​	这一周，在工作上主要是修复了恒大营销总应用的两个问题，一个是数据展示问题一个是网络请求问题，第一个问题主要是对需求的理解不清造成，第二个问题主要是由于粗心造成。</p>
+<p>​	而其他的时间主要在学习用webpack搭建前端项目和学习一个新的前端状态管理库Mobx，对于webpack的学习主要是了解它的各个配置项的作用以及了解根据具体需求来配个相应的loader与插件。而mobx与redux一样都是能与react很好配合的一个状态管理器，但是两者的实现方式却是大不相同。</p>
+<p>​	用redux的话，状态更新只能由action触发，以纯函数的方式定义reducer函数来规定state的更新规则，所以每次局部状态的更新免不了要进行一次state的拷贝，而且redux采用单个的store来管理应用的状态，所以在项目越来越复杂时store也会变得过于庞大而不便于管理，所以需要拆分reducer来优化，而且redux原生并不支持异步的action，需要通过中间件来实现异步action，当然，对于redux，是有它适合的应用场景和优势，在这方面上以后还是要继续去了解的。</p>
+<p>​	对于mobx，我自己的理解是，mobx通过将普通对象转化成一个可观察对象（原理是基于js对象的getter与setter属性），在设置可观察对象时，会自动触发某些行为，在这方面上它与redux是类似的。但mobx提供更加细粒化的观察，首先可观察对象是一个单例模式，mobx观察的是引用，当引用内的值发现改变就能触发行为，可以不通过派发action和用reducer更新状态，提供了更加自由的方式来管理应用状态，能更及时地相应状态变化。mobx可以采用多store来管理状态，方便业务拆分，不过这应该也有不好的地方，因为有可能造成状态的混乱或者其他的问题。当然对于这两个状态管理库，目前还没有很深入地理解，还需要在往后的时间继续学习。</p>
+
+        </div>
+        <div class="article_item_footer">
+            <div class="read_btn">
+                <a href="/经验总结/周记.html">Read</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="article_item">
+        <h3><a href="/读书笔记/git.html">git</a></h3>
+        <div class="preview md_html">
+            <h3 id="fetch">fetch</h3>
+<h4 id="%E6%8F%8F%E8%BF%B0">描述</h4>
+<p>拉去远程分支，默认再本地增加origin/XXX分支</p>
+<h4 id="%E5%8F%82%E6%95%B0">参数</h4>
+<p>--prune / -p ：fetch之前删除本地中对远程分支的引用，如果改引用再远程分支中已经不存在</p>
+<h3 id="commit">commit</h3>
+<p>git commit --amend 修补提交</p>
+
+        </div>
+        <div class="article_item_footer">
+            <div class="read_btn">
+                <a href="/读书笔记/git.html">Read</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="article_item">
+        <h3><a href="/读书笔记/ssh.html">ssh</a></h3>
+        <div class="preview md_html">
+            <h4 id="%E7%BB%91%E5%AE%9A%E6%9C%AC%E5%9C%B0%E7%AB%AF%E5%8F%A3">绑定本地端口</h4>
+<pre><code class="hljs language-bash">ssh -D 8080 user@host
+</code></pre>
+<p>ssh建立一个socket，监听本地的8080端口，就自动把它转移到SSH连接上面，发往远程主机。</p>
+<h4 id="%E6%9C%AC%E5%9C%B0%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91">本地端口转发</h4>
+<pre><code class="hljs language-bash">ssh -L localPort: remoteHost :remotePort SSHHost
+</code></pre>
+<p>ssh链接由**执行方(本地)<strong>向</strong>SSHHost(远程)**发起，ssh监听本地端口localPort，将localPort数据转发给了SSHHost的sshServer，sshServer将数据转发给远程服务端口remoteHost:remotePort,远程服务器返回的数据将原路返回到本地端口。</p>
+<h4 id="%E8%BF%9C%E7%A8%8B%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91">远程端口转发</h4>
+<pre><code class="hljs language-bash">ssh -R localPort: remoteHost :remotePort SSHHost
+</code></pre>
+<p>ssh链接由**执行方(远程)<strong>向</strong>SSHHost(本地)<strong>发起，<strong>执行方ssh</strong>要求</strong>SSHHost(本地)**上的sshServer监听localPort端口并将localPort端口数据返回给自己，由自己将数据转发给远程服务端口remoteHost:remotePort，远程服务器返回的数据将原路返回到本地端口。</p>
+
+        </div>
+        <div class="article_item_footer">
+            <div class="read_btn">
+                <a href="/读书笔记/ssh.html">Read</a>
+            </div>
+        </div>
+    </section>
+    
+    <div class="page_box">
+    <div class="page_pre">
+        <a class="page_pre_item" class="" href="/articles/1.html">FIRST</a>
+        <a class="page_pre_item" href="/articles/34.html">
+            <i class="iconfont icon-previous"></i>
+        </a>
+    </div>
+    <div class="page_num">
+        
+    </div>
+    <div class="page_next">
+        <a class="page_next_item" href="/articles/36.html">
+            <i class="iconfont icon-next"></i>
+        </a>
+        <a class="page_next_item" href="/articles/57.html">LAST</a>
+    </div>
+    </div>
+</div>
+    </div>
+    <aside>
+        <div class="profile_banner"></div>
+        <div class="profile_logo">
+        <img src="/assets/logo.png" alt="">
+        </div>
+        <div class="profile_name">
+            qoxop
+        </div>
+        <div class="profile_motto">
+            一只单身的帅狗, 打代码、打游戏、撸猫、无恶不做~~~
+        </div>
+        <div class="profile_info">
+        <div>
+            <div class="iconbox"><em class="iconfont icon-github"></em></div>
+            <div class="icontext">github</div>
+        </div>
+        <div>
+            <div class="iconbox"><em class="iconfont icon-resume"></em></div>
+            <div class="icontext">resume</div>
+        </div>
+        <div>...</div>
+        </div>
+    </aside>
+</div>
+        </main>
+        <footer id="footer"></footer>
+      </article>
+      <div class="shortcut-tools">
+          <div onclick="exec('scrollToTop')" class="goto-top-btn">Top</div>
+          <div onclick="exec('scrollToBottom')" class="goto-bottom-btn">Bottom</div>
+          <div onclick="exec('goback')" class="goback-btn">goback</div>
+      </div>
+      <script src="/assets/common.js"></script>
+</body>
+</html>
