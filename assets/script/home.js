@@ -1,0 +1,1 @@
+"use strict";window.addEventListener("load",function(){bodyScrollHandler(),autoHideHeader(),renderHomePage(),renderYearBar(),assistToolsHandler()});

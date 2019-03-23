@@ -1,0 +1,61 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="qoxop">
+    <meta name="keywords" content="">
+    <meta name="description" content="在日常项目的开发中，ES6中的解构语法常常用于数据的拷贝，比如在用redux的应用写reducer时就经常会用对象的结构来重新构造state，或者用于快捷地将对象的某些属性赋值给变量。">
+    <link rel="stylesheet" href="/assets/style/index.css">
+    <title>一个关于ES6解构的问题</title>
+<link rel="stylesheet" href="/assets/code_styles/solarized-light.css"></head>
+<body>
+    <header>
+        <div class="header">
+            <h1>阿伟的网络日志</h1>
+            <nav>
+                <ul>
+                    <li>
+                        <a class="unset" href="/index.html">Home</a>
+                    </li>
+                    <li>
+                        <a class="unset" href="/tags.html">Tags</a>
+                    </li>
+                    <li>
+                        <a class="unset" href="/about.html">About</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <article id="article_main"><h1>一个关于ES6解构的问题</h1><section class="article_info">
+        <span class="author">author: qoxop</span>
+        <span class="update_time">updateAt: 2019-03-06</span>
+    </section><div class="from_markdown"><p>在日常项目的开发中，ES6中的解构语法常常用于数据的拷贝，比如在用redux的应用写reducer时就经常会用对象的结构来重新构造state，或者用于快捷地将对象的某些属性赋值给变量。</p>
+<p>今天同事出了一个bug，他在模块外定义了一个对象数组常量，然后通过解构的方式将这个数组中的几个对象拷贝给模块中的几个变量，再结合接口数据修改了对象变量的属性并展示到页面上去，导致了下次再次用到该模块时，数据展示异常了(把上次对对象的修改结果也带上了)</p>
+<p>这是由于ES6中的解构语法只是一种浅拷贝而已，而且ES6中的应用类型常量并不是真正意义上的常量，它只能保证常量不能再被赋值给其他对象，但却可以轻易地修改它的内部数量，所以在使用全局的常量对象时必须小心谨慎，以防修改，影响其他模块。</p>
+</div><section class="tags_bar"></section></article>
+        <aside> 
+            <section class="assist-tool">
+                <div class="back-to-top">
+                    <em class="iconfont icon-top"></em>
+                </div>
+            </section>
+        </aside>
+    </main>
+    <footer>
+        <div class="scrollTips" id="scrollTips">
+        </div>
+        <section class="copyright">
+            copyright © 2019 by zhangjiwei
+        </section>
+        <section class="ICP_NUM">
+            <a href="http://www.miitbeian.gov.cn">
+                粤ICP备19026817号-1
+            </a>
+        </section>
+    </footer>
+    <script src="/assets/script/common.js"></script>
+
+
+<script src="/assets/script/article.js"></script></body></html>

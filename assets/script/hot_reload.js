@@ -1,0 +1,1 @@
+"use strict";!function(){var o=new WebSocket("ws://localhost:3000/hot_reload");o.onopen=function(){o.send("connectting"),console.log("connected to hot_reload server on 3001")},o.onclose=console.log,o.onmessage=function(o){"reload page"===o.data&&window.location.reload()},o.onerror=function(){console.log("连接热重载服务失败，请检查端口是否一致！")}}();
