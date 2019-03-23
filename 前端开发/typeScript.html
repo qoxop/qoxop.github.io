@@ -1,86 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="qoxop">
     <meta name="keywords" content="">
-    <title>qoxop | typeScript</title>
-    <link rel="stylesheet" href="/assets/common.css">
-    <link rel="stylesheet" href="/assets/article.css">
-    <link href="/assets/monokai_sublime.min.css" rel="stylesheet">  
-    <script async src="/assets/highlight.min.js"></script>
-    
-</head>
+    <meta name="description" content="类型声明，冒号+类型  -&amp;gt; :boolean | :number | :string">
+    <link rel="stylesheet" href="/assets/style/index.css">
+    <title>typeScript</title>
+<link rel="stylesheet" href="/assets/code_styles/solarized-light.css"></head>
 <body>
-    <article id="app">
-        <header id="app_header">
-          <h1>张集伟的个人博客</h1>
-          <div class="content_box header_inner">
-            <div class="logo">
-              <div class="logoImg">
-                <img src="/assets/icon.png" alt="">
-              </div>
-              <div class="logoText">
-                jiw
-              </div>
-            </div>
-            <nav class="navigator">
-              <ul>
-                
-                <li class="" onclick="exec('linkTo', '/index.html')">
-                    <a href="/index.html">
-                        HOME
-                    </a>
-                </li>
-                
-                <li class="" onclick="exec('linkTo', '/category.html')">
-                    <a href="/category.html">
-                        CATEGORY
-                    </a>
-                </li>
-                
-                <li class="" onclick="exec('linkTo', '/tags.html')">
-                    <a href="/tags.html">
-                        标签
-                    </a>
-                </li>
-                
-                <li class="" onclick="exec('linkTo', '/link.html')">
-                    <a href="/link.html">
-                        链接
-                    </a>
-                </li>
-                
-                <li class="" onclick="exec('linkTo', '/about.html')">
-                    <a href="/about.html">
-                        关于我
-                    </a>
-                </li>
-                
-              </ul>
+    <header>
+        <div class="header">
+            <h1>阿伟的网络日志</h1>
+            <nav>
+                <ul>
+                    <li>
+                        <a class="unset" href="/index.html">Home</a>
+                    </li>
+                    <li>
+                        <a class="unset" href="/tags.html">Tags</a>
+                    </li>
+                    <li>
+                        <a class="unset" href="/about.html">About</a>
+                    </li>
+                </ul>
             </nav>
-          </div>
-        </header>
-        <main id="main">
-           <article class="content_box">
-    <div class="article md_html_article" id="left_content">
-        <h1>
-            typeScript
-        </h1>
-        <div class="update_time">
-            <span>
-                更新时间：2018-12-22
-            </span>
         </div>
-        <div id="write" class="md_essay">
-            <h3 id="%E7%B1%BB%E5%9E%8B">类型</h3>
+    </header>
+    <main>
+        <article id="article_main"><h1>typeScript</h1><section class="article_info">
+        <span class="author">author: qoxop</span>
+        <span class="update_time">updateAt: 2018-12-22</span>
+    </section><div class="from_markdown"><h3 id="%E7%B1%BB%E5%9E%8B">类型</h3>
 <ol>
 <li>
 <p>类型声明，冒号+类型  -&gt; :boolean | :number | :string</p>
 </li>
 <li>
-<p>类型种类：布尔值(boolean)、 数字(number) 、字符串(string)、数组(Array|Array<number>)、元组(Tuple)、枚举(enum)、任意类型(Any)、void(函数无返回值、只能赋值为null和undefined)、Null 、Undefined、never</p>
+<p>类型种类：布尔值(boolean)、 数字(number) 、字符串(string)、数组(Array|Array<number>)、元组(Tuple)、枚举(enum)、任意类型(Any)、void(函数无返回值、只能赋值为null和undefined)、Null 、Undefined、never</number></p>
 </li>
 <li>
 <p>元组：一个固定长度、元素类型固定的数组：let x: [string, number]</p>
@@ -259,21 +216,28 @@ a = ro; <span class="hljs-comment">// error!</span>
 </ol>
 <h5 id="%E9%9D%99%E6%80%81%E5%B1%9E%E6%80%A7">静态属性</h5>
 <p>用static修饰属性，该属性是属于类的，实在类建立时初始化的，而不是创建实例时，可以同过 <strong>类名.xxx</strong> 直接访问，所有的子类可共享该属性。</p>
+</div><section class="tags_bar"></section></article>
+        <aside> 
+            <section class="assist-tool">
+                <div class="back-to-top">
+                    <em class="iconfont icon-top"></em>
+                </div>
+            </section>
+        </aside>
+    </main>
+    <footer>
+        <div class="scrollTips" id="scrollTips">
+        </div>
+        <section class="copyright">
+            copyright © 2019 by zhangjiwei
+        </section>
+        <section class="ICP_NUM">
+            <a href="http://www.miitbeian.gov.cn">
+                粤ICP备19026817号-1
+            </a>
+        </section>
+    </footer>
+    <script src="/assets/script/common.js"></script>
 
-        </div>
-        <div class="md_essay_tags">
-            
-        </div>
-    </div>
-</article>
-        </main>
-        <footer id="footer"></footer>
-      </article>
-      <div class="shortcut-tools">
-          <div onclick="exec('scrollToTop')" class="goto-top-btn">Top</div>
-          <div onclick="exec('scrollToBottom')" class="goto-bottom-btn">Bottom</div>
-          <div onclick="exec('goback')" class="goback-btn">goback</div>
-      </div>
-      <script src="/assets/common.js"></script>
-</body>
-</html>
+
+<script src="/assets/script/article.js"></script></body></html>

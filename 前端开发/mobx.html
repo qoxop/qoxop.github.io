@@ -1,80 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="qoxop">
     <meta name="keywords" content="">
-    <title>qoxop | mobx</title>
-    <link rel="stylesheet" href="/assets/common.css">
-    <link rel="stylesheet" href="/assets/article.css">
-    <link href="/assets/monokai_sublime.min.css" rel="stylesheet">  
-    <script async src="/assets/highlight.min.js"></script>
-    
-</head>
+    <meta name="description" content="参数：一个使用了observable数据的函数">
+    <link rel="stylesheet" href="/assets/style/index.css">
+    <title>mobx</title>
+<link rel="stylesheet" href="/assets/code_styles/solarized-light.css"></head>
 <body>
-    <article id="app">
-        <header id="app_header">
-          <h1>张集伟的个人博客</h1>
-          <div class="content_box header_inner">
-            <div class="logo">
-              <div class="logoImg">
-                <img src="/assets/icon.png" alt="">
-              </div>
-              <div class="logoText">
-                jiw
-              </div>
-            </div>
-            <nav class="navigator">
-              <ul>
-                
-                <li class="" onclick="exec('linkTo', '/index.html')">
-                    <a href="/index.html">
-                        HOME
-                    </a>
-                </li>
-                
-                <li class="" onclick="exec('linkTo', '/category.html')">
-                    <a href="/category.html">
-                        CATEGORY
-                    </a>
-                </li>
-                
-                <li class="" onclick="exec('linkTo', '/tags.html')">
-                    <a href="/tags.html">
-                        标签
-                    </a>
-                </li>
-                
-                <li class="" onclick="exec('linkTo', '/link.html')">
-                    <a href="/link.html">
-                        链接
-                    </a>
-                </li>
-                
-                <li class="" onclick="exec('linkTo', '/about.html')">
-                    <a href="/about.html">
-                        关于我
-                    </a>
-                </li>
-                
-              </ul>
+    <header>
+        <div class="header">
+            <h1>阿伟的网络日志</h1>
+            <nav>
+                <ul>
+                    <li>
+                        <a class="unset" href="/index.html">Home</a>
+                    </li>
+                    <li>
+                        <a class="unset" href="/tags.html">Tags</a>
+                    </li>
+                    <li>
+                        <a class="unset" href="/about.html">About</a>
+                    </li>
+                </ul>
             </nav>
-          </div>
-        </header>
-        <main id="main">
-           <article class="content_box">
-    <div class="article md_html_article" id="left_content">
-        <h1>
-            mobx
-        </h1>
-        <div class="update_time">
-            <span>
-                更新时间：2019-02-25
-            </span>
         </div>
-        <div id="write" class="md_essay">
-            <h4 id="autorun">Autorun</h4>
+    </header>
+    <main>
+        <article id="article_main"><h1>mobx</h1><section class="article_info">
+        <span class="author">author: qoxop</span>
+        <span class="update_time">updateAt: 2019-03-23</span>
+    </section><div class="from_markdown"><h4 id="autorun">Autorun</h4>
 <p>参数：一个使用了observable数据的函数</p>
 <p>返回：disposer函数，调用该函数可以去取消autorun，以及取消对computed值的计算</p>
 <p>错误处理：可以用disposer.onError方法来覆盖Reaction的默认日志行为。</p>
@@ -95,6 +52,7 @@ dispose.onError(<span class="hljs-function"><span class="hljs-params">e</span> =
 age.set(<span class="hljs-number">-5</span>)  <span class="hljs-comment">// 显示alert弹出框</span>
 </code></pre>
 <p>全局的onError方法：全局的 onError 处理方法可以通过 extras.onReactionError(handler)来设置。</p>
+<p><img src="/images/icon.png" alt="icon"></p>
 <h4 id="%40observer">@observer</h4>
 <p>将React组件转变成响应式组件。它用mobx.autorun 包装了组件的render函数以确保任何组件渲染中使用的数据变化是都可以强制刷新组件。</p>
 <pre><code class="hljs language-javascript"><span class="hljs-keyword">import</span> {observer} <span class="hljs-keyword">from</span> <span class="hljs-string">"mobx-react"</span>;
@@ -121,7 +79,7 @@ React.render(&lt;Timer timerData={timerData.secondsPassed} /&gt;, document.body)
 <ol>
 <li>
 <p>无状态函数组件</p>
-<pre><code class="hljs language-react">import {observer} from &quot;mobx-react&quot;;
+<pre><code class="hljs language-react">import {observer} from "mobx-react";
 
 const Timer = observer(({ timerData }) =&gt;
     &lt;span&gt;Seconds passed: { timerData.secondsPassed } &lt;/span&gt;
@@ -130,8 +88,8 @@ const Timer = observer(({ timerData }) =&gt;
 </li>
 <li>
 <p>可观察的局部组件状态</p>
-<pre><code class="hljs language-react">import {observer} from &quot;mobx-react&quot;
-import {observable} from &quot;mobx&quot;
+<pre><code class="hljs language-react">import {observer} from "mobx-react"
+import {observable} from "mobx"
 
 @observer class Timer extends React.Component {
     @observable secondsPassed = 0
@@ -178,22 +136,29 @@ React.render(&lt;Timer /&gt;, document.body)
 </blockquote>
 <p>调用过至少一次getter(注册观察者)，使用setter(执行过程)</p>
 <p>Mobx的observable函数就是通过普通对象生产一个拥有getter、setter属性的对象，其中getter的首次调用用于初始化初值并注册该属性的观察者，</p>
-<p>单例模式、观察者模式、</p>
+<p>单例模式、观察者模式</p>
+</div><section class="tags_bar"><span>mobx</span><span>状态管理</span></section></article>
+        <aside> 
+            <section class="assist-tool">
+                <div class="back-to-top">
+                    <em class="iconfont icon-top"></em>
+                </div>
+            </section>
+        </aside>
+    </main>
+    <footer>
+        <div class="scrollTips" id="scrollTips">
+        </div>
+        <section class="copyright">
+            copyright © 2019 by zhangjiwei
+        </section>
+        <section class="ICP_NUM">
+            <a href="http://www.miitbeian.gov.cn">
+                粤ICP备19026817号-1
+            </a>
+        </section>
+    </footer>
+    <script src="/assets/script/common.js"></script>
 
-        </div>
-        <div class="md_essay_tags">
-            
-        </div>
-    </div>
-</article>
-        </main>
-        <footer id="footer"></footer>
-      </article>
-      <div class="shortcut-tools">
-          <div onclick="exec('scrollToTop')" class="goto-top-btn">Top</div>
-          <div onclick="exec('scrollToBottom')" class="goto-bottom-btn">Bottom</div>
-          <div onclick="exec('goback')" class="goback-btn">goback</div>
-      </div>
-      <script src="/assets/common.js"></script>
-</body>
-</html>
+
+<script src="/assets/script/article.js"></script></body></html>

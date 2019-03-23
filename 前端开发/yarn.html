@@ -1,80 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="qoxop">
     <meta name="keywords" content="">
-    <title>qoxop | yarn</title>
-    <link rel="stylesheet" href="/assets/common.css">
-    <link rel="stylesheet" href="/assets/article.css">
-    <link href="/assets/monokai_sublime.min.css" rel="stylesheet">  
-    <script async src="/assets/highlight.min.js"></script>
-    
-</head>
+    <meta name="description" content="清除安装失败的依赖包">
+    <link rel="stylesheet" href="/assets/style/index.css">
+    <title>yarn</title>
+<link rel="stylesheet" href="/assets/code_styles/solarized-light.css"></head>
 <body>
-    <article id="app">
-        <header id="app_header">
-          <h1>张集伟的个人博客</h1>
-          <div class="content_box header_inner">
-            <div class="logo">
-              <div class="logoImg">
-                <img src="/assets/icon.png" alt="">
-              </div>
-              <div class="logoText">
-                jiw
-              </div>
-            </div>
-            <nav class="navigator">
-              <ul>
-                
-                <li class="" onclick="exec('linkTo', '/index.html')">
-                    <a href="/index.html">
-                        HOME
-                    </a>
-                </li>
-                
-                <li class="" onclick="exec('linkTo', '/category.html')">
-                    <a href="/category.html">
-                        CATEGORY
-                    </a>
-                </li>
-                
-                <li class="" onclick="exec('linkTo', '/tags.html')">
-                    <a href="/tags.html">
-                        标签
-                    </a>
-                </li>
-                
-                <li class="" onclick="exec('linkTo', '/link.html')">
-                    <a href="/link.html">
-                        链接
-                    </a>
-                </li>
-                
-                <li class="" onclick="exec('linkTo', '/about.html')">
-                    <a href="/about.html">
-                        关于我
-                    </a>
-                </li>
-                
-              </ul>
+    <header>
+        <div class="header">
+            <h1>阿伟的网络日志</h1>
+            <nav>
+                <ul>
+                    <li>
+                        <a class="unset" href="/index.html">Home</a>
+                    </li>
+                    <li>
+                        <a class="unset" href="/tags.html">Tags</a>
+                    </li>
+                    <li>
+                        <a class="unset" href="/about.html">About</a>
+                    </li>
+                </ul>
             </nav>
-          </div>
-        </header>
-        <main id="main">
-           <article class="content_box">
-    <div class="article md_html_article" id="left_content">
-        <h1>
-            yarn
-        </h1>
-        <div class="update_time">
-            <span>
-                更新时间：2018-12-22
-            </span>
         </div>
-        <div id="write" class="md_essay">
-            <h4 id="add">add</h4>
+    </header>
+    <main>
+        <article id="article_main"><h1>yarn</h1><section class="article_info">
+        <span class="author">author: qoxop</span>
+        <span class="update_time">updateAt: 2018-12-22</span>
+    </section><div class="from_markdown"><h4 id="add">add</h4>
 <ul>
 <li><strong>yarn add  &lt;package...&gt;  [--dev/-D, --peer/-P, --optional/-O, --exact/-E, --tilde/-T]</strong></li>
 </ul>
@@ -93,9 +50,9 @@
 <p>清除安装失败的依赖包</p>
 <h4 id="config">config</h4>
 <ul>
-<li><strong>yarn config set <key> <value> [-g|--global]</strong>    设置配置文件的key-value</li>
-<li><strong>yarn config get <key></strong>    获取配置的文件中对应key的value</li>
-<li><strong>yarn config delete <key></strong>    删除配置文件中某个key</li>
+<li><strong>yarn config set <key> <value> [-g|--global]</value></key></strong>    设置配置文件的key-value</li>
+<li><strong>yarn config get <key></key></strong>    获取配置的文件中对应key的value</li>
+<li><strong>yarn config delete <key></key></strong>    删除配置文件中某个key</li>
 <li><strong>yarn config list</strong>    列出所有的配置信息</li>
 </ul>
 <h4 id="generate-lock-entry">generate-lock-entry</h4>
@@ -106,7 +63,7 @@
 </ul>
 <h4 id="info">info</h4>
 <ul>
-<li><strong>yarn info <package>  [<field>]</strong>    查看某个包的信息</li>
+<li><strong>yarn info <package>  [<field>]</field></package></strong>    查看某个包的信息</li>
 </ul>
 <h4 id="init">init</h4>
 <p>初始化一个yarn project</p>
@@ -125,7 +82,7 @@
 <p>link 命令用于调试本地依赖包</p>
 <ul>
 <li><strong>yarn link</strong>	为当前目录下的项目添加一个链接</li>
-<li><strong>yarn link  <package></strong>  将package关联到一个本地的链接上</li>
+<li><strong>yarn link  <package></package></strong>  将package关联到一个本地的链接上</li>
 </ul>
 <h4 id="unlink">unlink</h4>
 <ul>
@@ -141,24 +98,24 @@
 <p>列出项目所有的依赖</p>
 <h4 id="owner">owner</h4>
 <ul>
-<li><strong>yarn owner ls <package></strong></li>
-<li><strong>yarn owner add <user> <package></strong></li>
-<li><strong>yarn owner rm <user> <package></strong></li>
+<li><strong>yarn owner ls <package></package></strong></li>
+<li><strong>yarn owner add <user> <package></package></user></strong></li>
+<li><strong>yarn owner rm <user> <package></package></user></strong></li>
 </ul>
 <h4 id="pack">pack</h4>
 <p>打包</p>
 <ul>
-<li><strong>yarn pack --filename <filename></strong></li>
+<li><strong>yarn pack --filename <filename></filename></strong></li>
 </ul>
 <h4 id="publish">publish</h4>
 <p>发布</p>
 <ul>
 <li><strong>yarn publish [ tarball ]</strong>	Publishes the package defined by a .tgz gzipped tarball.
 <ul>
-<li>**yarn publish [folder] **Publishes the package contained in the specified folder. <folder>/package.json should specify the package details.</li>
+<li>**yarn publish [folder] **Publishes the package contained in the specified folder. <folder>/package.json should specify the package details.</folder></li>
 </ul>
 </li>
-<li><strong>yarn publish --tag <tag></strong>     Provided a tag to yarn publish lets you publish packages with a specific tag.</li>
+<li><strong>yarn publish --tag <tag></tag></strong>     Provided a tag to yarn publish lets you publish packages with a specific tag.</li>
 <li><strong>yarn publish --access &lt;public|restricted&gt;</strong>    The --access flag controls whether the npm registry publishes this package as a public package, or restricted.</li>
 </ul>
 <h4 id="remove">remove</h4>
@@ -172,21 +129,28 @@
 <h4 id="self-update">self-update</h4>
 <h4 id="upgrade">upgrade</h4>
 <p>更新所有的依赖到最新稳定版本（based on the version range specified in the package.json file. ）</p>
+</div><section class="tags_bar"></section></article>
+        <aside> 
+            <section class="assist-tool">
+                <div class="back-to-top">
+                    <em class="iconfont icon-top"></em>
+                </div>
+            </section>
+        </aside>
+    </main>
+    <footer>
+        <div class="scrollTips" id="scrollTips">
+        </div>
+        <section class="copyright">
+            copyright © 2019 by zhangjiwei
+        </section>
+        <section class="ICP_NUM">
+            <a href="http://www.miitbeian.gov.cn">
+                粤ICP备19026817号-1
+            </a>
+        </section>
+    </footer>
+    <script src="/assets/script/common.js"></script>
 
-        </div>
-        <div class="md_essay_tags">
-            
-        </div>
-    </div>
-</article>
-        </main>
-        <footer id="footer"></footer>
-      </article>
-      <div class="shortcut-tools">
-          <div onclick="exec('scrollToTop')" class="goto-top-btn">Top</div>
-          <div onclick="exec('scrollToBottom')" class="goto-bottom-btn">Bottom</div>
-          <div onclick="exec('goback')" class="goback-btn">goback</div>
-      </div>
-      <script src="/assets/common.js"></script>
-</body>
-</html>
+
+<script src="/assets/script/article.js"></script></body></html>

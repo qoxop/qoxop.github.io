@@ -1,80 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="qoxop">
     <meta name="keywords" content="">
-    <title>qoxop | HTML语义化及其应用</title>
-    <link rel="stylesheet" href="/assets/common.css">
-    <link rel="stylesheet" href="/assets/article.css">
-    <link href="/assets/monokai_sublime.min.css" rel="stylesheet">  
-    <script async src="/assets/highlight.min.js"></script>
-    
-</head>
+    <meta name="description" content="首先我对html语义化的理解是，页面的html标签结构能很好地表达页面的想呈现的内容以及内容的结构。为什么要使用html语义化标签呢？主要是为了方便人阅读和机器的解析，良好的html结构让人比较容易程序要表达的什么，同时有利于seo。同时在丢失样式的情况下能有一个基础的样式来展示页面。下面是来自维基百科的解释：">
+    <link rel="stylesheet" href="/assets/style/index.css">
+    <title>HTML语义化及其应用</title>
+<link rel="stylesheet" href="/assets/code_styles/solarized-light.css"></head>
 <body>
-    <article id="app">
-        <header id="app_header">
-          <h1>张集伟的个人博客</h1>
-          <div class="content_box header_inner">
-            <div class="logo">
-              <div class="logoImg">
-                <img src="/assets/icon.png" alt="">
-              </div>
-              <div class="logoText">
-                jiw
-              </div>
-            </div>
-            <nav class="navigator">
-              <ul>
-                
-                <li class="" onclick="exec('linkTo', '/index.html')">
-                    <a href="/index.html">
-                        HOME
-                    </a>
-                </li>
-                
-                <li class="" onclick="exec('linkTo', '/category.html')">
-                    <a href="/category.html">
-                        CATEGORY
-                    </a>
-                </li>
-                
-                <li class="" onclick="exec('linkTo', '/tags.html')">
-                    <a href="/tags.html">
-                        标签
-                    </a>
-                </li>
-                
-                <li class="" onclick="exec('linkTo', '/link.html')">
-                    <a href="/link.html">
-                        链接
-                    </a>
-                </li>
-                
-                <li class="" onclick="exec('linkTo', '/about.html')">
-                    <a href="/about.html">
-                        关于我
-                    </a>
-                </li>
-                
-              </ul>
+    <header>
+        <div class="header">
+            <h1>阿伟的网络日志</h1>
+            <nav>
+                <ul>
+                    <li>
+                        <a class="unset" href="/index.html">Home</a>
+                    </li>
+                    <li>
+                        <a class="unset" href="/tags.html">Tags</a>
+                    </li>
+                    <li>
+                        <a class="unset" href="/about.html">About</a>
+                    </li>
+                </ul>
             </nav>
-          </div>
-        </header>
-        <main id="main">
-           <article class="content_box">
-    <div class="article md_html_article" id="left_content">
-        <h1>
-            HTML语义化及其应用
-        </h1>
-        <div class="update_time">
-            <span>
-                更新时间：2019-02-28
-            </span>
         </div>
-        <div id="write" class="md_essay">
-            <p>首先我对html语义化的理解是，页面的html标签结构能很好地表达页面的想呈现的内容以及内容的结构。为什么要使用html语义化标签呢？主要是为了方便人阅读和机器的解析，良好的html结构让人比较容易程序要表达的什么，同时有利于seo。同时在丢失样式的情况下能有一个基础的样式来展示页面。下面是来自维基百科的解释：</p>
+    </header>
+    <main>
+        <article id="article_main"><h1>HTML语义化及其应用</h1><section class="article_info">
+        <span class="author">author: qoxop</span>
+        <span class="update_time">updateAt: 2019-03-23</span>
+    </section><div class="from_markdown"><p>首先我对html语义化的理解是，页面的html标签结构能很好地表达页面的想呈现的内容以及内容的结构。为什么要使用html语义化标签呢？主要是为了方便人阅读和机器的解析，良好的html结构让人比较容易程序要表达的什么，同时有利于seo。同时在丢失样式的情况下能有一个基础的样式来展示页面。下面是来自维基百科的解释：</p>
 <!-- more -->
 <h3 id="%E5%B8%B8%E7%94%A8%E7%9A%84%E8%AF%AD%E4%B9%89%E5%8C%96%E6%A0%87%E7%AD%BE">常用的语义化标签</h3>
 <h4 id="html5%E4%B9%8B%E5%89%8D">HTML5之前</h4>
@@ -114,7 +71,7 @@
   </dl>
 </li>
 </ul>
-<hr />
+<hr>
 <h4 id="html5-%E6%A0%87%E7%AD%BE">HTML5 标签</h4>
 <ul>
 <li><code>&lt;article&gt;</code>: 表示一个独立的自成一体的内容区域，可以是一篇文章一个帖子等，通常会有一个标题和页脚，分别用header、footer包裹。</li>
@@ -128,21 +85,28 @@
 <li><code>&lt;mark&gt;</code>:  标签定义带有记号的文本。</li>
 </ul>
 <p>其他的标签可以参考： http://www.w3school.com.cn/html5/html5_reference.asp</p>
+</div><section class="tags_bar"><span>语义化</span></section></article>
+        <aside> 
+            <section class="assist-tool">
+                <div class="back-to-top">
+                    <em class="iconfont icon-top"></em>
+                </div>
+            </section>
+        </aside>
+    </main>
+    <footer>
+        <div class="scrollTips" id="scrollTips">
+        </div>
+        <section class="copyright">
+            copyright © 2019 by zhangjiwei
+        </section>
+        <section class="ICP_NUM">
+            <a href="http://www.miitbeian.gov.cn">
+                粤ICP备19026817号-1
+            </a>
+        </section>
+    </footer>
+    <script src="/assets/script/common.js"></script>
 
-        </div>
-        <div class="md_essay_tags">
-            
-        </div>
-    </div>
-</article>
-        </main>
-        <footer id="footer"></footer>
-      </article>
-      <div class="shortcut-tools">
-          <div onclick="exec('scrollToTop')" class="goto-top-btn">Top</div>
-          <div onclick="exec('scrollToBottom')" class="goto-bottom-btn">Bottom</div>
-          <div onclick="exec('goback')" class="goback-btn">goback</div>
-      </div>
-      <script src="/assets/common.js"></script>
-</body>
-</html>
+
+<script src="/assets/script/article.js"></script></body></html>
