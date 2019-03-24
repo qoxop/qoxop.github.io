@@ -11,7 +11,7 @@
 <body>
     <header>
         <div class="header">
-            <h1>阿伟的网络日志</h1>
+            <h1><a class="unset" href="/">阿伟的网络日志</a></h1>
             <nav>
                 <ul>
                     <li>
@@ -30,7 +30,7 @@
     <main>
         <article id="article_main"><h1>redux中间件</h1><section class="article_info">
         <span class="author">author: qoxop</span>
-        <span class="update_time">updateAt: 2019-03-23</span>
+        <span class="update_time">update at: 2019-03-23</span>
     </section><div class="from_markdown"><p>对于redux的来说，相对难以理解的可能就是redux中间件了，一开始的时候看了文档再看了别人写的文章介绍依旧还是云里雾里的，其实中间件的概念就是在再一个直接的过程中链式地加入其他的任务。为了理解redux中间件，今天还是从另一种方式入手来思考吧！</p>
 <!-- more -->
 <h3 id="%E4%B8%80%E3%80%81redux%E4%B8%AD%E6%98%AF%E5%A6%82%E4%BD%95%E5%AE%9A%E4%B9%89%E4%B8%80%E4%B8%AA%E4%B8%AD%E9%97%B4%E4%BB%B6%E7%9A%84%EF%BC%9F">一、redux中是如何定义一个中间件的？</h3>
@@ -128,7 +128,7 @@
 <li>用中间件链式函数替换store的dispatch方法，生成一个新的store</li>
 </ol>
 <p>自此中间的概念大概就是这样了，所以但<code>dispatch</code>一个<code>action</code>的时候，redux执行的是中间件链式函数<code>next_n</code>,而<code>next_n</code>中保留着原始的<code>getState</code>方法和<code>dispatch</code>方法</p>
-</div><section class="tags_bar"><span>redux</span></section></article>
+</div><section class="tags_bar"><a href="/tags.html#redux">redux</a></section></article>
         <aside> 
             <section class="assist-tool">
                 <div class="back-to-top">
