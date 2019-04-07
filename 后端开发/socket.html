@@ -1,0 +1,73 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="qoxop">
+    <meta name="keywords" content="">
+    <meta name="description" content="socket是一种操作系统提供的进程间通信机制。">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="bookmark" href="/favicon.ico">
+    <link rel="stylesheet" href="/assets/style/index.css">
+    <title>socket</title>
+<link rel="stylesheet" href="/assets/code_styles/solarized-light.css"></head>
+<body>
+    <header>
+        <div class="header">
+            <h1><a class="unset" href="/">阿伟的网络日志</a></h1>
+            <nav>
+                <ul>
+                    <li>
+                        <a class="unset" href="/index.html">Home</a>
+                    </li>
+                    <li>
+                        <a class="unset" href="/tags.html">Tags</a>
+                    </li>
+                    <li>
+                        <a class="unset" href="/about.html">About</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <article id="article_main"><h1>socket</h1><section class="article_info">
+        <span class="author">author: qoxop</span>
+        <span class="update_time">update at: 2019-04-06</span>
+    </section><div class="from_markdown"><p>socket是一种操作系统提供的进程间通信机制。</p>
+<p>在操作系统中，通常会为应用程序提供一组应用程序接口（API），称为套接字接口（socket API）。应用程序可以通过套接字接口，来使用网络套接字，以进行数据交换。</p>
+<p>在套接字接口中，以IP地址及通信端口组成套接字地址。远程的套接字地址，以及本地的套接字地址完成连接后，再加上使用的协议，这个五元组，作为套接字对，之后就可以彼此交换数据。</p>
+<p>Socket是应用层与TCP/IP协议族通信的中间软件抽象层，它是一组接口。在设计模式中，Socket其实就是一个门面模式，它把复杂的TCP/IP协议族隐藏在Socket接口后面，对用户来说，一组简单的接口就是全部，让Socket去组织数据，以符合指定的协议。</p>
+<p>说白了Socket是应用层与TCP/IP协议族通信的中间软件抽象层，它是一组接口。在设计模式中，Socket其实就是一个门面模式，它把复杂的TCP/IP协议族隐藏在Socket接口后面，对用户来说，一组简单的接口就是全部，让Socket去组织数据，以符合指定的协议。</p>
+<p>这些接口的实现都是内核来完成。</p>
+<p>0是标准输入，1是标准输出，2是标准错误输出。</p>
+<p>网络层的“ip地址”可以唯一标识网络中的主机，而传输层的“协议+端口”可以唯一标识主机中的应用程序（进程）。这样利用三元组（ip地址，协议，端口）就可以标识网络的进程了，网络中的进程通信就可以利用这个标志与其它进程进行交互。</p>
+<p>在TCP/IP网络应用中，通信的两个进程间相互作用的主要模式是客户/服务器（Client/Server, C/S）模式，即客户向服务器发出服务请求，服务器接收到请求后，提供相应的服务。</p>
+<p>（1）客户与服务器进程的作用是非对称的，因此代码不同。</p>
+<p>（2）服务器进程一般是先启动的。只要系统运行，该服务进程一直存在，直到正常或强迫终止。</p>
+<p>服务器端先初始化Socket，然后与端口绑定(bind)，对端口进行监听(listen)，调用accept阻塞，等待客户端连接。</p>
+<p>在这时如果有个客户端初始化一个Socket，然后连接服务器(connect)，如果连接成功，这时客户端与服务器端的连接就建立了。</p>
+</div><section class="tags_bar"></section></article>
+        <aside> 
+            <section class="assist-tool">
+                <div class="back-to-top">
+                    <em class="iconfont icon-top"></em>
+                </div>
+            </section>
+        </aside>
+    </main>
+    <footer>
+        <div class="scrollTips" id="scrollTips">
+        </div>
+        <section class="copyright">
+            copyright © 2019 by zhangjiwei
+        </section>
+        <section class="ICP_NUM">
+            <a href="http://www.miitbeian.gov.cn">
+                粤ICP备19026817号-1
+            </a>
+        </section>
+    </footer>
+    <script src="/assets/script/common.js"></script>
+
+
+<script src="/assets/script/article.js"></script></body></html>

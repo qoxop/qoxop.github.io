@@ -1,0 +1,181 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="qoxop">
+    <meta name="keywords" content="">
+    <meta name="description" content="每个JavaScript对象都是基于一个引用类型创建的，这个引用类型可以是原生类型，也可以是开发人员自定义的类型。
+一个变量只是指向一个对象，而不是保存一个对象，例如">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="bookmark" href="/favicon.ico">
+    <link rel="stylesheet" href="/assets/style/index.css">
+    <title>javascript对象</title>
+<link rel="stylesheet" href="/assets/code_styles/solarized-light.css"></head>
+<body>
+    <header>
+        <div class="header">
+            <h1><a class="unset" href="/">阿伟的网络日志</a></h1>
+            <nav>
+                <ul>
+                    <li>
+                        <a class="unset" href="/index.html">Home</a>
+                    </li>
+                    <li>
+                        <a class="unset" href="/tags.html">Tags</a>
+                    </li>
+                    <li>
+                        <a class="unset" href="/about.html">About</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <article id="article_main"><h1>javascript对象</h1><section class="article_info">
+        <span class="author">author: qoxop</span>
+        <span class="update_time">update at: 2017-03-05</span>
+    </section><div class="from_markdown"><h3 id="%E5%AE%9A%E4%B9%89">定义</h3>
+<blockquote>
+<p>每个JavaScript对象都是基于一个引用类型创建的，这个引用类型可以是原生类型，也可以是开发人员自定义的类型。
+一个变量只是指向一个对象，而不是保存一个对象，例如</p>
+</blockquote>
+<pre><code class="hljs language-javaScript">     x = {<span class="hljs-attr">a</span>:<span class="hljs-number">1</span>} ;
+     <span class="hljs-keyword">var</span> y = x;
+</code></pre>
+<p>变量y也是指向同一个对象的引用，所以 当执行 <code>y.a=2</code>,  <code>x.a</code> 也会等于2</p>
+<h3 id="%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%96%B9%E6%B3%95">创建对象的方法</h3>
+<ol>
+<li>对象直接量</li>
+</ol>
+<pre><code class="hljs language-javaScript"><span class="hljs-keyword">var</span> person = {
+     name = <span class="hljs-string">"tom"</span>,
+     age    = <span class="hljs-number">18</span>
+}
+</code></pre>
+<ol start="2">
+<li>创建Object实例,然后为其添加属性和方法</li>
+</ol>
+<pre><code class="hljs language-javaScript"><span class="hljs-keyword">var</span> person = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Object</span>();
+person.name = <span class="hljs-string">"tom"</span>;
+person.sayName = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{ 
+    alert(<span class="hljs-keyword">this</span>.name) 
+}
+</code></pre>
+<ol start="3">
+<li>工厂模式</li>
+</ol>
+<pre><code class="hljs language-javaScript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createPerson</span>(<span class="hljs-params">name,age,job</span>)</span>{
+    <span class="hljs-keyword">var</span> o = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Object</span>();
+    o.name = name;
+    o.age = age;
+    o.job = job;
+    o.sayName = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{alert(<span class="hljs-keyword">this</span>.name)}
+    <span class="hljs-keyword">return</span> o;
+}
+</code></pre>
+<ol start="4">
+<li>构造函数模式，然后通过new关键字来创建自定义的类的实例</li>
+</ol>
+<pre><code class="hljs language-javaScript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Person</span>(<span class="hljs-params">name,age,job</span>)</span>{
+    <span class="hljs-keyword">this</span>.name = name;
+    <span class="hljs-keyword">this</span>.age = age;
+    <span class="hljs-keyword">this</span>.job = job;
+    <span class="hljs-keyword">this</span>.sayName = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+        alert(<span class="hljs-keyword">this</span>.name)
+    }
+}  
+<span class="hljs-comment">//this指向person这个对象，故函数中this的属性全部添加到person中去了</span>
+<span class="hljs-keyword">let</span> person = <span class="hljs-keyword">new</span> Person(<span class="hljs-string">"tom"</span>,<span class="hljs-number">12</span>,<span class="hljs-string">"worker"</span>);  
+
+<span class="hljs-comment">//非严格模式下this指向全局环境</span>
+Person(<span class="hljs-string">"tom"</span>,<span class="hljs-number">12</span>,<span class="hljs-string">"worker"</span>);                   
+<span class="hljs-built_in">window</span>.sayName(); <span class="hljs-comment">// tom</span>
+</code></pre>
+<p>5.原型继承创建，通过Object.create()</p>
+<pre><code class="hljs language-javaScript"><span class="hljs-keyword">var</span> person = <span class="hljs-built_in">Object</span>.create({
+     name = <span class="hljs-string">"tom"</span>,
+     age    = <span class="hljs-number">18</span>
+});
+</code></pre>
+<p>参数中的对象就是person的原型</p>
+<h3 id="%E5%B1%9E%E6%80%A7%E7%9A%84%E6%9F%A5%E8%AF%A2%E5%92%8C%E8%AE%BE%E7%BD%AE">属性的查询和设置</h3>
+<blockquote>
+<p>属性的查询可以通过点（.）或方括号（[]）运算符来获取属性的值，js中的对象可以看成是一种关联数组，可用同过 for in 来遍历对象中的属性（包括继承属性）。</p>
+</blockquote>
+<p>属性的访问分为查询访问与赋值访问，当查询一个不存在的属性时将会一个undefined，当为一个不存在的属性赋值时，将会创建一个新的属性。对象属性的查询将通过原型链一层层地去查找，而==属性的赋值如果在对象本身找不到时将在自身创建一个新的属性，不会影响原型对象中的属性，但这个新的属性将覆盖原型对象的属性。==
+所以可用对象的原型继承来保护对象数据。</p>
+<blockquote>
+<p>访问一个对象中没有的属性不会报错，但访问一个不能有属性的对象就会报错（null、undefined），</p>
+</blockquote>
+<h3 id="%E5%B1%9E%E6%80%A7%E5%88%A0%E9%99%A4">属性删除</h3>
+<blockquote>
+<p>delete运算符可以删除对象的属性，它的操作数是一个属性访问的表达式，但delete只能删除自身属性，不能删除继承来的属性。</p>
+</blockquote>
+<p>delete的本质只是断开属性和宿主对象的联系，并不是真正的消除属性.
+delete不能删除 可配置属性=false的属性，</p>
+<pre><code class="hljs language-javaScript">    o={<span class="hljs-attr">a</span>:<span class="hljs-number">9</span>};     
+    s.b = o;     
+    <span class="hljs-keyword">delete</span> s.b;     
+    o.a ;     <span class="hljs-comment">//9</span>
+</code></pre>
+<h3 id="%E6%A3%80%E6%B5%8B%E5%B1%9E%E6%80%A7">检测属性</h3>
+<ol>
+<li>in运算符     “x” in o ;<br>
+能区分==不存在==的属性和==存在但值为undefined==的属性</li>
+<li>.hasOwnProperty()函数</li>
+<li>propertyIsEnumerable()函数
+以上只能检测自身属性，检测继承来的属性将返回false</li>
+<li>!==undefined</li>
+</ol>
+<h3 id="%E6%9E%9A%E4%B8%BE%E5%B1%9E%E6%80%A7">枚举属性</h3>
+<blockquote>
+<p>代码中给对象添加的属性都是可枚举的，对象继承的内置方法不可枚举</p>
+</blockquote>
+<h3 id="%E5%B1%9E%E6%80%A7getter%E5%92%8Csetter">属性getter和setter</h3>
+<blockquote>
+<p>js对象属性可以分为 数据属性 和 存取器属性，不管是哪种属性都是可继承的</p>
+</blockquote>
+<ol>
+<li>存取器属性必须拥有setter和getter两种方法或其中之一</li>
+<li>当查询存取器属性的值时js会调用该属性的getter方法，</li>
+<li>当设置存取器属性的值时js会调用该属性的setter方法，所以可以将存取器属性当做是一种动态属性,如：</li>
+</ol>
+<pre><code class="hljs language-javaScript"><span class="hljs-comment">//随机数属性</span>
+<span class="hljs-keyword">get</span> octet() { 
+    <span class="hljs-keyword">return</span>  <span class="hljs-built_in">Math</span>.floor(  <span class="hljs-built_in">Math</span>.random()*<span class="hljs-number">256</span>  );
+}     
+</code></pre>
+<ol start="4">
+<li>存取器属性的写法</li>
+</ol>
+<pre><code class="hljs language-javaScript"><span class="hljs-keyword">var</span> a = {
+     <span class="hljs-attr">data_prop</span>:<span class="hljs-string">"value"</span>, <span class="hljs-comment">//普通的数据属性</span>
+     <span class="hljs-keyword">get</span> access_prop(){<span class="hljs-comment">/*getter方法的函数体，必须返回一个值*/</span>},      <span class="hljs-comment">//存取器属性access_prop的getter方法</span>
+     <span class="hljs-keyword">set</span> access_prop(value){<span class="hljs-comment">/*setter方法的函数体，需要一个参数*/</span>}    <span class="hljs-comment">//存取器属性access_prop的setter方法</span>
+}
+</code></pre>
+</div><section class="tags_bar"><a href="/tags.html#javascript">javascript</a><a href="/tags.html#基础">基础</a></section></article>
+        <aside> 
+            <section class="assist-tool">
+                <div class="back-to-top">
+                    <em class="iconfont icon-top"></em>
+                </div>
+            </section>
+        </aside>
+    </main>
+    <footer>
+        <div class="scrollTips" id="scrollTips">
+        </div>
+        <section class="copyright">
+            copyright © 2019 by zhangjiwei
+        </section>
+        <section class="ICP_NUM">
+            <a href="http://www.miitbeian.gov.cn">
+                粤ICP备19026817号-1
+            </a>
+        </section>
+    </footer>
+    <script src="/assets/script/common.js"></script>
+
+
+<script src="/assets/script/article.js"></script></body></html>

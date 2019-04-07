@@ -32,11 +32,11 @@
     <main>
         <article id="article_main"><h1>对js原型链的理解</h1><section class="article_info">
         <span class="author">author: qoxop</span>
-        <span class="update_time">update at: 2019-03-23</span>
+        <span class="update_time">update at: 2018-04-03</span>
     </section><div class="from_markdown"><h3 id="%E5%8E%9F%E5%9E%8B%E9%93%BE%E7%9A%84%E6%9C%AC%E8%B4%A8">原型链的本质</h3>
 <p>a对象的<code>__proto__</code> 属性指向b对象，而b对象的<code>__proto__</code> 指向c对象，这就是一条原型链</p>
 <h3 id="%E5%8E%9F%E5%9E%8B%E9%93%BE%E7%9A%84%E4%BD%9C%E7%94%A8">原型链的作用</h3>
-<p>如果访问对象自身某个不存在属性时，程序就会去对象的<code>__proto__</code>属性指向的对象去查找，如果再找不到就会继续按照这样的规则去继续查找，知道找到为止或者最后的对像的<code>__proto__</code>属性指向null</p>
+<p>如果访问对象自身某个不存在属性时，程序就会去对象的<code>__proto__</code>属性指向的对象去查找，如果再找不到就会继续按照这样的规则去继续查找，知道找到为止或者最后的<code>__proto__</code>属性指向null</p>
 <p>由于属性的查找的优先级是先查自身自有属性再去原型链中查找，这就造成了所谓的属性屏蔽</p>
 <pre><code class="hljs language-javascript"><span class="hljs-comment">// 演示原型链</span>
 <span class="hljs-keyword">let</span> a = {<span class="hljs-attr">pa</span>: <span class="hljs-string">'a'</span>};
@@ -51,17 +51,20 @@ a.pc === c.pc <span class="hljs-comment">// false, c的指向改变了</span>
 </code></pre>
 <h3 id="%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%96%B9%E5%BC%8F">创建对象的方式</h3>
 <ol>
-<li>字面量 / <code>new Object(obj)</code> ：构造函数都是Object</li>
-<li>构造函数 :  构造函数为自定义的构造函数</li>
-<li><code>Object.create(srcObj: any)</code> ：构造函数与<code>srcObj</code>的构造函数一致，作用是新建一个对象使得该对象的<code>__proto__</code>属性指向<code>srcObj</code></li>
+<li>字面量</li>
+<li>构造函数</li>
+<li><code>Object.create(srcObj: any)</code></li>
 </ol>
+<p>其他的如函数返回之类的本质上不算是对象创建，应该说是对象传递或改造</p>
 <h3 id="javascript%E4%B8%AD%E5%8E%9F%E5%9E%8B%E9%93%BE%E7%9A%84%E5%BD%A2%E6%88%90">JavaScript中原型链的形成</h3>
-<p>对象的原型指向它的构造函数<strong>在调用时</strong>的<code>prototype</code>属性(的引用)，如果需要如果需要动态修改对象的原型，只能去修改<code>prototype</code>属性的属性，而不能直接给<code>prototype</code>属性赋值(因为引用改变了)</p>
+<p>对象的原型指向它的构造函数<strong>在(new)调用时</strong>的<code>prototype</code>属性(的引用)，如果需要如果需要动态修改对象的原型，只能去修改<code>prototype</code>属性的属性，而不能直接给<code>prototype</code>属性赋值(因为引用改变了,就追溯不到了)</p>
+<p>而字面量一般都有一个默认的构造函数</p>
 <p><code>js</code>中只有<strong>函数</strong>与<strong>类</strong>(本质上也是函数)有默认的<code>prototype</code>属性，而且<code>prototype</code>属性对象的<code>constructor</code>属性指向函数本身或者类的构造函数</p>
-<p>一些概念：原型对象指的就是prototype，原型链就是<code>__proto__</code>链</p>
-<p>注意点：原型对象上的方法和属性是所有实例对象共有的方法和属性</p>
+<p>一些概念：原型对象指的就是构造函数的<code>prototype</code>，原型链就是<code>__proto__</code>链</p>
+<p>注意点：原型对象上的方法和属性是所有实例对象<strong>共有</strong>的方法和属性</p>
 <h3 id="%E6%93%8D%E4%BD%9C%E7%AC%A6">操作符</h3>
 <h4 id="instanceof">instanceof</h4>
+<p><code>instanceof</code> 运算符用于测试构造函数的prototype属性是否出现在对象的原型链中的任何位置</p>
 <pre><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">A</span> </span>{<span class="hljs-comment">/* anything here */</span>};
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">B</span> </span>{
     A.call(<span class="hljs-keyword">this</span>)
@@ -79,10 +82,6 @@ b.__proto__.constructor === B.prototype.constructor
 <li>构造函数被执行，相应的传参被传入，同时上下文(this)会被指定为这个新的实例。<code>(this = f)</code></li>
 <li>如果构造函数返回了一个对象，那实例就会变成这个对象，new操作符的作用相当于没有，如果没有返回任何东西，那new操作符将会把上下文(this)做为函数的返回， <code>return this</code></li>
 </ol>
-<h3 id="%E5%90%84%E7%A7%8D%E9%BB%98%E8%AE%A4%E7%B1%BB%E5%9E%8B%E7%9A%84prototype">各种默认类型的prototype</h3>
-<pre><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">F</span>(<span class="hljs-params"></span>) </span>{}
-F.__proto__ === <span class="hljs-built_in">Function</span>.prototype <span class="hljs-comment">// true</span>
-</code></pre>
 <h3 id="%E5%AE%9E%E7%8E%B0%E7%BB%A7%E6%89%BF%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95">实现继承的几种方法</h3>
 <ol>
 <li>只继承自有属性(利用构造函数)</li>
@@ -100,7 +99,7 @@ child.tpye === <span class="hljs-string">"parent"</span> <span class="hljs-comme
 child.name === <span class="hljs-string">"child"</span> <span class="hljs-comment">// true</span>
 child.sayHi() <span class="hljs-comment">// Error</span>
 </code></pre>
-</div><section class="tags_bar"><a href="/tags.html#JavaScript">JavaScript</a></section></article>
+</div><section class="tags_bar"><a href="/tags.html#原型链">原型链</a></section></article>
         <aside> 
             <section class="assist-tool">
                 <div class="back-to-top">

@@ -32,7 +32,7 @@
     <main>
         <article id="article_main"><h1>react生命周期</h1><section class="article_info">
         <span class="author">author: qoxop</span>
-        <span class="update_time">update at: 2019-03-23</span>
+        <span class="update_time">update at: 2019-02-16</span>
     </section><div class="from_markdown"><h3 id="preview">preview</h3>
 <p>关于react生命周期，网上有个通过流程图总结的文档 http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/，这个流程图和官方文档已经描述得相当清楚，这里还是通过自己的理解总结一下下。</p>
 <!-- more -->
@@ -76,7 +76,7 @@
 <h4 id="4.getsnapshotbeforeupdate">4.getSnapshotBeforeUpdate</h4>
 <p><code>getSnapshotBeforeUpdate(prevProps, prevState)</code>在当最近一次的render函数即将把输出提交到真实的dom节点上之<strong>前</strong>被调用，但是事实上不管有没有实际的更新输出到dom节点上，<code>getSnapshotBeforeUpdate</code> 都会在最近的render后被执行，这个生命周期函数的作用在让程序可以获取得到<strong>未更新前</strong>的真实的dom的情况，而他的返回值将作为componentDidUpdate的第三个参数</p>
 <h4 id="5.componentdidupdate">5.componentDidUpdate</h4>
-<p><code>componentDidUpdate(prevProps, prevState, snapshot)</code> 在当最近一次的render函数即将把输出提交到真实的dom节点上之<strong>后</strong>被调用，实际上即使dom节点没有实质的更新，该函数也会被执行</p>
+<p><code>componentDidUpdate(prevProps, prevState, snapshot)</code> 在当最近一次的render函数即将把输出提交到真实的dom节点上之<strong>后</strong>被调用，<strong>实际上即使dom节点没有实质的更新，该函数也会被执行</strong></p>
 <h3 id="%E5%85%B3%E4%BA%8Esetstate%E5%87%BD%E6%95%B0%E7%9A%84callback">关于setState函数的callback</h3>
 <p>setState函数的callback的触发是在生命周期(除<code>componentWillUnmount</code>外)的最后端</p>
 <h3 id="%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86">错误处理</h3>
@@ -111,7 +111,7 @@ class ErrorBoundary extends React.Component {
 </code></pre>
 <h3 id="%E6%9C%80%E5%90%8E">最后</h3>
 <p>以上忽略了，不被建议的<code>cmponentWillReceiveProps</code> 和 <code>componentDidCatch</code></p>
-</div><section class="tags_bar"><a href="/tags.html#react">react</a><a href="/tags.html#JavaScript">JavaScript</a></section></article>
+</div><section class="tags_bar"><a href="/tags.html#react">react</a></section></article>
         <aside> 
             <section class="assist-tool">
                 <div class="back-to-top">
