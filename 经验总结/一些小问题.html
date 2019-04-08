@@ -32,7 +32,7 @@
     <main>
         <article id="article_main"><h1>一些小问题</h1><section class="article_info">
         <span class="author">author: qoxop</span>
-        <span class="update_time">update at: 2019-04-06</span>
+        <span class="update_time">update at: 2019-04-08</span>
     </section><div class="from_markdown"><h4 id="find%E5%87%BD%E6%95%B0%E9%9C%80%E8%A6%81%E9%9C%80%E8%A6%81%E7%9A%84%E9%97%AE%E9%A2%98">find函数需要需要的问题</h4>
 <p>js原生的find函数与lodash的find函数默认再找不到的情况下会返回undefined，如果对<strong>预期为非空</strong>的变量通过find函数赋值，就有可能导致空指针异常(借用一下java的说法)</p>
 <h4 id="%E8%87%AA%E5%AE%9A%E4%B9%89%E5%91%A8">自定义周</h4>
@@ -40,8 +40,7 @@
 <h4 id="%E5%85%B3%E4%BA%8E%E6%97%B6%E9%97%B4%E5%88%86%E9%9A%94%E7%AC%A6">关于时间分隔符</h4>
 <p>JavaScript的<code>new Date()</code>可以传递两个格式的时间字符串，一种是``"YYYY/MM/dd"<code>, 另一种是</code>"YYYY-MM-dd"`, 但是第二种不是规范的写法，容易出现兼容性问题，在某些浏览器下是会报错的。</p>
 <h4 id="console.log-%E6%95%B0%E6%8D%AE%E4%B8%8D%E5%87%86">console.log 数据不准</h4>
-<p>由于浏览器的优化措施，有时候console.log 并不是同步执行的，所以log的数据并不一定就是你想要看到的那个时刻的数据，替代方案当然是打断点了，所以对于用打包工具打包代码一定要用<code>source map</code>, 不然要哭死。。</p>
-<p>box-align 和 box-pack</p>
+<p>由于浏览器的优化措施，有时候console.log 并不是同步执行的，所以log的数据并不一定就是你想要看到的那个时刻的数据，替代方案当然是打断点了，所以对于用打包工具打包代码一定要用<code>source map</code>, 不然要哭死。</p>
 <h4 id="%E6%95%B0%E7%BB%84%E7%9A%84sort%E6%96%B9%E6%B3%95%E8%A1%A8%E7%8E%B0%E4%B8%8D%E4%B8%80%E8%87%B4">数组的sort方法表现不一致</h4>
 <p>这是来之<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/sort">MDN</a>的描述</p>
 <blockquote>
@@ -55,14 +54,14 @@
 <p>第二点就是出bug的原因了</p>
 <h4 id="includes%E5%85%BC%E5%AE%B9%E6%80%A7">includes兼容性</h4>
 <p>ios8环境下(可能还有其他设备)数组的includes函数不存在，导致页面报了错，临时解决方案统一用lodash的方法，未来可能需要设备做能力检测然后动态引入polyfill</p>
-<h4 id="%E5%B8%B8%E8%A7%81%E7%9A%84%E6%AD%BB%E5%BE%AA%E7%8E%AF%E4%BB%A3%E7%A0%81">常见的死循环代码</h4>
 <h4 id="react%E7%BB%84%E4%BB%B6%E5%AF%B9props%E5%8F%98%E5%8C%96%E7%9A%84%E5%93%8D%E5%BA%94">react组件对props变化的响应</h4>
 <p><code>react</code>组件对<code>props</code>变化的响应是间件的，对<code>state</code>才是直接(不是在说同步的意思)，props数据源的改变不会直接让<code>react组件</code>重新<code>render</code>，只有<code>react组件的</code>父组件重新<code>render</code>, <code>props</code>的变化才会传递到子组件上。</p>
 <h4 id="react%E7%88%B6%E7%BB%84%E4%BB%B6%E4%BB%B6%E5%A6%82%E4%BD%95%E4%BC%A0%E9%80%92%E9%9D%9E%E5%93%8D%E5%BA%94%E6%95%B0%E6%8D%AE%E7%BB%99%E5%AD%90%E7%BB%84%E4%BB%B6">react父组件件如何传递非响应数据给子组件</h4>
 <p>传回调函数，而不是直接传数据</p>
 <h4 id="es6%E7%BB%93%E6%9E%84">ES6结构</h4>
 <p>ES6中的解构语法可以用于数据的拷贝，但仅仅只是浅拷贝，需要注意对数据源的修改可能会引起的一些意外发生。</p>
-</div><section class="tags_bar"></section></article>
+<p>@udpateAt: 2019-02-23</p>
+</div><section class="tags_bar"><a href="/tags.html#经验总结">经验总结</a></section></article>
         <aside> 
             <section class="assist-tool">
                 <div class="back-to-top">

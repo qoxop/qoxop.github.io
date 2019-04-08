@@ -32,7 +32,7 @@
     <main>
         <article id="article_main"><h1>ssh工具基本用法</h1><section class="article_info">
         <span class="author">author: qoxop</span>
-        <span class="update_time">update at: 2019-04-06</span>
+        <span class="update_time">update at: 2018-07-26</span>
     </section><div class="from_markdown"><h4 id="%E7%BB%91%E5%AE%9A%E6%9C%AC%E5%9C%B0%E7%AB%AF%E5%8F%A3">绑定本地端口</h4>
 <pre><code class="hljs language-bash">ssh -D 8080 user@host
 </code></pre>
@@ -45,7 +45,7 @@
 <pre><code class="hljs language-bash">ssh -R localPort: remoteHost :remotePort SSHHost
 </code></pre>
 <p>ssh链接由**执行方(远程)<strong>向</strong>SSHHost(本地)<strong>发起，<strong>执行方ssh</strong>要求</strong>SSHHost(本地)**上的sshServer监听localPort端口并将localPort端口数据返回给自己，由自己将数据转发给远程服务端口remoteHost:remotePort，远程服务器返回的数据将原路返回到本地端口。</p>
-</div><section class="tags_bar"></section></article>
+</div><section class="tags_bar"><a href="/tags.html#工具">工具</a></section></article>
         <aside> 
             <section class="assist-tool">
                 <div class="back-to-top">

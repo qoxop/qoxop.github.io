@@ -82,23 +82,6 @@ b.__proto__.constructor === B.prototype.constructor
 <li>构造函数被执行，相应的传参被传入，同时上下文(this)会被指定为这个新的实例。<code>(this = f)</code></li>
 <li>如果构造函数返回了一个对象，那实例就会变成这个对象，new操作符的作用相当于没有，如果没有返回任何东西，那new操作符将会把上下文(this)做为函数的返回， <code>return this</code></li>
 </ol>
-<h3 id="%E5%AE%9E%E7%8E%B0%E7%BB%A7%E6%89%BF%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95">实现继承的几种方法</h3>
-<ol>
-<li>只继承自有属性(利用构造函数)</li>
-</ol>
-<pre><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Parent</span>(<span class="hljs-params"></span>) </span>{
-  <span class="hljs-keyword">this</span>.type = <span class="hljs-string">"parent"</span>
-}
-Parent.prototype.sayHi = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"hi"</span>);
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Child</span>(<span class="hljs-params"></span>) </span>{
-  Parent.call(<span class="hljs-keyword">this</span>)
-  <span class="hljs-keyword">this</span>.name = <span class="hljs-string">"child"</span>
-}
-<span class="hljs-keyword">const</span> child = <span class="hljs-keyword">new</span> Child
-child.tpye === <span class="hljs-string">"parent"</span> <span class="hljs-comment">// true</span>
-child.name === <span class="hljs-string">"child"</span> <span class="hljs-comment">// true</span>
-child.sayHi() <span class="hljs-comment">// Error</span>
-</code></pre>
 </div><section class="tags_bar"><a href="/tags.html#原型链">原型链</a></section></article>
         <aside> 
             <section class="assist-tool">
