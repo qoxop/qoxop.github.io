@@ -1,6 +1,6 @@
 const Koa = require('koa')
 const static = require('koa-static')
-
+const {exec} = require('child_process')
 const app = new Koa()
 
 //设置静态资源的路径 
@@ -13,3 +13,7 @@ app.use( ctx => {
 app.listen(80, () => {
   console.log('server is starting at port 80')
 })
+
+setInterval(() => {
+    exec('git pull');
+}, 10000)
