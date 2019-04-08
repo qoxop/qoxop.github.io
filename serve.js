@@ -16,4 +16,4 @@ app.listen(80, () => {
 
 setInterval(() => {
     exec('git pull');
-}, 10000)
+}, 100000)
