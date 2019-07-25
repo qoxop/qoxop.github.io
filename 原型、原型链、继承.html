@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="bookmark" href="/favicon.ico">
     <link rel="stylesheet" href="/assets/style/index.css">
-    <title>对js原型链的理解</title>
+    <title>原型、原型链、继承</title>
 <link rel="stylesheet" href="/assets/code_styles/solarized-light.css"></head>
 <body>
     <header>
@@ -30,7 +30,7 @@
         </div>
     </header>
     <main>
-        <article id="article_main"><h1>对js原型链的理解</h1><section class="article_info">
+        <article id="article_main"><h1>原型、原型链、继承</h1><section class="article_info">
         <span class="author">author: qoxop</span>
         <span class="update_time">update at: 2018-04-03</span>
     </section><div class="from_markdown"><h3 id="%E5%8E%9F%E5%9E%8B%E9%93%BE%E7%9A%84%E6%9C%AC%E8%B4%A8">原型链的本质</h3>
@@ -49,6 +49,23 @@ a.pc === c.pc <span class="hljs-comment">// true</span>
 c = {<span class="hljs-attr">pc</span>: <span class="hljs-string">'cc'</span>};
 a.pc === c.pc <span class="hljs-comment">// false, c的指向改变了</span>
 </code></pre>
+<h3 id="prototype%E5%B1%9E%E6%80%A7">Prototype属性</h3>
+<p>一般来说，只有函数(用<strong>function关键字</strong>定义的函数)才会默认有prototype属性（其他情况手动赋值也是可以的），prototype属性在函数以构造函数方式调用时使用，作为其实例的<code>__proto__</code> 属性用(用作继承)，并且所有实例共享一个prototype。下面将函数的<code>prototype</code>属性叫做<code>prototype</code>对象，因为每个<code>prototype</code>属性都有着差不多的特点。</p>
+<p>那么 <code>prototype</code> 对象究竟都存了那些东西呢？首先是<code>constructor</code></p>
+<ul>
+<li>
+<p>但函数的prototype属性被重新直接赋值(引用改变)，后续的实例<code>__proto__</code>指向新的prototype对象，前面的实例不受影响。</p>
+</li>
+<li>
+<p>一帮来说，函数默认的prototype属性为一个对象,这个对象两个属性<code>constructor</code> 和 <code>__proto__</code>, <code>constructor</code>指向函数自身，<code>__proto__</code> 指向<code>Object.prototype</code></p>
+</li>
+<li>
+<p>确定某个对象是什么类型的，就需要知道对象的<code>__proto__</code> 指向那个函数的<code>prototype</code>属性</p>
+</li>
+<li>
+<p>其实对象的<code>__proto__</code> 属性的<code>constructor</code>属性就是用来指名对象的构造函数的</p>
+</li>
+</ul>
 <h3 id="%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%96%B9%E5%BC%8F">创建对象的方式</h3>
 <ol>
 <li>字面量</li>
@@ -71,8 +88,15 @@ a.pc === c.pc <span class="hljs-comment">// false, c的指向改变了</span>
     <span class="hljs-comment">/* anything here */</span>
 }；
 B.prototype = <span class="hljs-built_in">Object</span>.create(A.prototype)
-<span class="hljs-keyword">var</span> b = <span class="hljs-keyword">new</span> B
-b installceof B; <span class="hljs-comment">// 作用(原理)上等于b.__proto__ === B.prototype || b.__proto__ === A.prototype</span>
+<span class="hljs-keyword">var</span> b = <span class="hljs-keyword">new</span> B();
+b installceof B; 
+<span class="hljs-comment">/*
+	作用(原理)上等于:
+	b.__proto__ === B.prototype ||
+	b.__proto__.__proto__ === B.prototype ||
+	b.__proto__.__proto__.__proto__ === B.prototype ||
+	......
+*/</span>
 <span class="hljs-comment">// 如果需要判断直接父类</span>
 b.__proto__.constructor === B.prototype.constructor
 </code></pre>
@@ -106,4 +130,4 @@ b.__proto__.constructor === B.prototype.constructor
     <script src="/assets/script/common.js"></script>
 
 
-<script src="/assets/script/hot_reload.js"></script><script src="/assets/script/article.js"></script></body></html>
+<script src="/assets/script/article.js"></script></body></html>

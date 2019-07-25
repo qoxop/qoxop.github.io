@@ -1,0 +1,72 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="qoxop">
+    <meta name="keywords" content="">
+    <meta name="description" content="闭包是函数和声明该函数的词法环境的组合。">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="bookmark" href="/favicon.ico">
+    <link rel="stylesheet" href="/assets/style/index.css">
+    <title>闭包</title>
+<link rel="stylesheet" href="/assets/code_styles/solarized-light.css"></head>
+<body>
+    <header>
+        <div class="header">
+            <h1><a class="unset" href="/">阿伟的网络日志</a></h1>
+            <nav>
+                <ul>
+                    <li>
+                        <a class="unset" href="/index.html">Home</a>
+                    </li>
+                    <li>
+                        <a class="unset" href="/tags.html">Tags</a>
+                    </li>
+                    <li>
+                        <a class="unset" href="/about.html">About</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <article id="article_main"><h1>闭包</h1><section class="article_info">
+        <span class="author">author: qoxop</span>
+        <span class="update_time">update at: 2019-07-25</span>
+    </section><div class="from_markdown"><h2 id="%E9%97%AD%E5%8C%85%E7%9A%84%E6%A6%82%E5%BF%B5">闭包的概念</h2>
+<blockquote>
+<p>闭包是函数和声明该函数的词法环境的组合。</p>
+<p>JavaScript中的函数会形成闭包。 闭包是由函数以及创建该函数的词法环境组合而成。这个环境包含了这个闭包创建时所能访问的所有局部变量。。<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Closures">(MDN)</a></p>
+</blockquote>
+<p>也就是说函数的声明会形成一个闭包，闭包的作用就是<strong>给该函数提供运行环境的</strong>。换句话说，函数的内部是可以访问到它声明时的运行环境的(变量)，其实就是<strong>词法作用域的概念在代码运行时的体现</strong>。</p>
+<p>理解闭包的核心在于理解<strong>词法作用域</strong>以及<strong>代码运行环境</strong>。</p>
+<h2 id="%E9%97%AD%E5%8C%85%E7%9A%84%E4%BD%9C%E7%94%A8">闭包的作用</h2>
+<p>函数的声明环境可以是在<strong>全局运行环境</strong>，也可以是<strong>局部运行环境</strong>(也就是另一个函数的内部)。</p>
+<p>一般情况下调用一个函数(入栈)会产生一个局部运行环境，函数执行结束(出栈)会销毁这个环境。但如果在这个局部环境内声明了一个函数，那么局部运行环境和这个内部函数之间就会形成一个闭包。</p>
+<p>根据js的垃圾回收机制，一个变量不再被引用时才有可能被回收掉，所以，只要上面提到的内部函数的引用还存在，那么该闭包也会继续存在(局部运行环境没有被销毁)。</p>
+<p>在我看来，闭包的机制其实是给我们提供了一种匿名存储的方案。</p>
+</div><section class="tags_bar"></section></article>
+        <aside> 
+            <section class="assist-tool">
+                <div class="back-to-top">
+                    <em class="iconfont icon-top"></em>
+                </div>
+            </section>
+        </aside>
+    </main>
+    <footer>
+        <div class="scrollTips" id="scrollTips">
+        </div>
+        <section class="copyright">
+            copyright © 2019 by zhangjiwei
+        </section>
+        <section class="ICP_NUM">
+            <a href="http://www.miitbeian.gov.cn">
+                粤ICP备19026817号-1
+            </a>
+        </section>
+    </footer>
+    <script src="/assets/script/common.js"></script>
+
+
+<script src="/assets/script/article.js"></script></body></html>

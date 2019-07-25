@@ -33,9 +33,10 @@
         <article id="article_main"><h1>redux中间件</h1><section class="article_info">
         <span class="author">author: qoxop</span>
         <span class="update_time">update at: 2018-04-06</span>
-    </section><div class="from_markdown"><p>对于redux的来说，相对难以理解的可能就是redux中间件了，一开始的时候看了文档再看了别人写的文章介绍依旧还是云里雾里的，其实中间件的概念就是在再一个直接的过程中链式地加入其他的任务。为了理解redux中间件，今天还是从另一种方式入手来思考吧！</p>
+    </section><div class="from_markdown"><h1 id="redux%E4%B8%AD%E9%97%B4%E4%BB%B6">Redux中间件</h1>
+<p>对于redux的来说，相对难以理解的可能就是redux中间件了，一开始的时候看了文档再看了别人写的文章介绍依旧还是云里雾里的，其实中间件的概念就是在再一个直接的过程中链式地加入其他的任务。为了理解redux中间件，今天还是从另一种方式入手来思考吧！</p>
 <!-- more -->
-<h3 id="%E4%B8%80%E3%80%81redux%E4%B8%AD%E6%98%AF%E5%A6%82%E4%BD%95%E5%AE%9A%E4%B9%89%E4%B8%80%E4%B8%AA%E4%B8%AD%E9%97%B4%E4%BB%B6%E7%9A%84%EF%BC%9F">一、redux中是如何定义一个中间件的？</h3>
+<h2 id="%E4%B8%80%E3%80%81redux%E4%B8%AD%E6%98%AF%E5%A6%82%E4%BD%95%E5%AE%9A%E4%B9%89%E4%B8%80%E4%B8%AA%E4%B8%AD%E9%97%B4%E4%BB%B6%E7%9A%84%EF%BC%9F">一、redux中是如何定义一个中间件的？</h2>
 <p>在这里先不管别的，记住这中定义形式就好，外层参数store就是指应用的store，最里层的函数的action，就是日后调用dispatch时传递过来的action，那第二层函数的next又是代表什么呢？</p>
 <pre><code class="hljs language-javascript"><span class="hljs-comment">// 定义一个logger中间件，来自官方文档的demo</span>
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">logger</span>(<span class="hljs-params">store</span>) </span>{
@@ -49,9 +50,9 @@
   }
 }
 </code></pre>
-<h3 id="%E4%BA%8C%E3%80%81%E4%B8%AD%E9%97%B4%E4%BB%B6%E5%9C%A8redux%E4%B8%AD%E8%B5%B7%E7%9A%84%E4%BD%9C%E7%94%A8%EF%BC%9F">二、中间件在redux中起的作用？</h3>
+<h2 id="%E4%BA%8C%E3%80%81%E4%B8%AD%E9%97%B4%E4%BB%B6%E5%9C%A8redux%E4%B8%AD%E8%B5%B7%E7%9A%84%E4%BD%9C%E7%94%A8%EF%BC%9F">二、中间件在redux中起的作用？</h2>
 <p>redux中间件即使发起一个action到action起作用的过程中加入了其他的副作用，emmm....这里可能还是有点不知所云!</p>
-<h3 id="%E4%B8%89%E3%80%81redux%E5%9C%A8%E6%B3%A8%E5%86%8C%E4%B8%AD%E9%97%B4%E4%BB%B6%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%AD%E6%98%AF%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86%E8%BF%99%E4%BA%9B%E4%B8%AD%E9%97%B4%E4%BB%B6%E7%9A%84%EF%BC%9F">三、redux在注册中间件的过程中是如何处理这些中间件的？</h3>
+<h2 id="%E4%B8%89%E3%80%81redux%E5%9C%A8%E6%B3%A8%E5%86%8C%E4%B8%AD%E9%97%B4%E4%BB%B6%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%AD%E6%98%AF%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86%E8%BF%99%E4%BA%9B%E4%B8%AD%E9%97%B4%E4%BB%B6%E7%9A%84%EF%BC%9F">三、redux在注册中间件的过程中是如何处理这些中间件的？</h2>
 <p>下面采用伪代码的形式来解析这一过程</p>
 <pre><code class="hljs language-javascript"><span class="hljs-comment">// 定义n个middleware</span>
 <span class="hljs-keyword">const</span> mdw1 = <span class="hljs-function">(<span class="hljs-params">store</span>) =&gt;</span> (next) =&gt; <span class="hljs-function">(<span class="hljs-params">action</span>) =&gt;</span> {
@@ -92,7 +93,7 @@
 <span class="hljs-comment">// 以上两段代码表面，最终的next_n函数是由内到外生成(穿衣服)，而由外到内调用(脱衣服)</span>
 <span class="hljs-comment">// do something about就是副作用产出的地方了</span>
 </code></pre>
-<h3 id="%E5%9B%9B%E3%80%81%E6%B3%A8%E5%86%8C%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%97%B6%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88%EF%BC%9F%E5%AE%9E%E9%99%85%E8%BF%87%E7%A8%8B%E6%98%AF%E6%80%8E%E6%A0%B7%E7%9A%84%EF%BC%9F">四、注册中间件时发生了什么？实际过程是怎样的？</h3>
+<h2 id="%E5%9B%9B%E3%80%81%E6%B3%A8%E5%86%8C%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%97%B6%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88%EF%BC%9F%E5%AE%9E%E9%99%85%E8%BF%87%E7%A8%8B%E6%98%AF%E6%80%8E%E6%A0%B7%E7%9A%84%EF%BC%9F">四、注册中间件时发生了什么？实际过程是怎样的？</h2>
 <p>redux注册中间件的最终结果为用生成的next_n函数替换原有的dispatch函数，而next_n函数保留着原来的dispatch函数的引用。</p>
 <pre><code class="hljs language-javascript"><span class="hljs-comment">// 源码 + 注释</span>
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">applyMiddleware</span>(<span class="hljs-params">...middlewares</span>) </span>{
@@ -154,4 +155,4 @@
     <script src="/assets/script/common.js"></script>
 
 
-<script src="/assets/script/hot_reload.js"></script><script src="/assets/script/article.js"></script></body></html>
+<script src="/assets/script/article.js"></script></body></html>

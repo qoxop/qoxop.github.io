@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="bookmark" href="/favicon.ico">
     <link rel="stylesheet" href="/assets/style/index.css">
-    <title>代码段</title>
+    <title>more pieces</title>
 <link rel="stylesheet" href="/assets/code_styles/solarized-light.css"></head>
 <body>
     <header>
@@ -30,10 +30,10 @@
         </div>
     </header>
     <main>
-        <article id="article_main"><h1>代码段</h1><section class="article_info">
+        <article id="article_main"><h1>more pieces</h1><section class="article_info">
         <span class="author">author: qoxop</span>
-        <span class="update_time">update at: 2019-04-08</span>
-    </section><div class="from_markdown"><h3 id="%E4%B8%80%E9%81%93%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E9%A2%98%E7%9B%AE">一道有意思的题目</h3>
+        <span class="update_time">update at: 2019-07-25</span>
+    </section><div class="from_markdown"><h2 id="lazyman">LazyMan</h2>
 <pre><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">LazyMan</span>(<span class="hljs-params">name</span>) </span>{
     <span class="hljs-keyword">const</span> lazyMan = {name}
     <span class="hljs-keyword">let</span> tasks = []
@@ -68,7 +68,7 @@
     <span class="hljs-keyword">return</span> lazyMan;
 }
 </code></pre>
-<h3 id="%E4%B8%80%E4%B8%AA%E5%BE%AA%E7%8E%AF%E9%81%8D%E5%8E%86%E5%99%A8%E7%94%9F%E6%88%90%E5%87%BD%E6%95%B0">一个循环遍历器生成函数</h3>
+<h2 id="%E4%B8%80%E4%B8%AA%E5%BE%AA%E7%8E%AF%E9%81%8D%E5%8E%86%E5%99%A8%E7%94%9F%E6%88%90%E5%87%BD%E6%95%B0">一个循环遍历器生成函数</h2>
 <p>start是遍历起点，end是遍历终点，如果没有传递end，start就是遍历的次数</p>
 <pre><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">start, end</span>) </span>{
   <span class="hljs-keyword">if</span>(<span class="hljs-keyword">typeof</span> end === <span class="hljs-string">'undefined'</span>) {
@@ -105,7 +105,7 @@
   }
 }
 </code></pre>
-<h3 id="ajax">Ajax</h3>
+<h2 id="ajax">Ajax</h2>
 <pre><code class="hljs language-javascript"><span class="hljs-keyword">const</span> request = (<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
   <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getAjax</span>(<span class="hljs-params"></span>) </span>{
     <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> XMLHttpRequest === <span class="hljs-string">'undefined'</span>) {
@@ -229,7 +229,7 @@
   <span class="hljs-keyword">return</span> <span class="hljs-built_in">Object</span>.assign(createReq, req);
 })()
 </code></pre>
-<h3 id="%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6">自定义事件</h3>
+<h2 id="%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6">自定义事件</h2>
 <pre><code class="hljs language-javascript"><span class="hljs-comment">// 自定义事件对象</span>
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">MyEvent</span>(<span class="hljs-params"></span>) </span>{
     <span class="hljs-keyword">let</span> cbsStore = {};
@@ -263,7 +263,7 @@
     }
 }
 </code></pre>
-<h3 id="html%E4%BB%A3%E7%A0%81%E5%8E%8B%E7%BC%A9">html代码压缩</h3>
+<h2 id="html%E4%BB%A3%E7%A0%81%E5%8E%8B%E7%BC%A9">html代码压缩</h2>
 <pre><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">compressHtml</span>(<span class="hljs-params">htmlStr</span>) </span>{
     <span class="hljs-keyword">if</span>(<span class="hljs-keyword">typeof</span> htmlStr === <span class="hljs-string">'string'</span>) {
         <span class="hljs-keyword">return</span> htmlStr.replace(<span class="hljs-regexp">/[\s, \n]+/g</span>, <span class="hljs-string">' '</span>);
@@ -272,7 +272,7 @@
     }
 }
 </code></pre>
-<h3 id="%E5%BD%93%E5%89%8D%E5%91%A8%E7%9A%84%E8%B5%B7%E6%AD%A2">当前周的起止</h3>
+<h2 id="%E5%BD%93%E5%89%8D%E5%91%A8%E7%9A%84%E8%B5%B7%E6%AD%A2">当前周的起止</h2>
 <pre><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">weekRank</span>(<span class="hljs-params">normal = true</span>) </span>{
     <span class="hljs-keyword">const</span> now = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>();
     <span class="hljs-keyword">let</span> weekDay = now.getDay();
@@ -292,7 +292,7 @@
     }
 }
 </code></pre>
-</div><section class="tags_bar"><a href="/tags.html#code">code</a></section></article>
+</div><section class="tags_bar"></section></article>
         <aside> 
             <section class="assist-tool">
                 <div class="back-to-top">
@@ -316,4 +316,4 @@
     <script src="/assets/script/common.js"></script>
 
 
-<script src="/assets/script/hot_reload.js"></script><script src="/assets/script/article.js"></script></body></html>
+<script src="/assets/script/article.js"></script></body></html>

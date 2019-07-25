@@ -33,15 +33,15 @@
         <article id="article_main"><h1>css盒子模型</h1><section class="article_info">
         <span class="author">author: qoxop</span>
         <span class="update_time">update at: 2018-11-06</span>
-    </section><div class="from_markdown"><h3 id="css%E7%9B%92%E6%A8%A1%E5%9E%8B">CSS盒模型</h3>
+    </section><div class="from_markdown"><h2 id="css%E7%9B%92%E6%A8%A1%E5%9E%8B">CSS盒模型</h2>
 <blockquote>
 <p>CSS盒模型（译者注：也被称为“盒模型”）是网页布局的基础 ——每个元素被表示为一个矩形的方框，框的内容、内边距、边界和外边距像洋葱的膜那样，一层包着一层构建起来。浏览器渲染网页布局时，它会算出每个框的内容要用什么样式，周围的洋葱层有多大，以及框相对于其它框放在哪里。</p>
 </blockquote>
-<h4 id="%E7%9B%92%E6%A8%A1%E5%9E%8B%E7%BB%84%E6%88%90">盒模型组成</h4>
+<h3 id="%E7%9B%92%E6%A8%A1%E5%9E%8B%E7%BB%84%E6%88%90">盒模型组成</h3>
 <p>由外到里分别为: content, padding, border, margin</p>
-<h4 id="%E4%B8%A4%E7%A7%8D%E6%A0%87%E5%87%86">两种标准</h4>
+<h3 id="%E4%B8%A4%E7%A7%8D%E6%A0%87%E5%87%86">两种标准</h3>
 <p>标准模型(content-box)、IE模型(border-box)，通过box-sizing切换，具体的区别在于width、height属性描述限制的范围不同</p>
-<h4 id="%E8%8E%B7%E5%8F%96%E7%9B%92%E5%AD%90%E7%9A%84%E5%AE%BD%E9%AB%98">获取盒子的宽高</h4>
+<h3 id="%E8%8E%B7%E5%8F%96%E7%9B%92%E5%AD%90%E7%9A%84%E5%AE%BD%E9%AB%98">获取盒子的宽高</h3>
 <ol>
 <li>
 <p>取内联样式设置的宽高（取得的是css是width/height属性）</p>
@@ -70,18 +70,18 @@
 </code></pre>
 </li>
 </ol>
-<h4 id="%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%A1%8C%E9%99%B7">外边距塌陷</h4>
+<h3 id="%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%A1%8C%E9%99%B7">外边距塌陷</h3>
 <blockquote>
 <p>块级元素的上外边距和下外边距有时会合并（或折叠）为一个外边距，其大小取其中的最大者，这种行为称为外边距折叠（margin collapsing），有时也翻译为外边距合并。注意浮动元素和绝对定位元素的外边距不会折叠。</p>
 </blockquote>
-<h5 id="%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%A1%8C%E9%99%B7%E7%9A%84%E4%B8%89%E7%A7%8D%E5%9F%BA%E6%9C%AC%E6%83%85%E5%86%B5">外边距塌陷的三种基本情况</h5>
+<h4 id="%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%A1%8C%E9%99%B7%E7%9A%84%E4%B8%89%E7%A7%8D%E5%9F%BA%E6%9C%AC%E6%83%85%E5%86%B5">外边距塌陷的三种基本情况</h4>
 <ul>
 <li>相邻元素之间</li>
 <li>父元素与其第一个或最后一个子元素之间</li>
 <li>空的块级元素</li>
 </ul>
-<h5 id="%E9%98%B2%E6%AD%A2%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%A1%8C%E9%99%B7%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88">防止外边距塌陷的解决方案</h5>
-<h6 id="bfc-%E5%9D%97%E7%BA%A7%E6%A0%BC%E5%BC%8F%E5%8C%96%E4%B8%8A%E4%B8%8B%E6%96%87">BFC 块级格式化上下文</h6>
+<h4 id="%E9%98%B2%E6%AD%A2%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%A1%8C%E9%99%B7%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88">防止外边距塌陷的解决方案</h4>
+<h5 id="bfc-%E5%9D%97%E7%BA%A7%E6%A0%BC%E5%BC%8F%E5%8C%96%E4%B8%8A%E4%B8%8B%E6%96%87">BFC 块级格式化上下文</h5>
 <blockquote>
 <p>BFC（Block Formatting Context）格式化上下文，是Web页面中盒模型布局的CSS渲染模式，指一个独立的渲染区域或者说是一个隔离的独立容器。</p>
 </blockquote>
@@ -127,4 +127,4 @@
     <script src="/assets/script/common.js"></script>
 
 
-<script src="/assets/script/hot_reload.js"></script><script src="/assets/script/article.js"></script></body></html>
+<script src="/assets/script/article.js"></script></body></html>

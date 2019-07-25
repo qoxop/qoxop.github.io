@@ -33,8 +33,7 @@
         <article id="article_main"><h1>TypeScript学习笔记</h1><section class="article_info">
         <span class="author">author: qoxop</span>
         <span class="update_time">update at: 2018-12-15</span>
-    </section><div class="from_markdown"><h2 id="%E4%B8%80%E3%80%81%E8%AF%AD%E6%B3%95">一、语法</h2>
-<h3 id="%E5%9F%BA%E7%A1%80%E7%B1%BB%E5%9E%8B">基础类型</h3>
+    </section><div class="from_markdown"><h2 id="%E5%9F%BA%E7%A1%80%E7%B1%BB%E5%9E%8B">基础类型</h2>
 <h4 id="%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E">变量声明</h4>
 <ol>
 <li>变量声明，变量名:类型
@@ -154,6 +153,7 @@ getLength(num)
     [index: <span class="hljs-built_in">number</span>]: <span class="hljs-built_in">number</span>;
 }
 <span class="hljs-keyword">let</span> fibonacci: NumberArray = [<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>];
+
 </code></pre>
 <h3 id="%E6%8E%A5%E5%8F%A3%E2%80%94%E2%80%94%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%B1%BB%E5%9E%8B">接口——对象的类型</h3>
 <h4 id="1.-%E6%A6%82%E5%BF%B5">1. 概念</h4>
@@ -170,6 +170,7 @@ getLength(num)
   color?: <span class="hljs-built_in">string</span>;
   width?: <span class="hljs-built_in">number</span>;
 }
+
 </code></pre>
 <h4 id="%E5%8F%AA%E8%AF%BB%E5%B1%9E%E6%80%A7">只读属性</h4>
 <p>一些对象属性只能在对象刚刚创建的时候修改其值，其他时间是不允许修改的</p>
@@ -184,11 +185,13 @@ ro[<span class="hljs-number">0</span>] = <span class="hljs-number">12</span>; <s
 ro.push(<span class="hljs-number">5</span>); <span class="hljs-comment">// error!</span>
 ro.length = <span class="hljs-number">100</span>; <span class="hljs-comment">// error!</span>
 a = ro; <span class="hljs-comment">// error!</span>
+
 </code></pre>
 <h4 id="%E7%BB%95%E5%BC%80%E5%AF%B9%E5%AD%97%E9%9D%A2%E9%87%8F%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%A3%80%E6%9F%A5">绕开对字面量对象的检查</h4>
 <p>对象字面量会被特殊对待而且会经过 额外属性检查，当将它们赋值给变量或作为参数传递的时候。 <strong>如果一个对象字面量</strong>存在任何“<strong>目标类型</strong>”不包含的属性时，你会得到一个错误。</p>
 <pre><code class="hljs language-typescript"><span class="hljs-comment">/*绕开检查*/</span>
 <span class="hljs-keyword">let</span> mySquare = createSquare({ width: <span class="hljs-number">100</span>, opacity: <span class="hljs-number">0.5</span> } <span class="hljs-keyword">as</span> SquareConfig);
+
 </code></pre>
 <h4 id="%E5%8F%AF%E7%B4%A2%E5%BC%95%E7%9A%84%E7%B1%BB%E5%9E%8B%3A">可索引的类型:</h4>
 <p>共支持两种索引签名<strong>字符串</strong> 、<strong>数字</strong></p>
@@ -230,6 +233,7 @@ a = ro; <span class="hljs-comment">// error!</span>
 <h3 id="%E6%B3%9B%E5%9E%8B">泛型</h3>
 <h4 id="%E4%B8%AA%E4%BA%BA%E7%90%86%E8%A7%A3">个人理解</h4>
 <p>**泛型的使用场景一般是用在定义时类型不确定，但是使用时且需要明确类型。**比如一个创建数组的函数，在定义函数的时候我们并不知道将来这个函数时用来创建什么类型的数组，如果为每个类型定义一个这样的函数就不太现实，所以才需要泛型。就是在调用函数时同时告诉函数我要创建的是什么类型的数组。</p>
+<p>泛型的作用就是在无法确定类型的情况下，约束类型的一致性。</p>
 <pre><code class="hljs language-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createArray</span>&lt;<span class="hljs-title">T</span>&gt;(<span class="hljs-params">length: <span class="hljs-built_in">number</span>, value: T</span>): <span class="hljs-title">Array</span>&lt;<span class="hljs-title">T</span>&gt; </span>{
     <span class="hljs-keyword">let</span> result: T[] = [];
     <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; length; i++) {
@@ -237,6 +241,7 @@ a = ro; <span class="hljs-comment">// error!</span>
     }
     <span class="hljs-keyword">return</span> result;
 }
+<span class="hljs-comment">// 传入类型参数，与typescript在react中的应用一样</span>
 createArray&lt;<span class="hljs-built_in">string</span>&gt;(<span class="hljs-number">3</span>, <span class="hljs-string">'x'</span>); <span class="hljs-comment">// ['x', 'x', 'x']</span>
 
 <span class="hljs-comment">// 多类型参数</span>
@@ -325,8 +330,8 @@ swap([<span class="hljs-number">7</span>, <span class="hljs-string">'seven'</spa
 <h5 id="%E9%9D%99%E6%80%81%E5%B1%9E%E6%80%A7">静态属性</h5>
 <p>用static修饰属性，该属性是属于类的，实在类建立时初始化的，而不是创建实例时，可以同过 <strong>类名.xxx</strong> 直接访问，所有的子类可共享该属性。</p>
 <h3 id=""></h3>
-<h2 id="%E4%BA%8C%E3%80%81%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%85%B3">二、配置相关</h2>
-<h3 id="%E5%A3%B0%E6%98%8E%E6%96%87%E4%BB%B6">声明文件</h3>
+<h1 id="%E4%BA%8C%E3%80%81%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%85%B3">二、配置相关</h1>
+<h2 id="%E5%A3%B0%E6%98%8E%E6%96%87%E4%BB%B6">声明文件</h2>
 <blockquote>
 <p>当使用第三方库时，我们需要引用它的声明文件，才能获得对应的代码补全、接口提示等功能。</p>
 </blockquote>
@@ -453,4 +458,4 @@ jQuery.ajax(<span class="hljs-string">'/api/get_something'</span>);
     <script src="/assets/script/common.js"></script>
 
 
-<script src="/assets/script/hot_reload.js"></script><script src="/assets/script/article.js"></script></body></html>
+<script src="/assets/script/article.js"></script></body></html>

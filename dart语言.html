@@ -1,0 +1,257 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="qoxop">
+    <meta name="keywords" content="">
+    <meta name="description" content="<strong>Note:</strong> 实例变量可以被定位为 <code>final</code> 但是不能定位为  <code>const</code>.">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="bookmark" href="/favicon.ico">
+    <link rel="stylesheet" href="/assets/style/index.css">
+    <title>dart语言</title>
+<link rel="stylesheet" href="/assets/code_styles/solarized-light.css"></head>
+<body>
+    <header>
+        <div class="header">
+            <h1><a class="unset" href="/">阿伟的网络日志</a></h1>
+            <nav>
+                <ul>
+                    <li>
+                        <a class="unset" href="/index.html">Home</a>
+                    </li>
+                    <li>
+                        <a class="unset" href="/tags.html">Tags</a>
+                    </li>
+                    <li>
+                        <a class="unset" href="/about.html">About</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <article id="article_main"><h1>dart语言</h1><section class="article_info">
+        <span class="author">author: qoxop</span>
+        <span class="update_time">update at: 2018-11-09</span>
+    </section><div class="from_markdown"><h2 id="1.-demo">1. demo</h2>
+<pre><code class="hljs language-dart">main(){
+    <span class="hljs-keyword">var</span> number = <span class="hljs-number">41</span>;	<span class="hljs-comment">// 变量声明和初始化</span>
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">'The number is <span class="hljs-subst">$number</span>'</span>) <span class="hljs-comment">//字符模板</span>
+}
+</code></pre>
+<h2 id="2.%E5%9F%BA%E7%A1%80">2.基础</h2>
+<ol>
+<li>主入口：main函数</li>
+<li>一切皆对象，任何能保存在变量中的东西都是对象，任何对象都是class的实例，任何类都是继承自 Object class</li>
+<li>强类型，类型声明可选，因为dart有类型推断，变量类型取决与初始化的值。</li>
+<li>支持泛型，比如<code>List&lt;int&gt;</code></li>
+<li>支持高阶函数，函数可以被绑定到类或对象上，也可以在函数内定义函数。</li>
+<li>Dart supports top-level variables, as well as variables tied to a class or object (static and instance variables). Instance variables are sometimes known as fields or properties.</li>
+<li>没有显式的访问控制声明，如 public、protected等，下划线开头的属性是私有的。</li>
+<li>标识符以字母下划线开头，后面随意</li>
+<li>表达式语句与声明语句很不同</li>
+<li>dart工具回报两种问题，error 和 warning，错误包括运行时错误和编译时错误</li>
+</ol>
+<h2 id="%E5%8F%98%E9%87%8F">变量</h2>
+<h3 id="%E5%A3%B0%E6%98%8E%E6%96%B9%E5%BC%8F">声明方式</h3>
+<ol>
+<li>自动类型推断，需初始化，如果没有初始化默认类型为 Null <code>var name ='tom'</code></li>
+<li>手动类型声明，不需要初始化 <code>String name = 'tom'</code></li>
+</ol>
+<h3 id="%E9%BB%98%E8%AE%A4%E5%80%BC">默认值</h3>
+<pre><code class="hljs"><span class="hljs-string">没有初始化的变量的默认值都是</span> <span class="hljs-literal">null</span>
+</code></pre>
+<h3 id="%E5%B8%B8%E9%87%8F">常量</h3>
+<ol>
+<li>编译时常量const:  类似与c语言的宏定义</li>
+<li>运行时常量final：用final定义的顶级作用域或类变量在其第一次使用时被初始化。</li>
+</ol>
+<blockquote>
+<p><strong>Note:</strong> 实例变量可以被定位为 <code>final</code> 但是不能定位为  <code>const</code>.</p>
+</blockquote>
+<h2 id="%E8%87%AA%E6%9C%89%E7%B1%BB%E5%9E%8B">自有类型</h2>
+<ol>
+<li>number</li>
+<li>strings</li>
+<li>booleans</li>
+<li>lists</li>
+<li>maps</li>
+<li>runes(for expressing Unicode characters in a string)</li>
+<li>symbols</li>
+</ol>
+<p>以上的类型都可以通过字面量的方式初始化，可以通过它们的构造函数来初始化</p>
+<h3 id="number">number</h3>
+<pre><code class="hljs">包含两个子类型，`int` 和 `double`
+</code></pre>
+<h3 id="strings">strings</h3>
+<p>字面量书写方式</p>
+<ol>
+<li>单引号</li>
+<li>双引号</li>
+<li>拼接
+<ol>
+<li>加号拼接</li>
+<li>相邻拼接</li>
+<li>字符串模板，a. <code>$ + 变量名</code>， b.<code>${任意表达式}</code></li>
+</ol>
+</li>
+<li>三引号</li>
+<li>单行字符串 r''</li>
+</ol>
+<blockquote>
+<p>字符串字面量时编译时常量，常量字符串的字符串模板只能内嵌编译时常量</p>
+</blockquote>
+<h3 id="booleans">booleans</h3>
+<h3 id="list">list</h3>
+<p>类似与其它语言的Array</p>
+<pre><code class="hljs language-dart"><span class="hljs-keyword">var</span> list = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]
+</code></pre>
+<p>提供类JavaScript的api，但他支持泛型</p>
+<h3 id="maps">maps</h3>
+<p>一个key - value动态对象，key与value都可以是任意对象</p>
+<pre><code class="hljs language-dart"><span class="hljs-comment">// 字面量写法</span>
+<span class="hljs-keyword">var</span> gifts = {
+    <span class="hljs-string">'first'</span>: <span class="hljs-string">'partridge'</span>,
+    <span class="hljs-string">'second'</span>: <span class="hljs-string">'turledoves'</span>,
+}
+<span class="hljs-comment">// 构造函数写法</span>
+<span class="hljs-keyword">var</span> gifts = <span class="hljs-built_in">Map</span>();
+<span class="hljs-keyword">assert</span>(gifts[<span class="hljs-string">'first'</span>] == <span class="hljs-string">'partridge'</span>)
+</code></pre>
+<ol>
+<li>如果查找的key不存在map对象中，将会返回null</li>
+<li>可以通过.length属性查看存在多少个键值对</li>
+</ol>
+<h3 id="runes">runes</h3>
+<p>In Dart, runes are the UTF-32 code points of a string.</p>
+<p>Unicode defines a unique numeric value for each letter, digit, and symbol used in all of the world’s writing systems. Because a Dart string is a sequence of UTF-16 code units, expressing 32-bit Unicode values within a string requires special syntax.</p>
+<pre><code class="hljs language-dart">main() {
+  <span class="hljs-keyword">var</span> clapping = <span class="hljs-string">'\u{1f44f}'</span>;
+  <span class="hljs-built_in">print</span>(clapping);
+  <span class="hljs-built_in">print</span>(clapping.codeUnits);
+  <span class="hljs-built_in">print</span>(clapping.runes.toList());
+
+  Runes input = <span class="hljs-keyword">new</span> Runes(
+      <span class="hljs-string">'\u2665  \u{1f605}  \u{1f60e}  \u{1f47b}  \u{1f596}  \u{1f44d}'</span>);
+  <span class="hljs-built_in">print</span>(<span class="hljs-keyword">new</span> <span class="hljs-built_in">String</span>.fromCharCodes(input));
+}
+</code></pre>
+<h3 id="symbols">symbols</h3>
+<h2 id="function">Function</h2>
+<h3 id="%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5">基础概念</h3>
+<ol>
+<li>定义方式 <code>返回类型 函数名(...arg){/* 函数体 */}</code></li>
+<li>可以省略返回类型，通过return语句自动推断</li>
+<li>支持箭头函数（类JavaScript）</li>
+</ol>
+<h3 id="%E5%8F%AF%E9%80%89%E5%8F%82%E6%95%B0">可选参数</h3>
+<ul>
+<li>
+<p>命名传参</p>
+<pre><code class="hljs language-dart"><span class="hljs-comment">// 函数定义方式</span>
+<span class="hljs-keyword">void</span> enableFlags({<span class="hljs-built_in">bool</span> bold, <span class="hljs-built_in">bool</span> hidden}) {
+    <span class="hljs-comment">// ...</span>
+}
+<span class="hljs-comment">// 调用方式</span>
+enableFlags(bold: <span class="hljs-keyword">true</span>, hidden: <span class="hljs-keyword">false</span>);
+<span class="hljs-comment">// 必选参数</span>
+<span class="hljs-keyword">void</span> enableFlags({
+    <span class="hljs-meta">@require</span> <span class="hljs-built_in">bool</span> bold, 
+    <span class="hljs-built_in">bool</span> hidden}) {
+    <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+</li>
+<li>
+<p>位置传参</p>
+</li>
+<li>
+<p>参数默认值</p>
+<pre><code class="hljs language-dart"><span class="hljs-comment">// 命名</span>
+<span class="hljs-keyword">void</span> enableFlags({<span class="hljs-built_in">bool</span> bold, <span class="hljs-built_in">bool</span> hidden = <span class="hljs-keyword">false</span>}) {
+    <span class="hljs-comment">// ...</span>
+}
+<span class="hljs-comment">// 位置</span>
+<span class="hljs-keyword">void</span> enableFlags(<span class="hljs-built_in">bool</span> bold, [<span class="hljs-built_in">bool</span> hidden = <span class="hljs-keyword">false</span>]) {
+    <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+</li>
+</ul>
+<h3 id="main()-function">main() function</h3>
+<h3 id="anonymous-functions">Anonymous functions</h3>
+<pre><code class="hljs language-dart"><span class="hljs-comment">// 匿名函数</span>
+<span class="hljs-keyword">var</span> list = [<span class="hljs-string">'apples'</span>, <span class="hljs-string">'bananas'</span>, <span class="hljs-string">'oranges'</span>];
+list.forEach((item) {
+  <span class="hljs-built_in">print</span>(<span class="hljs-string">'<span class="hljs-subst">${list.indexOf(item)}</span>: <span class="hljs-subst">$item</span>'</span>);
+});
+</code></pre>
+<h3 id="lexical-scope-%E8%AF%8D%E6%B3%95%E4%BD%9C%E7%94%A8%E5%9F%9F">Lexical scope 词法作用域</h3>
+<pre><code class="hljs">规则与es6的<span class="hljs-built_in">let</span>一样，作用域块包括函数块和语法块
+</code></pre>
+<h3 id="operators">Operators</h3>
+<p>| 描述         | 操作符 |
+| ------------ | ------ |
+| TYPE TEST    | is is! |
+| IF NULL      | ??     |
+| 断言         | as     |
+| 对象链式操作 | ..     |</p>
+<pre><code class="hljs language-dart">(emp <span class="hljs-keyword">as</span> Person).firstName = <span class="hljs-string">'Bob'</span>
+</code></pre>
+<h2 id="%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6">流程控制</h2>
+<h3 id="assert">Assert</h3>
+<pre><code class="hljs">不是函数而是语句，如果语句内的语句放回<span class="hljs-literal">false</span>，会打断程序的运行
+</code></pre>
+<h3 id="exceptions">Exceptions</h3>
+<pre><code class="hljs">Your Dart code can <span class="hljs-built_in">throw</span> <span class="hljs-keyword">and</span> <span class="hljs-built_in">catch</span> exceptions. Exceptions are <span class="hljs-built_in">errors</span> indicating that something unexpected happened. If the exception isn’t caught, the <span class="hljs-built_in">isolate</span> that raised the exception <span class="hljs-built_in">is</span> suspended, <span class="hljs-keyword">and</span> typically the <span class="hljs-built_in">isolate</span> <span class="hljs-keyword">and</span> its <span class="hljs-built_in">program</span> are terminated.（异常不捕获处理会造成程序的终止）
+</code></pre>
+<ul>
+<li>throw</li>
+</ul>
+<pre><code class="hljs language-dart"><span class="hljs-keyword">throw</span> FormatException(<span class="hljs-string">'Expected at least 1 section'</span>);
+<span class="hljs-comment">// throw anything</span>
+<span class="hljs-keyword">throw</span> <span class="hljs-string">'out of llamas'</span>;
+</code></pre>
+<ul>
+<li>try catch</li>
+</ul>
+<pre><code class="hljs language-dart"><span class="hljs-keyword">try</span> {
+  breedMoreLlamas();
+} on OutOfLlamasException {
+  <span class="hljs-comment">// A specific exception</span>
+  buyMoreLlamas();
+} on Exception <span class="hljs-keyword">catch</span> (e) {
+  <span class="hljs-comment">// Anything else that is an exception</span>
+  <span class="hljs-built_in">print</span>(<span class="hljs-string">'Unknown exception: <span class="hljs-subst">$e</span>'</span>);
+} <span class="hljs-keyword">catch</span> (e) {
+  <span class="hljs-comment">// No specified type, handles all</span>
+  <span class="hljs-built_in">print</span>(<span class="hljs-string">'Something really unknown: <span class="hljs-subst">$e</span>'</span>);
+} <span class="hljs-keyword">finally</span> {
+    
+}
+</code></pre>
+</div><section class="tags_bar"><a href="/tags.html#dart">dart</a></section></article>
+        <aside> 
+            <section class="assist-tool">
+                <div class="back-to-top">
+                    <em class="iconfont icon-top"></em>
+                </div>
+            </section>
+        </aside>
+    </main>
+    <footer>
+        <div class="scrollTips" id="scrollTips">
+        </div>
+        <section class="copyright">
+            copyright © 2019 by zhangjiwei
+        </section>
+        <section class="ICP_NUM">
+            <a href="http://www.miitbeian.gov.cn">
+                粤ICP备19026817号-1
+            </a>
+        </section>
+    </footer>
+    <script src="/assets/script/common.js"></script>
+
+
+<script src="/assets/script/article.js"></script></body></html>

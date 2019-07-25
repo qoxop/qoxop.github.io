@@ -33,17 +33,16 @@
         <article id="article_main"><h1>react生命周期</h1><section class="article_info">
         <span class="author">author: qoxop</span>
         <span class="update_time">update at: 2019-02-16</span>
-    </section><div class="from_markdown"><h3 id="preview">preview</h3>
+    </section><div class="from_markdown"><h2 id="preview">preview</h2>
 <p>关于react生命周期，网上有个通过流程图总结的文档 http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/，这个流程图和官方文档已经描述得相当清楚，这里还是通过自己的理解总结一下下。</p>
-<!-- more -->
 <p>react的生命周期可以分为三个部分来说，创建时、更新时和卸载时</p>
 <ul>
 <li>创建时：constructor →  getDerivedStateFromProps →  render →  componentDidMount</li>
 <li>更新时： getDerivedStateFromProps → shouldComponentUpdate → render → getSnapshotBeforeUpdate → componentDidUpdate</li>
 <li>卸载时: componentWillUnmount</li>
 </ul>
-<h3 id="%E5%88%9B%E5%BB%BA%E6%97%B6">创建时</h3>
-<h4 id="1.-constructor">1. constructor</h4>
+<h2 id="%E5%88%9B%E5%BB%BA%E6%97%B6">创建时</h2>
+<h3 id="1.-constructor">1. constructor</h3>
 <p>构造函数，组件被实例化时被调用，可在在这里定义state或其他的实例属性，但构造函数不一定是实例化时最先被运行的。</p>
 <pre><code class="hljs language-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">People</span> <span class="hljs-title">extend</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
     name = makeName(); <span class="hljs-comment">// 这里的代码先于构造函数执行</span>
@@ -53,7 +52,7 @@
     }
 }
 </code></pre>
-<h4 id="2.getderivedstatefromprops">2.getDerivedStateFromProps</h4>
+<h3 id="2.getderivedstatefromprops">2.getDerivedStateFromProps</h3>
 <p>react16以上版本用以替代<code>componentWillReceiveProps</code>生命周期函数的方法，区别是<code>getDerivedStateFromProps</code> 是一个静态的方法，他是无法直接访问到实例以及实例的属性的，他在组件每次的render之前被组件实例调用，在该函数的返回值被用于更新实例的state(以merge的方式)，如果函数没有返回或者返回为空，则不执行更新。</p>
 <p>参数</p>
 <ul>
@@ -61,26 +60,26 @@
 <li>state：<strong>最新的</strong>state</li>
 </ul>
 <p>注：实例调用这个函数时，传进来的props和state是即将好更新的值，也就是说此时实例对象上的props和state还是原来的数据</p>
-<h4 id="3.-render">3. render</h4>
+<h3 id="3.-render">3. render</h3>
 <p>根据最新的props和state来渲染virtual dom结构，有一点容易误解的地方就是以为执行了render就一定会更新实际的dom结构，其实不然，是否渲染更新实际的dom结构事根据render返回的virtual dom前后差异来决定的。</p>
-<h4 id="4.componentdidmount">4.componentDidMount</h4>
+<h3 id="4.componentdidmount">4.componentDidMount</h3>
 <p>当实例被挂载到dom上之后被触发，整个生命周期只触发一次，不管实例是否真的有内容渲染到dom上他都会被触发一次。</p>
-<h3 id="%E6%9B%B4%E6%96%B0%E6%97%B6">更新时</h3>
-<h4 id="1.getderivedstatefromprops">1.getDerivedStateFromProps</h4>
+<h2 id="%E6%9B%B4%E6%96%B0%E6%97%B6">更新时</h2>
+<h3 id="1.getderivedstatefromprops">1.getDerivedStateFromProps</h3>
 <p>略</p>
-<h4 id="2.shouldcomponentupdate">2.shouldComponentUpdate</h4>
+<h3 id="2.shouldcomponentupdate">2.shouldComponentUpdate</h3>
 <p><code>shouldComponentUpdate(nextProps, nextState)</code>函数在<code>getDerivedStateFromProps</code> 之后执行，同样接受两个参数，一个最新的props和一个最新的state，props参数与<code>getDerivedStateFromProps</code>拿到的是一样的, 但是state是经过<code>getDerivedStateFromProps</code>改造过后的state，如果这个函数返回true，将执行往后的步骤，如果返回fasle，那么往后的步骤都不在执行，更新终止；</p>
 <p>注: <code>shouldComponentUpdate(nextProps, nextState)</code> 返回<code>fasle</code>只是阻碍了生命周期的进行而没有阻碍state的更新</p>
-<h4 id="3.render">3.render</h4>
+<h3 id="3.render">3.render</h3>
 <p>略</p>
-<h4 id="4.getsnapshotbeforeupdate">4.getSnapshotBeforeUpdate</h4>
+<h3 id="4.getsnapshotbeforeupdate">4.getSnapshotBeforeUpdate</h3>
 <p><code>getSnapshotBeforeUpdate(prevProps, prevState)</code>在当最近一次的render函数即将把输出提交到真实的dom节点上之<strong>前</strong>被调用，但是事实上不管有没有实际的更新输出到dom节点上，<code>getSnapshotBeforeUpdate</code> 都会在最近的render后被执行，这个生命周期函数的作用在让程序可以获取得到<strong>未更新前</strong>的真实的dom的情况，而他的返回值将作为componentDidUpdate的第三个参数</p>
-<h4 id="5.componentdidupdate">5.componentDidUpdate</h4>
+<h3 id="5.componentdidupdate">5.componentDidUpdate</h3>
 <p><code>componentDidUpdate(prevProps, prevState, snapshot)</code> 在当最近一次的render函数即将把输出提交到真实的dom节点上之<strong>后</strong>被调用，<strong>实际上即使dom节点没有实质的更新，该函数也会被执行</strong></p>
 <h3 id="%E5%85%B3%E4%BA%8Esetstate%E5%87%BD%E6%95%B0%E7%9A%84callback">关于setState函数的callback</h3>
 <p>setState函数的callback的触发是在生命周期(除<code>componentWillUnmount</code>外)的最后端</p>
-<h3 id="%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86">错误处理</h3>
-<h4 id="1.getderivedstatefromerror">1.getDerivedStateFromError</h4>
+<h2 id="%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86">错误处理</h2>
+<h3 id="1.getderivedstatefromerror">1.getDerivedStateFromError</h3>
 <p><code>static getDerivedStateFromError(error)</code></p>
 <blockquote>
 <p>This lifecycle is invoked after an error has been thrown by a descendant component. It receives the error that was thrown as a parameter and should return a value to update state.</p>
@@ -135,4 +134,4 @@ class ErrorBoundary extends React.Component {
     <script src="/assets/script/common.js"></script>
 
 
-<script src="/assets/script/hot_reload.js"></script><script src="/assets/script/article.js"></script></body></html>
+<script src="/assets/script/article.js"></script></body></html>

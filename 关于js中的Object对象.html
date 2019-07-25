@@ -34,7 +34,7 @@
         <span class="author">author: qoxop</span>
         <span class="update_time">update at: 2019-04-03</span>
     </section><div class="from_markdown"><p>今天来学学JavaScript中的Object对象。其实基本上都是摘抄自<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object">MDN</a>的文档，因为文档说的东西太多了，这里做一下过滤方便以后复习查看。</p>
-<h3 id="%E7%AE%80%E5%8D%95%E7%9A%84%E4%B8%AD%E8%8B%B1%E6%96%87%E5%AF%B9%E7%85%A7">简单的中英文对照</h3>
+<h2 id="%E7%AE%80%E5%8D%95%E7%9A%84%E4%B8%AD%E8%8B%B1%E6%96%87%E5%AF%B9%E7%85%A7">简单的中英文对照</h2>
 <p>| 中文简述                             | 函数                                         |
 | ------------------------------------ | -------------------------------------------- |
 | 复制对象/合并对象                    | Object.assign(target, ...sources)            |
@@ -66,7 +66,7 @@
 | 返回一个该对象的字符串表示             | obj.toLocaleString()               |
 | 对象表示为一个文本值                   | obj.toString()                     |
 | 返回指定对象的原始值                   | obj.valueOf()                      |</p>
-<h3 id="%E7%B1%BB%E6%96%B9%E6%B3%95%2F%E8%87%AA%E6%9C%89%E6%96%B9%E6%B3%95">类方法/自有方法</h3>
+<h2 id="%E7%B1%BB%E6%96%B9%E6%B3%95%2F%E8%87%AA%E6%9C%89%E6%96%B9%E6%B3%95">类方法/自有方法</h2>
 <h4 id="1.-object.assign(target%2C-...sources)">1. Object.assign(target, ...sources)</h4>
 <p>用于将所有可枚举属性的值从一个或多个源对象复制到目标对象。它将返回目标对象。</p>
 <pre><code class="hljs language-javascript"><span class="hljs-keyword">const</span> target = { <span class="hljs-attr">a</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">b</span>: <span class="hljs-number">2</span> };
@@ -99,7 +99,7 @@ target === returnedTarget <span class="hljs-comment">// true</span>
 <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Object</span>.entries(obj)); <span class="hljs-comment">// [ ['foo', 'bar'], ['baz', 42] ]</span>
 </code></pre>
 <h4 id="6.-object.freeze(obj)">6. Object.freeze(obj)</h4>
-<p>可以<strong>冻结</strong>一个对象。一个被冻结的对象再也不能被修改；冻结了一个对象则不能向这个对象添加新的属性，不能删除已有属性，不能修改该对象已有属性的可枚举性、可配置性、可写性，以及不能修改已有属性的值。此外，冻结一个对象后该对象的原型也不能被修改。<code>freeze()</code> 返回和传入的参数相同的对象。</p>
+<p>可以<strong>冻结</strong>一个对象。一个被冻结的对象再也不能被修改；冻结了一个对象则不能向这个对象添加新的属性，不能删除已有属性，不能修改该对象已有属性的可枚举性、可配置性、可写性，<strong>以及不能修改已有属性的值</strong>。此外，冻结一个对象后该对象的原型也不能被修改。<code>freeze()</code> 返回和传入的参数相同的对象。</p>
 <p>这个方法返回传递的对象，而不是创建一个被冻结的副本。</p>
 <h4 id="7.-object.fromentries(iterable)">7. Object.fromEntries(iterable)</h4>
 <p>把键值对列表转换为一个对象。</p>
@@ -166,7 +166,7 @@ subclass.prototype = <span class="hljs-built_in">Object</span>.create(superclass
 </blockquote>
 <h4 id="21.-object.values(obj)">21. Object.values(obj)</h4>
 <p>返回一个给定<strong>对象自身</strong>的所有可枚举属性值的数组，值的顺序与使用<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/for...in"><code>for...in</code></a>循环的顺序相同 ( 区别在于 for-in 循环枚举原型链中的属性 )。</p>
-<h3 id="%E5%AE%9E%E4%BE%8B%E6%96%B9%E6%B3%95%2Fobject.prototype">实例方法/Object.prototype</h3>
+<h2 id="%E5%AE%9E%E4%BE%8B%E6%96%B9%E6%B3%95%2Fobject.prototype">实例方法/Object.prototype</h2>
 <h4 id="1.-obj.hasownproperty(prop)">1. obj.hasOwnProperty(prop)</h4>
 <p>会返回一个布尔值，指示对象<strong>自身</strong>属性中是否具有指定的属性</p>
 <p>所有继承了 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object"><code>Object</code></a> 的对象都会继承到 <code>hasOwnProperty</code> 方法。这个方法可以用来检测一个对象是否含有特定的自身属性；和 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/in"><code>in</code></a> 运算符不同，该方法会忽略掉那些从原型链上继承到的属性。</p>
@@ -207,4 +207,4 @@ subclass.prototype = <span class="hljs-built_in">Object</span>.create(superclass
     <script src="/assets/script/common.js"></script>
 
 
-<script src="/assets/script/hot_reload.js"></script><script src="/assets/script/article.js"></script></body></html>
+<script src="/assets/script/article.js"></script></body></html>
