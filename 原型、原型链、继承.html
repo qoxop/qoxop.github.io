@@ -4,7 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="author" content="qoxop">
     <meta name="keywords" content="">
-    <meta name="description" content="a对象的<code>__proto__</code> 属性指向b对象，而b对象的<code>__proto__</code> 指向c对象，这就是一条原型链">
+    <meta name="description" content="首先原型是一个对象，原型是用于描述对象的构造函数的，也就是说对象的原型由它的构造函数决定。">
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="bookmark" href="/favicon.ico">
     <link rel="stylesheet" href="/assets/style/index.css">
@@ -33,38 +33,39 @@
         <article id="article_main"><h1>原型、原型链、继承</h1><section class="article_info">
         <span class="author">author: qoxop</span>
         <span class="update_time">update at: 2018-04-03</span>
-    </section><div class="from_markdown"><h3 id="%E5%8E%9F%E5%9E%8B%E9%93%BE%E7%9A%84%E6%9C%AC%E8%B4%A8">原型链的本质</h3>
-<p>a对象的<code>__proto__</code> 属性指向b对象，而b对象的<code>__proto__</code> 指向c对象，这就是一条原型链</p>
-<h3 id="%E5%8E%9F%E5%9E%8B%E9%93%BE%E7%9A%84%E4%BD%9C%E7%94%A8">原型链的作用</h3>
-<p>如果访问对象自身某个不存在属性时，程序就会去对象的<code>__proto__</code>属性指向的对象去查找，如果再找不到就会继续按照这样的规则去继续查找，知道找到为止或者最后的<code>__proto__</code>属性指向null</p>
-<p>由于属性的查找的优先级是先查自身自有属性再去原型链中查找，这就造成了所谓的属性屏蔽</p>
-<pre><code class="hljs language-javascript"><span class="hljs-comment">// 演示原型链</span>
-<span class="hljs-keyword">let</span> a = {<span class="hljs-attr">pa</span>: <span class="hljs-string">'a'</span>};
-<span class="hljs-keyword">let</span> b = {<span class="hljs-attr">pb</span>: <span class="hljs-string">'b'</span>};
-<span class="hljs-keyword">let</span> c = {<span class="hljs-attr">pc</span>: <span class="hljs-string">'c'</span>};
-a.__proto__ = b;
-b.__proto__ = c;
-a.pb === b.pb <span class="hljs-comment">// true</span>
-a.pc === c.pc <span class="hljs-comment">// true</span>
-c = {<span class="hljs-attr">pc</span>: <span class="hljs-string">'cc'</span>};
-a.pc === c.pc <span class="hljs-comment">// false, c的指向改变了</span>
+    </section><div class="from_markdown"><h3 id="%E4%BB%80%E4%B9%88%E6%98%AF%E5%8E%9F%E5%9E%8B%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AF%E5%8E%9F%E5%9E%8B%E9%93%BE">什么是原型、什么是原型链</h3>
+<p>首先原型是一个对象，原型是用于描述对象的构造函数的，也就是说对象的原型由它的构造函数决定。</p>
+<p>一般来说，自定义的函数和系统自带的构造函数都会包含一个<code>prototype</code>属性, 该属性也是一个对象，它至少包含一个<code>constructor</code>属性指向构造函数自身。</p>
+<p>当构造函数<code>A</code>创造一个实例<code>a</code>出来时，<code>a</code>的原型就是指向<code>A</code>的<code>prototype</code>属性。</p>
+<p>因为<code>A</code>的<code>prototype</code>属性本身也是一个对象，它也有它的原型，这就是形成了一条原型链。</p>
+<p>对象的原型可以通过对象的<code>__proto__</code>属性访问到，也就是所说<code>a.__proto__ === A.prototype</code></p>
+<h3 id="%E5%8E%9F%E5%9E%8B%E9%93%BE%E7%9A%84%E6%9C%AC%E8%B4%A8">原型链的本质</h3>
+<pre><code class="hljs"><span class="hljs-comment">// 原型链</span>
+a.<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">__proto__</span>.</span><span class="hljs-module"><span class="hljs-identifier">__proto__</span>
+/</span><span class="hljs-operator">/</span></span> 等价
+a.__proto<span class="hljs-operator"> === </span><span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">A</span>.</span></span>prototype
+a.<span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">__proto__</span>.</span><span class="hljs-module"><span class="hljs-identifier">__proto__</span> </span><span class="hljs-operator">==</span></span>= <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">A</span>.</span></span>prototype.__proto__<span class="hljs-operator"> === </span><span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">Object</span>.</span></span>prototype
+
 </code></pre>
-<h3 id="prototype%E5%B1%9E%E6%80%A7">Prototype属性</h3>
-<p>一般来说，只有函数(用<strong>function关键字</strong>定义的函数)才会默认有prototype属性（其他情况手动赋值也是可以的），prototype属性在函数以构造函数方式调用时使用，作为其实例的<code>__proto__</code> 属性用(用作继承)，并且所有实例共享一个prototype。下面将函数的<code>prototype</code>属性叫做<code>prototype</code>对象，因为每个<code>prototype</code>属性都有着差不多的特点。</p>
-<p>那么 <code>prototype</code> 对象究竟都存了那些东西呢？首先是<code>constructor</code></p>
+<h3 id="%E5%8E%9F%E5%9E%8B%E9%93%BE%E5%AE%9E%E9%99%85%E4%BD%93%E7%8E%B0">原型链实际体现</h3>
+<p>本质上来说，原型链的效果在于如果访问对象自身某个不存在属性时，程序就会去对象的<code>__proto__</code>属性指向的对象去查找，如果再找不到就会继续按照这样的规则去继续查找，知道找到为止或者最后的<code>__proto__</code>属性指向null</p>
+<p>这样的效果可以让js最大程度的共享属性和方法，比如很多中js的类型都可以访问到<code>Object.prototype</code>中定义的方法，比如<code>toString</code>,<code>valueOf</code>等</p>
+<h3 id="%E5%B1%9E%E6%80%A7%E5%B1%8F%E8%94%BD">属性屏蔽</h3>
+<p>属性的查找的优先级是先查自身自有属性再去原型链中查找，但是属性的设置有所不同，这里分为两种情况，</p>
 <ul>
-<li>
-<p>但函数的prototype属性被重新直接赋值(引用改变)，后续的实例<code>__proto__</code>指向新的prototype对象，前面的实例不受影响。</p>
+<li>属性在对象自身存在，自有属性情况较简单，不做介绍</li>
+<li>属性在原型链上，如果属性在原型链上，那么该属性设置手属性修饰符的限制，
+<ul>
+<li>如果属性只读，则设置失败，</li>
+<li>如果存在setter，将调用setter</li>
+<li>其他情况，情况将在对象自身添加一个新的属性，屏蔽原型链上的属性</li>
+</ul>
 </li>
-<li>
-<p>一帮来说，函数默认的prototype属性为一个对象,这个对象两个属性<code>constructor</code> 和 <code>__proto__</code>, <code>constructor</code>指向函数自身，<code>__proto__</code> 指向<code>Object.prototype</code></p>
-</li>
-<li>
-<p>确定某个对象是什么类型的，就需要知道对象的<code>__proto__</code> 指向那个函数的<code>prototype</code>属性</p>
-</li>
-<li>
-<p>其实对象的<code>__proto__</code> 属性的<code>constructor</code>属性就是用来指名对象的构造函数的</p>
-</li>
+</ul>
+<h3 id="prototype%E5%B1%9E%E6%80%A7">Prototype属性</h3>
+<p>一般来说，用<strong>function关键字</strong>定义的函数, 和<strong>class</strong>定义的类，会默认带上<code>prototype</code>属性，可以手动修改它的值，最终影响它的实例对象的原型</p>
+<ul>
+<li>当函数的prototype属性被重新直接赋值(引用改变)，后续生产实例对象的原型指向新的prototype，之前生产的实例不受影响。</li>
 </ul>
 <h3 id="%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%96%B9%E5%BC%8F">创建对象的方式</h3>
 <ol>
@@ -73,39 +74,112 @@ a.pc === c.pc <span class="hljs-comment">// false, c的指向改变了</span>
 <li><code>Object.create(srcObj: any)</code></li>
 </ol>
 <p>其他的如函数返回之类的本质上不算是对象创建，应该说是对象传递或改造</p>
+<p>字面量的本质其实也是构造函数调用，比如数组字面量底层调用的是Array构造函数，对象字面量底层用的是Object构造函数。</p>
 <h3 id="javascript%E4%B8%AD%E5%8E%9F%E5%9E%8B%E9%93%BE%E7%9A%84%E5%BD%A2%E6%88%90">JavaScript中原型链的形成</h3>
-<p>对象的原型指向它的构造函数<strong>在(new)调用时</strong>的<code>prototype</code>属性(的引用)，如果需要如果需要动态修改对象的原型，只能去修改<code>prototype</code>属性的属性，而不能直接给<code>prototype</code>属性赋值(因为引用改变了,就追溯不到了)</p>
-<p>而字面量一般都有一个默认的构造函数</p>
-<p><code>js</code>中只有<strong>函数</strong>与<strong>类</strong>(本质上也是函数)有默认的<code>prototype</code>属性，而且<code>prototype</code>属性对象的<code>constructor</code>属性指向函数本身或者类的构造函数</p>
-<p>一些概念：原型对象指的就是构造函数的<code>prototype</code>，原型链就是<code>__proto__</code>链</p>
-<p>注意点：原型对象上的方法和属性是所有实例对象<strong>共有</strong>的方法和属性</p>
+<p>用 <code>new</code> 调用用一个构造函数(或类)，生产的对象的原型指向构造函数的<code>prototype</code>属性，构造函数的<code>prototype</code>属性也还有属于给它自己的构造函数。</p>
+<p>注意点：同一个构造函数的实例对象，原型是共享的（包括属性和方法）</p>
 <h3 id="%E6%93%8D%E4%BD%9C%E7%AC%A6">操作符</h3>
-<h4 id="instanceof">instanceof</h4>
+<h4 id="1.-instanceof-%E7%9A%84%E5%8E%9F%E7%90%86">1. instanceof 的原理</h4>
 <p><code>instanceof</code> 运算符用于测试构造函数的prototype属性是否出现在对象的原型链中的任何位置</p>
-<pre><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">A</span> </span>{<span class="hljs-comment">/* anything here */</span>};
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">B</span> </span>{
-    A.call(<span class="hljs-keyword">this</span>)
-    <span class="hljs-comment">/* anything here */</span>
-}；
-B.prototype = <span class="hljs-built_in">Object</span>.create(A.prototype)
-<span class="hljs-keyword">var</span> b = <span class="hljs-keyword">new</span> B();
-b installceof B; 
-<span class="hljs-comment">/*
+<pre><code class="hljs language-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Parent</span> </span>{}
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Child</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Parent</span> </span>{}
+
+<span class="hljs-keyword">const</span> child = <span class="hljs-keyword">new</span> Child();
+<span class="hljs-built_in">console</span>.log(child <span class="hljs-keyword">instanceof</span> Child) <span class="hljs-comment">// true</span>
+<span class="hljs-built_in">console</span>.log(child <span class="hljs-keyword">instanceof</span> Parent) <span class="hljs-comment">// true</span>
+
+<span class="hljs-comment">/*  
+    child instanceof Parent
 	作用(原理)上等于:
-	b.__proto__ === B.prototype ||
-	b.__proto__.__proto__ === B.prototype ||
-	b.__proto__.__proto__.__proto__ === B.prototype ||
+	child.__proto__ === Parent.prototype || 
+	child.__proto__.__proto__ === Parent.prototype ||
 	......
 */</span>
+
 <span class="hljs-comment">// 如果需要判断直接父类</span>
-b.__proto__.constructor === B.prototype.constructor
+b.__proto__.constructor === B
 </code></pre>
-<h4 id="new">new</h4>
+<h4 id="2.-new-%E7%9A%84%E5%8E%9F%E7%90%86">2. new 的原理</h4>
 <ol>
 <li>一个新的对象被创建，它继承自构造函数的prototype，<code>f = {__proto__: F.prototype}</code></li>
 <li>构造函数被执行，相应的传参被传入，同时上下文(this)会被指定为这个新的实例。<code>(this = f)</code></li>
-<li>如果构造函数返回了一个对象，那实例就会变成这个对象，new操作符的作用相当于没有，如果没有返回任何东西，那new操作符将会把上下文(this)做为函数的返回， <code>return this</code></li>
+<li>如果构造函数返回了一个对象，那实例就会变成这个对象，new操作符的作用相当于没有，如果没有返回任何东西，那new操作符将会把上下文(this)做为函数的返回</li>
 </ol>
+<h3 id="es6%E4%B8%AD%E7%9A%84%E7%B1%BB">ES6中的类</h3>
+<p>ES6中的类其实就是构造函数的语法糖。没有什么特别的地方。</p>
+<h3 id="js%E5%AE%9E%E7%8E%B0%E7%BB%A7%E6%89%BF%E7%9A%84%E6%96%B9%E5%BC%8F">js实现继承的方式</h3>
+<ol>
+<li>借助构造函数，修改this指向</li>
+</ol>
+<pre><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Parent</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">this</span>.name = <span class="hljs-string">'parent'</span>
+}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Child</span>(<span class="hljs-params"></span>) </span>{
+    Parent.call(<span class="hljs-keyword">this</span>) <span class="hljs-comment">// apply</span>
+    <span class="hljs-keyword">this</span>.type = <span class="hljs-string">'child'</span>
+}
+<span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">new</span> Child())
+</code></pre>
+<p>缺点是无法继承Parent的原型对象，也就是说<code>child.__proto__</code> 指向了<code>Child.prototype</code>但<code>Child.prototype.__proto__</code>并不是指向<code>Parent.prototype</code>,这种方式的继承是通过在执行<code>Child</code>函数时调用Parent函数，并修改<code>Parent</code>函数的<code>this</code>指向，所以这里通过<code>Child</code>生产的对象并不存在属性共享的问题</p>
+<ol start="2">
+<li>借助原型链, 修改子类构造函数的<code>prototype</code>属性</li>
+</ol>
+<pre><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Parent</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">this</span>.name = <span class="hljs-string">'parent'</span>
+}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Child</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">this</span>.type = <span class="hljs-string">'child'</span>
+}
+Child.prototype = <span class="hljs-keyword">new</span> Parent();
+<span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">new</span> Child().__proto__)
+</code></pre>
+<p>这种方式的好处是子类继承了父类的自有属性，同时也继承了父类的原型属性，也就是说<code>child.__proto__ === new Parent() === Child.prototype</code>, 那么其实<code>child.__proto__.__proto__ === Parent.prototype</code>,缺点就是各个child对象共享了继承属性<code>Child.prototype</code>，其中一个修改了继承属性，其他对象也会跟着改变</p>
+<ol start="3">
+<li>组合方式，组合 1 和 2 的方式</li>
+</ol>
+<pre><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Parent</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">this</span>.name = <span class="hljs-string">'parent'</span>
+}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Child</span>(<span class="hljs-params"></span>) </span>{
+    Parent.call(<span class="hljs-keyword">this</span>); <span class="hljs-comment">// 自有属性</span>
+    <span class="hljs-keyword">this</span>.type = <span class="hljs-string">'child'</span>;
+}
+Child.prototype = <span class="hljs-keyword">new</span> Parent(); 
+<span class="hljs-comment">// 这里利用属性屏蔽，解决了方式 2 的问题</span>
+</code></pre>
+<p>缺点执行了两次Parent</p>
+<ol start="4">
+<li>组合方式继承优化1</li>
+</ol>
+<pre><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Parent</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">this</span>.name = <span class="hljs-string">'parent'</span>
+}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Child</span>(<span class="hljs-params"></span>) </span>{
+    Parent.call(<span class="hljs-keyword">this</span>); <span class="hljs-comment">// 自有属性</span>
+    <span class="hljs-keyword">this</span>.type = <span class="hljs-string">'child'</span>;
+}
+Child.prototype = Parent.prototype; 
+</code></pre>
+<p><code>child.constuctor</code> 指向的都是<code>Parent</code>,由于原型对象的共用，导致无法区分实例是由那个构造函数生成的</p>
+<ol start="5">
+<li>组合方式继承优化2</li>
+</ol>
+<pre><code class="hljs language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Parent</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">this</span>.name = <span class="hljs-string">'parent'</span>
+}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Child</span>(<span class="hljs-params"></span>) </span>{
+    Parent.call(<span class="hljs-keyword">this</span>); <span class="hljs-comment">// 自有属性</span>
+    <span class="hljs-keyword">this</span>.type = <span class="hljs-string">'child'</span>;
+}
+Child.prototype = <span class="hljs-built_in">Object</span>.create(Parent.prototype); 
+Child.prototype.constructor = Child
+</code></pre>
+<h3 id="es6-%E7%BB%A7%E6%89%BF%E4%B8%8Ees5%E7%BB%A7%E6%89%BF%E7%9A%84%E5%AF%B9%E6%AF%94">ES6 继承与ES5继承的对比</h3>
+<h4 id="es6">ES6</h4>
+<p><img src="./image/class%E5%8E%9F%E5%9E%8B.png" alt="class原型.png"></p>
+<h4 id="es5---%E7%BB%84%E5%90%88%E6%96%B9%E5%BC%8F%E7%BB%A7%E6%89%BF%E4%BC%98%E5%8C%962">ES5 - 组合方式继承优化2</h4>
+<p><img src="./image/es5%E7%BB%A7%E6%89%BF.png" alt="es5继承.png"></p>
+<p>由此可以看出ES6中的类是ES5组合方式继承优化2的一种语法糖，其效果是一致的。</p>
 </div><section class="tags_bar"><a href="/tags.html#原型链">原型链</a></section></article>
         <aside> 
             <section class="assist-tool">
